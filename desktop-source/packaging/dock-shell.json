@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "name": "omarchy-s-dock-shell",
+  "status": "private-staging-only",
+  "upstream_commit": "b83d3df0840504299d3099ebf391eb8110527edd",
+  "prefix": "/usr/local/lib/omarchy-dock/omarchy-shell",
+  "requires_capabilities": ["private Hyprland dock session", "Quickshell", "NetworkManager and BlueZ session proxies", "dock app-launch broker", "dock theme and screenshot helpers", "clipboard tools", "shared sound launcher"],
+  "conflicts": ["another owner of /usr/local/lib/omarchy-dock/omarchy-shell"],
+  "excluded_ownership": ["boot and recovery", "kernel and firmware", "Phosh", "user profiles", "network credentials", "Bluetooth pairing", "host device configuration"],
+  "release_blockers": ["original integration license", "asset-specific provenance", "dependency version lock", "package-manager integration and rollback"]
+}

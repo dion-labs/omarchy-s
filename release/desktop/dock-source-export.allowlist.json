@@ -1,0 +1,312 @@
+{
+  "schema": 1,
+  "scope": "Reviewed dock services and pinned shell adaptation source preview; no generated payload, private state or firmware",
+  "publication_cleared": false,
+  "files": [
+    {
+      "path": "DOCK-LICENSE-MIT",
+      "sha256": "fcf392851989e0430a15e5145e79cc7092f7e16a57161da67b3e2122bb13b9ff",
+      "mode": "0644"
+    },
+    {
+      "path": "DOCK-LICENSING.md",
+      "sha256": "7a44ef0092b299ecb0300716c6c92716eca8ec621fc367c0fe565baf79baa1cf",
+      "mode": "0644"
+    },
+    {
+      "path": "DOCK-PREVIEW.md",
+      "sha256": "064598ae9b604c1c305bbe6ce2b1b035c1261447ba75205b3f3ab3d86ec26293",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/agent-display.py",
+      "sha256": "46e5cbfe5f2c32c60c39730068129748283f10f661e59876af16f5ba0aa94c95",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/agent-recovery.py",
+      "sha256": "91d6b7631b9d22a2d9a0b4e650d72834587a665ef4ce79d7ddfe88098ca7ba5b",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/app-broker.py",
+      "sha256": "8f7ae9c84e05377306375da10463ab8cce8ccdd00ca2a7515a067a4e93c01cb0",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/app-launch.py",
+      "sha256": "fa0d36670d72aefe2198421d43c9615968007b588a94423e54d7ea1fd144d288",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/app_process.py",
+      "sha256": "522a1c43e496d0553bb90af2a529978cd28d236566c28075ac2aaa638fa340b2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/app_protocol.py",
+      "sha256": "1e2172e0b9ee8f4b6d0891688cbb91b4b19e2c8ae47b5e99f89eaae13834b278",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/battery-widget/BarWidget.qml",
+      "sha256": "50d4d6fb6e70bad90dc5b66d368f634bc6a2043d1527d3671ee9f8fa42b50807",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/bluetooth-power",
+      "sha256": "52de0536c30123b50381fb9e2560059753392c67560ec84fca5d341c8510b2e2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/browser-profile.py",
+      "sha256": "a1a9035c60277fb3c90ac5ca5dc138dbf75e580d69ad49ab97e512766af646e9",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-background.py",
+      "sha256": "c1012f69a0fdee20e97dde0a4bcbc324042332d6414ac55c74e0037d74c0cf44",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-bluetooth.py",
+      "sha256": "35be9283add6a8703d9ecc96158f0c5a551f1dfa3197f619a63ec475e970a195",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-browser.py",
+      "sha256": "b53f80792b9d69e83322a0c169e61bfae260cae90978258a46337f9226b2738a",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-capture.py",
+      "sha256": "408d56a5bfdabcc15b587efdd300b2ad5b988daa569676e5b645f830907d1261",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-file-dialog.py",
+      "sha256": "91e13885fd9676ee3b0717af5d4d0937d80218c8abb3e329785bda15ac7adb3c",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-network.py",
+      "sha256": "49525b1677c4968d3ea354900fcbfa6082089e9b5111779d8810609b0ccd5356",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-notifications.py",
+      "sha256": "48c6848502ec794822cfd5db826830ec74b23adfba2be29ffe93a19eaaa50a2b",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-screencast.py",
+      "sha256": "bf37da8732670233f7d76c8ce540f829872fb619b48e343b9d8fe1da04d8c880",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-terminal.py",
+      "sha256": "f81cbb11e4d68a4699159559fc0ca3a1866beaf34fddbab72e596a6cf659cf99",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/check-tray.py",
+      "sha256": "c2b95f7ede623011d7c5b7504e0428e2319c36012b42db18fc1270d9015d1413",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/clipboard-open.py",
+      "sha256": "5b66d77dc681da6fc77f641128f00b01de4163a825987efad180bde95fc0d209",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/continuity_state.py",
+      "sha256": "60ef6b986ea38015e95206d57517b3d58a2c2924454b87b9be6e2f8f97222470",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/desktop-environment.py",
+      "sha256": "53c4c407fc0c20a29ca5304a3fdd40a989083ddb94a4ee52b7c81f66a1d5653c",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/desktop-session.py",
+      "sha256": "41773564a84b9d4092b49b88e105aa5c39e43b6da1ece98a64016f58698417c7",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/dock-launch.py",
+      "sha256": "d17a4ccf0bd9d5d65c14e681cc62790bc7b96e949fb67654fa1cce4ca5069d48",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/gpu_environment.py",
+      "sha256": "de168b6a78628fb7939240e9f87789e8e7e7b8af78e0624c40f04376705ce8b8",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/gtk_theme.py",
+      "sha256": "cdde4e0e9b7e4f97af6129d1776a3ccdab90dc401ed724306cf9835c46c16cbe",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/input-access.py",
+      "sha256": "1c14b77c745d2ea0f542d770d858eb556e963d082db553b01c50bfcde3e87d57",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/input-hotplug.py",
+      "sha256": "b03670e3f5a659abde97b60b5307c3d4b1d2760d8c9e90b2c15c8c1dfc807015",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/launchpad.py",
+      "sha256": "cfaffc7387f2665889856345212d3aadccd865574fb237dc50821492fb2488be",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/network-proxy.py",
+      "sha256": "89955f01b7d686447f420e6dd549d75364e9d5e091d4ee019dfd8a0d5c20ea9d",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/omarchy-profile/README.md",
+      "sha256": "ac4a5c8331771d3563f9531c7aad2b380f8dd3146280910bc81a36d259ce658a",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/omarchy-profile/hyprland.lua",
+      "sha256": "2b051bc54f8980ebb4a98eeac30b603c73bccbf8673b4423be0dc0b3b3bb0f31",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/omarchy-profile/upstream.json",
+      "sha256": "81ef6a8596f67c18aa49093cf6f23beccf0189e1c4baa85d8573997f49db4b36",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/omarchy-profile/upstream/LICENSE",
+      "sha256": "717ba1949502290f8e47688ae2e323acd06c8ca47aec9f7596b15f678c1af4a2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/omarchy-profile/upstream/looknfeel.lua",
+      "sha256": "d257ea9864abb9cac124083bef88374659e759144a3d2028ec9486e578978804",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/portal_backend.py",
+      "sha256": "96075c72129baf15ce2ade3376375c94093b2c2f4b5cf01ed276c35c1da978d6",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/power-menu.py",
+      "sha256": "0216b427034d6f3040b52865200703543fe1da1f86bcdeb4eed36cfa3d4ba748",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/power_actions.py",
+      "sha256": "25b4d18be497ceaf692ce9062e94a08a77b3c15d39993a166e945168b507c8b2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/power_dialog.py",
+      "sha256": "cdbb1a30fdfdf40f031a0a5a796dbf5b4e26dc62fda51328fa9a18336281f3ea",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/screenshot.py",
+      "sha256": "a20af7ee8f9a73196558f98c605db8722766e04a6ca70a365e0e5a06017036c2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/shell-menu.py",
+      "sha256": "074fbd01bdce827f35574b4c01ccfb4a4d6e130e1b2878e87b0b68c76bb94f5b",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/terminal_theme.py",
+      "sha256": "d901c2bef4207376d3baf55e35e7f2c5247231db1b58faf8ee0e631d162863fe",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/theme-set.py",
+      "sha256": "a8b83ec6fa1189f82d1688b1a13c39e91d14e38799875c11b44f94fa75fcd3b3",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/omarchy-shell-LICENSE.txt",
+      "sha256": "717ba1949502290f8e47688ae2e323acd06c8ca47aec9f7596b15f678c1af4a2",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dock-dependencies.lock.json",
+      "sha256": "838cf39883267f6ecb831b571aacef11a63d7e842ad5b534b2d750faa192240f",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dock-services.json",
+      "sha256": "e192a5a9678d8503dec6d4cd89115ee098dde0fc7c5722fed6179ce2e7545f67",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dock-shell.json",
+      "sha256": "0f28a387fa1eee027aff02fe8a4f57ec4dfc045f3ce1c0182fa704d5c8e9fb68",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dock-source-attribution.json",
+      "sha256": "831badc73b246f789bb8013d4998960e5355e3a95c32943d31b659d35d5304a9",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dock-lab/network_panel.py",
+      "sha256": "b96bb922a46e523bb167a74f74737613dd7446a047b5fe68c2458f8b2b51d87c",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dock-lab/prepare-omarchy-shell.py",
+      "sha256": "5b66fcca9b3bff399e61b35c343b9e14a2dd2535f01108a546115bdda44db5cb",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/check-dock-dependencies.py",
+      "sha256": "2d3915e0c9b9b8156c958bb58998abcb3d960f82f18d3fef91c0f966c6e8f9ec",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/check-dock-source.py",
+      "sha256": "0b445dc229b741a0f962d267597c1b3b62b5eb7371ac5c67527b149c2833b21a",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/export-source.py",
+      "sha256": "b367bbe67e1e76b63cfdbd375c78ab8403d9908f9ad898c72cd5fc5cbd5af870",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/stage-dock-services.py",
+      "sha256": "e40625f621e4d45f8627959c552426b5ca7d51b30b430cf50bbfa5b5402ee740",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/stage-dock-shell.py",
+      "sha256": "039409f9881ef1787cf3ff0e50d9f0e4c4d6a5d8555a7b7ef7c85aed5f8de3eb",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/test-dock-services.py",
+      "sha256": "d8b18572c7f049a75d9a23faf8364a39ea6c0411b511f568821ecf8e1a4af88f",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/test-export-source.py",
+      "sha256": "eb665ceb5a5b20dee6135d2193d8f6e0b217640ee8905d0ef1ceeef9ffd8fd63",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/test-stage-dock-shell.py",
+      "sha256": "a1bf70ee2cc38e34722e87a5ba52570be7bd3d5262eaf7a7b45d9e1165e76c81",
+      "mode": "0644"
+    }
+  ]
+}

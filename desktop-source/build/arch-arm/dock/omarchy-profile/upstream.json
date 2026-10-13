@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/basecamp/omarchy",
+  "tag": "v4.0.4",
+  "commit": "c668141e9c42b13c80c9ca4ea108e11708c5e8a5",
+  "files": {
+    "default/hypr/looknfeel.lua": "d257ea9864abb9cac124083bef88374659e759144a3d2028ec9486e578978804",
+    "LICENSE": "717ba1949502290f8e47688ae2e323acd06c8ca47aec9f7596b15f678c1af4a2"
+  }
+}

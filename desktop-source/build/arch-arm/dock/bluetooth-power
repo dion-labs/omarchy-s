@@ -1,0 +1,6 @@
+#!/bin/sh
+# Use the existing phone BlueZ adapter; rfkill hardware remains with its owner.
+case "${1:-}" in
+  on|off) exec timeout 5s bluetoothctl power "$1" ;;
+  *) echo 'Usage: omarchy-bluetooth-power on|off' >&2; exit 2 ;;
+esac

@@ -1,10 +1,10 @@
-# Omarchy S — boot-source preview
+# Omarchy S — source previews
 
 A personal experiment to turn a Galaxy S9+ into a Linux phone that becomes a
 desktop when connected to a monitor. The longer-term goal is an agent that lives
 on the device and can work with its human across both interfaces.
 
-This first preview contains the boot reconstruction work for the **Samsung
+The boot preview contains the boot reconstruction work for the **Samsung
 Galaxy S9+ SM-G965F (Exynos 9810)**. It is a narrow source release, not the full
 phone system or an installer. The broader project uses Arch ARM, Phosh on the
 phone and a partial Omarchy/Hyprland port on the external display; that desktop
@@ -60,3 +60,18 @@ historical “publication unapproved” status. Publication of this exact previe
 subsequently approved by D; those frozen records are retained to preserve the
 reviewed archive identity. This approval does not extend to excluded binaries,
 firmware or the full phone system.
+
+## Desktop source preview
+
+[Desktop-source preview 1](https://github.com/dion-labs/omarchy-s/releases/tag/desktop-source-preview-1)
+adds the dock service and pinned shell-adaptation sources. Start with the
+[desktop source guide](desktop-source/DOCK-PREVIEW.md) and
+[desktop release notes](DESKTOP-RELEASE-NOTES.md).
+[Download desktop-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/desktop-source-preview-1/desktop-source-preview.tar).
+
+The reviewed desktop payload is under `desktop-source/`, with its manifest and
+separate allowlist under `release/desktop/`. Copy the allowlist into
+`desktop-source/packaging/` for local inventory verification. This source release
+does not include the external graphics dependencies or a supported live installer.
+Its [scoped licensing](desktop-source/DOCK-LICENSING.md) is separate from the boot
+payload. The older boot download links above remain valid.

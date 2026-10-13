@@ -5,3 +5,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+/desktop-source/artifacts/
+/desktop-source/local-evidence/
+/desktop-source/upstream/
+/desktop-source/packaging/dock-source-export.allowlist.json

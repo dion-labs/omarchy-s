@@ -32,3 +32,7 @@ does not clear or bundle vendor firmware, kernel source, private state or images
 This grant is scoped to the source preview. It is not a blanket license for
 packages acquired by the builders or generated binaries. The earlier boot and
 desktop previews retain their own separate scopes.
+
+The portal staging helper, offline ownership planner, tests and
+[installation contract](PORTAL-PAYLOAD.md) are original integration covered by
+the scoped grant. The generated portal notice remains the upstream MIT text.

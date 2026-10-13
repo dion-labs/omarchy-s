@@ -1,53 +1,54 @@
-# Dependency-source preview 1
+# Dependency-source preview 2
 
-This 46-file source preview reconstructs external userspace dependencies needed by
-the partial S9+ desktop port: the Weston input module, patched Aquamarine and
-portal, opt-in Mesa workaround, and two native USB owner source files. It includes
-archive pins, package-only builder recipes, tests, scoped licensing and notices.
-No binaries, firmware, configured images or private state are included.
+The portal executable could already be rebuilt, but its runtime notice and manifest
+were still external installation inputs. This 51-file source preview adds a stager
+that reconstructs all three exact files, with deterministic modes, timestamps and
+an ownership receipt. Seven of the desktop's ten external hashes now reproduce.
+
+It also defines a three-file installation ownership boundary and a pure offline
+planner. Existing unowned files cannot be silently adopted; mismatched previous
+state rejects an update. Partial rollback accepts only known before/after states
+and refuses unrelated changes. The planner never reads or mutates target files.
 
 ## Validation
 
-- Two normalized source exports match exactly; hashes, membership, links and
-  per-file attribution/privacy review pass. Five upstream notice files match
-  their pinned archive members.
-- 18 focused tests pass, including source drift, symlinks, no-overwrite, package
-  identity and offline acquisition checks.
-- Fresh Aquamarine/Mesa/Weston downloads match their hashes; a fresh portal Git
-  fetch and archive match the pinned commit's archive hash.
-- Four paired offline builds pass. A separate exported-source rehearsal also
-  builds each component twice and matches the first run's bytes/modes/symlinks.
-- Input-seat, Aquamarine and portal match three installed binary hashes. Native
-  USB reconstruction matches both installed owner source hashes exactly.
-- Mesa has 37 repeatable output entries. Repeatability does not establish runtime
-  equivalence: the previously measured source-path differences from installed
-  Mesa remain an explicit deployment gate. No runtime pins are changed.
+- 31 tests pass from the extracted source, including six staging and seven
+  ownership tests. Synthetic cases cover creation, no-op, collision, drift,
+  malformed inventories and every file-level interruption boundary of an upgrade.
+- Two fresh offline portal builds from extracted source match the installed hash.
+  Both stage into identical four-file trees (three payload files and receipt),
+  also matching stages made from the previous independently rebuilt executables.
+- All three portal payload hashes match the unchanged runtime dependency lock.
+  Their ownership paths do not overlap the existing 40-file dock service package.
+- Two source exports match exactly. Archive membership, hashes, relative links,
+  per-file licensing and privacy review pass. Earlier boot/desktop payloads and
+  dependency build recipes remain unchanged.
 
-The rehearsal reuses package-reconstructed ARM64 builders, checking receipts
-against their locks and recipes. It does not repeat the full compiler/package
-build, prove arbitrary receipts trustworthy, or claim cross-host image identity.
-No phone was contacted, and there is no new physical acceptance.
+The previous four-component build evidence is retained; this milestone rebuilds
+portal only because those recipes and inputs are unchanged. Package-reconstructed
+builder receipts are reused and verified. No phone was contacted or modified.
 
-## Get started and limits
+## Scope and next step
 
-Read dependency-source/DEPENDENCIES-PREVIEW.md in the repository, or
-DEPENDENCIES-PREVIEW.md in the archive. It documents public acquisition,
-package-only toolchain reconstruction, paired offline builds and source staging.
-Use fresh output directories. USB owner sources are not standalone services:
-matching hardware helpers, kernel modules, rescue gadget and readiness units
-remain separate. Installed portal/Mesa metadata are not recreated here. These
-recipes do not establish full installation closure or authorize device activation.
+Read [the portal payload contract](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-2/dependency-source/PORTAL-PAYLOAD.md) for staging
+commands, ownership rules and the required executor behavior. No live installer
+or crash-durable rollback is implemented by this planner. The next step is isolated
+executor tests for creation, backups, receipt commits and recovery. Device adoption,
+process lifecycle coordination and physical checks remain separate gates. The
+existing marked-test-root restriction is unchanged.
 
-Original DionLabs expression has scoped MIT terms; Aquamarine context retains
-BSD-3-Clause and the remaining upstream declarations/selectors/notices retain
-their applicable terms. Acquiring dependencies does not grant blanket permission
-to redistribute their binaries.
+Mesa remains a candidate with three differences from the installed build; runtime
+equivalence and truthful candidate metadata remain open. Native hardware-helper,
+kernel/gadget and full installation closure are also separate. This source release
+does not distribute generated portal binaries or other runtime artifacts.
 
+Original integration has a scoped DionLabs MIT grant. Inherited notices and patch
+context retain their applicable licenses. The source-only archive contains 51 files.
 Archive dependency-source-preview.tar SHA256:
-`82a8372ded61447062e46f747e936b96642569c46f649b819792ee122e7b44c7`.
+`c62a3829ee8b99cb3a434df8b4c814877c841e1665d797268128e48e6b3235aa`.
+
 Assets also include manifest.json, dependency-source-export.allowlist.json and
-SHA256SUMS. The archive was exported as source-preview.tar; its digest is unchanged
-by renaming. GitHub-generated repository archives have different contents.
+SHA256SUMS. The archive's export-time filename was source-preview.tar; renaming
+preserves its digest. GitHub-generated repository archives are different.
 The frozen manifest's publication_cleared:false records its prepublication export
-state; publication approval covers only this reviewed source package. Earlier
-boot and desktop previews remain unchanged.
+state; publication approval covers only this reviewed source package.

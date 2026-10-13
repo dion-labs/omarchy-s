@@ -73,11 +73,12 @@ separate prerequisites; do not run these sources on an arbitrary device.
 
 [Desktop dependency pins](packaging/dock-dependencies.lock.json) remain the
 known-good reference. Input-seat, Aquamarine, portal and the two USB sources can
-match five of those pins exactly. Mesa fresh builds are repeatable, but three of
+match five of those pins exactly. The [portal payload workflow](PORTAL-PAYLOAD.md)
+also recreates the notice and runtime manifest, bringing the exact subset to seven. Mesa fresh builds are repeatable, but three of
 31 regular files differed from the installed build in prior validation, including
 source-path strings. Repeatability does not establish runtime equivalence. Keep
 the installed Mesa pin until an isolated GPU test and physical checks pass.
-Installed portal/Mesa metadata manifests are also not recreated by these recipes.
+The installed Mesa metadata manifest is not recreated by these recipes.
 No replacement of the ten external runtime pins is implied.
 
 ## Local checks
@@ -88,6 +89,8 @@ python3 scripts/toolchain-lab/test-inputs.py
 python3 scripts/toolchain-lab/test-weston-headers.py
 python3 scripts/dependency-lab/test-native-usb.py
 python3 scripts/dependency-lab/test-acquire-sources.py
+python3 scripts/dependency-lab/test-stage-portal.py
+python3 scripts/dependency-lab/test-portal-ownership.py
 ```
 
 The public package contains source, recipes, pins and notices only. Downloaded

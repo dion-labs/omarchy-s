@@ -1,7 +1,7 @@
 {
   "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
   "publication_cleared": false,
-  "allowlist_sha256": "557110e011462ec1c9edf27b04ced58768cfee42f98318ae8a3a81b67aaf0ac1",
+  "allowlist_sha256": "2e63364b9637302d5342b2b85c6908174a3171ac0199c0a2ced46c5edede2276",
   "files": [
     {
       "path": "DEPENDENCIES-LICENSE-MIT",
@@ -10,12 +10,17 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "d712f054e08815dba056498e3dfe45e2b0ab37fa97d76f4627b45fee1ec3b1ba",
+      "sha256": "76935332f2bfc3c952784c05b7448e808887ea33f4c77286e728729378ca41b0",
       "mode": "0644"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "fac2ec87fe4d8fb037c7e4a161521e84b2ad71007002edc6059a5774e8620762",
+      "sha256": "d25db9a2d4d8857908f81cb14e8936e5242dadd81056647f09bac1270a411386",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-PAYLOAD.md",
+      "sha256": "97cd6471ce94d1174c87f8f3b0570bc1d86bc2f9749666f9ef8b0b9137cb4157",
       "mode": "0644"
     },
     {
@@ -115,7 +120,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "8288d7195a16a7ba774c0eb55f75dde5c9f4a6957c9c23b40aa9e56ee3823dab",
+      "sha256": "4ba3257cd617461e7b99a30b16c77d1dfa37dbec16c823eabf26d71dbe535f55",
       "mode": "0644"
     },
     {
@@ -164,8 +169,18 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/portal-ownership.py",
+      "sha256": "50e3d146a07e0239c5cf2b73cc2d44b68cdcf55d1c25775a89b30dcd615b01dc",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/prepare-native-usb.py",
       "sha256": "43a583a5e537b4a062c98541281cfda471938ca6a7ddf7f7223132ea9e1d2017",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/stage-portal.py",
+      "sha256": "b3d15acee130adac6da9faaef66ff4c1f4e3d70ec627fdbcb514fbd1ba72568b",
       "mode": "0644"
     },
     {
@@ -176,6 +191,16 @@
     {
       "path": "scripts/dependency-lab/test-native-usb.py",
       "sha256": "53c17ca7e8c5aefc0db864ec4a930ffcfd5a19204f61d8132697c3314b02a9ec",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-ownership.py",
+      "sha256": "350145d0250d6ca857608ac9395f1d508284ce6f5bda5eaf29a0e81f87265c71",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-stage-portal.py",
+      "sha256": "275930e93d1e4dff157d0064b2c6d8e9a81d993f2f3b110b02fa7d42c552a8cc",
       "mode": "0644"
     },
     {
@@ -234,5 +259,5 @@
       "mode": "0644"
     }
   ],
-  "archive_sha256": "82a8372ded61447062e46f747e936b96642569c46f649b819792ee122e7b44c7"
+  "archive_sha256": "c62a3829ee8b99cb3a434df8b4c814877c841e1665d797268128e48e6b3235aa"
 }

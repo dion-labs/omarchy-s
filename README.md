@@ -77,16 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 1](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-1)
-adds reproducible input, Aquamarine, portal and Mesa recipes plus native USB owner
-source reconstruction. Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md)
-and [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-1/dependency-source-preview.tar).
+[Dependency-source preview 2](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-2)
+adds deterministic portal payload staging and an offline ownership/rollback planner
+to the input, Aquamarine, portal, Mesa and USB reconstruction recipes. Read the
+[dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
+[portal payload contract](dependency-source/PORTAL-PAYLOAD.md) and
+[release notes](DEPENDENCY-RELEASE-NOTES.md).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-2/dependency-source-preview.tar).
 
-The 46-file source payload lives under `dependency-source/`, with manifest and
-allowlist under `release/dependencies/`. Five runtime hashes reproduce exactly;
-Mesa is a repeatable candidate with an explicit runtime-validation gate. Hardware
-helpers, installed metadata and complete installation ownership remain separate.
-This release supplies recipes, not prebuilt libraries, firmware or a live installer.
-Its [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains
-Aquamarine BSD and other upstream notices. Earlier source payloads are unchanged.
+The 51-file source payload lives under `dependency-source/`, with manifest and
+allowlist under `release/dependencies/`. Seven runtime hashes reproduce exactly.
+The planner rejects unowned files and drift, but does not implement live installation
+or durable rollback. Mesa still needs runtime validation; hardware helpers and
+complete installation ownership remain separate. The release supplies source,
+not prebuilt libraries, firmware or an enabled installer. Its
+[scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
+notices. Earlier previews remain available at their original release tags.

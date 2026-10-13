@@ -10,12 +10,12 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "8249c6eb9de6d9a1c94e31c865a1b9f3a6320d384e56114583924363b53d66cd",
+      "sha256": "c2aeea7e91b335fd594d0699d2bcca0e131a25d5250dc30726c7daccdff0dc29",
       "mode": "0644"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "a9dab028e1344674fc03fc63c7f992893b093618fc0086e03f36e379eb5fe2f3",
+      "sha256": "8dd5db94811afd987b6d0e17f437ba0612669dc2ae0ddc0c2681f9468803791e",
       "mode": "0644"
     },
     {
@@ -24,8 +24,13 @@
       "mode": "0644"
     },
     {
+      "path": "PORTAL-SESSION-LAB.md",
+      "sha256": "3fed82fb1b040b51a186251a5a357938e32440e1d81beaa86200557325580ae9",
+      "mode": "0644"
+    },
+    {
       "path": "PORTAL-TRANSACTION-LAB.md",
-      "sha256": "8e3f61288f605a3d94a02f6d7bb19e1565fa7083a60af60b04bbc6db8566370e",
+      "sha256": "5884898ebb0a77bd1e93989b99b0659a275536f955f33cca5c72b2a903895313",
       "mode": "0644"
     },
     {
@@ -125,7 +130,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "bde3405e4cff522a5f31ccb283b6973600a40edf824e8f7d9b4a487a5f95e0d1",
+      "sha256": "5d687db172204e7a210062435f01aeb982389a6867fdcf34f77941cafdfa36d0",
       "mode": "0644"
     },
     {
@@ -199,6 +204,11 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/portal-wayland-fixture.c",
+      "sha256": "81dc44c0a175871f6e58ca1db2d60362ad47ae203b92506e8b979388dd6871c9",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/prepare-native-usb.py",
       "sha256": "43a583a5e537b4a062c98541281cfda471938ca6a7ddf7f7223132ea9e1d2017",
       "mode": "0644"
@@ -236,6 +246,11 @@
     {
       "path": "scripts/dependency-lab/test-portal-retention.py",
       "sha256": "3d1c9d6b0c209c91f86f892e2f26ce6a62d4763428f4cb273d60be548c849666",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-session.py",
+      "sha256": "1dd9594c7446f9187903ec12730252dfc795ffbd7fd2aae046a831d28d32c6e7",
       "mode": "0644"
     },
     {

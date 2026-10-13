@@ -208,3 +208,6 @@ services, first-install lifecycle policy and source authorization remain open.
 A startup regression test covers atomic identity-record replacement during a read.
 Only that concurrent-snapshot error is retried during a known spawn, within the
 existing deadline; malformed identities and unrelated drift still fail closed.
+
+See the [real backend session laboratory](PORTAL-SESSION-LAB.md) for the next
+readiness/known-session closure layer. It does not enable live update integration.

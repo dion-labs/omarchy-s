@@ -100,3 +100,7 @@ Their redistribution needs its own source/license obligations assessment.
 The [isolated transaction laboratory](PORTAL-TRANSACTION-LAB.md) exercises portal
 creation, backups, receipt commits, rollback, finalization and explicit cleanup on Linux.
 Its separate 48-test transaction/retention/lifecycle/child suites requires the documented container command; macOS skips are not acceptance.
+
+The optional [real backend session laboratory](PORTAL-SESSION-LAB.md) adds eight
+tests using the hash-pinned portal executable on a private bus; it requires the
+explicit read-only staged payload mount and accepts no skipped results.

@@ -10,13 +10,13 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "8249c6eb9de6d9a1c94e31c865a1b9f3a6320d384e56114583924363b53d66cd",
+      "sha256": "c2aeea7e91b335fd594d0699d2bcca0e131a25d5250dc30726c7daccdff0dc29",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "a9dab028e1344674fc03fc63c7f992893b093618fc0086e03f36e379eb5fe2f3",
+      "sha256": "8dd5db94811afd987b6d0e17f437ba0612669dc2ae0ddc0c2681f9468803791e",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -27,8 +27,14 @@
       "scope": "Original integration and offline tests only; identifiers and dependency facts are not claimed as original expression"
     },
     {
+      "path": "PORTAL-SESSION-LAB.md",
+      "classification": "local-expression",
+      "scope": "Original isolated session tests, registry-only fixture and documentation; no upstream protocol ownership claim",
+      "sha256": "3fed82fb1b040b51a186251a5a357938e32440e1d81beaa86200557325580ae9"
+    },
+    {
       "path": "PORTAL-TRANSACTION-LAB.md",
-      "sha256": "8e3f61288f605a3d94a02f6d7bb19e1565fa7083a60af60b04bbc6db8566370e",
+      "sha256": "5884898ebb0a77bd1e93989b99b0659a275536f955f33cca5c72b2a903895313",
       "classification": "local-expression",
       "scope": "Original isolated transaction integration, documentation and tests; no upstream ownership claim"
     },
@@ -231,6 +237,12 @@
       "scope": "Original isolated transaction integration, documentation and tests; no upstream ownership claim"
     },
     {
+      "path": "scripts/dependency-lab/portal-wayland-fixture.c",
+      "classification": "local-expression",
+      "scope": "Original isolated session tests, registry-only fixture and documentation; no upstream protocol ownership claim",
+      "sha256": "81dc44c0a175871f6e58ca1db2d60362ad47ae203b92506e8b979388dd6871c9"
+    },
+    {
       "path": "scripts/dependency-lab/prepare-native-usb.py",
       "sha256": "43a583a5e537b4a062c98541281cfda471938ca6a7ddf7f7223132ea9e1d2017",
       "classification": "local-expression",
@@ -277,6 +289,12 @@
       "classification": "local-expression",
       "scope": "Original isolated retention integration and tests; no upstream ownership claim",
       "sha256": "3d1c9d6b0c209c91f86f892e2f26ce6a62d4763428f4cb273d60be548c849666"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-session.py",
+      "classification": "local-expression",
+      "scope": "Original isolated session tests, registry-only fixture and documentation; no upstream protocol ownership claim",
+      "sha256": "1dd9594c7446f9187903ec12730252dfc795ffbd7fd2aae046a831d28d32c6e7"
     },
     {
       "path": "scripts/dependency-lab/test-portal-transaction.py",

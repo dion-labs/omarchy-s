@@ -1,56 +1,54 @@
-# Dependency-source preview 6
+# Dependency-source preview 7
 
-The lifecycle laboratory now controls a disposable real child process, exercising
-startup, health and shutdown timeouts and recovery after its coordinator dies.
-It launches only the bundled Python test child; no portal daemon or phone service
-is started or changed.
+The laboratory now runs the actual hash-pinned portal backend on private D-Bus
+and PipeWire servers, using a registry-only Wayland fixture. It tests API readiness
+and explicit closure of known sessions without touching the phone or host desktop.
 
-## Changes and validation
+## Findings and validation
 
-An exclusive controller lock coordinates the fixture. Persistent root/PID/start
-time and fixed-command identity are checked before pidfd signalling. Unix socket
-peer PID/UID, instance identifier, loaded payload identity and current files must
-agree for health. TERM escalates to KILL after a bounded wait. Parent-death SIGKILL
-and a parent recheck cover coordinator failure, including spawn before the child
-writes its record. Children also expire after 30 seconds.
+The pinned backend exposes ScreenCast version 4. Its bus owner/PID and executable
+hash match the launched process. CreateSession succeeds; its backend session
+objects survive the exit of short-lived direct D-Bus callers. Explicit Session.Close
+removes them. Duplicate close fails, and restart changes the owner and removes old
+objects. This direct backend behavior does not establish how normal applications
+behave through the xdg-desktop-portal frontend.
 
-All 79 tests pass without skips from the extracted archive in networkless ARM64
-Linux with read-only source mounts. Nine child tests add 23 forced coordinator
-exits (12 update, 11 recovery) to the earlier 295 storage/model cases: 318 total.
-Each interrupted child-lifecycle case checks exact prior file state and IPC health
-after double recovery. Other cases cover no readiness, bad or unresponsive health,
-early exit, ignored TERM, process identity and socket peer mismatch, controller
-contention and payload drift.
+Eight new tests cover readiness/capabilities, three-session closure, duplicate
+close, restart, PipeWire loss, Wayland loss, name collision and an unresponsive
+backend. The latter exposed that gdbus method timeouts do not bound the entire
+invocation; an outer subprocess deadline now records an unconfirmed close as a
+failure and retains the tracked session. Explicit close succeeds after resume.
 
-The first full run caught an atomic identity-record read race during startup.
-The corrected adapter retries only that concurrent-snapshot condition within the
-existing deadline; a deterministic regression test passes. Other identity errors
-still fail closed. The rebuilt portal payload passes update, double recovery and
-cleanup with the real test child; the portal executable itself is never run.
+All 87 tests pass without skips from the extracted archive in networkless ARM64
+Linux with read-only source/stage mounts. The earlier 318 forced-exit cases remain
+unchanged; this release adds eight real API tests, not more injected-exit cases.
+Two normalized exports match, all 63 files match their inventory, and 62 attribution
+entries verify. Documentation links and privacy findings were reviewed. Boot and
+desktop payloads, dependency recipes and runtime pins are unchanged.
 
-Two final normalized exports match. All 60 source files and 59 attribution entries
-verify, and documentation/privacy review passes. Earlier boot/desktop payloads,
-build recipes and runtime pins are unchanged. No phone was contacted.
+## Scope and next step
 
-## Limits and next step
+Read the [real session laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-7/dependency-source/PORTAL-SESSION-LAB.md).
+The original Wayland fixture advertises the required globals but provides no
+outputs or frames and rejects capture requests. Three pinned protocol XML inputs
+are checked before temporary code generation. No generated code or binary is
+included in the release. A different portal executable hash is refused.
 
-See the [laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-6/dependency-source/PORTAL-TRANSACTION-LAB.md)
-for the adapter contract and bounds. Only private marked temporary roots are
-accepted. This is not a production service manager or a live installation mode.
-Hook internals are not interrupted at every instruction. Child ownership is tied
-to its parent, unlike a real independently managed portal service. Filesystem calls
-and scheduler latency are not hard real-time bounded. These process tests do not
-prove machine power-loss durability or real portal client draining.
+The suite closes only sessions it created and tracks. The inspected backend has
+no general drain-all operation. Active streams, pending requests, unknown clients,
+frontend cancellation and the phone's wlr capture path remain unverified. API
+readiness is not evidence of successful capture. No live updater is enabled and
+no phone, account or host session was contacted.
 
-Next: define and test actual portal readiness and client-drain behavior in an
-isolated session. Existing-device adoption, initially stopped services, first-install
-lifecycle policy, source authorization and Mesa runtime acceptance remain separate.
+Next: exercise frontend cancellation and actual capture sessions with a real
+headless compositor, then define refusal of active or untracked clients before
+updates. Keep ownership adoption and physical acceptance separate.
 
-This release is source only, with scoped DionLabs MIT terms for original expression
-and preserved upstream notices. No binaries, firmware, images or accounts included.
+Source only: original DionLabs integration has scoped MIT terms; inherited
+notices retain upstream terms. No portal binaries, firmware or images distributed.
 
 Archive dependency-source-preview.tar SHA256:
-`223df353a2818fd35644bb2028cfcbc9252769d2490a834df47126074e9be73c`.
+`1ccfcdb04987716275eab9988d78b9e8aad184020c2fbd4f77d3ea12c5b93600`.
 Assets also include manifest.json, dependency-source-export.allowlist.json and
 SHA256SUMS. Export-time source-preview.tar is renamed without changing bytes;
 GitHub-generated repository archives differ. Frozen publication_cleared:false

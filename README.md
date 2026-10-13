@@ -77,19 +77,21 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 6](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-6)
-adds a disposable child-process adapter to the Linux portal transaction
-laboratory, testing bounded startup/shutdown, IPC identity and coordinator death. It accepts only isolated marked
-temporary directories and has no live installation mode. Read the
+[Dependency-source preview 7](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-7)
+adds real portal backend readiness and known-session closure tests on a private
+D-Bus/PipeWire session with a registry-only Wayland fixture. Tests use private
+temporary directories; there is no live installation mode. Read the
 [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[transaction laboratory guide](dependency-source/PORTAL-TRANSACTION-LAB.md) and
+[transaction laboratory guide](dependency-source/PORTAL-TRANSACTION-LAB.md),
+[real session guide](dependency-source/PORTAL-SESSION-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-6/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-7/dependency-source-preview.tar).
 
-The 60-file source payload lives under `dependency-source/`, with manifest and
-allowlist under `release/dependencies/`. All 79 tests pass, including 318 injected
+The 63-file source payload lives under `dependency-source/`, with manifest and
+allowlist under `release/dependencies/`. All 87 tests pass, including 318 injected
 process exits. The real portal payload passes isolated storage rehearsals; no
-portal process or phone is activated. Seven runtime hashes reproduce exactly.
+phone is activated. The real backend executes only inside the isolated lab.
+Seven runtime hashes reproduce exactly.
 Mesa runtime validation, live process coordination, existing-device adoption and
 automatic retention policy remain separate. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
 retains upstream notices. Earlier previews remain available at their release tags.

@@ -1,0 +1,237 @@
+--- a/drivers/soc/samsung/s9p-max77705-muic.c
++++ b/drivers/soc/samsung/s9p-max77705-muic.c
+@@ -21,6 +21,7 @@
+ #include <linux/delay.h>
+ #include <linux/i2c.h>
+ #include <linux/module.h>
++#include <linux/mutex.h>
+ #include <linux/of.h>
+ #include <linux/workqueue.h>
+ 
+@@ -71,6 +72,8 @@
+ struct s9p_muic {
+ 	struct i2c_client *client;
+ 	struct delayed_work work;
++	struct mutex opcode_lock;
++	bool mailbox_fault;
+ 	u8 last_bc;
+ 	bool applied;
+ };
+@@ -126,24 +129,105 @@
+ 					     out);
+ }
+ 
++/* This diagnostic driver is the sole reader of UIC_INT at address0x25.
++ * Reading it acknowledges all UIC flags; retain other bits in the log.
++ * Do not share this transport with a future interrupt-driven Type-C driver. */
++static int muic_completion(struct s9p_muic *m)
++{
++        int value = muic_read(m, REG_UIC_INT);
++
++        if (value >= 0 && (value & ~BIT(7)))
++                dev_info(&m->client->dev, "UIC events during mailbox query: %02x\n",
++                         (unsigned int)(value & ~BIT(7)));
++        return value;
++}
++
++/* Caller holds opcode_lock. After an ambiguous failure, refuse new commands
++ * until a new boot/bind so a late response cannot satisfy another request. */
++static int muic_transaction(struct s9p_muic *m, u8 opcode,
++                            const u8 *data, int len, u8 *reply, int reply_len)
++{
++        int ret, attempt;
++
++        if (m->mailbox_fault)
++                return -EIO;
++        ret = muic_completion(m); /* discard stale completion before request */
++        if (ret < 0)
++                goto fault;
++        ret = muic_opcode_write(m, opcode, data, len);
++        if (ret)
++                goto fault;
++        for (attempt = 0; attempt < 50; attempt++) {
++                msleep(10);
++                ret = muic_completion(m);
++                if (ret < 0)
++                        goto fault;
++                if (!(ret & BIT(7)))
++                        continue;
++                ret = muic_opcode_result(m, reply, reply_len);
++                if (ret < 0)
++                        goto fault;
++                if (ret != reply_len || reply[0] != opcode) {
++                        ret = -EPROTO;
++                        goto fault;
++                }
++                return 0;
++        }
++        ret = -ETIMEDOUT;
++fault:
++        m->mailbox_fault = true;
++        return ret;
++}
++
+ static int muic_set_path(struct s9p_muic *m, u8 val)
+ {
+-	u8 res[4] = {};
+-	int ret;
+-
+-	ret = muic_opcode_write(m, OPCODE_CONTROL1_WRITE, &val, 1);
+-	if (ret) {
+-		dev_err(&m->client->dev, "CONTROL1 write failed: %d\n", ret);
+-		return ret;
+-	}
+-	msleep(20);
+-	muic_opcode_result(m, res, sizeof(res));
+-	dev_info(&m->client->dev,
+-		 "CONTROL1 <= %02x, MCU answered %02x %02x %02x %02x\n",
+-		 val, res[0], res[1], res[2], res[3]);
+-	m->applied = true;
+-	return 0;
+-}
++        u8 reply[2];
++        int ret;
++
++        mutex_lock(&m->opcode_lock);
++        ret = muic_transaction(m, OPCODE_CONTROL1_WRITE, &val, 1,
++                               reply, sizeof(reply));
++        if (!ret)
++                m->applied = true;
++        mutex_unlock(&m->opcode_lock);
++        return ret;
++}
++
++/* Only vendor CCCTRL read opcodes; no CC configuration/power writes. */
++static int muic_read_control(struct s9p_muic *m, u8 opcode, u8 *value)
++{
++        u8 reply[2];
++        int ret;
++
++        if (opcode != 0x0b && opcode != 0x0d && opcode != 0x0f)
++                return -EINVAL;
++        ret = muic_transaction(m, opcode, NULL, 0, reply, sizeof(reply));
++        if (!ret)
++                *value = reply[1];
++        return ret;
++}
++
++static ssize_t connector_controls_show(struct device *dev,
++                                       struct device_attribute *attr, char *buf)
++{
++        struct s9p_muic *m = i2c_get_clientdata(to_i2c_client(dev));
++        u8 cc[3];
++        int i, ret = 0;
++
++        mutex_lock(&m->opcode_lock);
++        for (i = 0; i < ARRAY_SIZE(cc); i++) {
++                ret = muic_read_control(m, 0x0b + 2 * i, &cc[i]);
++                if (ret)
++                        break;
++        }
++        mutex_unlock(&m->opcode_lock);
++        if (ret)
++                return ret;
++        return sysfs_emit(buf, "ccctrl1=%02x ccctrl2=%02x ccctrl3=%02x\n",
++                          cc[0], cc[1], cc[2]);
++}
++/* Explicit administrator diagnostic; do not poll this alongside status. */
++static DEVICE_ATTR(connector_controls, 0400, connector_controls_show, NULL);
+ 
+ static void muic_poll(struct work_struct *work)
+ {
+@@ -163,6 +247,31 @@
+ 		schedule_delayed_work(&m->work, msecs_to_jiffies(s9p_muic_poll_ms));
+ }
+ 
++/* Status registers only: do not read clear-on-read interrupt registers. */
++static ssize_t connector_status_show(struct device *dev,
++                                     struct device_attribute *attr, char *buf)
++{
++        struct s9p_muic *m = i2c_get_clientdata(to_i2c_client(dev));
++        int bc, cc0, cc1, pd0, pd1;
++
++        bc = muic_read(m, REG_BC_STATUS);
++        cc0 = muic_read(m, REG_CC_STATUS0);
++        cc1 = muic_read(m, REG_CC_STATUS1);
++        pd0 = muic_read(m, REG_PD_STATUS0);
++        pd1 = muic_read(m, REG_PD_STATUS1);
++        if (bc < 0 || cc0 < 0 || cc1 < 0 || pd0 < 0 || pd1 < 0)
++                return -EIO;
++        return sysfs_emit(buf, "bc=%02x cc0=%02x cc1=%02x pd0=%02x pd1=%02x\n",
++                          bc, cc0, cc1, pd0, pd1);
++}
++static DEVICE_ATTR_RO(connector_status);
++static struct attribute *s9p_muic_attrs[] = {
++        &dev_attr_connector_status.attr,
++        &dev_attr_connector_controls.attr,
++        NULL,
++};
++ATTRIBUTE_GROUPS(s9p_muic);
++
+ static int s9p_muic_probe(struct i2c_client *client)
+ {
+ 	struct s9p_muic *m;
+@@ -172,6 +281,7 @@
+ 	if (!m)
+ 		return -ENOMEM;
+ 	m->client = client;
++	mutex_init(&m->opcode_lock);
+ 	i2c_set_clientdata(client, m);
+ 
+ 	hw = muic_read(m, REG_UIC_HW_REV);
+@@ -183,6 +293,47 @@
+ 		 hw, fw);
+ 	muic_log_status(m, "at probe");
+ 
++        /* Samsung max77705_usbc_disable_auto_vbus(): opcode54, value0.
++         * Leave VBUS under explicit host policy control. This does not enable
++         * OTG/boost or change the battery input/charge current settings.
++         * Match only the firmware revision observed in the working comparison.
++         */
++        if (hw != 0x13 || fw != 0x32)
++                return dev_err_probe(&client->dev, -ENODEV,
++                                     "Unreviewed USBC firmware for manual VBUS policy\n");
++        {
++                /* Exact working Samsung startup sequence, before54/00:
++                 * 56/07 enables VBUS-CC, SBU-GND and VBUS-SBU short checks.
++                 * 57/01 leaves firmware on and disables automatic IBUS.
++                 * No input-current setpoint or OTG/boost write is issued.
++                 */
++                const u8 short_checks = 7, manual_ibus = 1;
++                const u8 disabled = 0;
++                u8 reply[2];
++                int ret;
++
++                mutex_lock(&m->opcode_lock);
++                ret = muic_transaction(m, 0x56, &short_checks, 1,
++                                       reply, sizeof(reply));
++                if (!ret && reply[1] != 7)
++                        ret = -EPROTO;
++                if (!ret)
++                        ret = muic_transaction(m, 0x57, &manual_ibus, 1,
++                                               reply, 1);
++                if (!ret)
++                        ret = muic_transaction(m, 0x54, &disabled, 1,
++                                       reply, sizeof(reply));
++                mutex_unlock(&m->opcode_lock);
++                if (ret)
++                        return dev_err_probe(&client->dev, ret,
++                                             "Disable automatic VBUS failed\n");
++                if (reply[1] != 0)
++                        return dev_err_probe(&client->dev, -EPROTO,
++                                             "Unexpected automatic VBUS response\n");
++                dev_info(&client->dev, "Samsung connector initialization complete; source power remains off\n");
++        }
++
++
+ 	bc = muic_read(m, REG_BC_STATUS);
+ 	m->last_bc = bc < 0 ? 0 : bc;
+ 
+@@ -214,6 +365,7 @@
+ 	.driver = {
+ 		.name		= "s9p-max77705-muic",
+ 		.of_match_table	= s9p_muic_of_match,
++		.dev_groups = s9p_muic_groups,
+ 	},
+ 	.probe	= s9p_muic_probe,
+ 	.remove	= s9p_muic_remove,

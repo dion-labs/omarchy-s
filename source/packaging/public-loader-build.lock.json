@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "image_id": "sha256:a2a9d1e77008f91b120292e1170044c36b8c6466416217359202f9488184c60d",
+  "files": {
+    "artifacts/kernel-source-closure/upstream-port.tar.gz": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88",
+    "build/mainline/loader/checkpoints.patch": "fbc40ceb58237358f51ce39459753aa1060f3b204948ac5509f121e5c31e80f3",
+    "local-evidence/boot-provenance-20261012/full-kernel-final/Image": "dbcc9bd171eac8d9cacf14600ae6a9f6db7ead1e38b675b29cc87451978bdcf4",
+    "local-evidence/boot-provenance-20261012/full-kernel-final/exynos9810-star2lte.dtb": "4b8a2c2325be53803d3ad620bb427b5cb0c35f316a32500d5784a6ece652c8e1",
+    "build/boot-repro/build-loader.sh": "00486cfe681d8ca7c2d3201357352d8e6501cd10596a5556ad494f4b7f532baa",
+    "scripts/boot-repro/container.py": "e4bd8417576429e87f74885bc9a4ff7f19a68050aedadee344027750f600d2d7",
+    "artifacts/header-provenance/third/dt.img": "aa33f1e1ba87c24d422d354512731a30e4764b13efc3c3ee0f2b301b63ea9b35",
+    "scripts/boot-repro/explicit-container.py": "3930cba596fb22ec5780e61e9e989c85da7d2c81a28f9dfe4b1c2e37884e191a"
+  },
+  "expected": {
+    "uniLoader": "9affa0cca6eddad07f7abdf589c6a2b3a05026c7f73650a471845ebf20839b2b",
+    "uniLoader.config": "3e8c5714b7a3c774bdf694c14fe272d43737a98c2b5d0f908588e7d0f5db407f",
+    "uniLoader.elf": "aaa88971abdecfd0ad8f4df27ff5634bcdca3a05fcb66690bea80fd9198289e4",
+    "boot.img": "bd403abead6a06029a8a36fa3ed5c10afb5eca0b72de0743805f26cf74689ebb"
+  },
+  "dtbh": "artifacts/header-provenance/third/dt.img"
+}

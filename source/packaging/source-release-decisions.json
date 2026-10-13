@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "scope": "Allowlisted boot-reconstruction sources and review metadata only",
+  "publication_cleared": false,
+  "payload_identity": "Adjacent export manifest.json binds file hashes, modes and source-preview.tar SHA256; approval must identify that exact candidate",
+  "decisions": [
+    {
+      "id": "SCOPE",
+      "status": "pending",
+      "owner": "D",
+      "condition": "Approve exact boot-only candidate and bounded claims",
+      "evidence": [
+        "open-source/RELEASE-DECISION.md",
+        "open-source/SOURCE-PREVIEW.md"
+      ]
+    },
+    {
+      "id": "ORIGINAL",
+      "status": "approved-scoped-MIT",
+      "owner": "D",
+      "condition": "D approved MIT for original contributions and DionLabs holder on 2026-10-13; inherited terms remain",
+      "evidence": [
+        "LICENSING.md",
+        "packaging/source-attribution.json"
+      ]
+    },
+    {
+      "id": "PATCHES",
+      "status": "removed-from-successor",
+      "owner": "Maintainer",
+      "condition": "All ten disputed dtbtool patches excluded; independent pinned-profile packer replaces dependency",
+      "evidence": [
+        "packaging/dtbh-build.lock.json",
+        "scripts/boot-repro/pack-dtbh.py",
+        "LICENSING.md"
+      ]
+    },
+    {
+      "id": "REVIEW",
+      "status": "candidate-validation-recorded-separately",
+      "owner": "Maintainer",
+      "condition": "Current exact archive review and build receipts are supplied outside the payload to avoid recursive hashes; they do not authorize publication",
+      "evidence": [
+        "open-source/ATTRIBUTION.md",
+        "packaging/boot-license-evidence.json",
+        "open-source/PER-FILE-REVIEW.md"
+      ]
+    },
+    {
+      "id": "PUBLISH",
+      "status": "not-authorized",
+      "owner": "D",
+      "condition": "Approve identified archive and destination/version after other gates",
+      "evidence": [
+        "open-source/RELEASE-DECISION.md"
+      ]
+    },
+    {
+      "id": "METADATA",
+      "status": "approved-retention",
+      "owner": "D",
+      "condition": "D approved P1/P2/P3 historical reconstruction metadata retention on 2026-10-13",
+      "evidence": [
+        "LICENSING.md"
+      ]
+    }
+  ],
+  "conditional": [
+    {
+      "id": "DTS",
+      "status": "lineage-unresolved-source-excluded",
+      "trigger": "Including original DTS source or claiming authored-source reconstruction is closed",
+      "evidence": [
+        "open-source/LINEAGE-SCOPE.md",
+        "packaging/vendor-dts-history.json"
+      ]
+    },
+    {
+      "id": "FIRMWARE",
+      "status": "excluded-no-redistribution-clearance",
+      "trigger": "Bundling firmware or built images",
+      "evidence": [
+        "packaging/boot-source-inventory.json"
+      ]
+    },
+    {
+      "id": "HARDWARE",
+      "status": "not-required-for-source-review",
+      "trigger": "Runtime installation or activation; use separate maintenance gates",
+      "evidence": [
+        "open-source/RELEASE-DECISION.md"
+      ]
+    }
+  ],
+  "automation_limit": "This file records review status only. No tool may infer user approval or publication authority from technical checks."
+}

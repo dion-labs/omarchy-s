@@ -1,0 +1,58 @@
+--- a/arch/arm64/boot/dts/exynos/exynos9810-star2lte.dts
++++ b/arch/arm64/boot/dts/exynos/exynos9810-star2lte.dts
+@@ -257,7 +257,7 @@
+ 		gpio = <&gpd0 2 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 		regulator-boot-on;
+-		status = "disabled"; /* UFS-STATUS */
++		status = "okay";
+ 	};
+ 
+ 	/*
+@@ -597,7 +597,9 @@
+ 		interrupts = <GIC_SPI 244 IRQ_TYPE_LEVEL_HIGH>;
+ 		phys = <&usbdrd_phy 0>;
+ 		phy-names = "usb2-phy";
+-		dr_mode = "peripheral";
++		dr_mode = "otg";
++		usb-role-switch;
++		role-switch-default-mode = "peripheral";
+ 		maximum-speed = "high-speed";
+ 		snps,dis_u2_susphy_quirk;
+ 		snps,dis_u3_susphy_quirk;
+@@ -752,7 +754,7 @@
+ 		 * and a read into a gated block hangs the bus silently instead of
+ 		 * failing. The build turns it on with UFS=1.
+ 		 */
+-		status = "disabled"; /* UFS-STATUS */
++		status = "okay";
+ 	};
+ };
+ 
+@@ -779,7 +781,7 @@
+ 		interrupts = <GIC_SPI 182 IRQ_TYPE_LEVEL_HIGH>,	/* frame start */
+ 			     <GIC_SPI 183 IRQ_TYPE_LEVEL_HIGH>,	/* frame done */
+ 			     <GIC_SPI 188 IRQ_TYPE_LEVEL_HIGH>;	/* extra */
+-		status = "disabled"; /* DECON-STATUS */
++		status = "okay"; /* DECON-STATUS */
+ 	};
+ 
+ 	pd_g3d: power-domain@14064040 {
+@@ -810,7 +812,7 @@
+ 		clock-names = "core";
+ 		operating-points-v2 = <&gpu_opp_table>;
+ 		power-domains = <&pd_g3d>;
+-		status = "disabled"; /* GPU-STATUS */
++		status = "okay"; /* GPU-STATUS */
+ 
+ 		/*
+ 		 * The stock DVFS points this port has validated. The voltage
+@@ -932,7 +934,7 @@
+ 		 * host arrived fine. Cache maintenance around DMA costs little
+ 		 * at this link's data rates.
+ 		 */
+-		status = "disabled"; /* WLAN-STATUS */
++		status = "okay"; /* WLAN-STATUS */
+ 
+ 		pcie_wlan_intc: legacy-interrupt-controller {
+ 			interrupt-controller;

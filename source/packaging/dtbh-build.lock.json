@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "image_id": "sha256:a2a9d1e77008f91b120292e1170044c36b8c6466416217359202f9488184c60d",
+  "recipe": "build/boot-repro/build-dtbh.sh",
+  "files": {
+    "artifacts/header-provenance/vendor-source.tar.gz": "8ffe72b5c6344b1656aaee5d27dc8db2ae6193cb0dbf9ff10e6047590297ebf3",
+    "scripts/boot-repro/pack-dtbh.py": "954b594df8a556ba3507f13965cf96dca4539516e58e58d0d01afad724be3643",
+    "packaging/dtbh-profile.json": "32779a6ac1931d984e370dd17362b1ac859705ae4543ee668e69657eb27c44d4",
+    "build/boot-repro/build-dtbh.sh": "705f17a91fc69c4dc0f1b609822241c86142ea55d88b17fb561d4457b8e23ea5"
+  },
+  "expected": {
+    "vendor.dtb": "fad817899386591b46431e059fe622b01f3469f7fab268be874c3bab229d71b2",
+    "dt.img": "aa33f1e1ba87c24d422d354512731a30e4764b13efc3c3ee0f2b301b63ea9b35"
+  },
+  "sources": {
+    "vendor": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/archive/5eaa43c40667ef407f826ca2bab9552568327c23.tar.gz"
+  },
+  "scope": "Independent single-profile packer, no dtbtool source or patch inputs"
+}

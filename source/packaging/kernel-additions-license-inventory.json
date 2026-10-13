@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "scope": "18 reconstructed kernel additions; observed tags are not a legal conclusion",
+  "files": [
+    {
+      "path": "arch/arm64/boot/dts/exynos/exynos9810-star2lte.dts",
+      "sha256": "d47bfb6932e1899c18280ff5fbe2e77359d5dff28c59ad13c902acbed6180888",
+      "source": "src/mainline-dts/exynos9810-star2lte.dts",
+      "patch": "build/kernel-repro/patches/exynos9810-star2lte.dts.patch",
+      "observed_spdx": [
+        "GPL-2.0 OR BSD-3-Clause"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/cpufreq/s9p-cpufreq.c",
+      "sha256": "fac634be9e90649e11906a363b223a54a8b28a3bf83423313d5a18a815760cae",
+      "source": "src/cpufreq/s9p-cpufreq.c",
+      "patch": "build/kernel-repro/patches/s9p-cpufreq.c.patch",
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/gpu/drm/s9p/Kconfig",
+      "sha256": "d56353f00b8fdda046a276c4588cc296453c3161c35345d8a9c7a6238e3d1a31",
+      "source": "src/gpu/drm/s9p/Kconfig",
+      "patch": null,
+      "observed_spdx": [],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/gpu/drm/s9p/Makefile",
+      "sha256": "f471808701eccbb34e73403944179e824aed2508a0f4a83d197133b0a6856445",
+      "source": "src/gpu/drm/s9p/Makefile",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/gpu/drm/s9p/s9p-decon.c",
+      "sha256": "784adb4bcddcec7d69f084d708d8990baa11fdbdde0df97511c0f204f586d62d",
+      "source": "src/gpu/drm/s9p/s9p-decon.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/gpu/drm/sysfb/exynos-bootfb.c",
+      "sha256": "050275cff1e2e0d5d8c482f3fd6cd2b7c09f7e810121579a7b94203ed4128cf2",
+      "source": "generated-from-linux:drivers/gpu/drm/sysfb/simpledrm.c",
+      "patch": "build/kernel-repro/patches/exynos-bootfb.c.patch",
+      "observed_spdx": [
+        "GPL-2.0-only"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/pci/controller/dwc/pcie-exynos9810.c",
+      "sha256": "8be059369463c9946ce651e60d38e82fd7335cd47caed13b6c58459968f4f008",
+      "source": "src/pci/pcie-exynos9810.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/phy/samsung/phy-exynos9810-usbdrd.c",
+      "sha256": "2c0958f6b5114eae27cb7c90e55097b81be15867bfaca7d974b3860243a65166",
+      "source": "src/usb/phy-exynos9810-usbdrd.c",
+      "patch": "build/kernel-repro/patches/phy-exynos9810-usbdrd.c.patch",
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/soc/samsung/s9p-acpm.c",
+      "sha256": "4d4defcc0a46c028a16dde76e24f95ef339236acb80e07c953e9193aaf13be59",
+      "source": "src/soc/s9p-acpm.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/soc/samsung/s9p-clkgate.c",
+      "sha256": "a660f6c2e69b2e4fa58d14e4f34d1c277c0b2cf99c3242349d5d0b5e2a74a641",
+      "source": "src/soc/s9p-clkgate.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/soc/samsung/s9p-g3d-pd.c",
+      "sha256": "5e60954a9fa67c55f0ad19796c9fbc91001b7ab23cc6c59a2c27b9a1c98eabd2",
+      "source": "src/soc/s9p-g3d-pd.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/soc/samsung/s9p-g3d.c",
+      "sha256": "eb154696a52c2f1e8011a716614ceb5820f8208b6550bd714d4f9a1e822e533b",
+      "source": "src/soc/s9p-g3d.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/soc/samsung/s9p-max77705-muic.c",
+      "sha256": "5636fac036d0e0482fdea8efda4c79c58221776ab0ad6c0cc03a8be84e1e3a97",
+      "source": "src/soc/s9p-max77705-muic.c",
+      "patch": "build/kernel-repro/patches/s9p-max77705-muic.c.patch",
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/ufs/host/ufs-cal-9810.c",
+      "sha256": "a0ea376d046c429d386240e30f98cf4473d69640e1f9b0d32ee8a0de54618490",
+      "source": "src/ufs/ufs-cal-9810.c",
+      "patch": null,
+      "observed_spdx": [],
+      "license_concluded": "NOASSERTION",
+      "review": "Exact byte match against pinned vendor drivers/scsi/ufs source verified in packaging/vendor-ancestry.json. Port GPL-2.0 attribution retained; no independent per-file license grant inferred."
+    },
+    {
+      "path": "drivers/ufs/host/ufs-cal-9810.h",
+      "sha256": "2dd0f8750e7579dbee443c405f626b6d89a3628b8a7c814fcd45f8e0aefbdd3c",
+      "source": "src/ufs/ufs-cal-9810.h",
+      "patch": null,
+      "observed_spdx": [],
+      "license_concluded": "NOASSERTION",
+      "review": "Exact byte match against pinned vendor drivers/scsi/ufs source verified in packaging/vendor-ancestry.json. Port GPL-2.0 attribution retained; no independent per-file license grant inferred."
+    },
+    {
+      "path": "drivers/ufs/host/ufs-exynos9810.c",
+      "sha256": "c96a337679af89201430215c406ef381261bdec718a910bb47a047827e4a361b",
+      "source": "src/ufs/ufs-exynos9810.c",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0-or-later"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "drivers/video/logo/logo_shero_clut224.ppm",
+      "sha256": "85b67982a2ca0947bc3f5fb8a24edeaf49a711a3aa6b8859b2aa5a94b75e05a7",
+      "source": "branding/shero_logo.ppm",
+      "patch": null,
+      "observed_spdx": [],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    },
+    {
+      "path": "include/linux/soc/samsung/s9p-acpm.h",
+      "sha256": "6ace6525a018e2b08f5668ebd85326008f56cc7c3e1528c430ad0a83301a8d79",
+      "source": "src/soc/s9p-acpm.h",
+      "patch": null,
+      "observed_spdx": [
+        "GPL-2.0"
+      ],
+      "license_concluded": "NOASSERTION",
+      "review": "Retain upstream file notices; review local delta attribution"
+    }
+  ]
+}

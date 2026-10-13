@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "ap_filename": "AP_G965FXXUHFVG4_CL23733710_QB54197687_REV01_user_low_ship_meta_OS10.tar.md5",
+  "ap_sha256": "c37ad3b015ccd270d9528f4abea2bad2f36e26d204fd06e59da83d4ee8c5e73f",
+  "vendor_member": "vendor.img.lz4",
+  "vendor_lz4_sha256": "99cb93fe3129b2dda48fde8e880ed36a49db41f9871fff8bafc6c1e3638eeb99",
+  "vendor_sparse_sha256": "4bd7f6655beb60ce50a48ba39a56b2c49239092235beba4ad0593b73d1b17235",
+  "vendor_raw_sha256": "4e2fc5a278740cdc135a68b39fa98e12a33025436ace4f893d89eb917e61c50b",
+  "firmware_path": "/firmware/bcm4361B2_semco.hcd",
+  "firmware_sha256": "069b2ab56bacf7387181ecd59f837344025523fd7dc14890272a7e6dd79eff70",
+  "lz4_package": {
+    "name": "lz4",
+    "version": "1.9.4-1build1",
+    "filename": "lz4_1.9.4-1build1_arm64.deb",
+    "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/lz4/lz4_1.9.4-1build1_arm64.deb",
+    "sha256": "9a91d7d896f3811da41af6b4ff4c8395bbda418e020b71fdbc283dce0f0ed24f"
+  },
+  "scope": "Read-only import from user-supplied stock AP; no stock images bundled, no download service or redistribution permission implied."
+}

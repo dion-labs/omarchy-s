@@ -1,0 +1,20 @@
+--- a/drivers/gpu/drm/sysfb/exynos-bootfb.c
++++ b/drivers/gpu/drm/sysfb/exynos-bootfb.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0-only
+ 
+ #include <linux/aperture.h>
++#include <linux/dma-mapping.h> /* S9P_FB_SYNC */
+ #include <linux/clk.h>
+ #include <linux/minmax.h>
+ #include <linux/of_address.h>
+@@ -841,6 +842,9 @@
+ 	struct drm_device *dev;
+ 	int ret;
+ 
++	ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(40)); /* S9P_FB_SYNC */
++	if (ret)
++		return ret;
+ 	sdev = exynos_bootfb_device_create(&exynos_bootfb_driver, pdev);
+ 	if (IS_ERR(sdev))
+ 		return PTR_ERR(sdev);

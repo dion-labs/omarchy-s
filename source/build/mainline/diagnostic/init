@@ -1,0 +1,35 @@
+#!/bin/sh
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+/bin/busybox --install -s /bin
+mkdir -p /proc /sys /dev /root /run
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+# Start independently so root-discovery delay/failure cannot hide USB access.
+sh /usb-console.sh >/run/usb-console.log 2>&1 &
+. /root-layout.sh
+printf '\nOmarchy S mainline diagnostic: existing root will stay read-only.\n'
+disk=
+for attempt in $(seq 1 60); do
+    disk=$(find_system_partition /sys/class/block /dev) && break
+    sleep 1
+done
+if [ -n "$disk" ] && loop=$(map_diagnostic_root "$disk"); then
+    echo "Verified pmOS_root mounted read-only at /root via $loop"
+else
+    echo 'Root discovery/validation failed; no filesystem mounted.'
+fi
+# Explicit opt-in; USB rescue stays independent if graphics cannot start.
+if [ -f /root/etc/omarchy-phosh-autostart ]; then
+    (
+        for n in $(seq 1 30); do
+            [ -c /dev/dri/renderD128 ] && [ -c /dev/dri/card2 ] && break
+            sleep 1
+        done
+        sh /root/opt/omarchy-phosh/enter.sh /bin/sh /phosh-start.sh
+    ) >/run/phosh-autostart.log 2>&1 &
+fi
+# Deliberately no switch_root: the existing XFCE/DECON services target 4.9.
+# No borrowed recovery-register writes or automatic reboot until reviewed.
+echo 'Diagnostic rescue console ready; optional Phosh startup runs independently.'
+exec setsid sh -i </dev/console >/dev/console 2>&1

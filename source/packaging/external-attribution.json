@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "publication_cleared": false,
+  "messages": [
+    {
+      "file": "bcm4361-v3.html",
+      "url": "https://lists.openwall.net/linux-kernel/2026/08/20/1557",
+      "sha256": "3e4d978cccc11aa3c670c7c77523968eeecaab24425df0ca93ded91fe35f8e62"
+    },
+    {
+      "file": "bcm4361-review.html",
+      "url": "https://lists.openwall.net/linux-kernel/2026/09/14/2831",
+      "sha256": "55d10f4ab8a696d3315ca23631f0f85016a36bce58ef6b1e6e0d6a074eca6fc9"
+    }
+  ],
+  "observations": [
+    {
+      "id": "bcm4361-author",
+      "source": "https://lists.openwall.net/linux-kernel/2026/08/20/1557",
+      "message_id": "20260820-broadcom-staging-v3-1-7d5741e37efb@gmail.com",
+      "author": "Markuss Broks",
+      "date": "2026-08-20",
+      "finding": "BCM4361 PCIe patch v3 supplies IDs, firmware mapping, retention support and a 0x170000 RAM base. Port comment claiming the upstream patch used the 4359 RAM base does not describe this v3."
+    },
+    {
+      "id": "bcm4361-review",
+      "source": "https://lists.openwall.net/linux-kernel/2026/09/14/2831",
+      "message_id": "20260914184259.1466535-1-arend.vanspriel@broadcom.com",
+      "author": "Arend van Spriel",
+      "date": "2026-09-14",
+      "finding": "Requests adding 2G and 5G IDs to brcmf_pcie_devid_table, beyond their definitions."
+    },
+    {
+      "id": "dtbtool-patch-terms",
+      "source": "https://gitlab.postmarketos.org/postmarketOS/pmaports/-/tree/2254bfcf53d13d79136e9c5187480a3582f32cad/main/dtbtool-exynos",
+      "finding": "Ten patch author headers identify Henrik Grimler. Root LICENSE is GPLv3, APKBUILD declares MIT, source notice is Linux Foundation BSD-style. No patch-specific grant independently established; preserve all evidence, do not infer blanket relicensing."
+    }
+  ]
+}

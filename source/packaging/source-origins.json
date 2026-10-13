@@ -1,0 +1,635 @@
+{
+  "schema": 1,
+  "scope": "Pinned source context and bounded helper comparison; not proof of original authorship",
+  "sources": [
+    {
+      "name": "linux",
+      "filename": "upstream-linux.tar.gz",
+      "url": "https://codeload.github.com/torvalds/linux/tar.gz/8cd9520d35a6c38db6567e97dd93b1f11f185dc6",
+      "algorithm": "sha256",
+      "digest": "3b89952ea68cf65a7ffad4ef527bd9c0a3e8f86e101d0491f062d495af730e55"
+    },
+    {
+      "name": "s9plus-port",
+      "filename": "upstream-port.tar.gz",
+      "url": "https://codeload.github.com/SheroAbi/galaxy-s9plus-mainline-linux/tar.gz/b42ffce0bf97c0f49f90af91107a670d324c53e3",
+      "algorithm": "sha256",
+      "digest": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88"
+    }
+  ],
+  "helper_candidate_count": 30,
+  "patches": [
+    {
+      "path": "build/kernel-repro/patches/native20-tracked.patch",
+      "sha256": "897adf5f4d3d8214908a4e89f332dd0bdda66ba34139e62d2a035430fd95739d",
+      "origin": {
+        "name": "linux",
+        "filename": "upstream-linux.tar.gz",
+        "url": "https://codeload.github.com/torvalds/linux/tar.gz/8cd9520d35a6c38db6567e97dd93b1f11f185dc6",
+        "algorithm": "sha256",
+        "digest": "3b89952ea68cf65a7ffad4ef527bd9c0a3e8f86e101d0491f062d495af730e55"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "arch/arm64/boot/dts/exynos/Makefile",
+          "before_sha256": "5639b74edefb678394794306a998faad61fda08e26bcb0256daa68f287e48780",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "66363362f4036ee7129d8bfee225f6b035153da25303d16656a83c2e8fc17ffd"
+        },
+        {
+          "path": "drivers/bluetooth/hci_bcm.c",
+          "before_sha256": "3f34a36328de0df9ab3c4bb09fd5d7196762f209f924db25772bec48f1840f23",
+          "observed_spdx": [
+            "GPL-2.0-or-later"
+          ],
+          "after_sha256": "995aab0014cc84dd1cef4397540fadbdfc4a181cbda2526e3caa8b2fc22cb18c"
+        },
+        {
+          "path": "drivers/cpufreq/Kconfig",
+          "before_sha256": "d40ff5acfc580580f3c5829ce1a6b812188577e117c775f1251911786e316e17",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "81b041ad16ddea1f1d46d45f0065ad773ff70123365c89f0c29b8af027865933"
+        },
+        {
+          "path": "drivers/cpufreq/Makefile",
+          "before_sha256": "f6796e27244a9c06a5ea40b3f6880b848f413c2b40acd99e690e537a57743a46",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "dfdbb739da737aa976c2d0e81cd09ab910c7d0fbb7c865dded4b2edc365be749"
+        },
+        {
+          "path": "drivers/gpu/drm/Kconfig",
+          "before_sha256": "dc7fa973ecfcec32596a64c2d4344cfaf9637ac9f0323e1629d00ccb2ede0f35",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "6d189f0057984d02bf7a6a63aeefd32d586da7e1fca17e09547a97d745e08f13"
+        },
+        {
+          "path": "drivers/gpu/drm/Makefile",
+          "before_sha256": "20228b767dab3da3ae45c92e459df914d1d751b0005099326e40528809405f53",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "542ca74e466e15d4e06b610709f2c4e83f7c2e5ee9e9eb2d8cac4d9f69e80f1d"
+        },
+        {
+          "path": "drivers/gpu/drm/panfrost/panfrost_drv.c",
+          "before_sha256": "5ae7dbc98fcf7c6b0ffd89b749873c57715ca036cc5f1cbb5b6fe869f3c2f82b",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "03d02e023ba6a69c6ae6b418d6c843a31bea4a725d0e89771837b4589b5504d6"
+        },
+        {
+          "path": "drivers/gpu/drm/panfrost/panfrost_gem.c",
+          "before_sha256": "70ce7766295b14bae0a52a1d2575ea9cf93968a4c2a0fda46bd3f4f09346aa6a",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "f9e4be8713c4fc5e6407240942b18806a46aafa01cea9deced3e5f3cee680669"
+        },
+        {
+          "path": "drivers/gpu/drm/panfrost/panfrost_job.c",
+          "before_sha256": "9a06704288a7ae2b789eb5699bc285ae064db5a2c1902864394c56b7b1fcdde6",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "9402037a9573f1b65ec39b832993a611f2586c373475a79974020d12d03b0300"
+        },
+        {
+          "path": "drivers/gpu/drm/panfrost/panfrost_job.h",
+          "before_sha256": "6278e9c8021e64a4bd6a2faf40b6ad1f9dc1b46a827c59675bfdf6c242a9a73b",
+          "observed_spdx": [
+            "GPL-2.0 */"
+          ],
+          "after_sha256": "c22bc1a55e21d8ec6bbba7c580062eb53d443d6d1513b9fabed73c8d6ecb8923"
+        },
+        {
+          "path": "drivers/gpu/drm/sysfb/Kconfig",
+          "before_sha256": "f3af6876f0a21cddcb848f7bac178a5899c437440268ee6f2b3e03192ba5b6c7",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "248cf607223d08735f52917383a1879fb642d03b25f9f21ef3f15c15f509fd72"
+        },
+        {
+          "path": "drivers/gpu/drm/sysfb/Makefile",
+          "before_sha256": "99e2e990913a148b6b5d9fadca01348a2d531b8d6f4b1de36f1d5b5a25ad2e39",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "cdaeffecd979f13c9990bf80477e2dfbd976f8fb70344215370b79c912b720ba"
+        },
+        {
+          "path": "drivers/gpu/drm/sysfb/drm_sysfb_modeset.c",
+          "before_sha256": "edaf9747a0c06510c43416c3afa05571a56d1e38743d98e43064094705ac66bd",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "d31defa7375de8cd5806f5a117a2e8b7a649d62798e3a6fc8e8d9d661f4a0383"
+        },
+        {
+          "path": "drivers/i2c/busses/i2c-exynos5.c",
+          "before_sha256": "9d00ca062a55199f432e7d7a16ead8847b71263324c6a434533d9eb03dd791f9",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "ac559df1529d9fa934dcd8eac16c0885a80f89f669c247adc822179a8c8f9ce4"
+        },
+        {
+          "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+          "before_sha256": "932e25c75f9ea5247194dfdb78c6b41a457af68d7a558935a7b5489bf548aa9d",
+          "observed_spdx": [
+            "ISC"
+          ],
+          "after_sha256": "4abb821f7a450ad365a73d1bca340acc46b2e00ff17aa69f94d6e977b870f718"
+        },
+        {
+          "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c",
+          "before_sha256": "4a5a5ac64da90251b1a6a24262d421f47c3ab365d58a95633bdf7380a3472473",
+          "observed_spdx": [
+            "ISC"
+          ],
+          "after_sha256": "f09664eb3a9ecb7609307b3be889d664a07afa9f2a93ec1755e16331590fc692"
+        },
+        {
+          "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h",
+          "before_sha256": "b2899336d680ca868536b25d1601ae99325ab66aaf1c565b4e638c71827b7369",
+          "observed_spdx": [
+            "ISC"
+          ],
+          "after_sha256": "956ebd2c9c5f27fdcbb7c6c0468af65992ac2d93be4a4676f366c47cdb795442"
+        },
+        {
+          "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+          "before_sha256": "c43f47f22c73a3a0bc91549f629311861b646903057f25617927a1575cd6a80c",
+          "observed_spdx": [
+            "ISC"
+          ],
+          "after_sha256": "555358cf2cf3318d5e8fd07e98cd7581213b1c613104d3db89f4ffb0de2423cc"
+        },
+        {
+          "path": "drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h",
+          "before_sha256": "32ebf65e5aa69162f8bc1f2f1d5793e8a337fcd47cc4d0c8bee23f0ba4f2d87d",
+          "observed_spdx": [
+            "ISC"
+          ],
+          "after_sha256": "69d96841063993d58a7915b6ee65c87686e498c7f2d0359dbc3f7792369f0211"
+        },
+        {
+          "path": "drivers/pci/controller/dwc/Kconfig",
+          "before_sha256": "afafc707a88a2b82b8e625fab79920961d9cbf90228cd45e34d577a9c0f5c0e3",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "a23f088884df6ac2811c4cf670601c72d4c54f89404681c9756973d767e76f64"
+        },
+        {
+          "path": "drivers/pci/controller/dwc/Makefile",
+          "before_sha256": "fb1dbfde36dfc8110d4549002869e211c04b3be0f567e212f139b08bf6fd84ae",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "21476c8b6f2f7c946ba65bff46c357fae66caff3c7a1b1a56d56039c3b5af4c8"
+        },
+        {
+          "path": "drivers/phy/samsung/Makefile",
+          "before_sha256": "5cf08f02716060898400d39cd0fdf19a1f5dad2431a79eed624dd2e0bddcf7ff",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "412c15c0b58cf573a44b69f7cc8e27afa62735a571ee4cb4807cdc8980fbbba9"
+        },
+        {
+          "path": "drivers/power/supply/max77705_charger.c",
+          "before_sha256": "f48557db4025e5e63f7f75dbb9a76f480b839b5e4cf3ea1021c1f4b1aa8e6c8a",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "0f958d079e3f69bf697332017f07ddc16281c0448ed72ea9c13cb9a9ba9a90c9"
+        },
+        {
+          "path": "drivers/soc/samsung/Kconfig",
+          "before_sha256": "c8e735176b04524c4aad501041b3b92d86f103602b016adde9430079593cdf34",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "df59ebd4fd8ee9df36d79064e4c778903f8eee5a5ccc7dd49b80a564c7a0d4bd"
+        },
+        {
+          "path": "drivers/soc/samsung/Makefile",
+          "before_sha256": "8f48a718d0b47bbebffca6d77b5e0ed907a4511bd64799122a830504a5981679",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "5a59c3b7545d3deb78175d3e90a9e1fadb6b76e1e641f7e59676ee44910d1c92"
+        },
+        {
+          "path": "drivers/ufs/host/Kconfig",
+          "before_sha256": "effc0732daab13955b5e8b1fb3aa9f1a54224965b6081bf7e33b34d62179ee27",
+          "observed_spdx": [
+            "GPL-2.0+"
+          ],
+          "after_sha256": "b01a875bb90d86fbb4b5bb5e65b895d94c58afdd32ba42c238980ce56dad4e30"
+        },
+        {
+          "path": "drivers/ufs/host/Makefile",
+          "before_sha256": "479987dc59d992e4c671b0f1046312cd4995e2411968d8ebc16b98e06f5e9990",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "af6685387daad9741d74512bc70055b67c8e17df13396f14fbd094c3d3fb7d2c"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/boot-repro/preserve-weak-version.patch",
+      "sha256": "a5c23508d84987e752995d6a86332fb2c4f24d1317d11915fb57bf12023e3a24",
+      "origin": {
+        "name": "linux",
+        "filename": "upstream-linux.tar.gz",
+        "url": "https://codeload.github.com/torvalds/linux/tar.gz/8cd9520d35a6c38db6567e97dd93b1f11f185dc6",
+        "algorithm": "sha256",
+        "digest": "3b89952ea68cf65a7ffad4ef527bd9c0a3e8f86e101d0491f062d495af730e55"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "init/Makefile",
+          "before_sha256": "8ddab3d06fbeeb18595e8a4a80b9304219953dcf8b1e75b49976cf068490fc8d",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "70cc3a9ab6d5de5d5eeeb212d5ae30bc34e0d7424a76ee957b761a68dea16e01"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/kernel-repro/patches/exynos9810-star2lte.dts.patch",
+      "sha256": "d1c217dd6d3a9068d0d60c874a48d20ca827ce81a9657812137ec82aedb0bc4e",
+      "origin": {
+        "source": "src/mainline-dts/exynos9810-star2lte.dts",
+        "preparation": "build/kernel-repro/additions.json and scripts/kernel-repro/prepare-public.py"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "arch/arm64/boot/dts/exynos/exynos9810-star2lte.dts",
+          "before_sha256": "fa9b4c11be8cf7e426f6160bf68ccada48baac72b7a4fffd5dcb663d873e1c16",
+          "observed_spdx": [
+            "GPL-2.0 OR BSD-3-Clause"
+          ],
+          "after_sha256": "d47bfb6932e1899c18280ff5fbe2e77359d5dff28c59ad13c902acbed6180888"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/kernel-repro/patches/s9p-cpufreq.c.patch",
+      "sha256": "0ae52bc2d0df5b3458c89111eb33197fb49523dc62fc94c05bb22f8e2aff6137",
+      "origin": {
+        "source": "src/cpufreq/s9p-cpufreq.c",
+        "preparation": "build/kernel-repro/additions.json and scripts/kernel-repro/prepare-public.py"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "drivers/cpufreq/s9p-cpufreq.c",
+          "before_sha256": "4b70d7b68904396393ab35bbada8ccd70a69dcbcc85f8c5705c58a7bb21f25f6",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "fac634be9e90649e11906a363b223a54a8b28a3bf83423313d5a18a815760cae"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/kernel-repro/patches/exynos-bootfb.c.patch",
+      "sha256": "c0c95a9031ef0ad74c6a985e1e1e214fe61ab946502d182b200d0dfcbc983052",
+      "origin": {
+        "source": "generated-from-linux:drivers/gpu/drm/sysfb/simpledrm.c",
+        "preparation": "build/kernel-repro/additions.json and scripts/kernel-repro/prepare-public.py"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "drivers/gpu/drm/sysfb/exynos-bootfb.c",
+          "before_sha256": "fd29b789f908d412ea06d012e8112edb40b07963b41f74c59117fbbcd62fe494",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "050275cff1e2e0d5d8c482f3fd6cd2b7c09f7e810121579a7b94203ed4128cf2"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/kernel-repro/patches/phy-exynos9810-usbdrd.c.patch",
+      "sha256": "9b2134deb94296a2c51dfb0a6726797f39c25358850b69283df710c0426764d6",
+      "origin": {
+        "source": "src/usb/phy-exynos9810-usbdrd.c",
+        "preparation": "build/kernel-repro/additions.json and scripts/kernel-repro/prepare-public.py"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "drivers/phy/samsung/phy-exynos9810-usbdrd.c",
+          "before_sha256": "b1f4dc945f9f614517d2e72a7e6898a9d61fbc77fb61d3c5525fe8f110fe5de9",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "2c0958f6b5114eae27cb7c90e55097b81be15867bfaca7d974b3860243a65166"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/kernel-repro/patches/s9p-max77705-muic.c.patch",
+      "sha256": "7ad7f6f989f840fa3954517f100c7adb8c42379edc730dfa37e8604a58a9f9cc",
+      "origin": {
+        "source": "src/soc/s9p-max77705-muic.c",
+        "preparation": "build/kernel-repro/additions.json and scripts/kernel-repro/prepare-public.py"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "drivers/soc/samsung/s9p-max77705-muic.c",
+          "before_sha256": "13faffba134ee0d21276dee7201cbc075d4aefd56beb66a97289638edf39071a",
+          "observed_spdx": [
+            "GPL-2.0"
+          ],
+          "after_sha256": "5636fac036d0e0482fdea8efda4c79c58221776ab0ad6c0cc03a8be84e1e3a97"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/mainline/loader/checkpoints.patch",
+      "sha256": "fbc40ceb58237358f51ce39459753aa1060f3b204948ac5509f121e5c31e80f3",
+      "origin": {
+        "name": "s9plus-port",
+        "filename": "upstream-port.tar.gz",
+        "url": "https://codeload.github.com/SheroAbi/galaxy-s9plus-mainline-linux/tar.gz/b42ffce0bf97c0f49f90af91107a670d324c53e3",
+        "algorithm": "sha256",
+        "digest": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88"
+      },
+      "context_application": "git apply --check and apply passed",
+      "files": [
+        {
+          "path": "main/boot.c",
+          "before_sha256": "0a703278ecbdcf06b1a64f3d9a0ea480b0a24563b67f1e8cf3b21c399ae4e7bb",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "9d407bdc7fa7c73fcb07313e0484d32366baf3e1afa2083fb8faa809b6243c94"
+        },
+        {
+          "path": "arch/aarch64/load-kernel.c",
+          "before_sha256": "554163dba0023437af65fa3c67c0d3a4a652acedc43260dfdcccf304e8bccfcc",
+          "observed_spdx": [
+            "GPL-2.0-only"
+          ],
+          "after_sha256": "b689f66fcef608b60820e45051620b7e6f0c338b4c8a555ceaf983a3c5917e0d"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    }
+  ],
+  "upstream_transformer": {
+    "source": "scripts/build/patch_tree.py",
+    "sha256": "9fc211fee85950078481425ab6f9a76b5b042e1b56b84c070a49facc2f5cb287",
+    "files": [
+      {
+        "path": "arch/arm64/boot/dts/exynos/Makefile",
+        "upstream_generated_sha256": "5639b74edefb678394794306a998faad61fda08e26bcb0256daa68f287e48780",
+        "native20_sha256": "66363362f4036ee7129d8bfee225f6b035153da25303d16656a83c2e8fc17ffd",
+        "identical": false
+      },
+      {
+        "path": "drivers/bluetooth/hci_bcm.c",
+        "upstream_generated_sha256": "3f34a36328de0df9ab3c4bb09fd5d7196762f209f924db25772bec48f1840f23",
+        "native20_sha256": "995aab0014cc84dd1cef4397540fadbdfc4a181cbda2526e3caa8b2fc22cb18c",
+        "identical": false
+      },
+      {
+        "path": "drivers/cpufreq/Kconfig",
+        "upstream_generated_sha256": "81b041ad16ddea1f1d46d45f0065ad773ff70123365c89f0c29b8af027865933",
+        "native20_sha256": "81b041ad16ddea1f1d46d45f0065ad773ff70123365c89f0c29b8af027865933",
+        "identical": true
+      },
+      {
+        "path": "drivers/cpufreq/Makefile",
+        "upstream_generated_sha256": "dfdbb739da737aa976c2d0e81cd09ab910c7d0fbb7c865dded4b2edc365be749",
+        "native20_sha256": "dfdbb739da737aa976c2d0e81cd09ab910c7d0fbb7c865dded4b2edc365be749",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/Kconfig",
+        "upstream_generated_sha256": "6d189f0057984d02bf7a6a63aeefd32d586da7e1fca17e09547a97d745e08f13",
+        "native20_sha256": "6d189f0057984d02bf7a6a63aeefd32d586da7e1fca17e09547a97d745e08f13",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/Makefile",
+        "upstream_generated_sha256": "542ca74e466e15d4e06b610709f2c4e83f7c2e5ee9e9eb2d8cac4d9f69e80f1d",
+        "native20_sha256": "542ca74e466e15d4e06b610709f2c4e83f7c2e5ee9e9eb2d8cac4d9f69e80f1d",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/panfrost/panfrost_drv.c",
+        "upstream_generated_sha256": "03d02e023ba6a69c6ae6b418d6c843a31bea4a725d0e89771837b4589b5504d6",
+        "native20_sha256": "03d02e023ba6a69c6ae6b418d6c843a31bea4a725d0e89771837b4589b5504d6",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/panfrost/panfrost_gem.c",
+        "upstream_generated_sha256": "f9e4be8713c4fc5e6407240942b18806a46aafa01cea9deced3e5f3cee680669",
+        "native20_sha256": "f9e4be8713c4fc5e6407240942b18806a46aafa01cea9deced3e5f3cee680669",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/panfrost/panfrost_job.c",
+        "upstream_generated_sha256": "75e32fb93f55bc12988ca79bc7ec133945ea9ff2365689a6c79898f6b56cadfd",
+        "native20_sha256": "9402037a9573f1b65ec39b832993a611f2586c373475a79974020d12d03b0300",
+        "identical": false
+      },
+      {
+        "path": "drivers/gpu/drm/panfrost/panfrost_job.h",
+        "upstream_generated_sha256": "c22bc1a55e21d8ec6bbba7c580062eb53d443d6d1513b9fabed73c8d6ecb8923",
+        "native20_sha256": "c22bc1a55e21d8ec6bbba7c580062eb53d443d6d1513b9fabed73c8d6ecb8923",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/sysfb/Kconfig",
+        "upstream_generated_sha256": "248cf607223d08735f52917383a1879fb642d03b25f9f21ef3f15c15f509fd72",
+        "native20_sha256": "248cf607223d08735f52917383a1879fb642d03b25f9f21ef3f15c15f509fd72",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/sysfb/Makefile",
+        "upstream_generated_sha256": "cdaeffecd979f13c9990bf80477e2dfbd976f8fb70344215370b79c912b720ba",
+        "native20_sha256": "cdaeffecd979f13c9990bf80477e2dfbd976f8fb70344215370b79c912b720ba",
+        "identical": true
+      },
+      {
+        "path": "drivers/gpu/drm/sysfb/drm_sysfb_modeset.c",
+        "upstream_generated_sha256": "d31defa7375de8cd5806f5a117a2e8b7a649d62798e3a6fc8e8d9d661f4a0383",
+        "native20_sha256": "d31defa7375de8cd5806f5a117a2e8b7a649d62798e3a6fc8e8d9d661f4a0383",
+        "identical": true
+      },
+      {
+        "path": "drivers/i2c/busses/i2c-exynos5.c",
+        "upstream_generated_sha256": "ac559df1529d9fa934dcd8eac16c0885a80f89f669c247adc822179a8c8f9ce4",
+        "native20_sha256": "ac559df1529d9fa934dcd8eac16c0885a80f89f669c247adc822179a8c8f9ce4",
+        "identical": true
+      },
+      {
+        "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c",
+        "upstream_generated_sha256": "4abb821f7a450ad365a73d1bca340acc46b2e00ff17aa69f94d6e977b870f718",
+        "native20_sha256": "4abb821f7a450ad365a73d1bca340acc46b2e00ff17aa69f94d6e977b870f718",
+        "identical": true
+      },
+      {
+        "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c",
+        "upstream_generated_sha256": "f09664eb3a9ecb7609307b3be889d664a07afa9f2a93ec1755e16331590fc692",
+        "native20_sha256": "f09664eb3a9ecb7609307b3be889d664a07afa9f2a93ec1755e16331590fc692",
+        "identical": true
+      },
+      {
+        "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h",
+        "upstream_generated_sha256": "956ebd2c9c5f27fdcbb7c6c0468af65992ac2d93be4a4676f366c47cdb795442",
+        "native20_sha256": "956ebd2c9c5f27fdcbb7c6c0468af65992ac2d93be4a4676f366c47cdb795442",
+        "identical": true
+      },
+      {
+        "path": "drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c",
+        "upstream_generated_sha256": "555358cf2cf3318d5e8fd07e98cd7581213b1c613104d3db89f4ffb0de2423cc",
+        "native20_sha256": "555358cf2cf3318d5e8fd07e98cd7581213b1c613104d3db89f4ffb0de2423cc",
+        "identical": true
+      },
+      {
+        "path": "drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h",
+        "upstream_generated_sha256": "69d96841063993d58a7915b6ee65c87686e498c7f2d0359dbc3f7792369f0211",
+        "native20_sha256": "69d96841063993d58a7915b6ee65c87686e498c7f2d0359dbc3f7792369f0211",
+        "identical": true
+      },
+      {
+        "path": "drivers/pci/controller/dwc/Kconfig",
+        "upstream_generated_sha256": "a23f088884df6ac2811c4cf670601c72d4c54f89404681c9756973d767e76f64",
+        "native20_sha256": "a23f088884df6ac2811c4cf670601c72d4c54f89404681c9756973d767e76f64",
+        "identical": true
+      },
+      {
+        "path": "drivers/pci/controller/dwc/Makefile",
+        "upstream_generated_sha256": "21476c8b6f2f7c946ba65bff46c357fae66caff3c7a1b1a56d56039c3b5af4c8",
+        "native20_sha256": "21476c8b6f2f7c946ba65bff46c357fae66caff3c7a1b1a56d56039c3b5af4c8",
+        "identical": true
+      },
+      {
+        "path": "drivers/phy/samsung/Makefile",
+        "upstream_generated_sha256": "412c15c0b58cf573a44b69f7cc8e27afa62735a571ee4cb4807cdc8980fbbba9",
+        "native20_sha256": "412c15c0b58cf573a44b69f7cc8e27afa62735a571ee4cb4807cdc8980fbbba9",
+        "identical": true
+      },
+      {
+        "path": "drivers/power/supply/max77705_charger.c",
+        "upstream_generated_sha256": "f48557db4025e5e63f7f75dbb9a76f480b839b5e4cf3ea1021c1f4b1aa8e6c8a",
+        "native20_sha256": "0f958d079e3f69bf697332017f07ddc16281c0448ed72ea9c13cb9a9ba9a90c9",
+        "identical": false
+      },
+      {
+        "path": "drivers/soc/samsung/Kconfig",
+        "upstream_generated_sha256": "df59ebd4fd8ee9df36d79064e4c778903f8eee5a5ccc7dd49b80a564c7a0d4bd",
+        "native20_sha256": "df59ebd4fd8ee9df36d79064e4c778903f8eee5a5ccc7dd49b80a564c7a0d4bd",
+        "identical": true
+      },
+      {
+        "path": "drivers/soc/samsung/Makefile",
+        "upstream_generated_sha256": "5a59c3b7545d3deb78175d3e90a9e1fadb6b76e1e641f7e59676ee44910d1c92",
+        "native20_sha256": "5a59c3b7545d3deb78175d3e90a9e1fadb6b76e1e641f7e59676ee44910d1c92",
+        "identical": true
+      },
+      {
+        "path": "drivers/ufs/host/Kconfig",
+        "upstream_generated_sha256": "b01a875bb90d86fbb4b5bb5e65b895d94c58afdd32ba42c238980ce56dad4e30",
+        "native20_sha256": "b01a875bb90d86fbb4b5bb5e65b895d94c58afdd32ba42c238980ce56dad4e30",
+        "identical": true
+      },
+      {
+        "path": "drivers/ufs/host/Makefile",
+        "upstream_generated_sha256": "af6685387daad9741d74512bc70055b67c8e17df13396f14fbd094c3d3fb7d2c",
+        "native20_sha256": "af6685387daad9741d74512bc70055b67c8e17df13396f14fbd094c3d3fb7d2c",
+        "identical": true
+      }
+    ],
+    "meaning": "Equal output proves these final bytes are reproduced by the pinned port transformer; unequal output requires separate delta review."
+  },
+  "port_charger": {
+    "source": "src/soc/max77705_charger.c",
+    "copy_recipe": "scripts/build/apply_drivers.sh",
+    "source_sha256": "671bf7101d885880146eeccc7f10b9c432c1260642ee547fb7d98764a2fe95d9",
+    "native20_sha256": "0f958d079e3f69bf697332017f07ddc16281c0448ed72ea9c13cb9a9ba9a90c9"
+  },
+  "addition_review": {
+    "framebuffer": {
+      "path": "drivers/gpu/drm/sysfb/exynos-bootfb.c",
+      "upstream_generated_sha256": "050275cff1e2e0d5d8c482f3fd6cd2b7c09f7e810121579a7b94203ed4128cf2",
+      "selected_sha256": "050275cff1e2e0d5d8c482f3fd6cd2b7c09f7e810121579a7b94203ed4128cf2",
+      "identical": true,
+      "source": "scripts/build/patch_tree.py"
+    },
+    "board_switches": {
+      "source": "scripts/build/build71.sh",
+      "source_sha256": "86a4fa3eca7d6c7a2698e626bc4884cfe49a47b424299ccb8ccead17b456b800",
+      "inspection": "UFS, DECON, GPU, WLAN enablement mirrors upstream feature switches; USB OTG role-switch hunk is a separate local candidate delta."
+    }
+  },
+  "helpers": [
+    {
+      "path": "build/mainline/diagnostic/init",
+      "sha256": "80b9ea297884cb80bcbd7dbd777d2360d8aab69c883f7c0c23fd5df69db66344",
+      "exact_file_matches": [],
+      "longest_blocks": [],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/mainline/diagnostic/root-layout.sh",
+      "sha256": "5eade512224b0a9e76b3e09c01c8180faf4d5f8b04e045e35ced11ab60832b95",
+      "exact_file_matches": [],
+      "longest_blocks": [],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/mainline/diagnostic/usb-console.sh",
+      "sha256": "43b3c6989f250a391b22c3b8fe5522e6115ba644405cc873683df56d63ae7f6f",
+      "exact_file_matches": [],
+      "longest_blocks": [],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/arch-arm/native-boot/root-layout.sh",
+      "sha256": "07fef2265ae1dcb821a8cbc90d19074660b291f462322f9d4e9e2289aa83972f",
+      "exact_file_matches": [],
+      "longest_blocks": [],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "build/arch-arm/native-boot/transition.sh",
+      "sha256": "832369348803e2092699f22bb484d1c90dbe89729b226ce4368b99d144a80c49",
+      "exact_file_matches": [],
+      "longest_blocks": [],
+      "license_concluded": "NOASSERTION"
+    }
+  ],
+  "publication_cleared": false
+}

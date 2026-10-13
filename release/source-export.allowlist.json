@@ -1,0 +1,542 @@
+{
+  "schema": 1,
+  "scope": "Boot reconstruction source preview; no rootfs, binaries, archives, accounts or firmware",
+  "publication_cleared": false,
+  "files": [
+    {
+      "path": "BOOT-PREVIEW.md",
+      "sha256": "ff0b2753af770f91d4e17f1904a1641a3f0c4bdf909b68cbf45b964b838ec44c",
+      "mode": "0644"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "sha256": "ed5d81d7ae256f4c21d0c764e5cac751ee9123fdaefa7e7581d6c732f0627726",
+      "mode": "0644"
+    },
+    {
+      "path": "LICENSING.md",
+      "sha256": "2cb7d922af909fbd4d63f19080cd05000842643519b4ddfc0129202ded638ae9",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/native-boot/root-layout.sh",
+      "sha256": "07fef2265ae1dcb821a8cbc90d19074660b291f462322f9d4e9e2289aa83972f",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/native-boot/transition.sh",
+      "sha256": "832369348803e2092699f22bb484d1c90dbe89729b226ce4368b99d144a80c49",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/BUSYBOX-SOURCE.md",
+      "sha256": "65cb67b44ebfc711483f244ee36583dd4e1050c4c26e0e41418e9a929b0194ea",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/BUSYBOX-TRUST.md",
+      "sha256": "a712d36db76fb171ef94c24c2831ffe4b8e2b46810f99cdce62408383cb40d8c",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/BUSYBOX-UBUNTU-ENV.md",
+      "sha256": "ec10b8f0dbe4ef812c490176e6f6614d6c9089bed4bacba27a5c6d7116019a4e",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/BusyBox-Ubuntu.Dockerfile",
+      "sha256": "365274aacc151da15bbcc010c692bad4abc11c1229edb05c1ac95444392a1cc9",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/OFFLINE-PIPELINE.md",
+      "sha256": "bf3987ae4f644cf370fa7ffb609904a82da47b48e1bf9064669e9c2ba3df6420",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/TOOLCHAIN.md",
+      "sha256": "7580e2b8ac5ea524de6d73b74f3179bf36f4cb6a1f3e883a37bfd2e791fd7e8c",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/build-dtbh.sh",
+      "sha256": "705f17a91fc69c4dc0f1b609822241c86142ea55d88b17fb561d4457b8e23ea5",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/build-kernel.sh",
+      "sha256": "6d425097336385507b436b6b187a5896933ad4863468ea1732cba0976dc61436",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/build-loader.sh",
+      "sha256": "00486cfe681d8ca7c2d3201357352d8e6501cd10596a5556ad494f4b7f532baa",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/cpio-layout.json",
+      "sha256": "acfb438d8523ca79c0f664355fdaee4a4652b73c90aae10b862a6b3c8d2f7fb5",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/prepare-busybox.sh",
+      "sha256": "8556bc05edea26c62f8675744552bc8862f8ce01c55e328a3db8330e5eddac1c",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/preserve-weak-version.patch",
+      "sha256": "a5c23508d84987e752995d6a86332fb2c4f24d1317d11915fb57bf12023e3a24",
+      "mode": "0644"
+    },
+    {
+      "path": "build/boot-repro/rebuild-busybox-ubuntu.sh",
+      "sha256": "eb9809cc9ef67eb2e51c2f9af46fa6e189e4abacc77df70e74fae1cd674a741e",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/additions.json",
+      "sha256": "cc2c941b6692033dac4800d2d732ab8581d7a2d9ad828c924e2e8db4ac9ea6d6",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/native20.config",
+      "sha256": "04f69a66832e2be3e5be18286f49d932127d304722a94a3aff702943f55e95d7",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/exynos-bootfb.c.patch",
+      "sha256": "c0c95a9031ef0ad74c6a985e1e1e214fe61ab946502d182b200d0dfcbc983052",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/exynos9810-star2lte.dts.patch",
+      "sha256": "d1c217dd6d3a9068d0d60c874a48d20ca827ce81a9657812137ec82aedb0bc4e",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/native20-tracked.patch",
+      "sha256": "897adf5f4d3d8214908a4e89f332dd0bdda66ba34139e62d2a035430fd95739d",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/phy-exynos9810-usbdrd.c.patch",
+      "sha256": "9b2134deb94296a2c51dfb0a6726797f39c25358850b69283df710c0426764d6",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/s9p-cpufreq.c.patch",
+      "sha256": "0ae52bc2d0df5b3458c89111eb33197fb49523dc62fc94c05bb22f8e2aff6137",
+      "mode": "0644"
+    },
+    {
+      "path": "build/kernel-repro/patches/s9p-max77705-muic.c.patch",
+      "sha256": "7ad7f6f989f840fa3954517f100c7adb8c42379edc730dfa37e8604a58a9f9cc",
+      "mode": "0644"
+    },
+    {
+      "path": "build/mainline/diagnostic/init",
+      "sha256": "80b9ea297884cb80bcbd7dbd777d2360d8aab69c883f7c0c23fd5df69db66344",
+      "mode": "0644"
+    },
+    {
+      "path": "build/mainline/diagnostic/root-layout.sh",
+      "sha256": "5eade512224b0a9e76b3e09c01c8180faf4d5f8b04e045e35ced11ab60832b95",
+      "mode": "0644"
+    },
+    {
+      "path": "build/mainline/diagnostic/usb-console.sh",
+      "sha256": "43b3c6989f250a391b22c3b8fe5522e6115ba644405cc873683df56d63ae7f6f",
+      "mode": "0644"
+    },
+    {
+      "path": "build/mainline/loader/checkpoints.patch",
+      "sha256": "fbc40ceb58237358f51ce39459753aa1060f3b204948ac5509f121e5c31e80f3",
+      "mode": "0644"
+    },
+    {
+      "path": "build/toolchains/mesa.Dockerfile",
+      "sha256": "dacbf5c5e95e5580722bc07d824c0fbe6ea08bf50787d2ce7cc35f6e159ac3ea",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/ATTRIBUTION.md",
+      "sha256": "1b81bcab12f155855ae8fa782c4f074da35798816753032a42ece965b1e3c8be",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/LINEAGE-SCOPE.md",
+      "sha256": "66008be69b5a59fd5620dfbbf4cea6b76122fa80ccc78ce3280ed2cb34f3bb19",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/PER-FILE-REVIEW.md",
+      "sha256": "919d6fca476738597de79024f4738412aa60de98bf8a4c6f0ec4ed5a19663e80",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/RELEASE-DECISION.md",
+      "sha256": "a715f1ef507081129aa0a584d1b50b875c7963c0a61d13f93219510593255726",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/SOURCE-ORIGINS.md",
+      "sha256": "c5059133c20ed57e30ee1044820175387e206cfe2ec5563134b7cb855046a21e",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/SOURCE-PREVIEW.md",
+      "sha256": "1464fb0ab763e386a29a6049aa169114bd835ed560e5b996db3b5de6bc618f5a",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/VENDOR-ATTRIBUTION.md",
+      "sha256": "4aa84a889cb12360d4118d6fee8ee0e54a24de21995b5a5260dcb319764c89bd",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/busybox-copyright.txt",
+      "sha256": "336d995e819d3a7a3fdbf3f5041c07094f75ee849acb3bb742b7503d45786329",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/candidate-samsung-board-notice.txt",
+      "sha256": "42e6e2430787f0cd535a77a17bc1639f3077d972cf7e4d2acf7f089bb395534c",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/candidate-samsung-soc-notice.txt",
+      "sha256": "b77e129239fe1fd21e48c581c1c3e3df1907ed40337e1707bfd714ba7da9fa30",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dtbtool-dtbtool-exynos.c.txt",
+      "sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/linux-COPYING.txt",
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/linux-LICENSES-preferred-GPL-2.0.txt",
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/pmaports-LICENSE.txt",
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/port-LICENSE.txt",
+      "sha256": "1b0b03858b73cabb9ed1007080c94bf5c38f7ae8693a0278dbd7ee44f23af846",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/port-THIRD-PARTY.md.txt",
+      "sha256": "c3753c7204a10093d690dcb15038f7c9547c7d360afd1fa7d5b802df3fdfe24f",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/port-bootloader-uniLoader-LICENSE.txt",
+      "sha256": "33da12ec2eb61c6bd2a7fe4b3882e2bdffbc0820333903b33e5d4c962771b3ab",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/port-firmware-README.md.txt",
+      "sha256": "4460698f4f3bdd9ac0906d038b9a41fdd84b471ced2a09ee7e2e3a19db118d4a",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/vendor-COPYING.txt",
+      "sha256": "af8067302947c01fd9eee72befa54c7e3ef8a48fecde7fd71277f2290b2bf0f7",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/vendor-dhd-msgbuf-notice.txt",
+      "sha256": "9d4e9d1de1ed424157c692dad13f6a9df725b62a4cebb3fec75ac8ff64d00fd9",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/vendor-i2c-exynos5-notice.txt",
+      "sha256": "759845861c2b7e7cc7becc1989119266d92874a3730e792ad3a0603ac23ef1ed",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/vendor-scripts-dtc-libfdt-libfdt.h.txt",
+      "sha256": "4ccbfb9794f2982bfda97988b69e167106337304a8135795b733b11f0c5ee052",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/bluetooth-firmware.lock.json",
+      "sha256": "bfa3bde67828e20eb4a715205f99cd826e3f4f5b6df52e4bdd215526568e56bb",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/boot-downloads.lock.json",
+      "sha256": "234bed61057bef72392c7f203e91d06a68962ab8d16577c06bf4325c9df63b64",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/boot-inputs.lock.json",
+      "sha256": "bcdf9b9b5506875a0cf7f3fc881a51effccf5827606f641bcebf26563bc1e0f7",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/boot-kernel-build.lock.json",
+      "sha256": "63b2675f46121b4afea5ad8c76c077896d0e4a2cd7241d0c39fa16029d947e82",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/boot-license-evidence.json",
+      "sha256": "4d4281769b20a54e32e5a5f1270e17d35ede71ecf9e82f37607e89ab1deaad5d",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/boot-source-inventory.json",
+      "sha256": "dfb87018eb3e7f648bed7043c3da41993e3755e5626be725515d743ef1e21ad0",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/busybox-env-archives.lock.json",
+      "sha256": "dd233f5962f62eb1324f120b274c5fca64e3cb9900254fdd5b82b43654130133",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/busybox-source.lock.json",
+      "sha256": "c17e2c74b9477df8361c06c03a9ab92f7e30580cae4dd0bfc23b051428f34719",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/busybox-trust.lock.json",
+      "sha256": "b5c3b3cb6a44853121fddbdbb974e086f53fa3b5914898bafdf1a6b77f7188ae",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/busybox-ubuntu-build.json",
+      "sha256": "5feaab087cbda7a9a014ed8f549e2bb03f9f527c1368df38bd353b80b3ede001",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dtbh-build.lock.json",
+      "sha256": "2c18a6a805a8ed62663934fbe5c791a3449252e0a0aad2665e0d063e762e667f",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dtbh-downloads.lock.json",
+      "sha256": "56062bd6d0f9ab6ff53323553411409d7cf7b85f7eebb3c0f5ba818dd2b804fd",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dtbh-profile.json",
+      "sha256": "32779a6ac1931d984e370dd17362b1ac859705ae4543ee668e69657eb27c44d4",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dtbtool-patch-scope.json",
+      "sha256": "799e0d2f8b3f231862c253e8575fd26890469c592bdc0450f2aa83096587ab44",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dts-authored-candidate.json",
+      "sha256": "5c6c3a2b71ab49be5ccdf3e45c051ee7d54ee30dce929d95b016adfc8cfff38f",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/external-attribution.json",
+      "sha256": "1f4376db94c7ef88147dad60bf1051a80dcfb720f47814285390ea378bd739f5",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/kernel-additions-license-inventory.json",
+      "sha256": "67fc46399839c5de3093750517e17de06585a73e981e00b38262fa28f426b1f4",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/kernel-sources.lock.json",
+      "sha256": "287f433bc262981b7ea571610b5e3c776b756a129d79a3e36219f45d249babf6",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/public-loader-build.lock.json",
+      "sha256": "ccfda5838652c176891d9afa0e5db417782fe38be7e2598cf783371023f4e05d",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/source-attribution.json",
+      "sha256": "0fd27ba47123900d8edd55c2065f4ddb45ef443833c13920ac9aec955f3c1e9e",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/source-origins.json",
+      "sha256": "1f1e619fc6755a66841688e3b92c70d2b28b86e27120d5e684875439affadc7f",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/source-release-decisions.json",
+      "sha256": "090accc9e338fa96452b85041d088ecae51d2f760c9444fde79a0dadfeec5792",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/toolchains/mesa-archives.lock.json",
+      "sha256": "25ffd4b95841a7ef2bbd03239027345f794333ee8ae9a94e27ebb3d0d6423456",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/vendor-ancestry.json",
+      "sha256": "cb3ad5c686d0d6727f118f0be9621cb0262e6b53c578ddcbf38c8f4a662c99cb",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/vendor-dts-history.json",
+      "sha256": "277926ad3e66ed323d9a98e93b5af92d9a1c235991a260f8559e50839a3d0430",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/build-busybox-environment.py",
+      "sha256": "fd8661d9e5d42cb13487b81952e7baf2a4e88e4ab0fb1b1ad568c52d1964c21f",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/build-toolchain.py",
+      "sha256": "2dbe3fd33c6550767a439743947700494826b34e1a283c258e81330469b8520c",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/container.py",
+      "sha256": "e4bd8417576429e87f74885bc9a4ff7f19a68050aedadee344027750f600d2d7",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/explicit-container.py",
+      "sha256": "3930cba596fb22ec5780e61e9e989c85da7d2c81a28f9dfe4b1c2e37884e191a",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/pack-dtbh.py",
+      "sha256": "954b594df8a556ba3507f13965cf96dca4539516e58e58d0d01afad724be3643",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/pipeline.py",
+      "sha256": "e35b069930c3a3fd7cf79a5e5037e8ff9e578056b5647debb9e99627763ce10b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/prepare-busybox.py",
+      "sha256": "e351172f4b26ace93581eeceb505114968ec78bcf7e1e13191359b6086873f53",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/prepare.py",
+      "sha256": "371378854f943cc41b644ff0bee4a8f53df44dbbd2e50e19bf71b05a52ab69bb",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/rebuild-busybox-ubuntu.py",
+      "sha256": "9abd1f7d2e639231d0058a68065b3e8fc9529b8ee94992040a1fe4d9a83afa56",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-build-toolchain.py",
+      "sha256": "4bebdc133d60d2c2c140f01316fe6f8de15d1f4e5cee180baf312f7d6ba5ac4f",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-busybox-trust.py",
+      "sha256": "7d813ea2f43d65b82ebe5aaf13bb71f651f1a6c46b93ffa74759eb54c003475b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-container.py",
+      "sha256": "4c032eeb2320b484b1a085ba53968065f25841bf231da8f81fa5d02838194847",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-explicit-container.py",
+      "sha256": "375b37419e5489628641a4b1621fe72cb3edd868992e7f2a205572d00fdf3249",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-inputs.py",
+      "sha256": "64def2984ad64029f90308bf12f9777f846efd0596c0bdebc560bcb1e56cfd5c",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-pack-dtbh.py",
+      "sha256": "3bab97ec96ccc693d9da9da59cf15996be2cda5bf29068230e9eec5a4e859764",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/test-pipeline.py",
+      "sha256": "d5ac18c0e40d8d3ac292873943c144d7c7cfb78e785bcc8b9d4d1a42035b3114",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/toolchain.py",
+      "sha256": "f2f60b8745d5c0987fabba230bd9f410a0bd2bafccfddd196b8471327364d71b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/verify-busybox-environment.py",
+      "sha256": "6a7fff1587257bcdd340a3e021d8cdf6871976d7c0a3bc5851ec11ae5f515768",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/verify-busybox-trust.py",
+      "sha256": "d0ec46f24a50f265cf19b3404f955be9a522b570e8974ebe9d1dba6bec3ce7bd",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/boot-repro/verify-regdb.py",
+      "sha256": "55cbc15f4a428ebbb97fdd060eb7c8b3ee2e145d0097d8544f1c5d7cf13f8b4a",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/kernel-repro/prepare-public.py",
+      "sha256": "6ab7869a6692110840e670c7e9277f156706f1a6fe8ea81a2cae3aca695ab395",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/check-boot-inventory.py",
+      "sha256": "4ca978555a550219364ad4716654ff6040f9e872e01c638b1e70f94d60ecaa0f",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/check-lineage-scope.py",
+      "sha256": "4fd956fc75cfcae3a97461b291a9f1215877a394fbdad88ded971ea399f0a0d3",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/check-source-attribution.py",
+      "sha256": "61d80080f0ce7f7a7e618fa4852d35b346eb0fd97ef3f4fba2890d312fc140f4",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/export-source.py",
+      "sha256": "b367bbe67e1e76b63cfdbd375c78ab8403d9908f9ad898c72cd5fc5cbd5af870",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/test-export-source.py",
+      "sha256": "eb665ceb5a5b20dee6135d2193d8f6e0b217640ee8905d0ef1ceeef9ffd8fd63",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/trace-source-origins.py",
+      "sha256": "4781e088b3387ad4473d3c0db5eb293a229558ee43aaf9df21028a9d40934ddb",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/trace-vendor-attribution.py",
+      "sha256": "60bc28461087a5b1d29b5cd3ca1ea9b2c981c40d8cf0dd48aa7508a6b05f1171",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/fetch-packages.py",
+      "sha256": "a4a59b698e37cb98e247d497fb0f95cd61a4cb38be3927f88963a157a0b9b630",
+      "mode": "0644"
+    }
+  ]
+}

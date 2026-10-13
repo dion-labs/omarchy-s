@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "image_id": "sha256:a2a9d1e77008f91b120292e1170044c36b8c6466416217359202f9488184c60d",
+  "fingerprints": {
+    "archive": "F6ECB3762474EDA9D21B7022871920D1991BC93C",
+    "dsc": "47F22AE7A2754291722BF090F6E140F6DB359E58",
+    "upstream": "C9E9416F76E610DBD09D040F47B70C55ACC9965B"
+  },
+  "evidence": {
+    "published.json": "63762c394569ad8a00be6c884ba3c96899ecd902fd887943645490986924ceb8",
+    "builds.json": "4019b334ca8013ce7604d3b675408f959171efc86626c0532bddcad0c1210145",
+    "build_log_url": "104229f93c16113b46ba3802102e4b7db2fb248725e2eef5fb2939ab30f97f8f",
+    "buildinfo_url": "022434f1ff0a3296ebe4e79ffc2d4f84d6c65574600d4d0e415a4d755d14c9fd",
+    "changesfile_url": "91fb47ef3123a19632c4416e76a64b8363d70bb8ed0f7ceaa275ce65678fe5cc",
+    "signer-keys.json": "1447468dd5a74601009beb4adb01d30f2cb25122741da092939c4e50b4dbe0f1",
+    "upstream-key.asc": "41d0554e1abb52e962d52ed360181ca9def8876f512553dc660edd0a4a3cb160",
+    "upstream-key.gpg": "76f9fdbd73f6037746b3776e28b1f754d8849523a28a9ecceb0fd9f2ef1a65d2",
+    "uploader-key.asc": "bf1b850aba82600866d7438ecc8aa41c921c9d678cc0de5a80538ea2f127e82c",
+    "uploader-key.gpg": "9c112cd27320ce2127aa5e95b77a90d3714bfcff53ace149e8f25ee5d0fb829d",
+    "archive-keyring.gpg": "80a36b0a6de2f69f49d2df75ef473ccde121e9e190b9ea01d20a4f63778d5c31",
+    "InRelease": "0762124ebfc6d9149d7838baabf15bb48461dce96d7d3aa462c0426e91a2767a",
+    "main_binary-arm64_Packages.xz": "b0bd60d93af06a2b8542ef740afe2fdcbad84f355faeee7d26dba91222e765ac",
+    "main_source_Sources.xz": "92abc424e835943efba5e6d5eccd2a739435fdcec961794d70baa118185bff54"
+  },
+  "uploader_profile": "https://api.launchpad.net/1.0/~octagalland",
+  "upstream_key_origin": "https://busybox.net/~vda/vda_pubkey.gpg",
+  "upstream_key_attribution": "https://busybox.net/developer.html",
+  "archive_key_origin": "ubuntu-archive-keyring.gpg from pinned package-reconstructed Ubuntu toolchain",
+  "retrieval": {
+    "published.json": "https://api.launchpad.net/1.0/ubuntu/+archive/primary?ws.op=getPublishedSources&source_name=busybox&version=1%3A1.36.1-6ubuntu3.1&exact_match=true",
+    "builds.json": "https://api.launchpad.net/1.0/ubuntu/+archive/primary/+sourcepub/16398709?ws.op=getBuilds",
+    "signer-keys.json": "https://api.launchpad.net/1.0/~octagalland/gpg_keys",
+    "upstream-key.asc": "https://busybox.net/~vda/vda_pubkey.gpg",
+    "uploader-key.asc": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x47F22AE7A2754291722BF090F6E140F6DB359E58",
+    "InRelease": "https://ports.ubuntu.com/ubuntu-ports/dists/noble-security/InRelease",
+    "main_binary-arm64_Packages.xz": "https://ports.ubuntu.com/ubuntu-ports/dists/noble-security/main/binary-arm64/Packages.xz",
+    "main_source_Sources.xz": "https://ports.ubuntu.com/ubuntu-ports/dists/noble-security/main/source/Sources.xz",
+    "build_log_url": "https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/28868120/+files/buildlog_ubuntu-noble-arm64.busybox_1%3A1.36.1-6ubuntu3.1_BUILDING.txt.gz",
+    "buildinfo_url": "https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/28868120/+files/busybox_1.36.1-6ubuntu3.1_arm64.buildinfo",
+    "changesfile_url": "https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/28868120/+files/busybox_1.36.1-6ubuntu3.1_arm64.changes"
+  },
+  "derived_evidence": {
+    "upstream-key.gpg": "OpenPGP armor payload from upstream-key.asc decoded to binary",
+    "uploader-key.gpg": "OpenPGP armor payload from uploader-key.asc decoded to binary",
+    "archive-keyring.gpg": "/usr/share/keyrings/ubuntu-archive-keyring.gpg from pinned builder"
+  }
+}

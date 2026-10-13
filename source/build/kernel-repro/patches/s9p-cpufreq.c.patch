@@ -1,0 +1,20 @@
+--- a/drivers/cpufreq/s9p-cpufreq.c
++++ b/drivers/cpufreq/s9p-cpufreq.c
+@@ -792,8 +792,15 @@
+ 
+ 	tmu_cpu = devm_ioremap(&pdev->dev, TMU_CPU_PHYS, TMU_SIZE);
+ 	tmu_g3d = devm_ioremap(&pdev->dev, TMU_G3D_PHYS, TMU_SIZE);
+-	if (!tmu_cpu || !tmu_g3d)
+-		dev_warn(&pdev->dev, "TMU not mapped, no thermal cap\n");
++	if (!tmu_cpu || !tmu_g3d) {
++		/* Refuse registration before it can change clocks or rails.
++		 * devm releases mappings on probe failure; leave no stale globals.
++		 */
++		tmu_cpu = NULL;
++		tmu_g3d = NULL;
++		return dev_err_probe(&pdev->dev, -ENODEV,
++				     "TMU mapping failed; refusing cpufreq registration\n");
++	}
+ 
+ 	ret = cpufreq_register_driver(&s9p_cpufreq_driver);
+ 	if (ret)

@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "format": "s9-single-dtbh-v2",
+  "alignment": 2048,
+  "entry_prefix_words": [9810, 20646, 561349850, 26, 255],
+  "entry_final_word": 32,
+  "dtb_sha256": "fad817899386591b46431e059fe622b01f3469f7fab268be874c3bab229d71b2",
+  "expected_dtbh_sha256": "aa33f1e1ba87c24d422d354512731a30e4764b13efc3c3ee0f2b301b63ea9b35",
+  "provenance": "Format constants measured from the existing pinned single-entry DTBH output; original DTB bytes preserved. Opaque entry fields are not claimed to be general format semantics."
+}

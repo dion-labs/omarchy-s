@@ -1,0 +1,138 @@
+{
+  "arch/arm64/boot/dts/exynos/exynos9810-star2lte.dts": {
+    "source": "src/mainline-dts/exynos9810-star2lte.dts",
+    "normalize_crlf": true,
+    "source_sha256": "fa9b4c11be8cf7e426f6160bf68ccada48baac72b7a4fffd5dcb663d873e1c16",
+    "result_sha256": "d47bfb6932e1899c18280ff5fbe2e77359d5dff28c59ad13c902acbed6180888",
+    "mode": 420,
+    "patch": "build/kernel-repro/patches/exynos9810-star2lte.dts.patch",
+    "patch_sha256": "d1c217dd6d3a9068d0d60c874a48d20ca827ce81a9657812137ec82aedb0bc4e"
+  },
+  "drivers/cpufreq/s9p-cpufreq.c": {
+    "source": "src/cpufreq/s9p-cpufreq.c",
+    "normalize_crlf": true,
+    "source_sha256": "4b70d7b68904396393ab35bbada8ccd70a69dcbcc85f8c5705c58a7bb21f25f6",
+    "result_sha256": "fac634be9e90649e11906a363b223a54a8b28a3bf83423313d5a18a815760cae",
+    "mode": 420,
+    "patch": "build/kernel-repro/patches/s9p-cpufreq.c.patch",
+    "patch_sha256": "0ae52bc2d0df5b3458c89111eb33197fb49523dc62fc94c05bb22f8e2aff6137"
+  },
+  "drivers/gpu/drm/s9p/Kconfig": {
+    "source": "src/gpu/drm/s9p/Kconfig",
+    "normalize_crlf": true,
+    "source_sha256": "d56353f00b8fdda046a276c4588cc296453c3161c35345d8a9c7a6238e3d1a31",
+    "result_sha256": "d56353f00b8fdda046a276c4588cc296453c3161c35345d8a9c7a6238e3d1a31",
+    "mode": 420
+  },
+  "drivers/gpu/drm/s9p/Makefile": {
+    "source": "src/gpu/drm/s9p/Makefile",
+    "normalize_crlf": true,
+    "source_sha256": "f471808701eccbb34e73403944179e824aed2508a0f4a83d197133b0a6856445",
+    "result_sha256": "f471808701eccbb34e73403944179e824aed2508a0f4a83d197133b0a6856445",
+    "mode": 420
+  },
+  "drivers/gpu/drm/s9p/s9p-decon.c": {
+    "source": "src/gpu/drm/s9p/s9p-decon.c",
+    "normalize_crlf": true,
+    "source_sha256": "784adb4bcddcec7d69f084d708d8990baa11fdbdde0df97511c0f204f586d62d",
+    "result_sha256": "784adb4bcddcec7d69f084d708d8990baa11fdbdde0df97511c0f204f586d62d",
+    "mode": 420
+  },
+  "drivers/gpu/drm/sysfb/exynos-bootfb.c": {
+    "source": "generated-from-linux:drivers/gpu/drm/sysfb/simpledrm.c",
+    "normalize_crlf": false,
+    "source_sha256": "fd29b789f908d412ea06d012e8112edb40b07963b41f74c59117fbbcd62fe494",
+    "result_sha256": "050275cff1e2e0d5d8c482f3fd6cd2b7c09f7e810121579a7b94203ed4128cf2",
+    "mode": 420,
+    "patch": "build/kernel-repro/patches/exynos-bootfb.c.patch",
+    "patch_sha256": "c0c95a9031ef0ad74c6a985e1e1e214fe61ab946502d182b200d0dfcbc983052"
+  },
+  "drivers/pci/controller/dwc/pcie-exynos9810.c": {
+    "source": "src/pci/pcie-exynos9810.c",
+    "normalize_crlf": true,
+    "source_sha256": "8be059369463c9946ce651e60d38e82fd7335cd47caed13b6c58459968f4f008",
+    "result_sha256": "8be059369463c9946ce651e60d38e82fd7335cd47caed13b6c58459968f4f008",
+    "mode": 420
+  },
+  "drivers/phy/samsung/phy-exynos9810-usbdrd.c": {
+    "source": "src/usb/phy-exynos9810-usbdrd.c",
+    "normalize_crlf": true,
+    "source_sha256": "b1f4dc945f9f614517d2e72a7e6898a9d61fbc77fb61d3c5525fe8f110fe5de9",
+    "result_sha256": "2c0958f6b5114eae27cb7c90e55097b81be15867bfaca7d974b3860243a65166",
+    "mode": 420,
+    "patch": "build/kernel-repro/patches/phy-exynos9810-usbdrd.c.patch",
+    "patch_sha256": "9b2134deb94296a2c51dfb0a6726797f39c25358850b69283df710c0426764d6"
+  },
+  "drivers/soc/samsung/s9p-acpm.c": {
+    "source": "src/soc/s9p-acpm.c",
+    "normalize_crlf": true,
+    "source_sha256": "4d4defcc0a46c028a16dde76e24f95ef339236acb80e07c953e9193aaf13be59",
+    "result_sha256": "4d4defcc0a46c028a16dde76e24f95ef339236acb80e07c953e9193aaf13be59",
+    "mode": 420
+  },
+  "drivers/soc/samsung/s9p-clkgate.c": {
+    "source": "src/soc/s9p-clkgate.c",
+    "normalize_crlf": true,
+    "source_sha256": "a660f6c2e69b2e4fa58d14e4f34d1c277c0b2cf99c3242349d5d0b5e2a74a641",
+    "result_sha256": "a660f6c2e69b2e4fa58d14e4f34d1c277c0b2cf99c3242349d5d0b5e2a74a641",
+    "mode": 420
+  },
+  "drivers/soc/samsung/s9p-g3d-pd.c": {
+    "source": "src/soc/s9p-g3d-pd.c",
+    "normalize_crlf": true,
+    "source_sha256": "5e60954a9fa67c55f0ad19796c9fbc91001b7ab23cc6c59a2c27b9a1c98eabd2",
+    "result_sha256": "5e60954a9fa67c55f0ad19796c9fbc91001b7ab23cc6c59a2c27b9a1c98eabd2",
+    "mode": 420
+  },
+  "drivers/soc/samsung/s9p-g3d.c": {
+    "source": "src/soc/s9p-g3d.c",
+    "normalize_crlf": true,
+    "source_sha256": "eb154696a52c2f1e8011a716614ceb5820f8208b6550bd714d4f9a1e822e533b",
+    "result_sha256": "eb154696a52c2f1e8011a716614ceb5820f8208b6550bd714d4f9a1e822e533b",
+    "mode": 420
+  },
+  "drivers/soc/samsung/s9p-max77705-muic.c": {
+    "source": "src/soc/s9p-max77705-muic.c",
+    "normalize_crlf": true,
+    "source_sha256": "13faffba134ee0d21276dee7201cbc075d4aefd56beb66a97289638edf39071a",
+    "result_sha256": "5636fac036d0e0482fdea8efda4c79c58221776ab0ad6c0cc03a8be84e1e3a97",
+    "mode": 420,
+    "patch": "build/kernel-repro/patches/s9p-max77705-muic.c.patch",
+    "patch_sha256": "7ad7f6f989f840fa3954517f100c7adb8c42379edc730dfa37e8604a58a9f9cc"
+  },
+  "drivers/ufs/host/ufs-cal-9810.c": {
+    "source": "src/ufs/ufs-cal-9810.c",
+    "normalize_crlf": true,
+    "source_sha256": "a0ea376d046c429d386240e30f98cf4473d69640e1f9b0d32ee8a0de54618490",
+    "result_sha256": "a0ea376d046c429d386240e30f98cf4473d69640e1f9b0d32ee8a0de54618490",
+    "mode": 420
+  },
+  "drivers/ufs/host/ufs-cal-9810.h": {
+    "source": "src/ufs/ufs-cal-9810.h",
+    "normalize_crlf": true,
+    "source_sha256": "2dd0f8750e7579dbee443c405f626b6d89a3628b8a7c814fcd45f8e0aefbdd3c",
+    "result_sha256": "2dd0f8750e7579dbee443c405f626b6d89a3628b8a7c814fcd45f8e0aefbdd3c",
+    "mode": 420
+  },
+  "drivers/ufs/host/ufs-exynos9810.c": {
+    "source": "src/ufs/ufs-exynos9810.c",
+    "normalize_crlf": true,
+    "source_sha256": "c96a337679af89201430215c406ef381261bdec718a910bb47a047827e4a361b",
+    "result_sha256": "c96a337679af89201430215c406ef381261bdec718a910bb47a047827e4a361b",
+    "mode": 420
+  },
+  "drivers/video/logo/logo_shero_clut224.ppm": {
+    "source": "branding/shero_logo.ppm",
+    "normalize_crlf": false,
+    "source_sha256": "85b67982a2ca0947bc3f5fb8a24edeaf49a711a3aa6b8859b2aa5a94b75e05a7",
+    "result_sha256": "85b67982a2ca0947bc3f5fb8a24edeaf49a711a3aa6b8859b2aa5a94b75e05a7",
+    "mode": 420
+  },
+  "include/linux/soc/samsung/s9p-acpm.h": {
+    "source": "src/soc/s9p-acpm.h",
+    "normalize_crlf": true,
+    "source_sha256": "6ace6525a018e2b08f5668ebd85326008f56cc7c3e1528c430ad0a83301a8d79",
+    "result_sha256": "6ace6525a018e2b08f5668ebd85326008f56cc7c3e1528c430ad0a83301a8d79",
+    "mode": 420
+  }
+}

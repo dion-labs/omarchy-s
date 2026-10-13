@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "publication_cleared": false,
+  "repository": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810",
+  "pin": "5eaa43c40667ef407f826ca2bab9552568327c23",
+  "path": "arch/arm64/boot/dts/exynos/exynos9810-star2lte_eur_open_26.dts",
+  "pinned_blob": "369a05f0a135f97e85cb3dce0f6a28f2e6899c34",
+  "archive_blob_matches_git": true,
+  "path_history": [
+    {
+      "commit": "21775c90adee901007f7094fd732465980c20447",
+      "author": "baddar90",
+      "author_date": "2021-12-17T14:59:01+04:00",
+      "subject": "dts: force native resolution to fix google maps",
+      "blob": "369a05f0a135f97e85cb3dce0f6a28f2e6899c34",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/21775c90adee901007f7094fd732465980c20447",
+      "diff_sha256": "fc49988f5bd7ba80d5f84c7ae923ae3fe2cee36766e8d0424c552148f00d3060"
+    },
+    {
+      "commit": "9093f687f0af9110493244e6168df17b5ddead9d",
+      "author": "synt4x93",
+      "author_date": "2021-01-03T18:24:42Z",
+      "subject": "dts: exynos: update upscale_ratio_table",
+      "blob": "19d47facb2c607146ef717fce6c01403fb39996a",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/9093f687f0af9110493244e6168df17b5ddead9d",
+      "diff_sha256": "f5d1157c27b270e2c48003f99cfff12f0553c9589188810fb2ea3a56d2072863"
+    },
+    {
+      "commit": "4f962ef3868906bec1ee33bdbb0ccc540304fdc2",
+      "author": "synt4x93",
+      "author_date": "2021-01-03T18:24:26Z",
+      "subject": "dts: exynos: update gpu_dvfs_table",
+      "blob": "b5a0c258750dac73eb3aa534cdcdc7d0be3663b1",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/4f962ef3868906bec1ee33bdbb0ccc540304fdc2",
+      "diff_sha256": "7b002ab6fe871040ac9a7e4d0562cf0ee857d1ba185d3ead35d1c7fc2658ce44"
+    },
+    {
+      "commit": "6bc40076d7a26bb37c02facc830a9c6971c9588b",
+      "author": "synt4x93",
+      "author_date": "2021-01-03T18:24:06Z",
+      "subject": "dts: exynos: update mscl_qos_table",
+      "blob": "b8da5bc0acaaaa98e0762399f8f63cc3aac43dd7",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/6bc40076d7a26bb37c02facc830a9c6971c9588b",
+      "diff_sha256": "4699562c53fa3db9d8c1c777cd4bd37babf56b1ed4e971ce57d378b5e9119dd2"
+    },
+    {
+      "commit": "09c64f155228978e4316c7bbe8c97703003db272",
+      "author": "synt4x93",
+      "author_date": "2020-07-11T15:14:48+01:00",
+      "subject": "dts: exynos: disable reserved memory for tima/rkp",
+      "blob": "2f583e72733747f25f24eb8a0862c00279ae0be8",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/09c64f155228978e4316c7bbe8c97703003db272",
+      "diff_sha256": "d9bb3252fab68e2d8bd5271c5aec7560e169cf6a26257dce9886ac006630681d"
+    },
+    {
+      "commit": "04dec7d4c60a66e9573ff4cea9540b53c5fde711",
+      "author": "synt4x93",
+      "author_date": "2021-01-04T01:20:59Z",
+      "subject": "dts: exynos: nuke /odm",
+      "blob": "ae96e803d83bac0767ea44a5226426544208cae9",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/04dec7d4c60a66e9573ff4cea9540b53c5fde711",
+      "diff_sha256": "d2965455947d7bfff6d2ed441fe4188bad0949163e00f7d4fabcd2f246e983be"
+    },
+    {
+      "commit": "92feda014f9a7db67992aa42b7f6d0f2c3715eef",
+      "author": "synt4x93",
+      "author_date": "2020-06-22T11:11:37+01:00",
+      "subject": "dts: exynos: remove verify from all fsmgr_flags",
+      "blob": "fec2371358a466baf127ecc2ab13d9ed12aae795",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/92feda014f9a7db67992aa42b7f6d0f2c3715eef",
+      "diff_sha256": "f9c6d7ccb0464346155f54fe9f9844749f42f7163c345166949f2931a0c80598"
+    },
+    {
+      "commit": "8e19e2d6db45b5a0dec1ad283b4eeeeadf6e9962",
+      "author": "synt4x93",
+      "author_date": "2021-01-04T02:04:43Z",
+      "subject": "G965FXXUCFTK1",
+      "blob": "83e815be4e447e6e0cf496489344cb0a9412caae",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/commit/8e19e2d6db45b5a0dec1ad283b4eeeeadf6e9962"
+    }
+  ],
+  "introduction_status": "A",
+  "introduced_sha256": "4980e21d2d7f621fea570456dc39c885a4d614982403b1ff9ef9503fdb711982",
+  "introduced_bytes": 377426,
+  "introduced_starts_with_dts_directive": true,
+  "introduced_has_copyright_or_spdx": false,
+  "limits": "Path history identifies import and later editors, not original copyright ownership. Import message names firmware build but contains no source include chain or extraction recipe. Whole-tree rename/copy inference was not completed; git log --follow was stopped during bulk lazy blob fetch. Earlier alternate-path origins are not ruled out."
+}

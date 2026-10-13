@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "base_commit": "8cd9520d35a6c38db6567e97dd93b1f11f185dc6",
+  "base_repository": "https://github.com/torvalds/linux.git",
+  "image_id": "sha256:a2a9d1e77008f91b120292e1170044c36b8c6466416217359202f9488184c60d",
+  "files": {
+    "artifacts/kernel-source-closure/upstream-linux.tar.gz": "3b89952ea68cf65a7ffad4ef527bd9c0a3e8f86e101d0491f062d495af730e55",
+    "artifacts/kernel-public-first/additions.tar": "9e1d78ee7e550b36d80a32de2ba261360b9e4db45b8cb684cc7ae6eead186063",
+    "build/kernel-repro/patches/native20-tracked.patch": "897adf5f4d3d8214908a4e89f332dd0bdda66ba34139e62d2a035430fd95739d",
+    "build/kernel-repro/native20.config": "04f69a66832e2be3e5be18286f49d932127d304722a94a3aff702943f55e95d7",
+    "build/boot-repro/build-kernel.sh": "6d425097336385507b436b6b187a5896933ad4863468ea1732cba0976dc61436",
+    "artifacts/boot-provenance/first/initramfs.cpio": "1fde00750f2a27a60acd240b83e4f964108932e0636ff613c57dcf5b0843e345",
+    "artifacts/boot-provenance/first/firmware/regulatory.db": "2fb33ca0074db573e05ef7dd50bb45b63c0ff98b7e852e1105ebad536fae8e6b",
+    "artifacts/boot-provenance/first/firmware/regulatory.db.p7s": "c941c08f51c93e46722293b85631604c3740d86c3de0c75f79aef50d2e919179",
+    "artifacts/boot-provenance/first/firmware/brcm/brcmfmac4361-pcie.txt": "a12040c8b03d687d25adf3260f5fa2a5ad03683d393cc2b41cade3dfc79a7e27",
+    "artifacts/boot-provenance/first/firmware/brcm/brcmfmac4361-pcie.bin": "c5bcfaf76edc5c15b36a7182b40393684e948bc37ed13a16f54f2be15abe67ab",
+    "artifacts/boot-provenance/first/firmware/brcm/brcmfmac4361-pcie.clm_blob": "2d9dc4980c6544a2d4eb1a111f55d02baa26eccee5798a66a77b8fc105cac24b",
+    "build/boot-repro/preserve-weak-version.patch": "a5c23508d84987e752995d6a86332fb2c4f24d1317d11915fb57bf12023e3a24"
+  },
+  "scope": "Raw native20 Image/DTB reconstruction; no Samsung boot.img packaging, flashing or device access. Firmware redistribution is not cleared.",
+  "recipe": "build/boot-repro/build-kernel.sh",
+  "expected_symbols_sha256": "e52781b61e79af5690e9846d45487bf16cd1018b63492d7567d768b8f5027ee3",
+  "expected_image_sha256": "dbcc9bd171eac8d9cacf14600ae6a9f6db7ead1e38b675b29cc87451978bdcf4",
+  "expected_dtb_sha256": "4b8a2c2325be53803d3ad620bb427b5cb0c35f316a32500d5784a6ece652c8e1"
+}

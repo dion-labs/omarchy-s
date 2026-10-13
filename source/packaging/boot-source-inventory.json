@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "scope": "native20 offline boot chain; broader desktop inventory remains in UPSTREAMS.md",
+  "publication_cleared": false,
+  "components": [
+    {
+      "id": "linux",
+      "pin": "packaging/kernel-sources.lock.json",
+      "observed_license": "GPL-2.0-only with per-file SPDX exceptions",
+      "evidence": "root COPYING and GPL-2.0 retained",
+      "remaining": "Preserve per-file notices and complete patches/config/build instructions"
+    },
+    {
+      "id": "s9plus-port-and-uniloader",
+      "pin": "packaging/kernel-sources.lock.json",
+      "observed_license": "GPL-2.0-only project declaration; uniLoader GPL-2.0 notice",
+      "evidence": "root LICENSE, THIRD-PARTY and loader LICENSE retained",
+      "remaining": "Per-file review of additions and loader adaptations; firmware excluded"
+    },
+    {
+      "id": "vendor-dts",
+      "pin": "packaging/dtbh-build.lock.json",
+      "observed_license": "vendor root GPL-2.0; libfdt GPL-2.0-or-later OR BSD-2-Clause notice",
+      "evidence": "Vendor archive DTS hash/blob identity and structural measurements in packaging/vendor-ancestry.json; libfdt notice retained; unlicensed DTS excerpt excluded from preview. Git path history traces eight commits to G965FXXUCFTK1 import; exact archive/Git blob match. The replacement packer does not compile or link vendor libfdt; its notice is retained historical evidence.",
+      "remaining": "Trace flattened DTS history to original authored source; no DTS redistribution clearance inferred from tree COPYING."
+    },
+    {
+      "id": "independent-dtbh-packer",
+      "pin": "packaging/dtbh-build.lock.json",
+      "observed_license": "MIT for original DionLabs implementation",
+      "evidence": "LICENSING.md; exact-profile packer and output comparison",
+      "remaining": "Narrow pinned input only; not a general device-tree packer"
+    },
+    {
+      "id": "busybox",
+      "pin": "packaging/busybox-source.lock.json",
+      "observed_license": "GPL-2.0 per package copyright",
+      "evidence": "Verified upstream/uploader/archive signatures, exact Ubuntu buildinfo dependencies, fresh source build matching executable and complete static .deb, and exact derived native20 initramfs",
+      "remaining": "Retain complete source, patches, configuration and notices; complete distribution review. Isolated hostname test failure recorded separately."
+    },
+    {
+      "id": "embedded-firmware",
+      "pin": "packaging/boot-inputs.lock.json",
+      "observed_license": "Broadcom terms unresolved; regdb ISC reported by port",
+      "evidence": "port firmware README and THIRD-PARTY retained",
+      "remaining": "No binary export; confirm asset-specific licenses and exact regdb source"
+    },
+    {
+      "id": "bluetooth-firmware",
+      "pin": "packaging/bluetooth-firmware.lock.json",
+      "observed_license": "stock Samsung/Broadcom terms unresolved",
+      "evidence": "exact user-supplied AP extraction chain",
+      "remaining": "Optional local import only; exclude AP and HCD from source export"
+    },
+    {
+      "id": "builder-packages",
+      "pin": "packaging/toolchains/mesa-archives.lock.json",
+      "observed_license": "per-package mixed licenses",
+      "evidence": "pinned package inventory and reconstructed builder recipe",
+      "remaining": "Builder prerequisite; no image redistribution clearance inferred"
+    },
+    {
+      "id": "original-integration",
+      "pin": "scripts/boot-repro/pipeline.py",
+      "observed_license": "MIT for identified original contributions; inherited terms retained",
+      "evidence": "LICENSING.md and packaging/source-attribution.json",
+      "remaining": "No publication approval; preserve inherited notices and mixed-work obligations"
+    }
+  ]
+}

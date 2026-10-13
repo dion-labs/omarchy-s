@@ -1,0 +1,747 @@
+diff --git a/arch/arm64/boot/dts/exynos/Makefile b/arch/arm64/boot/dts/exynos/Makefile
+index 76cc23acb..f6f085ad3 100644
+--- a/arch/arm64/boot/dts/exynos/Makefile
++++ b/arch/arm64/boot/dts/exynos/Makefile
+@@ -16,6 +16,7 @@ dtb-$(CONFIG_ARCH_EXYNOS) += \
+ 	exynos850-e850-96.dtb		\
+ 	exynos8895-dreamlte.dtb		\
+ 	exynos9810-starlte.dtb		\
++	exynos9810-star2lte.dtb		\
+ 	exynos990-c1s.dtb		\
+ 	exynos990-r8s.dtb               \
+ 	exynos990-x1s.dtb		\
+diff --git a/drivers/bluetooth/hci_bcm.c b/drivers/bluetooth/hci_bcm.c
+index 1a4fc3882..c51a98f7a 100644
+--- a/drivers/bluetooth/hci_bcm.c
++++ b/drivers/bluetooth/hci_bcm.c
+@@ -638,6 +638,14 @@ static int bcm_setup(struct hci_uart *hu)
+ 	if (err)
+ 		return err;
+ 
++	/* S9+ build 111 advertises LE Read Transmit Power, but answers it
++	 * with Unknown Command and a one-byte return payload.
++	 */
++	if (of_machine_is_compatible("samsung,star2lte") &&
++	    hu->hdev->manufacturer == 15 && hu->hdev->hci_ver == 9 &&
++	    hu->hdev->hci_rev == 111 && hu->hdev->lmp_subver == 0x4309)
++		hci_set_quirk(hu->hdev, HCI_QUIRK_BROKEN_READ_TRANSMIT_POWER);
++
+ 	/* Some devices ship with the controller default address.
+ 	 * Allow the bootloader to set a valid address through the
+ 	 * device tree.
+diff --git a/drivers/cpufreq/Kconfig b/drivers/cpufreq/Kconfig
+index db83f3365..7cec66037 100644
+--- a/drivers/cpufreq/Kconfig
++++ b/drivers/cpufreq/Kconfig
+@@ -367,3 +367,12 @@ config ACPI_CPPC_CPUFREQ_FIE
+ endif # CPU_FREQ
+ 
+ endmenu
++config ARM_S9P_CPUFREQ
++	bool "cpufreq for the Samsung Exynos 9810 (Galaxy S9+)"
++	depends on ARM64
++	select S9P_ACPM
++	help
++	  Scales both clusters with the vendor PLL table entries and sets the
++	  BUCK rails through the APM firmware. The ACPM DVFS plugin refuses
++	  this port, so the vendor's own acme path is not available.
++
+diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
+index 385c9fcc6..6dd0ca907 100644
+--- a/drivers/cpufreq/Makefile
++++ b/drivers/cpufreq/Makefile
+@@ -106,3 +106,4 @@ obj-$(CONFIG_LOONGSON3_CPUFREQ)		+= loongson3_cpufreq.o
+ obj-$(CONFIG_SH_CPU_FREQ)		+= sh-cpufreq.o
+ obj-$(CONFIG_SPARC_US2E_CPUFREQ)	+= sparc-us2e-cpufreq.o
+ obj-$(CONFIG_SPARC_US3_CPUFREQ)		+= sparc-us3-cpufreq.o
++obj-$(CONFIG_ARM_S9P_CPUFREQ) += s9p-cpufreq.o
+diff --git a/drivers/gpu/drm/Kconfig b/drivers/gpu/drm/Kconfig
+index 8f5a8d301..717061eb8 100644
+--- a/drivers/gpu/drm/Kconfig
++++ b/drivers/gpu/drm/Kconfig
+@@ -357,6 +357,7 @@ source "drivers/gpu/drm/vmwgfx/Kconfig"
+ source "drivers/gpu/drm/xe/Kconfig"
+ source "drivers/gpu/drm/xen/Kconfig"
+ source "drivers/gpu/drm/xlnx/Kconfig"
++source "drivers/gpu/drm/s9p/Kconfig"
+ 
+ endif
+ 
+diff --git a/drivers/gpu/drm/Makefile b/drivers/gpu/drm/Makefile
+index e97faabcd..71863d4d8 100644
+--- a/drivers/gpu/drm/Makefile
++++ b/drivers/gpu/drm/Makefile
+@@ -256,3 +256,4 @@ quiet_cmd_hdrtest = HDRTEST $(patsubst %.hdrtest,%.h,$@)
+ 
+ $(obj)/%.hdrtest: $(src)/%.h FORCE
+ 	$(call if_changed_dep,hdrtest)
++obj-$(CONFIG_DRM_S9P_DECON) += s9p/
+diff --git a/drivers/gpu/drm/panfrost/panfrost_drv.c b/drivers/gpu/drm/panfrost/panfrost_drv.c
+index 074c0995d..2a7accc9e 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_drv.c
++++ b/drivers/gpu/drm/panfrost/panfrost_drv.c
+@@ -325,6 +325,8 @@ static int panfrost_ioctl_submit(struct drm_device *dev, void *data,
+ 	kref_init(&job->refcount);
+ 
+ 	job->pfdev = pfdev;
++	job->submitter_tgid = task_tgid_nr(current); /* S9P_JOB_OWNER */
++	get_task_comm(job->submitter_comm, current);
+ 	job->jc = args->jc;
+ 	job->requirements = args->requirements;
+ 	job->flush_id = panfrost_gpu_get_latest_flush_id(pfdev);
+diff --git a/drivers/gpu/drm/panfrost/panfrost_gem.c b/drivers/gpu/drm/panfrost/panfrost_gem.c
+index 3a7fce428..00b6b54ec 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_gem.c
++++ b/drivers/gpu/drm/panfrost/panfrost_gem.c
+@@ -4,6 +4,7 @@
+ 
+ #include <linux/cleanup.h>
+ #include <linux/err.h>
++#include <linux/pagemap.h> /* S9P_GEM_DMA32 */
+ #include <linux/slab.h>
+ #include <linux/dma-buf.h>
+ #include <linux/dma-mapping.h>
+@@ -488,6 +489,11 @@ panfrost_gem_create(struct drm_device *dev, size_t size, u32 flags)
+ 	if (IS_ERR(shmem))
+ 		return ERR_CAST(shmem);
+ 
++	/* S9P_GEM_DMA32: below 4 GB, so KMS can scan this out directly */
++	mapping_set_gfp_mask(shmem->base.filp->f_mapping,
++			     (mapping_gfp_mask(shmem->base.filp->f_mapping)
++			      & ~__GFP_HIGHMEM) | __GFP_DMA32);
++
+ 	bo = to_panfrost_bo(&shmem->base);
+ 	bo->noexec = !!(flags & PANFROST_BO_NOEXEC);
+ 	bo->is_heap = !!(flags & PANFROST_BO_HEAP);
+diff --git a/drivers/gpu/drm/panfrost/panfrost_job.c b/drivers/gpu/drm/panfrost/panfrost_job.c
+index d59b4863b..91a686dc0 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_job.c
++++ b/drivers/gpu/drm/panfrost/panfrost_job.c
+@@ -8,6 +8,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
+ #include <linux/dma-resv.h>
++#include <linux/ratelimit.h>
+ #include <drm/gpu_scheduler.h>
+ #include <drm/panfrost_drm.h>
+ 
+@@ -44,6 +45,49 @@ struct panfrost_job_slot {
+ 	int irq;
+ };
+ 
++#include <linux/moduleparam.h> /* S9P_FLUSH */
++static bool s9p_flush_reduction = true;
++module_param_named(s9p_flush_reduction, s9p_flush_reduction, bool, 0644);
++MODULE_PARM_DESC(s9p_flush_reduction, "use JS_CONFIG_ENABLE_FLUSH_REDUCTION on GPUs that offer it (S9P experiment)");
++
++/* S9P_FAULT_METADATA: opt-in metadata only, never buffer contents or labels. */
++static bool s9p_fault_metadata;
++module_param_named(s9p_fault_metadata, s9p_fault_metadata, bool, 0644);
++MODULE_PARM_DESC(s9p_fault_metadata, "log bounded BO metadata on GPU job faults");
++static DEFINE_RATELIMIT_STATE(s9p_fault_metadata_rs, 5 * HZ, 1);
++
++static void s9p_log_fault_metadata(struct panfrost_job *job)
++{
++ unsigned int i, count;
++
++ if (!READ_ONCE(s9p_fault_metadata) || !__ratelimit(&s9p_fault_metadata_rs))
++  return;
++ count = min_t(unsigned int, job->bo_count, 16);
++ dev_err(job->pfdev->base.dev,
++         "fault-meta owner=%s tgid=%d jc=%#llx bos=%u logged=%u\n",
++         job->submitter_comm, job->submitter_tgid, job->jc, job->bo_count, count);
++ /* The submitted job pins these mappings/objects until fence completion.
++  * Do not acquire GEM/mapping locks in the IRQ path. Values are snapshots. */
++ for (i = 0; i < count; i++) {
++  struct panfrost_gem_mapping *mapping = job->mappings ? job->mappings[i] : NULL;
++  struct panfrost_gem_object *bo;
++  u64 address, size;
++
++  if (!mapping || !mapping->obj) {
++   dev_err(job->pfdev->base.dev, "fault-meta bo=%u mapping=missing\n", i);
++   continue;
++  }
++  bo = mapping->obj;
++  address = READ_ONCE(mapping->mmnode.start) << PAGE_SHIFT;
++  size = bo->base.base.size;
++  dev_err(job->pfdev->base.dev,
++          "fault-meta bo=%u va=%#llx bytes=%llu active=%u madv=%d live_jobs=%d imported=%u contains_jc=%u\n",
++          i, address, size, mapping->active, READ_ONCE(bo->base.madv),
++          atomic_read(&bo->gpu_usecount), !!bo->base.base.import_attach,
++          job->jc >= address && job->jc - address < size);
++ }
++}
++
+ static struct panfrost_job *
+ to_panfrost_job(struct drm_sched_job *sched_job)
+ {
+@@ -238,7 +282,7 @@ static int panfrost_job_hw_submit(struct panfrost_job *job, int js)
+ 		panfrost_get_job_chain_flag(job);
+ 
+ 	if (panfrost_has_hw_feature(pfdev, HW_FEATURE_FLUSH_REDUCTION))
+-		cfg |= JS_CONFIG_ENABLE_FLUSH_REDUCTION;
++		cfg |= s9p_flush_reduction ? JS_CONFIG_ENABLE_FLUSH_REDUCTION : 0; /* S9P_FLUSH */
+ 
+ 	if (panfrost_has_hw_issue(pfdev, HW_ISSUE_10649))
+ 		cfg |= JS_CONFIG_START_MMU;
+@@ -463,10 +507,14 @@ static void panfrost_job_handle_err(struct panfrost_device *pfdev,
+ 			job_read(pfdev, JS_HEAD_LO(js)),
+ 			job_read(pfdev, JS_TAIL_LO(js)));
+ 	} else {
++		/* S9P_JOB_OWNER: record the actual ioctl submitter. */
++		dev_err(pfdev->base.dev, "job owner=%s tgid=%d bos=%u jc=%#llx\n",
++			job->submitter_comm, job->submitter_tgid, job->bo_count, job->jc);
+ 		dev_err(pfdev->base.dev, "js fault, js=%d, status=%s, head=0x%x, tail=0x%x",
+ 			js, exception_name,
+ 			job_read(pfdev, JS_HEAD_LO(js)),
+ 			job_read(pfdev, JS_TAIL_LO(js)));
++		s9p_log_fault_metadata(job);
+ 	}
+ 
+ 	if (js_status == DRM_PANFROST_EXCEPTION_STOPPED) {
+diff --git a/drivers/gpu/drm/panfrost/panfrost_job.h b/drivers/gpu/drm/panfrost/panfrost_job.h
+index c3f57e41a..7c0b3fd97 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_job.h
++++ b/drivers/gpu/drm/panfrost/panfrost_job.h
+@@ -4,6 +4,7 @@
+ #ifndef __PANFROST_JOB_H__
+ #define __PANFROST_JOB_H__
+ 
++#include <linux/sched.h> /* S9P_JOB_OWNER_INCLUDE */
+ #include <uapi/drm/panfrost_drm.h>
+ #include <drm/gpu_scheduler.h>
+ 
+@@ -12,6 +13,8 @@ struct panfrost_gem_object;
+ struct panfrost_file_priv;
+ 
+ struct panfrost_job {
++	pid_t submitter_tgid; /* S9P_JOB_OWNER */
++	char submitter_comm[TASK_COMM_LEN];
+ 	struct drm_sched_job base;
+ 
+ 	struct kref refcount;
+diff --git a/drivers/gpu/drm/sysfb/Kconfig b/drivers/gpu/drm/sysfb/Kconfig
+index 2559ead6c..902385d85 100644
+--- a/drivers/gpu/drm/sysfb/Kconfig
++++ b/drivers/gpu/drm/sysfb/Kconfig
+@@ -54,6 +54,20 @@ config DRM_OFDRM
+ 	  by the Open Firmware before the kernel boots. Scanout buffer, size,
+ 	  and display format must be provided via device tree.
+ 
++config DRM_EXYNOS_BOOTFB
++	tristate "Exynos bootloader framebuffer (KMS device named exynos)"
++	depends on DRM && MMU
++	select APERTURE_HELPERS
++	select DRM_CLIENT_SELECTION
++	select DRM_GEM_SHMEM_HELPER
++	select DRM_KMS_HELPER
++	select DRM_SYSFB_HELPER
++	help
++	  simpledrm under a different name. Samsung's DECON keeps scanning out
++	  the framebuffer the bootloader set up, so that buffer works as a
++	  scanout without a display driver -- and calling the device "exynos"
++	  is what makes Mesa pair it with the Panfrost render node.
++
+ config DRM_SIMPLEDRM
+ 	tristate "Simple framebuffer driver"
+ 	depends on DRM && MMU
+diff --git a/drivers/gpu/drm/sysfb/Makefile b/drivers/gpu/drm/sysfb/Makefile
+index 85c9087ab..95d8cb28d 100644
+--- a/drivers/gpu/drm/sysfb/Makefile
++++ b/drivers/gpu/drm/sysfb/Makefile
+@@ -10,4 +10,5 @@ obj-$(CONFIG_DRM_COREBOOTDRM)	+= corebootdrm.o
+ obj-$(CONFIG_DRM_EFIDRM)	+= efidrm.o
+ obj-$(CONFIG_DRM_OFDRM)		+= ofdrm.o
+ obj-$(CONFIG_DRM_SIMPLEDRM)	+= simpledrm.o
++obj-$(CONFIG_DRM_EXYNOS_BOOTFB)	+= exynos-bootfb.o
+ obj-$(CONFIG_DRM_VESADRM)	+= vesadrm.o
+diff --git a/drivers/gpu/drm/sysfb/drm_sysfb_modeset.c b/drivers/gpu/drm/sysfb/drm_sysfb_modeset.c
+index 808b1eda8..63a7a58c5 100644
+--- a/drivers/gpu/drm/sysfb/drm_sysfb_modeset.c
++++ b/drivers/gpu/drm/sysfb/drm_sysfb_modeset.c
+@@ -16,6 +16,8 @@
+ #include <drm/drm_print.h>
+ #include <drm/drm_probe_helper.h>
+ 
++#include <linux/dma-mapping.h> /* S9P_FB_SYNC */
++#include <drm/drm_gem_shmem_helper.h>
+ #include "drm_sysfb_helper.h"
+ 
+ struct drm_display_mode drm_sysfb_mode(unsigned int width,
+@@ -344,6 +346,11 @@ void drm_sysfb_plane_helper_atomic_update(struct drm_plane *plane, struct drm_at
+ 	struct drm_rect damage;
+ 	int ret, idx;
+ 
++	if (fb->obj[0] && !drm_gem_is_imported(fb->obj[0])) { /* S9P_FB_SYNC */
++		struct sg_table *s9p_sgt = drm_gem_shmem_get_pages_sgt(to_drm_gem_shmem_obj(fb->obj[0]));
++		if (!IS_ERR_OR_NULL(s9p_sgt))
++			dma_sync_sgtable_for_cpu(dev->dev, s9p_sgt, DMA_FROM_DEVICE);
++	}
+ 	ret = drm_gem_fb_begin_cpu_access(fb, DMA_FROM_DEVICE);
+ 	if (ret)
+ 		return;
+diff --git a/drivers/i2c/busses/i2c-exynos5.c b/drivers/i2c/busses/i2c-exynos5.c
+index 9c1c5f3c0..2c52cdacf 100644
+--- a/drivers/i2c/busses/i2c-exynos5.c
++++ b/drivers/i2c/busses/i2c-exynos5.c
+@@ -9,6 +9,7 @@
+ #include <linux/module.h>
+ 
+ #include <linux/i2c.h>
++#include <linux/kernel_stat.h> /* S9P_I2C_DIAG */
+ #include <linux/time.h>
+ #include <linux/interrupt.h>
+ #include <linux/delay.h>
+@@ -317,14 +318,30 @@ static int exynos5_i2c_set_timing(struct exynos5_i2c *i2c, bool hs_timings)
+ 	 * Result of (N + M) is always 8.
+ 	 * In general case, we don't need to control timing_s1 and timing_s2.
+ 	 */
+-	if (i2c->variant->hw == I2C_TYPE_EXYNOSAUTOV9) {
+-		div = ((clkin / (16 * i2c->op_clock)) - 1);
+-		i2c_timing_s3 = div << 16;
++	if (i2c->variant->hw == I2C_TYPE_EXYNOSAUTOV9) { /* S9P_I2C_TIMING */
++		unsigned int mhz = clkin / 1000000, n, s1, s2, s3;
++		void __iomem *r1 = i2c->regs + (hs_timings ? HSI2C_TIMING_HS1 : HSI2C_TIMING_FS1);
++		void __iomem *r2 = i2c->regs + (hs_timings ? HSI2C_TIMING_HS2 : HSI2C_TIMING_FS2);
++		void __iomem *r3 = i2c->regs + (hs_timings ? HSI2C_TIMING_HS3 : HSI2C_TIMING_FS3);
++
++		/* vendor: div = ipclk / (op * 15), shapes from ipclk in MHz */
++		div = (clkin / (op_clk * 15)) & 0xff;
+ 		if (hs_timings)
+-			writel(i2c_timing_s3, i2c->regs + HSI2C_TIMING_HS3);
++			n = (7 * mhz) / ((div + 1) * 100);
+ 		else
+-			writel(i2c_timing_s3, i2c->regs + HSI2C_TIMING_FS3);
+-
++			n = (9 * mhz) / ((div + 1) * 10);
++		if (n > 7)
++			n = 7;
++		s2 = ((0xffffffffu >> n) << n) & 0xff;		/* TSCL_H */
++		n = n ? n - 1 : 0;
++		s1 = ((0xffffffffu >> n) << n) & 0xff;		/* TSTART_HD */
++		s3 = (readl(r3) & ~0x00ff0000) | (div << 16);
++		writel(s3, r3);
++		writel((readl(r2) & ~0xff) | s2, r2);
++		writel((readl(r1) & ~0x00ff0000) | (s1 << 16), r1);
++		dev_info(i2c->dev, "S9P timing %s: ipclk=%u op=%u div=%u -> scl=%u Hz, t1=%08x t2=%08x t3=%08x\n",
++			 hs_timings ? "HS" : "FS", clkin, op_clk, div,
++			 clkin / ((div + 1) * 16), readl(r1), readl(r2), readl(r3));
+ 		return 0;
+ 	}
+ 
+@@ -808,8 +825,25 @@ static int exynos5_i2c_xfer_msg(struct exynos5_i2c *i2c,
+ 		time_left = exynos5_i2c_poll_irqs_timeout(i2c,
+ 							  EXYNOS5_I2C_TIMEOUT);
+ 
+-	if (time_left == 0)
++	if (time_left == 0 && !i2c->atomic &&
++	    exynos5_i2c_poll_irqs_timeout(i2c, msecs_to_jiffies(20))) {
++		dev_warn_once(i2c->dev, "S9P: transfer finished but its interrupt (%d, %u so far) never arrived; polled\n",
++			      i2c->irq, kstat_irqs_usr(i2c->irq));
++		time_left = 1;
++	}
++	if (time_left == 0) {
+ 		ret = -ETIMEDOUT;
++		dev_err(i2c->dev, "S9P %s addr=%02x len=%d irq=%d(%u): ctl=%08x fifoctl=%08x inten=%08x intst=%08x fifost=%08x conf=%08x auto=%08x to=%08x trans=%08x fs=%08x/%08x/%08x usi_con=%08x usi_opt=%08x\n",
++			(msgs->flags & I2C_M_RD) ? "rd" : "wr", msgs->addr, msgs->len,
++			i2c->irq, kstat_irqs_usr(i2c->irq),
++			readl(i2c->regs + 0x00), readl(i2c->regs + 0x04),
++			readl(i2c->regs + 0x20), readl(i2c->regs + 0x24),
++			readl(i2c->regs + 0x30), readl(i2c->regs + 0x40),
++			readl(i2c->regs + 0x44), readl(i2c->regs + 0x48),
++			readl(i2c->regs + 0x50), readl(i2c->regs + 0x60),
++			readl(i2c->regs + 0x64), readl(i2c->regs + 0x68),
++			readl(i2c->regs + 0xc4), readl(i2c->regs + 0xc8));
++	}
+ 	else
+ 		ret = i2c->state;
+ 
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+index 4adc0d0e4..340a1cd9e 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+@@ -738,6 +738,7 @@ static u32 brcmf_chip_tcm_rambase(struct brcmf_chip_priv *ci)
+ 	case BRCM_CC_4364_CHIP_ID:
+ 	case CY_CC_4373_CHIP_ID:
+ 		return 0x160000;
++	case BRCM_CC_4361_CHIP_ID:	/* 4347 class: CR4_4347_RAM_BASE */
+ 	case BRCM_CC_43751_CHIP_ID:
+ 	case BRCM_CC_43752_CHIP_ID:
+ 	case BRCM_CC_4377_CHIP_ID:
+@@ -1465,6 +1466,7 @@ bool brcmf_chip_sr_capable(struct brcmf_chip *pub)
+ 		addr = CORE_CC_REG(base, sr_control0);
+ 		reg = chip->ops->read32(chip->ctx, addr);
+ 		return (reg & CC_SR_CTL0_ENABLE_MASK) != 0;
++	case BRCM_CC_4361_CHIP_ID:
+ 	case BRCM_CC_4359_CHIP_ID:
+ 	case BRCM_CC_43751_CHIP_ID:
+ 	case BRCM_CC_43752_CHIP_ID:
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c
+index e44236cb2..8f8f71860 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.c
+@@ -28,6 +28,36 @@ void brcmf_commonring_register_cb(struct brcmf_commonring *commonring,
+ }
+ 
+ 
++/*
++ * Every host-to-dongle work item carries a per-ring sequence number in
++ * the common header's 4th byte ("epoch") and a phase bit in the flags
++ * byte, the way Broadcom's DHD stamps them: epoch = seqnum % 253 with
++ * seqnum starting at 254, phase (bit 7) flipped whenever an allocation
++ * lands on the ring base. Firmware that verifies them (BCM4361 B2)
++ * rejects unstamped items with ring status BADOPTION.
++ */
++#define BRCMF_H2D_EPOCH_MODULO	253
++#define BRCMF_H2D_EPOCH_INIT	(BRCMF_H2D_EPOCH_MODULO + 1)
++#define BRCMF_H2D_PHASE_BIT	0x80
++
++static void brcmf_commonring_stamp(struct brcmf_commonring *commonring)
++{
++	u8 *item;
++
++	while (commonring->stamp_ptr != commonring->w_ptr) {
++		if (commonring->stamp_ptr == 0)
++			commonring->phase ^= BRCMF_H2D_PHASE_BIT;
++		item = commonring->buf_addr +
++		       commonring->stamp_ptr * commonring->item_len;
++		item[2] = (item[2] & ~BRCMF_H2D_PHASE_BIT) | commonring->phase;
++		item[3] = commonring->seqnum % BRCMF_H2D_EPOCH_MODULO;
++		commonring->seqnum++;
++		commonring->stamp_ptr++;
++		if (commonring->stamp_ptr == commonring->depth)
++			commonring->stamp_ptr = 0;
++	}
++}
++
+ void brcmf_commonring_config(struct brcmf_commonring *commonring, u16 depth,
+ 			     u16 item_len, void *buf_addr)
+ {
+@@ -45,6 +75,9 @@ void brcmf_commonring_config(struct brcmf_commonring *commonring, u16 depth,
+ 	if (commonring->cr_write_wptr)
+ 		commonring->cr_write_wptr(commonring->cr_ctx);
+ 	commonring->f_ptr = 0;
++	commonring->stamp_ptr = 0;
++	commonring->phase = 0;
++	commonring->seqnum = BRCMF_H2D_EPOCH_INIT;
+ }
+ 
+ 
+@@ -180,6 +213,8 @@ brcmf_commonring_reserve_for_write_multiple(struct brcmf_commonring *commonring,
+ 
+ int brcmf_commonring_write_complete(struct brcmf_commonring *commonring)
+ {
++	brcmf_commonring_stamp(commonring);
++
+ 	if (commonring->f_ptr > commonring->w_ptr)
+ 		commonring->f_ptr = 0;
+ 
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h
+index 7fb11f482..f64b677d2 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/commonring.h
+@@ -28,6 +28,11 @@ struct brcmf_commonring {
+ 	bool inited;
+ 	bool was_full;
+ 
++	/* H2D item stamping: next unstamped item, phase bit, sequence */
++	u16 stamp_ptr;
++	u8 phase;
++	u32 seqnum;
++
+ 	atomic_t outstanding_tx;
+ };
+ 
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+index 45b342ea0..f88c3ad43 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+@@ -58,6 +58,7 @@ BRCMF_FW_CLM_DEF(4356, "brcmfmac4356-pcie");
+ BRCMF_FW_CLM_DEF(43570, "brcmfmac43570-pcie");
+ BRCMF_FW_DEF(4358, "brcmfmac4358-pcie");
+ BRCMF_FW_DEF(4359, "brcmfmac4359-pcie");
++BRCMF_FW_CLM_DEF(4361, "brcmfmac4361-pcie");
+ BRCMF_FW_DEF(4359C, "brcmfmac4359c-pcie");
+ BRCMF_FW_CLM_DEF(4364B2, "brcmfmac4364b2-pcie");
+ BRCMF_FW_CLM_DEF(4364B3, "brcmfmac4364b3-pcie");
+@@ -97,6 +98,7 @@ static const struct brcmf_firmware_mapping brcmf_pcie_fwnames[] = {
+ 	BRCMF_FW_ENTRY(BRCM_CC_43570_CHIP_ID, 0xFFFFFFFF, 43570),
+ 	BRCMF_FW_ENTRY(BRCM_CC_4358_CHIP_ID, 0xFFFFFFFF, 4358),
+ 	BRCMF_FW_ENTRY(BRCM_CC_4359_CHIP_ID, 0x000001FF, 4359),
++	BRCMF_FW_ENTRY(BRCM_CC_4361_CHIP_ID, 0xFFFFFFFF, 4361),
+ 	BRCMF_FW_ENTRY(BRCM_CC_4359_CHIP_ID, 0xFFFFFE00, 4359C),
+ 	BRCMF_FW_ENTRY(BRCM_CC_4364_CHIP_ID, 0x0000000F, 4364B2), /* 3 */
+ 	BRCMF_FW_ENTRY(BRCM_CC_4364_CHIP_ID, 0xFFFFFFF0, 4364B3), /* 4 */
+@@ -2466,6 +2468,8 @@ brcmf_pcie_probe(struct pci_dev *pdev, const struct pci_device_id *id)
+ 					&brcmf_pcie_buscore_ops);
+ 	if (IS_ERR(devinfo->ci)) {
+ 		ret = PTR_ERR(devinfo->ci);
++		if (ret == -ENODEV)	/* brcmf_pcie_probe: defer, chip not ready yet */
++			ret = -EPROBE_DEFER;
+ 		devinfo->ci = NULL;
+ 		goto fail;
+ 	}
+@@ -2732,6 +2736,9 @@ static const struct pci_device_id brcmf_pcie_devid_table[] = {
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_43570_RAW_DEVICE_ID, WCC),
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_4358_DEVICE_ID, WCC),
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_4359_DEVICE_ID, WCC),
++	BRCMF_PCIE_DEVICE(BRCM_PCIE_4361_DEVICE_ID, WCC),
++	BRCMF_PCIE_DEVICE(BRCM_PCIE_4361_2G_DEVICE_ID, WCC),
++	BRCMF_PCIE_DEVICE(BRCM_PCIE_4361_5G_DEVICE_ID, WCC),
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_43602_DEVICE_ID, WCC),
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_43602_2G_DEVICE_ID, WCC),
+ 	BRCMF_PCIE_DEVICE(BRCM_PCIE_43602_5G_DEVICE_ID, WCC),
+diff --git a/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h b/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h
+index df3b67ba4..76bf9f35f 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h
++++ b/drivers/net/wireless/broadcom/brcm80211/include/brcm_hw_ids.h
+@@ -45,6 +45,7 @@
+ #define BRCM_CC_43570_CHIP_ID		43570
+ #define BRCM_CC_4358_CHIP_ID		0x4358
+ #define BRCM_CC_4359_CHIP_ID		0x4359
++#define BRCM_CC_4361_CHIP_ID		0x4361
+ #define BRCM_CC_43602_CHIP_ID		43602
+ #define BRCM_CC_4364_CHIP_ID		0x4364
+ #define BRCM_CC_4365_CHIP_ID		0x4365
+@@ -82,6 +83,9 @@
+ #define BRCM_PCIE_43570_RAW_DEVICE_ID	0xaa31
+ #define BRCM_PCIE_4358_DEVICE_ID	0x43e9
+ #define BRCM_PCIE_4359_DEVICE_ID	0x43ef
++#define BRCM_PCIE_4361_DEVICE_ID		0x441f
++#define BRCM_PCIE_4361_2G_DEVICE_ID	0x4420
++#define BRCM_PCIE_4361_5G_DEVICE_ID	0x4421
+ #define BRCM_PCIE_43602_DEVICE_ID	0x43ba
+ #define BRCM_PCIE_43602_2G_DEVICE_ID	0x43bb
+ #define BRCM_PCIE_43602_5G_DEVICE_ID	0x43bc
+diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
+index f2fde1310..7ae131782 100644
+--- a/drivers/pci/controller/dwc/Kconfig
++++ b/drivers/pci/controller/dwc/Kconfig
+@@ -22,6 +22,16 @@ config PCIE_DW_HOST
+ 	select IRQ_MSI_LIB
+ 	select PCI_HOST_COMMON
+ 
++config PCIE_EXYNOS9810
++	tristate "Samsung Exynos 9810 PCIe host controller (WiFi)"
++	depends on PCI && OF && ARM64 && PCI_MSI
++	select PCIE_DW_HOST
++	select PCIE_DW
++	help
++	  PCIe channel 0 of the Exynos 9810, wired to the WiFi module on the
++	  Galaxy S9/S9+. The PHY is programmed with Samsung's own CAL sequence
++	  from the driver; the single endpoint is served with MSI only.
++
+ config PCIE_DW_EP
+ 	bool
+ 	select PCIE_DW
+diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
+index 7177451db..3d85f23ac 100644
+--- a/drivers/pci/controller/dwc/Makefile
++++ b/drivers/pci/controller/dwc/Makefile
+@@ -9,6 +9,7 @@ obj-$(CONFIG_PCIE_ANDES_QILAI) += pcie-andes-qilai.o
+ obj-$(CONFIG_PCIE_ESWIN) += pcie-eswin.o
+ obj-$(CONFIG_PCI_DRA7XX) += pci-dra7xx.o
+ obj-$(CONFIG_PCI_EXYNOS) += pci-exynos.o
++obj-$(CONFIG_PCIE_EXYNOS9810) += pcie-exynos9810.o
+ obj-$(CONFIG_PCIE_FU740) += pcie-fu740.o
+ obj-$(CONFIG_PCI_IMX6) += pci-imx6.o
+ obj-$(CONFIG_PCIE_NXP_S32G) += pcie-nxp-s32g.o
+diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
+index 342682638..cd7cc8d0c 100644
+--- a/drivers/phy/samsung/Makefile
++++ b/drivers/phy/samsung/Makefile
+@@ -16,4 +16,5 @@ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4X12_USB2)	+= phy-exynos4x12-usb2.o
+ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS5250_USB2)	+= phy-exynos5250-usb2.o
+ phy-exynos-usb2-$(CONFIG_PHY_S5PV210_USB2)	+= phy-s5pv210-usb2.o
+ obj-$(CONFIG_PHY_EXYNOS5_USBDRD)	+= phy-exynos5-usbdrd.o
++obj-$(CONFIG_GENERIC_PHY)	+= phy-exynos9810-usbdrd.o
+ obj-$(CONFIG_PHY_EXYNOS5250_SATA)	+= phy-exynos5250-sata.o
+diff --git a/drivers/power/supply/max77705_charger.c b/drivers/power/supply/max77705_charger.c
+index 63b0b4f0c..40b681739 100644
+--- a/drivers/power/supply/max77705_charger.c
++++ b/drivers/power/supply/max77705_charger.c
+@@ -5,6 +5,12 @@
+  * Copyright (C) 2025 Dzmitry Sankouski <dsankouski@gmail.org>
+  *
+  * Battery charger driver for MAXIM 77705 charger/power-supply.
++ *
++ * star2lte port: exposes POWER_SUPPLY_PROP_CHARGE_BEHAVIOUR
++ * (auto | inhibit-charge) wired to the charger's CHG_EN field, so userspace
++ * (for example a charge limiter) can stop and resume charging in hardware. This file
++ * replaces the pristine upstream driver in apply_drivers.sh — re-check it
++ * after rebasing onto a newer mainline tree.
+  */
+ 
+ #include <linux/devm-helpers.h>
+@@ -33,6 +39,7 @@ static enum power_supply_property max77705_charger_props[] = {
+ 	POWER_SUPPLY_PROP_PRESENT,
+ 	POWER_SUPPLY_PROP_STATUS,
+ 	POWER_SUPPLY_PROP_CHARGE_TYPE,
++	POWER_SUPPLY_PROP_CHARGE_BEHAVIOUR,
+ 	POWER_SUPPLY_PROP_HEALTH,
+ 	POWER_SUPPLY_PROP_VOLTAGE_MAX_DESIGN,
+ 	POWER_SUPPLY_PROP_CONSTANT_CHARGE_VOLTAGE,
+@@ -57,6 +64,9 @@ static irqreturn_t max77705_aicl_irq(int irq, void *irq_drv_data)
+ 		if (err < 0)
+ 			return IRQ_HANDLED;
+ 
++		/* Codes0..3 already mean the100mA minimum; never underflow. */
++		if (regval <= 3)
++			break;
+ 		regval--;
+ 
+ 		err = regmap_field_write(chg->rfield[MAX77705_CHG_CHGIN_LIM], regval);
+@@ -148,6 +158,17 @@ static int max77705_set_integer(struct max77705_charger_data *chg, enum max77705
+ 	return regmap_field_write(chg->rfield[fidx], regval);
+ }
+ 
++/* CHGIN codes0..3 are100mA; codes4..127 are(code+1)*25mA. */
++static int max77705_set_input_current(struct max77705_charger_data *chg, int val)
++{
++        unsigned int code;
++
++        code = clamp_val(val, MAX77705_CURRENT_CHGIN_MIN,
++                         MAX77705_CURRENT_CHGIN_MAX) /
++               MAX77705_CURRENT_CHGIN_STEP - 1;
++        return regmap_field_write(chg->rfield[MAX77705_CHG_CHGIN_LIM], code);
++}
++
+ static int max77705_check_battery(struct max77705_charger_data *chg, int *val)
+ {
+ 	unsigned int reg_data;
+@@ -394,6 +415,7 @@ static int max77705_chg_get_property(struct power_supply *psy,
+ {
+ 	struct max77705_charger_data *chg = power_supply_get_drvdata(psy);
+ 	struct regmap *regmap = chg->regmap;
++	unsigned int chg_en;
+ 
+ 	switch (psp) {
+ 	case POWER_SUPPLY_PROP_ONLINE:
+@@ -404,6 +426,11 @@ static int max77705_chg_get_property(struct power_supply *psy,
+ 		return max77705_get_status(chg, &val->intval);
+ 	case POWER_SUPPLY_PROP_CHARGE_TYPE:
+ 		return max77705_get_charge_type(chg, &val->intval);
++	case POWER_SUPPLY_PROP_CHARGE_BEHAVIOUR:
++		regmap_field_read(chg->rfield[MAX77705_CHG_EN], &chg_en);
++		val->intval = chg_en ? POWER_SUPPLY_CHARGE_BEHAVIOUR_AUTO :
++				       POWER_SUPPLY_CHARGE_BEHAVIOUR_INHIBIT_CHARGE;
++		return 0;
+ 	case POWER_SUPPLY_PROP_HEALTH:
+ 		return max77705_get_health(chg, &val->intval);
+ 	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
+@@ -438,16 +465,25 @@ static int max77705_set_property(struct power_supply *psy,
+ 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT:
+ 		err = max77705_set_integer(chg, MAX77705_CHG_CC_LIM,
+ 					   MAX77705_CURRENT_CHGIN_MIN,
+-					   MAX77705_CURRENT_CHGIN_MAX,
++					   63 * MAX77705_CURRENT_CHG_STEP,
+ 					   MAX77705_CURRENT_CHG_STEP,
+ 					   val->intval);
+ 		break;
+ 	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
+-		err = max77705_set_integer(chg, MAX77705_CHG_CHGIN_LIM,
+-					   MAX77705_CURRENT_CHGIN_MIN,
+-					   MAX77705_CURRENT_CHGIN_MAX,
+-					   MAX77705_CURRENT_CHGIN_STEP,
+-					   val->intval);
++		err = max77705_set_input_current(chg, val->intval);
++		break;
++	case POWER_SUPPLY_PROP_CHARGE_BEHAVIOUR:
++		switch (val->intval) {
++		case POWER_SUPPLY_CHARGE_BEHAVIOUR_AUTO:
++			err = max77705_charger_enable(chg);
++			break;
++		case POWER_SUPPLY_CHARGE_BEHAVIOUR_INHIBIT_CHARGE:
++			err = regmap_field_write(chg->rfield[MAX77705_CHG_EN],
++						 MAX77705_CHG_DISABLE);
++			break;
++		default:
++			err = -EINVAL;
++		}
+ 		break;
+ 	default:
+ 		err = -EINVAL;
+@@ -462,6 +498,7 @@ static int max77705_property_is_writeable(struct power_supply *psy,
+ 	switch (psp) {
+ 	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT:
+ 	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT:
++	case POWER_SUPPLY_PROP_CHARGE_BEHAVIOUR:
+ 		return true;
+ 	default:
+ 		return false;
+@@ -472,6 +509,8 @@ static const struct power_supply_desc max77705_charger_psy_desc = {
+ 	.name = "max77705-charger",
+ 	.type = POWER_SUPPLY_TYPE_USB,
+ 	.properties = max77705_charger_props,
++	.charge_behaviours = BIT(POWER_SUPPLY_CHARGE_BEHAVIOUR_AUTO) |
++			     BIT(POWER_SUPPLY_CHARGE_BEHAVIOUR_INHIBIT_CHARGE),
+ 	.property_is_writeable = max77705_property_is_writeable,
+ 	.num_properties = ARRAY_SIZE(max77705_charger_props),
+ 	.get_property = max77705_chg_get_property,
+diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
+index 1a5dfdc97..778f3f308 100644
+--- a/drivers/soc/samsung/Kconfig
++++ b/drivers/soc/samsung/Kconfig
+@@ -76,3 +76,11 @@ config EXYNOS_REGULATOR_COUPLER
+ 	bool "Exynos SoC Regulator Coupler" if COMPILE_TEST
+ 	depends on ARCH_EXYNOS || COMPILE_TEST
+ endif
++config S9P_ACPM
++	bool "ACPM MFD mailbox access (Exynos 9810 S2MPS18)"
++	depends on ARCH_EXYNOS
++	help
++	  The S2MPS18 main PMIC is behind the APM firmware; this speaks the
++	  vendor acpm_ipc/acpm_mfd protocol (channel 2) so in-kernel code can
++	  set BUCK rails. Used by s9p-cpufreq and s9p-g3d.
++
+diff --git a/drivers/soc/samsung/Makefile b/drivers/soc/samsung/Makefile
+index 636a76260..6792a4bd8 100644
+--- a/drivers/soc/samsung/Makefile
++++ b/drivers/soc/samsung/Makefile
+@@ -7,6 +7,11 @@ exynos_chipid-y			+= exynos-chipid.o exynos-asv.o
+ obj-$(CONFIG_EXYNOS_USI)	+= exynos-usi.o
+ 
+ obj-$(CONFIG_EXYNOS_PMU)	+= exynos_pmu.o
++obj-y				+= s9p-clkgate.o
++obj-y				+= s9p-g3d-pd.o
++obj-$(CONFIG_I2C)		+= s9p-max77705-muic.o
++obj-$(CONFIG_S9P_ACPM)		+= s9p-acpm.o
++obj-$(CONFIG_S9P_ACPM)		+= s9p-g3d.o
+ exynos_pmu-y			+= exynos-pmu.o gs101-pmu.o
+ 
+ obj-$(CONFIG_EXYNOS_PMU_ARM_DRIVERS)	+= exynos3250-pmu.o exynos4-pmu.o \
+diff --git a/drivers/ufs/host/Kconfig b/drivers/ufs/host/Kconfig
+index 964ae70e7..c0b2cc677 100644
+--- a/drivers/ufs/host/Kconfig
++++ b/drivers/ufs/host/Kconfig
+@@ -128,9 +128,18 @@ config SCSI_UFS_EXYNOS
+ 	  Select this if you have UFS host controller on Samsung Exynos SoC.
+ 	  If unsure, say N.
+ 
++config SCSI_UFS_EXYNOS9810
++	tristate "Exynos 9810 UFS host controller driver"
++	depends on SCSI_UFSHCD_PLATFORM && (ARCH_EXYNOS || COMPILE_TEST)
++	help
++	  UFS host support for the Samsung Exynos 9810, whose PHY and UNIPRO
++	  calibration differs from every variant ufs-exynos.c covers. Uses
++	  Samsung's own ufs-cal-9810 sequence, unchanged from the vendor kernel.
++
+ config SCSI_UFS_VARIABLE_SG_ENTRY_SIZE
+ 	bool
+ 	default y if SCSI_UFS_EXYNOS && SCSI_UFS_CRYPTO
++	default y if SCSI_UFS_EXYNOS9810
+ 
+ config SCSI_UFS_SPRD
+ 	tristate "Unisoc specific hooks to UFS controller platform driver"
+diff --git a/drivers/ufs/host/Makefile b/drivers/ufs/host/Makefile
+index 65d8bb23a..051f02d63 100644
+--- a/drivers/ufs/host/Makefile
++++ b/drivers/ufs/host/Makefile
+@@ -5,6 +5,7 @@ obj-$(CONFIG_SCSI_UFS_DWC_TC_PLATFORM) += tc-dwc-g210-pltfrm.o ufshcd-dwc.o tc-d
+ obj-$(CONFIG_SCSI_UFS_CDNS_PLATFORM) += cdns-pltfrm.o
+ obj-$(CONFIG_SCSI_UFS_QCOM) += ufs-qcom.o
+ obj-$(CONFIG_SCSI_UFS_EXYNOS) += ufs-exynos.o
++obj-$(CONFIG_SCSI_UFS_EXYNOS9810) += ufs-exynos9810.o ufs-cal-9810.o
+ obj-$(CONFIG_SCSI_UFSHCD_PCI) += ufshcd-pci.o
+ obj-$(CONFIG_SCSI_UFSHCD_PLATFORM) += ufshcd-pltfrm.o
+ obj-$(CONFIG_SCSI_UFS_HISI) += ufs-hisi.o

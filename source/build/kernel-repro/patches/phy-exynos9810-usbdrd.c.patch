@@ -1,0 +1,115 @@
+--- a/drivers/phy/samsung/phy-exynos9810-usbdrd.c
++++ b/drivers/phy/samsung/phy-exynos9810-usbdrd.c
+@@ -116,6 +116,11 @@
+ 				 HSP_TUNE_TXRES(3) | HSP_TUNE_TXPREEMPA(3) | \
+ 				 HSP_TUNE_SQRX(4) | HSP_TUNE_COMPDIS(3))
+ 
++/* star2lte rev26 vendor hs_tune, host column (USBPHY_MODE_HOST=1). */
++#define S9P_HSP_TUNE_HOST_VAL (HSP_TUNE_TXVREF(7) | HSP_TUNE_TXRISE(1) | \
++                              HSP_TUNE_TXRES(1) | HSP_TUNE_TXPREEMPA(3) | \
++                              HSP_TUNE_SQRX(6) | HSP_TUNE_COMPDIS(7))
++
+ static bool s9p_phy_tune = true;
+ module_param_named(tune, s9p_phy_tune, bool, 0444);
+ MODULE_PARM_DESC(tune, "apply the stock star2lte HS tuning (default on)");
+@@ -131,11 +136,50 @@
+ 	struct clk_bulk_data clks[2];
+ 	int nclks;
+ 	struct phy *phy;
++	enum phy_mode mode;
++	bool initialized;
++	bool powered;
+ };
+ 
+ static inline void rmw(void __iomem *reg, u32 clear, u32 set)
+ {
+ 	writel((readl(reg) & ~clear) | set, reg);
++}
++
++/* The PHY core serializes init, power and mode callbacks with its mutex.
++ * This configures USB signalling only: it never sources connector VBUS. */
++static void s9p_usbphy_apply_mode(struct s9p_usbphy *p)
++{
++        void __iomem *r = p->regs;
++
++        if (p->mode == PHY_MODE_USB_HOST) {
++                /* Vendor phy_exynos_usb_v3p1_config_host_mode(). */
++                rmw(r + USBCON_UTMI, UTMI_FORCE_BVALID | UTMI_FORCE_VBUSVALID,
++                    UTMI_DP_PULLDOWN | UTMI_DM_PULLDOWN);
++                rmw(r + USBCON_HSP, HSP_VBUSVLDEXTSEL | HSP_VBUSVLDEXT, 0);
++        } else {
++                /* Restore the accepted device-mode signalling. */
++                rmw(r + USBCON_UTMI, UTMI_DP_PULLDOWN | UTMI_DM_PULLDOWN,
++                    UTMI_FORCE_BVALID | UTMI_FORCE_VBUSVALID);
++                rmw(r + USBCON_HSP, 0, HSP_VBUSVLDEXTSEL | HSP_VBUSVLDEXT);
++        }
++        if (s9p_phy_tune)
++                rmw(r + USBCON_HSP_TUNE, S9P_HSP_TUNE_MASK,
++                    p->mode == PHY_MODE_USB_HOST ? S9P_HSP_TUNE_HOST_VAL :
++                                                  S9P_HSP_TUNE_VAL);
++}
++
++static int s9p_usbphy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
++{
++        struct s9p_usbphy *p = phy_get_drvdata(phy);
++
++        if (submode || (mode != PHY_MODE_USB_HOST && mode != PHY_MODE_USB_DEVICE))
++                return -EINVAL;
++        p->mode = mode;
++        /* Cache requests while clocks are off or the PHY is isolated. */
++        if (p->initialized && p->powered)
++                s9p_usbphy_apply_mode(p);
++        return 0;
+ }
+ 
+ static void s9p_usbphy_dump(struct s9p_usbphy *p, const char *when)
+@@ -285,6 +329,9 @@
+ 	if (s9p_phy_tune)
+ 		rmw(r + USBCON_HSP_TUNE, S9P_HSP_TUNE_MASK, S9P_HSP_TUNE_VAL);
+ 
++	p->initialized = true;
++	p->powered = true;
++	s9p_usbphy_apply_mode(p);
+ 	s9p_usbphy_dump(p, "after init");
+ 	return 0;
+ }
+@@ -299,6 +346,7 @@
+ 	rmw(r + USBCON_HSP_TEST, 0, HSP_TEST_SIDDQ);
+ 	s9p_usbphy_q_ch(p, false);
+ 
++	p->initialized = false;
+ 	clk_bulk_disable_unprepare(p->nclks, p->clks);
+ 	return 0;
+ }
+@@ -308,6 +356,9 @@
+ 	struct s9p_usbphy *p = phy_get_drvdata(phy);
+ 
+ 	s9p_usbphy_pmu(p, true);
++	p->powered = true;
++	if (p->initialized)
++		s9p_usbphy_apply_mode(p);
+ 	s9p_usbphy_dump(p, "power_on");
+ 	return 0;
+ }
+@@ -316,11 +367,13 @@
+ {
+ 	struct s9p_usbphy *p = phy_get_drvdata(phy);
+ 
++	p->powered = false;
+ 	s9p_usbphy_pmu(p, false);
+ 	return 0;
+ }
+ 
+ static const struct phy_ops s9p_usbphy_ops = {
++	.set_mode	= s9p_usbphy_set_mode,
+ 	.init		= s9p_usbphy_init,
+ 	.exit		= s9p_usbphy_exit,
+ 	.power_on	= s9p_usbphy_power_on,
+@@ -350,6 +403,7 @@
+ 	if (!p)
+ 		return -ENOMEM;
+ 	p->dev = dev;
++	p->mode = PHY_MODE_USB_DEVICE;
+ 
+ 	p->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(p->regs))

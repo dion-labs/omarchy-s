@@ -1,0 +1,2170 @@
+{
+  "schema": 1,
+  "base": "ubuntu@sha256:a853f94d226358a79c740cfc7bce0c289748f3fe3488d921d038ccd752c61b60",
+  "inherited_base_packages": [
+    "libaudit-common",
+    "libaudit1"
+  ],
+  "packages": [
+    {
+      "name": "base-passwd_3.6.3build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/base-passwd/base-passwd_3.6.3build1_arm64.deb",
+      "filename": "base-passwd_3.6.3build1_arm64.deb",
+      "size": 51144,
+      "algorithm": "sha512",
+      "digest": "d3faefd1a627ffbabcba053af935c39a62a83d79b3b465b405b1ada8f7a0a7642bb4d27bb70d8d518c4201071e83e6b23fdea3a2108a56d86e93c5f97f72a0f0"
+    },
+    {
+      "name": "bash_5.2.21-2ubuntu4_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bash/bash_5.2.21-2ubuntu4_arm64.deb",
+      "filename": "bash_5.2.21-2ubuntu4_arm64.deb",
+      "size": 780262,
+      "algorithm": "sha512",
+      "digest": "f9d725e559721673f1da843837dfd75176b746bbcbad5a6b076798998fa6e5918ed7c2de7e634f428d10afe87a875436f5d039bfee32fa4ac132e57012742ede"
+    },
+    {
+      "name": "bc_1.07.1-3ubuntu4_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bc/bc_1.07.1-3ubuntu4_arm64.deb",
+      "filename": "bc_1.07.1-3ubuntu4_arm64.deb",
+      "size": 84456,
+      "algorithm": "sha512",
+      "digest": "c4ac7383e2a9ed8a77f8e51dff8b5274e2ce9d48cbce71654257172047534a845a20351fa0327b1b6a75e3e42e377ed70a973e1592159f4406f9b57125b099e5"
+    },
+    {
+      "name": "build-essential_12.10ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/build-essential/build-essential_12.10ubuntu1_arm64.deb",
+      "filename": "build-essential_12.10ubuntu1_arm64.deb",
+      "size": 4932,
+      "algorithm": "sha512",
+      "digest": "5e9039855cf88c0dc703d0f1ae0dcd8d7f85191de040fec1f5d3ac87b7c1437c13a1aa890f4ff5e8eccb3ea69d13809d19354b41d4867268b2bf5f8543e3b9ca"
+    },
+    {
+      "name": "cpp_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/cpp_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "cpp_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 22438,
+      "algorithm": "sha512",
+      "digest": "a99afd8d7ffc29fd50d06f0cd3f1be0983031b7d3d5b80e392ff2aabbdfd3759980e04985e4cbf1b787379626e4b792146199cb34b37b4c47ef814774231f8a7"
+    },
+    {
+      "name": "cpp-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/cpp-aarch64-linux-gnu_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "cpp-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 5316,
+      "algorithm": "sha512",
+      "digest": "103ea8b57814ee5fce6b68ac88cf0aaa34c859ef964041cfbbae2eb34ba22d1f1094a74d4f0c2152c48798d91d68712e06b6d30824dd4500ec65b5e7d53ff829"
+    },
+    {
+      "name": "dash_0.5.12-6ubuntu5_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/dash/dash_0.5.12-6ubuntu5_arm64.deb",
+      "filename": "dash_0.5.12-6ubuntu5_arm64.deb",
+      "size": 90376,
+      "algorithm": "sha512",
+      "digest": "9237db7ba7ed60855c275a793eb50ebf4b940c1c9b53499d8a3bd5b5c94600589d19a5a767c504eadee9457b16c96f1b3aacb8b2c6e89ed1e9ffb9135a9b7a25"
+    },
+    {
+      "name": "debconf_1.5.86ubuntu1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/debconf/debconf_1.5.86ubuntu1_all.deb",
+      "filename": "debconf_1.5.86ubuntu1_all.deb",
+      "size": 124096,
+      "algorithm": "sha512",
+      "digest": "6b35b41b17cbfbc62b91c91a35c1da2f7ae348649c1748a7b23e39a96fe8fe9a3393e03b138f674564fb678fd34e6ca0ffc62114da8e0874062851c3d39054d8"
+    },
+    {
+      "name": "debianutils_5.17build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/debianutils/debianutils_5.17build1_arm64.deb",
+      "filename": "debianutils_5.17build1_arm64.deb",
+      "size": 90236,
+      "algorithm": "sha512",
+      "digest": "d6b667f77a1d8aad81a21c5afe1be6bb3230d324f72d4325b96cd04222b4c0e99a24bf6e1ac6f11bdfb54847f559d9b23bf098ac54e89e4e17e000ab5ae036d6"
+    },
+    {
+      "name": "device-tree-compiler_1.7.0-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/device-tree-compiler/device-tree-compiler_1.7.0-2build1_arm64.deb",
+      "filename": "device-tree-compiler_1.7.0-2build1_arm64.deb",
+      "size": 227424,
+      "algorithm": "sha512",
+      "digest": "43a886ad091945a28b1e7fb4ee2420ed2abfeb8326f58b41423957de75ec7b7fbae910ab353cec62048691610ddb055320bf270d07403e6edcb2af402ce67320"
+    },
+    {
+      "name": "findutils_4.9.0-5build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/f/findutils/findutils_4.9.0-5build1_arm64.deb",
+      "filename": "findutils_4.9.0-5build1_arm64.deb",
+      "size": 300282,
+      "algorithm": "sha512",
+      "digest": "c65c659ba20568316777a7c11c7b0fb938079d7abb1f6ccae5373334f0289cf66782a62bbfe3c4ece273984201e907177fdb5f53fdc3155e0438c37ac4f8986e"
+    },
+    {
+      "name": "flex_2.6.4-8.2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/f/flex/flex_2.6.4-8.2build1_arm64.deb",
+      "filename": "flex_2.6.4-8.2build1_arm64.deb",
+      "size": 290818,
+      "algorithm": "sha512",
+      "digest": "b4aff9878850976959f5bdf71f78f4511aebd9159c53c6dea8dbe3cca02232271429ae55b48b85b5dda3e40fc1b51c704557fee4cfd52c37a5acad6246a9d5a7"
+    },
+    {
+      "name": "g++_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/g%2b%2b_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "g++_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 1082,
+      "algorithm": "sha512",
+      "digest": "ff9a23b7fb7d35ce9f4133649693fc94c4dac2b2894a04bc13a433fd33c09695cfef00a566191bfe582b480002b3456c6977a3b21b7e6e09c2cc9f169e3a3582"
+    },
+    {
+      "name": "g++-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/g%2b%2b-aarch64-linux-gnu_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "g++-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 962,
+      "algorithm": "sha512",
+      "digest": "40da87b8b51df3bdda129751cc1a3df947e2affb60cf475e7619ccc214423ded7b550e54423891aeb9d775b80c9e6b54d06dc32f96930f408ea604f5e8a02768"
+    },
+    {
+      "name": "gcc_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/gcc_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "gcc_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 5018,
+      "algorithm": "sha512",
+      "digest": "e771a075dc064d4c6a4072cd39ee15dfaeea917608ab46f1c0332c9d5d3f10958705aceaf4aecab39a728e6a610710de4ca325548e8e0e8229a8538c5f16e488"
+    },
+    {
+      "name": "gcc-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-defaults/gcc-aarch64-linux-gnu_13.2.0-7ubuntu1_arm64.deb",
+      "filename": "gcc-aarch64-linux-gnu_4%3a13.2.0-7ubuntu1_arm64.deb",
+      "size": 1198,
+      "algorithm": "sha512",
+      "digest": "99d5cf1c7d2f82354c3c7342d1aade4e398fedd079f0f47b004ab4b190c8c3c9315d1ab715a8a563f6e689c2876eefaa6ff966eb0adbb5c74d6e2c703bfcd5ae"
+    },
+    {
+      "name": "grep_3.11-4build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/grep/grep_3.11-4build1_arm64.deb",
+      "filename": "grep_3.11-4build1_arm64.deb",
+      "size": 158728,
+      "algorithm": "sha512",
+      "digest": "c230d9c60b0bcb7b8300a292cb991b1d691695b9b8d048cde4e15d9bd4b8ffe6b352e96fe802c2d0cb5d01ac2ca0e6a1d683938443bd46490c390cf9f4d3a7ee"
+    },
+    {
+      "name": "hostname_3.23+nmu2ubuntu2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/h/hostname/hostname_3.23%2bnmu2ubuntu2_arm64.deb",
+      "filename": "hostname_3.23+nmu2ubuntu2_arm64.deb",
+      "size": 10990,
+      "algorithm": "sha512",
+      "digest": "323cdb90badc902995a51c94913604921000931786c5b9c31e39287ebcd9b8217507bd0bcb1ac19d2c3bb762d028a5f490792728bb3992992181bc30cd26e640"
+    },
+    {
+      "name": "init-system-helpers_1.66ubuntu1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/init-system-helpers/init-system-helpers_1.66ubuntu1_all.deb",
+      "filename": "init-system-helpers_1.66ubuntu1_all.deb",
+      "size": 39402,
+      "algorithm": "sha512",
+      "digest": "03fb3b345b3936c480ae22ebff24390a90fc17ead3b5458649c0f1c8019730089207b94524cfa38255ddc85acf5eade1a268c251b2d740477c155ec1f58dd59d"
+    },
+    {
+      "name": "libassuan0_2.5.6-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/liba/libassuan/libassuan0_2.5.6-1build1_arm64.deb",
+      "filename": "libassuan0_2.5.6-1build1_arm64.deb",
+      "size": 36750,
+      "algorithm": "sha512",
+      "digest": "a4c1b69a10b934bbd50985ecdf126e8222c77425f8fc7035640158e0aa945e2760200802aa74db36ba3c1f00b4c2040155d7bd52026acd0fbc1ee791606ff152"
+    },
+    {
+      "name": "libbrotli1_1.1.0-2build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/brotli/libbrotli1_1.1.0-2build2_arm64.deb",
+      "filename": "libbrotli1_1.1.0-2build2_arm64.deb",
+      "size": 339424,
+      "algorithm": "sha512",
+      "digest": "881aaaf1e73202177493f2f1d44d50c9584e1a1e266614e2f67984e0e8a788ed0759b922ead69d1e4762f3ea80574682bf97aba3c3de78e96688fd402a81ea14"
+    },
+    {
+      "name": "libcap-ng0_0.8.4-2build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libc/libcap-ng/libcap-ng0_0.8.4-2build2_arm64.deb",
+      "filename": "libcap-ng0_0.8.4-2build2_arm64.deb",
+      "size": 14850,
+      "algorithm": "sha512",
+      "digest": "9cf7a01118f7c4a8d5828446a80850d453704daf6a771e02b74109013484bf6cb0e7e2ebba8eca8a53999051d63fc5708cbfaa1e1cc8da08374fef59136065e4"
+    },
+    {
+      "name": "libcrypt-dev_1%3a4.4.36-4build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libx/libxcrypt/libcrypt-dev_4.4.36-4build1_arm64.deb",
+      "filename": "libcrypt-dev_1%3a4.4.36-4build1_arm64.deb",
+      "size": 118238,
+      "algorithm": "sha512",
+      "digest": "eae18ed2ffaa115ae1f0d82f1f3ec1d24e39c013bbbedd2f67797fb5d10a55b4c465d9eb0f86e66c2064f9887b751297a3fd6a142c244a420ff855f7613a0076"
+    },
+    {
+      "name": "libcrypt1_1%3a4.4.36-4build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libx/libxcrypt/libcrypt1_4.4.36-4build1_arm64.deb",
+      "filename": "libcrypt1_1%3a4.4.36-4build1_arm64.deb",
+      "size": 85888,
+      "algorithm": "sha512",
+      "digest": "7f2f47c739b8487754070126f3f07e58d133530dde84f35aa4e2389a330fc16d3bca9be688bce37a2e76190823d48dae4ea768a4d4c292a52bb558644b61ba8e"
+    },
+    {
+      "name": "libdb5.3t64_5.3.28+dfsg2-7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/db5.3/libdb5.3t64_5.3.28%2bdfsg2-7_arm64.deb",
+      "filename": "libdb5.3t64_5.3.28+dfsg2-7_arm64.deb",
+      "size": 732284,
+      "algorithm": "sha512",
+      "digest": "66d6e76c765276eec09281118a3d3d9bbcddf6729d2b6048827e3b63c50bd34aebb1bff6f1aa30dd655f256dbfabe6d595a29e92827c8209915afbca727034dc"
+    },
+    {
+      "name": "libdebconfclient0_0.271ubuntu3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/cdebconf/libdebconfclient0_0.271ubuntu3_arm64.deb",
+      "filename": "libdebconfclient0_0.271ubuntu3_arm64.deb",
+      "size": 11280,
+      "algorithm": "sha512",
+      "digest": "a143a0caa65552335f483486bcf8044d846f72250edc3ecaed0795077d778a496c189c932a054bec87c106e03ecb993410f4e38a929df2c2c1c399d06777fbea"
+    },
+    {
+      "name": "libedit2_3.1-20230828-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libe/libedit/libedit2_3.1-20230828-1build1_arm64.deb",
+      "filename": "libedit2_3.1-20230828-1build1_arm64.deb",
+      "size": 97526,
+      "algorithm": "sha512",
+      "digest": "135b6445c1db3cf8bd5dedc07ffd6b728b07191e3a1389ea97d240773c3ef50a28a566a1c7e991cc2c3233dea4f402a7668fa8b6773e7cbbcda68addd5272b5b"
+    },
+    {
+      "name": "liberror-perl_0.17029-2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libe/liberror-perl/liberror-perl_0.17029-2_all.deb",
+      "filename": "liberror-perl_0.17029-2_all.deb",
+      "size": 25632,
+      "algorithm": "sha512",
+      "digest": "e68398fc860aed177b029852be9cc14ce2fe9da861921c8e7443b669797f56a4fd1061041f7b6136ce33991111ad92c3ecbb4ff8c18d54181fca134f234c1869"
+    },
+    {
+      "name": "libfdt1_1.7.0-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/device-tree-compiler/libfdt1_1.7.0-2build1_arm64.deb",
+      "filename": "libfdt1_1.7.0-2build1_arm64.deb",
+      "size": 21090,
+      "algorithm": "sha512",
+      "digest": "6e161cea69bd290b956a34bebd25f16873af0110ee97e80fe908665024918c6fd756cba6993ece2abd7247f18897216617b0444ed8cb6866fd5696e43a682b26"
+    },
+    {
+      "name": "libffi-dev_3.4.6-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libf/libffi/libffi-dev_3.4.6-1build1_arm64.deb",
+      "filename": "libffi-dev_3.4.6-1build1_arm64.deb",
+      "size": 59476,
+      "algorithm": "sha512",
+      "digest": "3af820fdbda41e329a0a162462e127999cd466bd41a1eff46a40c1818300de91601a8ab1b26372268bd0dd50c5f8390182fe87b859259db38d98992d97464b29"
+    },
+    {
+      "name": "libffi8_3.4.6-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libf/libffi/libffi8_3.4.6-1build1_arm64.deb",
+      "filename": "libffi8_3.4.6-1build1_arm64.deb",
+      "size": 22716,
+      "algorithm": "sha512",
+      "digest": "412bc2289580b02030e21c4e6c3eecb2743231e758801d3e49bfa74d45e8e0ee5b446055e0adf76446e0191383a7a27258c090f5608bf8bc0155ecf175ebbbde"
+    },
+    {
+      "name": "libgc1_1%3a8.2.6-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libg/libgc/libgc1_8.2.6-1build1_arm64.deb",
+      "filename": "libgc1_1%3a8.2.6-1build1_arm64.deb",
+      "size": 89052,
+      "algorithm": "sha512",
+      "digest": "0b0f5222566f4b69c7cf23679f393d5f5c6677b83d833ea8f1554d1a3e320304c1778fbfd3ec04e523d69545beb3b5e0ba8380553c6dcaade5fad00fadb2e396"
+    },
+    {
+      "name": "libgdbm-compat4t64_1.23-5.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gdbm/libgdbm-compat4t64_1.23-5.1build1_arm64.deb",
+      "filename": "libgdbm-compat4t64_1.23-5.1build1_arm64.deb",
+      "size": 6578,
+      "algorithm": "sha512",
+      "digest": "ea077c316cd27337e933d5dc1b3c183fce94f96190036167df14bd473c78e4db762bc0e26511082e6a319d8a998df64ef335ae546236c2b96b2cbb41f8e80a04"
+    },
+    {
+      "name": "libgdbm6t64_1.23-5.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gdbm/libgdbm6t64_1.23-5.1build1_arm64.deb",
+      "filename": "libgdbm6t64_1.23-5.1build1_arm64.deb",
+      "size": 34352,
+      "algorithm": "sha512",
+      "digest": "98bb5d71004c63f5abaf66b88aa0f9e091a4d63d11ddfedd484cb1ddf559109c807b6abb413de451f8e1c017327904ffa63bf861fd0bd277b680d858f5e6e3bd"
+    },
+    {
+      "name": "libjansson4_2.14-2build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/j/jansson/libjansson4_2.14-2build2_arm64.deb",
+      "filename": "libjansson4_2.14-2build2_arm64.deb",
+      "size": 34362,
+      "algorithm": "sha512",
+      "digest": "84b758488973f0fb39367037d05e1265504775c3ce9f2a77d02be2e21255913134def19917eed275b2b7836706066b374979c894d16982ccca6b3eec1b6104ec"
+    },
+    {
+      "name": "libkeyutils1_1.6.3-3build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/keyutils/libkeyutils1_1.6.3-3build1_arm64.deb",
+      "filename": "libkeyutils1_1.6.3-3build1_arm64.deb",
+      "size": 9654,
+      "algorithm": "sha512",
+      "digest": "d2211722e1b0f6c64f1842467e97503390b6cff1462580c4f96e33b37921fb5277bac9b87362fdb7df2867eff3ed3e6ed0e99bd3653461bb15ecb74024ec7048"
+    },
+    {
+      "name": "libnpth0t64_1.6-3.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/npth/libnpth0t64_1.6-3.1build1_arm64.deb",
+      "filename": "libnpth0t64_1.6-3.1build1_arm64.deb",
+      "size": 8144,
+      "algorithm": "sha512",
+      "digest": "7c27c16833ae8e073445364ad1bb56fb78b177d69b82a6dad4ebe79acb3a66db63e70cdecd8a135353778aee24706beae32f6accc3be018a3556a91d07311429"
+    },
+    {
+      "name": "libpkgconf3_1.8.1-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pkgconf/libpkgconf3_1.8.1-2build1_arm64.deb",
+      "filename": "libpkgconf3_1.8.1-2build1_arm64.deb",
+      "size": 31226,
+      "algorithm": "sha512",
+      "digest": "ac6975eda356e24792d9ecbdfd5e5824764a2ef278d6d27fedf849d7ebf035a5330fb32408a9ccc0341ce749e7bd4df9eb63fafb40d5f29a87606e0108598525"
+    },
+    {
+      "name": "libpopt0_1.19+dfsg-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/popt/libpopt0_1.19%2bdfsg-1build1_arm64.deb",
+      "filename": "libpopt0_1.19+dfsg-1build1_arm64.deb",
+      "size": 28400,
+      "algorithm": "sha512",
+      "digest": "172e62852dddf4f48b7be33bfee8ab8e487184a0dcdd7730ed61b3909c3aeddef30b8b03e9726b58dd574bddff1a2e276e73f5c410602b5a414de0a9c2b8867a"
+    },
+    {
+      "name": "libpsl5t64_0.21.2-1.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libp/libpsl/libpsl5t64_0.21.2-1.1build1_arm64.deb",
+      "filename": "libpsl5t64_0.21.2-1.1build1_arm64.deb",
+      "size": 57436,
+      "algorithm": "sha512",
+      "digest": "6195f6e01225856a6a97c55dae2a16b5fe22292e3b3ef9e6c5b2e1f93822cddb0a2034b7e164991b46a65c768e15ace02bddd8e243407ce7951a812d3c252292"
+    },
+    {
+      "name": "libreadline8t64_8.2-4build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/readline/libreadline8t64_8.2-4build1_arm64.deb",
+      "filename": "libreadline8t64_8.2-4build1_arm64.deb",
+      "size": 153046,
+      "algorithm": "sha512",
+      "digest": "6dde163b28785356604b85fbb02a4eab8405a0f3f9222d3f60a349ec08e11f355318d97ab832572ad4d767185ac4589a877cd972a62368b87eb301c72b3701a4"
+    },
+    {
+      "name": "librtmp1_2.4+20151223.gitfa8646d.1-2build7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/rtmpdump/librtmp1_2.4%2b20151223.gitfa8646d.1-2build7_arm64.deb",
+      "filename": "librtmp1_2.4+20151223.gitfa8646d.1-2build7_arm64.deb",
+      "size": 57804,
+      "algorithm": "sha512",
+      "digest": "1701add7792422a6e1162cc8a674bd2f1d30dceda38c7f8b9a4676c05b1dbac53f751d3c18cd815fbac6402d28059a82bd7606631af26aa862daac78b26cd306"
+    },
+    {
+      "name": "libsemanage-common_3.5-1build5_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libsemanage/libsemanage-common_3.5-1build5_all.deb",
+      "filename": "libsemanage-common_3.5-1build5_all.deb",
+      "size": 10144,
+      "algorithm": "sha512",
+      "digest": "351f325c13358497aa1e9821c177978c04055e711a99ddd4b76ebfb4f796dfc4c86f3dfc2d28608bcb6d3dad678fe9cac1d446bcbdb1916ca4672666b74c36fb"
+    },
+    {
+      "name": "libsemanage2_3.5-1build5_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libsemanage/libsemanage2_3.5-1build5_arm64.deb",
+      "filename": "libsemanage2_3.5-1build5_arm64.deb",
+      "size": 90806,
+      "algorithm": "sha512",
+      "digest": "a5a76b822798beec068913ffe8002323ad6f0b204027fddf1e4545c912b645bf822f963bd9e2373f088e5b48938dc346a06e9636e89d8d56c3144be2e2ecf18f"
+    },
+    {
+      "name": "libsepol2_3.5-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libsepol/libsepol2_3.5-2build1_arm64.deb",
+      "filename": "libsepol2_3.5-2build1_arm64.deb",
+      "size": 290818,
+      "algorithm": "sha512",
+      "digest": "538b883fcb6c687690fe79019efeb01f2f3914c644a699d4bddb9be164b307de981fd4161475fc8c174b09d93d877f4a060e4981fd1e07a44a6c2df8d590b647"
+    },
+    {
+      "name": "libwayland-bin_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-bin_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-bin_1.22.0-2.1build1_arm64.deb",
+      "size": 20302,
+      "algorithm": "sha512",
+      "digest": "2a58570cfb8337d9ceeee7afe9bc2fe20196a40e950452943a26facf79d1369dbfa71f8bad1bc551e969aece5881b175ca5aedb0256aaf38ff7876c05ab3c159"
+    },
+    {
+      "name": "libwayland-client0_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-client0_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-client0_1.22.0-2.1build1_arm64.deb",
+      "size": 25904,
+      "algorithm": "sha512",
+      "digest": "8d693d842f698fc6f26dd0fc1b54226689270ee937acbcf0c33d5a50f504ed427f9b919c84b3b8997501d34d5cd1df2e1a9d8450d322c15c8f782b29e19b58c6"
+    },
+    {
+      "name": "libwayland-cursor0_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-cursor0_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-cursor0_1.22.0-2.1build1_arm64.deb",
+      "size": 10256,
+      "algorithm": "sha512",
+      "digest": "424219b39f7926b5e7e3c26fb52dd0e020c85b33c666238159343119f494c0b2ce6bbff44b1e4ad28fb21a256663a432834fbb9c2c9137ba55d49e8a6aaea36c"
+    },
+    {
+      "name": "libwayland-dev_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-dev_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-dev_1.22.0-2.1build1_arm64.deb",
+      "size": 71332,
+      "algorithm": "sha512",
+      "digest": "553eddcbdaf955ead627416684f05f79d8c94d14a0e7c80709baee726223dbaf4c3f81da0fc6f15418dc0fa926b586309144e31de346ec41c425488a6bac3908"
+    },
+    {
+      "name": "libwayland-egl-backend-dev_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-egl-backend-dev_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-egl-backend-dev_1.22.0-2.1build1_arm64.deb",
+      "size": 4368,
+      "algorithm": "sha512",
+      "digest": "f730821dda44024bbd5718647a856705236c5df2c8809800731f10b30800b78081115cccbf9f3251412dd02f9be7656fd4cd82607780ade8ada559226ce58365"
+    },
+    {
+      "name": "libwayland-egl1_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-egl1_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-egl1_1.22.0-2.1build1_arm64.deb",
+      "size": 5622,
+      "algorithm": "sha512",
+      "digest": "7db23b5f0743538dfc550509b13077fabad88f980c90275f77f89ff784ec8c3aab6e07300df846fddc56636a969cc59d1de9f253aa8edd40a8009e4db8ea52f6"
+    },
+    {
+      "name": "libwayland-server0_1.22.0-2.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland/libwayland-server0_1.22.0-2.1build1_arm64.deb",
+      "filename": "libwayland-server0_1.22.0-2.1build1_arm64.deb",
+      "size": 34640,
+      "algorithm": "sha512",
+      "digest": "1ae02e73315c204366c6e58ff1bd0eaf7c3c2b2900c1ae85db043588acbfb299d38f63125a95da104a5873fb75a480612ef944134f8ee94fa4395750d54e39f5"
+    },
+    {
+      "name": "libxxhash0_0.8.2-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/x/xxhash/libxxhash0_0.8.2-2build1_arm64.deb",
+      "filename": "libxxhash0_0.8.2-2build1_arm64.deb",
+      "size": 21684,
+      "algorithm": "sha512",
+      "digest": "e056d3e794e5d9111dce5967b6cef89eda70f404bc4ce54ea90245489598e444d166918bbf8819914b5bc03b7fd018af77c6bdeff13f4c6c681c4dddf9fc5f59"
+    },
+    {
+      "name": "libyaml-0-2_0.2.5-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/liby/libyaml/libyaml-0-2_0.2.5-1build1_arm64.deb",
+      "filename": "libyaml-0-2_0.2.5-1build1_arm64.deb",
+      "size": 51548,
+      "algorithm": "sha512",
+      "digest": "d862850e46b7bd42a8ac07c9aa788dddef866acc2839bbb8ac2cf826eb49624d2818da1713d4e12a64a827c46edf00c4caa3de4b2b6fc05a1b114d2350241429"
+    },
+    {
+      "name": "lto-disabled-list_47_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/lto-disabled-list/lto-disabled-list_47_all.deb",
+      "filename": "lto-disabled-list_47_all.deb",
+      "size": 12400,
+      "algorithm": "sha512",
+      "digest": "4c75a198a5826827c712a10ddcba84ecc522783e1e215cd4e61ab40a6178fbcd62f711d2b825cdb2500a74b90d89597fbc4ba854c4429e755165729886c8dc48"
+    },
+    {
+      "name": "m4_1.4.19-4build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/m4/m4_1.4.19-4build1_arm64.deb",
+      "filename": "m4_1.4.19-4build1_arm64.deb",
+      "size": 240132,
+      "algorithm": "sha512",
+      "digest": "93d2de64fe496475c34608e7eb66e0083b8f47b1d33c65fa50c5f395d6297cc3148042319790e31fc38e5292610720b7e61561323b86d4439c37ab99549b1315"
+    },
+    {
+      "name": "make_4.3-4.1build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/make-dfsg/make_4.3-4.1build2_arm64.deb",
+      "filename": "make_4.3-4.1build2_arm64.deb",
+      "size": 178236,
+      "algorithm": "sha512",
+      "digest": "3f2ea2a0ce664aec068e99294c81f14b50b99d2f40efa9372b4817b82e394d6b5b37734839504efaf815ed378d05146b80d4aed31fb7fed9ad526a7bee496175"
+    },
+    {
+      "name": "mawk_1.3.4.20240123-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/mawk/mawk_1.3.4.20240123-1build1_arm64.deb",
+      "filename": "mawk_1.3.4.20240123-1build1_arm64.deb",
+      "size": 123594,
+      "algorithm": "sha512",
+      "digest": "c5e6defd04f80df192cde58167ac32cc5345d18e31f693ce5f11cbb2f4a79986c9df2a79707308b695e75c3cd68fcf8bfa4c610319a9a79de5bb34ca4b71fb4c"
+    },
+    {
+      "name": "media-types_10.1.0_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/media-types/media-types_10.1.0_all.deb",
+      "filename": "media-types_10.1.0_all.deb",
+      "size": 27474,
+      "algorithm": "sha512",
+      "digest": "cb1f119b47ba7a2c76be0c1ba61cf91263021761ae7238fec3ba4da60e69d51cffc9d33275b0fbe3f5fa3b7abae892043b9a309c7cf9447a825db19595d13bde"
+    },
+    {
+      "name": "netbase_6.4_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/netbase/netbase_6.4_all.deb",
+      "filename": "netbase_6.4_all.deb",
+      "size": 13112,
+      "algorithm": "sha512",
+      "digest": "11268ff81e6633967dc686913fce2063e999388e6d86a591eb49d497211f2512f91b9a6727c9d2fbceb7c18790c62eb82eea4590388c2531fe826c9051f6fd5f"
+    },
+    {
+      "name": "patch_2.7.6-7build3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/patch/patch_2.7.6-7build3_arm64.deb",
+      "filename": "patch_2.7.6-7build3_arm64.deb",
+      "size": 101264,
+      "algorithm": "sha512",
+      "digest": "d17efa3c0372349f81528b4dfbd280e621278a60691783ebda05aa90235556d1dd39e3d5a8c535f6c549f5dc8ff5148f1a1c3daf5d7f10c337d1643f10a2268f"
+    },
+    {
+      "name": "pkg-config_1.8.1-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pkgconf/pkg-config_1.8.1-2build1_arm64.deb",
+      "filename": "pkg-config_1.8.1-2build1_arm64.deb",
+      "size": 7264,
+      "algorithm": "sha512",
+      "digest": "55cc1e616f3c19f2ff77858ef84ba9441b4d44bb7f3b9e91071d167b1bcf5a023c6e0ceee7a066594e49b150a8285f517c7560386bda3f5c334c8d63dc43102b"
+    },
+    {
+      "name": "pkgconf_1.8.1-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pkgconf/pkgconf_1.8.1-2build1_arm64.deb",
+      "filename": "pkgconf_1.8.1-2build1_arm64.deb",
+      "size": 16768,
+      "algorithm": "sha512",
+      "digest": "150b4d67cfb25473278ef83202ae3804878c9894d12c64e21c0cb1aa5598bd87f1bb978b7c5fa28b33a8183cd4e5267c52c1df8814cd7ea5682d7ee503995137"
+    },
+    {
+      "name": "pkgconf-bin_1.8.1-2build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pkgconf/pkgconf-bin_1.8.1-2build1_arm64.deb",
+      "filename": "pkgconf-bin_1.8.1-2build1_arm64.deb",
+      "size": 20458,
+      "algorithm": "sha512",
+      "digest": "8f7d09a929d3db00a72b04e000ab0e3e8925d61b92dd6f86ad5b20315e33ab15e39113ecd8ebb6d08cf0c2785d3e3267c6fa680185958b08f3a813cf09b1f252"
+    },
+    {
+      "name": "python3-markupsafe_2.1.5-1build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/markupsafe/python3-markupsafe_2.1.5-1build2_arm64.deb",
+      "filename": "python3-markupsafe_2.1.5-1build2_arm64.deb",
+      "size": 12524,
+      "algorithm": "sha512",
+      "digest": "70b755aa4e3afb8737f0656280c684ec7d0094dc9d3d69dc8c8bf4c760faa2b9b25d7bcac78e18068aa61d9171ce2a97f44f5690c2e1e0ce942151702c21d844"
+    },
+    {
+      "name": "python3-ply_3.11-6_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/ply/python3-ply_3.11-6_all.deb",
+      "filename": "python3-ply_3.11-6_all.deb",
+      "size": 46526,
+      "algorithm": "sha512",
+      "digest": "3e739777b2f5aa7db3cc0a0ec766b3c023e537597c6874b0bc69ceebd6ec2e5ae2d7291241dc7b398b182fa936a1a2ede803bdb2c402aef59756d255b8b932e4"
+    },
+    {
+      "name": "python3-pygments_2.17.2+dfsg-1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pygments/python3-pygments_2.17.2%2bdfsg-1_all.deb",
+      "filename": "python3-pygments_2.17.2+dfsg-1_all.deb",
+      "size": 819086,
+      "algorithm": "sha512",
+      "digest": "82c686b313b7527feb3ecddd290e1cb1f229d2f4ebe3d796b3a0571a40e53e25185e111ac865a06a43cd72dc1f3d65e487565c2cb2507eca32e8b8169372176e"
+    },
+    {
+      "name": "python3-yaml_6.0.1-2build2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pyyaml/python3-yaml_6.0.1-2build2_arm64.deb",
+      "filename": "python3-yaml_6.0.1-2build2_arm64.deb",
+      "size": 113332,
+      "algorithm": "sha512",
+      "digest": "f95a8a36edc236a27693a8b3da2ef3cf56e09318bf628e48ace0368dafa03c450af71bc725f07cf496bf13e14ad05e7196e463b2fe77b84e701d20804f75b366"
+    },
+    {
+      "name": "readline-common_8.2-4build1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/readline/readline-common_8.2-4build1_all.deb",
+      "filename": "readline-common_8.2-4build1_all.deb",
+      "size": 56484,
+      "algorithm": "sha512",
+      "digest": "e4769b6b47308a41b9cb074191cb7c7f6bd46ce6a8fc518ae1924cba2683945f135bc14d21765a169d88cf3da586f541fcff2386299d21336ef76b0fd21f804e"
+    },
+    {
+      "name": "rpcsvc-proto_1.4.2-0ubuntu7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/rpcsvc-proto/rpcsvc-proto_1.4.2-0ubuntu7_arm64.deb",
+      "filename": "rpcsvc-proto_1.4.2-0ubuntu7_arm64.deb",
+      "size": 64816,
+      "algorithm": "sha512",
+      "digest": "ec850cd7d86d3feb916211cafa41615aade8d904f08b6409c4102bef37a9cbf74c7388fe001ed830b29cdf6bf578f7c322cb55cb741e51a5122c67efd0856877"
+    },
+    {
+      "name": "sensible-utils_0.0.22_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/sensible-utils/sensible-utils_0.0.22_all.deb",
+      "filename": "sensible-utils_0.0.22_all.deb",
+      "size": 22462,
+      "algorithm": "sha512",
+      "digest": "a2b6bc0846e664e0e0f2e8d3aff5c42bcd2be5bc7e26f06ceeac24ff6eba83d7aa51f34af82ca11c413a740ceef2662f3877c857464a029b1aed20e14114e3ce"
+    },
+    {
+      "name": "sysvinit-utils_3.08-6ubuntu3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/sysvinit/sysvinit-utils_3.08-6ubuntu3_arm64.deb",
+      "filename": "sysvinit-utils_3.08-6ubuntu3_arm64.deb",
+      "size": 33828,
+      "algorithm": "sha512",
+      "digest": "5fa8c6b50b747a697642dea2a01b47867826bc44c689186a14f09ce76dad40fa399fe3e61667b3a135c015ac6941944d526615f90c0c622a983561e0567e00d5"
+    },
+    {
+      "name": "ubuntu-keyring_2023.11.28.1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/ubuntu-keyring/ubuntu-keyring_2023.11.28.1_all.deb",
+      "filename": "ubuntu-keyring_2023.11.28.1_all.deb",
+      "size": 11124,
+      "algorithm": "sha512",
+      "digest": "b58f1a3c4066fddfe3daf151a7526ca91b24cdb1a5eb6f6fdc655b37f6226e5332eee23e23089f8f046351627f6190a946ab8c48dc6d502c84376891b4c92f56"
+    },
+    {
+      "name": "libz3-4_4.8.12-3.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/z/z3/libz3-4_4.8.12-3.1build1_arm64.deb",
+      "filename": "libz3-4_4.8.12-3.1build1_arm64.deb",
+      "size": 5492238,
+      "algorithm": "sha512",
+      "digest": "a05c50da44b81ec402dedcc5be539636d1ff978a6e3c4249ea8c1c424b0a50590c94b54a43de82f48b96cd91428a8100c85563ed48eec0674207f3def740f23b"
+    },
+    {
+      "name": "libz3-dev_4.8.12-3.1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/z/z3/libz3-dev_4.8.12-3.1build1_arm64.deb",
+      "filename": "libz3-dev_4.8.12-3.1build1_arm64.deb",
+      "size": 72216,
+      "algorithm": "sha512",
+      "digest": "5bd060cd219f24999aa19245d0b489ef97a371227f36ae4a483fe0c62e5dff023ee247a2a1f069071bbde9ce36e3cdc3de362da171fc27c80f8204ce5100203e"
+    },
+    {
+      "name": "meson_1.3.2-1ubuntu1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/m/meson/meson_1.3.2-1ubuntu1_all.deb",
+      "filename": "meson_1.3.2-1ubuntu1_all.deb",
+      "size": 603950,
+      "algorithm": "sha512",
+      "digest": "12073b72fd9795a8b6c92118f28da461d1fab6a7d7644d6f142898532f1cb17a5006480d43dbbac6f22e371a9e853d5106800f3fb93115c8bfd1e2f6e8bbc779"
+    },
+    {
+      "name": "ninja-build_1.11.1-2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/n/ninja-build/ninja-build_1.11.1-2_arm64.deb",
+      "filename": "ninja-build_1.11.1-2_arm64.deb",
+      "size": 124812,
+      "algorithm": "sha512",
+      "digest": "b1cdbdf6d8554ad70fe4035407a00fe73e7cbd4ce81917d2f05fcf8d2ab975707acc7dcea95375a585545878389ff86bc42c789a6cec8b8e0135faa0466212b3"
+    },
+    {
+      "name": "apt_2.8.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/apt/apt_2.8.3_arm64.deb",
+      "filename": "apt_2.8.3_arm64.deb",
+      "size": 1335690,
+      "algorithm": "sha512",
+      "digest": "1cdfed95b992d71459c772318b88d242c03c73ff4b89b2074ce43f737bd3bc6c2b97496b827ee5f78ee61ee4112e656766333fcee1736d7d8765a6aa0d28a281"
+    },
+    {
+      "name": "base-files_13ubuntu10.5_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/base-files/base-files_13ubuntu10.5_arm64.deb",
+      "filename": "base-files_13ubuntu10.5_arm64.deb",
+      "size": 73378,
+      "algorithm": "sha512",
+      "digest": "75cf55dbeab1731366bbb7a83cc3581331095eaddb3e4d627937292a82cc3ab9304f43cf65bbd37fa06c2c2faf36c7e83e82a125fd596d2cb21f90f52d652454"
+    },
+    {
+      "name": "binutils_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/binutils_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "binutils_2.42-4ubuntu2.10_arm64.deb",
+      "size": 18116,
+      "algorithm": "sha512",
+      "digest": "a29b689b03e9b6eb3376563f071974e915e28c6feb1c4fb6c70691991a0ae08ff2a8c1cab15a4c57dee63048b705795502febf2982973b6ef2aeb47c7787425a"
+    },
+    {
+      "name": "binutils-aarch64-linux-gnu_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/binutils-aarch64-linux-gnu_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "binutils-aarch64-linux-gnu_2.42-4ubuntu2.10_arm64.deb",
+      "size": 3304470,
+      "algorithm": "sha512",
+      "digest": "2dd68411ea0315dfa5e7b89072768e87cf42615d1e8f1c2a1219ee8c6fdd969700984025ea57887d9b2c21e2586595112fab4ac5b693e2a58330e9f6bc270c10"
+    },
+    {
+      "name": "binutils-common_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/binutils-common_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "binutils-common_2.42-4ubuntu2.10_arm64.deb",
+      "size": 240286,
+      "algorithm": "sha512",
+      "digest": "48ea0f040a2d84752ec7cab0664ba4c2095236a9bd39d0f35ca50feb589d2c811d02c2c96a6c2a070490cda010b40c05b1c98ffd431fab1ba4b05c31155564eb"
+    },
+    {
+      "name": "bison_2%3a3.8.2+dfsg-1ubuntu0.24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bison/bison_3.8.2%2bdfsg-1ubuntu0.24.04.1_arm64.deb",
+      "filename": "bison_2%3a3.8.2+dfsg-1ubuntu0.24.04.1_arm64.deb",
+      "size": 740250,
+      "algorithm": "sha512",
+      "digest": "475c7246f54bedf8820e736a537197ba57f123c796bbc27f0773c48d100313dd5fb9ced191e31e68ade6a7e4ed6c21e1800670070107a614c9fc85113d59ca3e"
+    },
+    {
+      "name": "bsdutils_1%3a2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/bsdutils_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "bsdutils_1%3a2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 99102,
+      "algorithm": "sha512",
+      "digest": "ec6428a06b149f016d89be009bfc8c1a27178402c1fcaf31397ff5f98d3f411cdbf7fe778c384faa52fe389f4b5a4aceeac8a580b56974bb4f49e568e990b186"
+    },
+    {
+      "name": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox-static_1.36.1-6ubuntu3.1_arm64.deb",
+      "filename": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+      "size": 910700,
+      "algorithm": "sha512",
+      "digest": "789ccedf6c0ea81ec042c466226a7b57fe411203d21d12cfeb180b94e9c20d96371889a6ef0a77124dbce3ef303e59d8d27c8968c2545730ce3ff3f52f5c54ca"
+    },
+    {
+      "name": "bzip2_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bzip2/bzip2_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "filename": "bzip2_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "size": 34022,
+      "algorithm": "sha512",
+      "digest": "0ce990aa9163934d024ce4d4722b12429b72553541465e8bb61ac6dc02b8e971de1bc4ba87ba06dbfb677e68f330a0d4ac354cd7dcb7f13e73e69888ff3993d7"
+    },
+    {
+      "name": "ca-certificates_20260601~24.04.1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/ca-certificates/ca-certificates_20260601%7e24.04.1_all.deb",
+      "filename": "ca-certificates_20260601~24.04.1_all.deb",
+      "size": 139430,
+      "algorithm": "sha512",
+      "digest": "1b7219944f6aa70a8048d567c81683d82267bd9fddcdfd5e5962ca30432a5c8a7be71d21ee857b1a804956e7d23b1cea7c1a42e31d01df6513fc5313ada4a7e2"
+    },
+    {
+      "name": "coreutils_9.4-3ubuntu6.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/coreutils/coreutils_9.4-3ubuntu6.3_arm64.deb",
+      "filename": "coreutils_9.4-3ubuntu6.3_arm64.deb",
+      "size": 1363982,
+      "algorithm": "sha512",
+      "digest": "564480c817b3e709feb1bf455d8709751a0a332d221033db1dbce34d162e8062d4eb49e97ab99b0f387321e05e8dbd1cfa7625222c12517231940475fb64036c"
+    },
+    {
+      "name": "cpio_2.15+dfsg-1ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/cpio/cpio_2.15%2bdfsg-1ubuntu2.1_arm64.deb",
+      "filename": "cpio_2.15+dfsg-1ubuntu2.1_arm64.deb",
+      "size": 81806,
+      "algorithm": "sha512",
+      "digest": "c626c92477539cccf4a47a7367c313701217b0ab9c1cd4b296565ae88cca98dbf35c92fadedfa626f19b3bad1397c0edb34c015109a93749e68aa1bb1841c4ec"
+    },
+    {
+      "name": "cpp-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/cpp-13_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "cpp-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 1038,
+      "algorithm": "sha512",
+      "digest": "68ed5bd1fc208af45953ea4a699513b99225fba9964e7241488accf3bc01696f48313f55e5a4846fa2bc749faaaf03bd680448cf29d8b817faf52b1181094595"
+    },
+    {
+      "name": "cpp-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/cpp-13-aarch64-linux-gnu_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "cpp-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 9559928,
+      "algorithm": "sha512",
+      "digest": "09c7d76905e5e04c84de47f1f5bc3f572ebe527bdebbe40e9e9ccdbfab76941b8c1cb6b7219e7bb41ce4da3505c49dac25492bc5a13bee988933efa0a04a7140"
+    },
+    {
+      "name": "diffutils_1%3a3.10-1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/diffutils/diffutils_3.10-1ubuntu0.1_arm64.deb",
+      "filename": "diffutils_1%3a3.10-1ubuntu0.1_arm64.deb",
+      "size": 174878,
+      "algorithm": "sha512",
+      "digest": "4ae27e6b4ff1b5e1044f82ce51f89aaa0b092e55d20b71873c98b34cde1fff027a30f84908ee4849daefc72d480e93b8ca8f250c7062226d845cfb1d7a8fdafe"
+    },
+    {
+      "name": "dpkg_1.22.6ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/dpkg/dpkg_1.22.6ubuntu6.6_arm64.deb",
+      "filename": "dpkg_1.22.6ubuntu6.6_arm64.deb",
+      "size": 1264616,
+      "algorithm": "sha512",
+      "digest": "eaa451d7178ffc74c768ecc0257d76731c72d01c8aeee4b00715c3c110fc1cdade37921e3bd7058c0a0a47217e443bc442b927276e050758681bcfe6d0b4ea4f"
+    },
+    {
+      "name": "dpkg-dev_1.22.6ubuntu6.6_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/dpkg/dpkg-dev_1.22.6ubuntu6.6_all.deb",
+      "filename": "dpkg-dev_1.22.6ubuntu6.6_all.deb",
+      "size": 1074218,
+      "algorithm": "sha512",
+      "digest": "ea3a72e15f02cf340cf0d7c7523ad6edeed2f289e6d183db63fda4d9a4357b450c1afea89bc702a3ecfecd976f5cc99d582b1a024a2dcc55021af7ed44c7c5c2"
+    },
+    {
+      "name": "e2fsprogs_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-2.4%7eexp1ubuntu4.1_arm64.deb",
+      "filename": "e2fsprogs_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "size": 594152,
+      "algorithm": "sha512",
+      "digest": "5140b1919a155c5018789cd27c4aa4dda15ddbdde0ec0bc68c5e22bd83132a95bdf07e319445bd90c8cf2a2d4ef9b7f10575f05685768307a264b5f3c192dcfd"
+    },
+    {
+      "name": "g++-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/g%2b%2b-13_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "g++-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 16046,
+      "algorithm": "sha512",
+      "digest": "6d5468430233e177f9f2c24a97029e8d82c51cb86cb8b55a42fdb167f54117b1278aa1542f3a7bf6dca382e104d130303bd4ec67ea85f62ba7c1e0b3a3b92aba"
+    },
+    {
+      "name": "g++-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/g%2b%2b-13-aarch64-linux-gnu_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "g++-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 10892156,
+      "algorithm": "sha512",
+      "digest": "e17d066886a9fdce65b4496c8bb618249e87968cfba52dd1cafd199e330c74896c6e990c0b671b26c33c62565a278d8cc1aefd4354552b08a0ceea95618dcf56"
+    },
+    {
+      "name": "gcc-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/gcc-13_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "gcc-13_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 484024,
+      "algorithm": "sha512",
+      "digest": "bafca2d966ecaa4015dec8fff82e18583cef43de08072dc484a2521367cff87bbab6fa46c234a40c4c494c56c915d764058ea9ecf6c9345d59793e91bd5dab1c"
+    },
+    {
+      "name": "gcc-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/gcc-13-aarch64-linux-gnu_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "gcc-13-aarch64-linux-gnu_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 18708214,
+      "algorithm": "sha512",
+      "digest": "4d3410e9415864d6dc671151652a4168c5e57e412356ba1eec470d71c082a938ce4a29bdd7e431eded8f93d91a8bd3f5b0d992771220034e342713ea811b47d1"
+    },
+    {
+      "name": "gcc-13-base_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/gcc-13-base_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "gcc-13-base_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 51632,
+      "algorithm": "sha512",
+      "digest": "dc8994531dbf4da5df417a1770b9a77293b49e5536deed111637d6b9356b91129ced82a309a2889376788683a0f28d7c9918aca3ace41dfdd9a9ffc5423f4b0d"
+    },
+    {
+      "name": "gcc-14-base_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/gcc-14-base_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "gcc-14-base_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 50984,
+      "algorithm": "sha512",
+      "digest": "375e93d49514b33573710b074f8805e904b704de6c4ea448e4f74be75cbc0d9137224b3fc7201482a1d10276f7f411b606a9f08910bc1ded383901b0bc088756"
+    },
+    {
+      "name": "git_1%3a2.43.0-1ubuntu7.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/git/git_2.43.0-1ubuntu7.3_arm64.deb",
+      "filename": "git_1%3a2.43.0-1ubuntu7.3_arm64.deb",
+      "size": 3773542,
+      "algorithm": "sha512",
+      "digest": "1f5b8f1e567662e3841f4815f602e8d7d3c05d9d65eae14a484a6f5a61d4fdad993db6a2f54b81a28a27746df3df0867c16f4dceebba233c8eaffe2b7319249a"
+    },
+    {
+      "name": "git-man_1%3a2.43.0-1ubuntu7.3_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/git/git-man_2.43.0-1ubuntu7.3_all.deb",
+      "filename": "git-man_1%3a2.43.0-1ubuntu7.3_all.deb",
+      "size": 1100178,
+      "algorithm": "sha512",
+      "digest": "896368cbe814cfaef023240c6c9ea449aa2ab5fe7972f93f5680ea5083e3743db046038f99db8adf101fd445657a30f2e054b7bd7d60a608ae78b781c22d5353"
+    },
+    {
+      "name": "gpgv_2.4.4-2ubuntu17.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnupg2/gpgv_2.4.4-2ubuntu17.6_arm64.deb",
+      "filename": "gpgv_2.4.4-2ubuntu17.6_arm64.deb",
+      "size": 151008,
+      "algorithm": "sha512",
+      "digest": "8ef1dd9826c80e9ef8e8834f086d6d053f17538093ee48755c11db5af5cf1d0041dff7643d9371f279804349356c06f7cad7903b6322bda8be54cc56160cff06"
+    },
+    {
+      "name": "gzip_1.12-1ubuntu3.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gzip/gzip_1.12-1ubuntu3.2_arm64.deb",
+      "filename": "gzip_1.12-1ubuntu3.2_arm64.deb",
+      "size": 97552,
+      "algorithm": "sha512",
+      "digest": "e3c05cadf642772f7af006733a06a50fe7c10e533dde44938a14013fe40169346463beb13740dc642bf9d3a91d60c0bac7b63821b4dc20432103cdd49260d448"
+    },
+    {
+      "name": "icu-devtools_74.2-1ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/icu/icu-devtools_74.2-1ubuntu3.1_arm64.deb",
+      "filename": "icu-devtools_74.2-1ubuntu3.1_arm64.deb",
+      "size": 208902,
+      "algorithm": "sha512",
+      "digest": "34d12c8a00e1fc973496ae0a2bb405a49245ffc8a4e8f059019a189796e7d730693b17102aad1b39925f106a919253a67b1676af8443dd517e888075d93e87cd"
+    },
+    {
+      "name": "libacl1_2.3.2-1build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/acl/libacl1_2.3.2-1build1.1_arm64.deb",
+      "filename": "libacl1_2.3.2-1build1.1_arm64.deb",
+      "size": 17050,
+      "algorithm": "sha512",
+      "digest": "a7b7dc0e4b75c572e695760ec2032612da8e07fbde5b001ccdfb016baf402c8fcb7ee3616840be351a4983814c89e364c8a06c15977a16da578e07c6a88b4c88"
+    },
+    {
+      "name": "libapt-pkg6.0t64_2.8.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/apt/libapt-pkg6.0t64_2.8.3_arm64.deb",
+      "filename": "libapt-pkg6.0t64_2.8.3_arm64.deb",
+      "size": 936590,
+      "algorithm": "sha512",
+      "digest": "5dd75fc969aec1937ba0dcd0fc7e4a40888d359b500c2b5505452c9e9a45c7a73ff1e23556043fb7f2b4506986565523bbd1c1637ceb979f610dd17483cd3966"
+    },
+    {
+      "name": "libasan8_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libasan8_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libasan8_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 2927874,
+      "algorithm": "sha512",
+      "digest": "d0dc23265e6b6a863af17784ece3c7add79189ffd92eb2ce7690d897f13b1801ebd0a929073aa714b7334ee0df64fee88819c0bfbf55f27b7a8b99aa0786fd72"
+    },
+    {
+      "name": "libatomic1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libatomic1_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libatomic1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 11604,
+      "algorithm": "sha512",
+      "digest": "46db6b58ef2b114bf615a9fa55d693785180d4718924965e1c22242e65e1e7af31072db0fd1b47bfad64c781b237a6b9ae2ad203afe7fa6121928a578b7a6395"
+    },
+    {
+      "name": "libattr1_1%3a2.5.2-1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/attr/libattr1_2.5.2-1ubuntu0.1_arm64.deb",
+      "filename": "libattr1_1%3a2.5.2-1ubuntu0.1_arm64.deb",
+      "size": 11428,
+      "algorithm": "sha512",
+      "digest": "8878444e8dc753a8b0f0a65c5a33d10b118409109ca7f907949060e1785fd4d89c2c4b655b49c391a5d9603699811a83ee24407e80d6ab3ce080f5195340e218"
+    },
+    {
+      "name": "libbinutils_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/libbinutils_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "libbinutils_2.42-4ubuntu2.10_arm64.deb",
+      "size": 766448,
+      "algorithm": "sha512",
+      "digest": "e0abc3f6a01ff655382f54927d555bb249fb5424304d91528b2d6bf35bd0cf84efa47b4e313d7f190591a0a46ffa1fd6cc33f5496d9e757c64d7a0ddc754cab1"
+    },
+    {
+      "name": "libblkid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/libblkid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "libblkid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 124240,
+      "algorithm": "sha512",
+      "digest": "f8fa76815955f5ce26e8366384abc2c7db279c77514f73956a18203cae16bfaedbbf28a6fde904888b4db43f9533619c150eed75b58a8402f6b0542672cc74c1"
+    },
+    {
+      "name": "libbsd0_0.12.1-1build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libb/libbsd/libbsd0_0.12.1-1build1.1_arm64.deb",
+      "filename": "libbsd0_0.12.1-1build1.1_arm64.deb",
+      "size": 40970,
+      "algorithm": "sha512",
+      "digest": "79f0b34c50488e05a7169e93dd5e355c1ad406d9bea54664bffea335c7a976fa5731555a250c6a390293bef6d1eaf8f2bfdca292cc267183b5ed72edbc41d0e4"
+    },
+    {
+      "name": "libbz2-1.0_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bzip2/libbz2-1.0_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "filename": "libbz2-1.0_1.0.8-5.1ubuntu0.1_arm64.deb",
+      "size": 35936,
+      "algorithm": "sha512",
+      "digest": "724d3555208816027ca2acff6c1802547aceb69f12c83c936d8888bb70374e7edb3050d3241d53f84d6a668a4b8c2c2db01e9b3f8444d5c8c328a70a55b4c566"
+    },
+    {
+      "name": "libc-bin_2.39-0ubuntu8.9_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc-bin_2.39-0ubuntu8.9_arm64.deb",
+      "filename": "libc-bin_2.39-0ubuntu8.9_arm64.deb",
+      "size": 591286,
+      "algorithm": "sha512",
+      "digest": "f44b412234cb2f31e601dced317e22570fa62dc16e7c259304318e39bf03b735c32938f6cdd4bbbc69b345254ae58d1ef7faf807e83599f7311b494ca89966e9"
+    },
+    {
+      "name": "libc-dev-bin_2.39-0ubuntu8.9_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc-dev-bin_2.39-0ubuntu8.9_arm64.deb",
+      "filename": "libc-dev-bin_2.39-0ubuntu8.9_arm64.deb",
+      "size": 19684,
+      "algorithm": "sha512",
+      "digest": "6ce68003284ae6a6a925fac4374bc50e1c99bd59c5cb27faec0a3b648e2802913522efd823f8a0a4b022d78f51f7bc488db0cdd08e7745087ae9f6c7af70ac53"
+    },
+    {
+      "name": "libc6_2.39-0ubuntu8.9_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6_2.39-0ubuntu8.9_arm64.deb",
+      "filename": "libc6_2.39-0ubuntu8.9_arm64.deb",
+      "size": 2776414,
+      "algorithm": "sha512",
+      "digest": "9c4a0aa7aaa2d3e4fb903724a85534f2267ca7f4377210fc5d097e3c4b8fb49ce4afe912aea510ffdff78ec35d33cb05b4d2546581633d8f70813803e9edf5ff"
+    },
+    {
+      "name": "libc6-dev_2.39-0ubuntu8.9_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/glibc/libc6-dev_2.39-0ubuntu8.9_arm64.deb",
+      "filename": "libc6-dev_2.39-0ubuntu8.9_arm64.deb",
+      "size": 1596264,
+      "algorithm": "sha512",
+      "digest": "fb3d57a071d1b67d6b7daf5aabae7f561ecd5c12063c2e6839492b96f3fbc0879699a58d34203b3df31c93fb3b0872abf61b6e80ab7219008c543c7ebdb90520"
+    },
+    {
+      "name": "libcap2_1%3a2.66-5ubuntu2.4_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libc/libcap2/libcap2_2.66-5ubuntu2.4_arm64.deb",
+      "filename": "libcap2_1%3a2.66-5ubuntu2.4_arm64.deb",
+      "size": 30676,
+      "algorithm": "sha512",
+      "digest": "3f0194aef8c10c6ac16d617c664885c33d2b8abb68e8bed5dc1b55d5238b5541a9d46a339c011c777cd2e8d6cbeb132ad55602dabcd3fcf4e32e1a5888b477ec"
+    },
+    {
+      "name": "libcc1-0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libcc1-0_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libcc1-0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 49734,
+      "algorithm": "sha512",
+      "digest": "9f59e3d45fd0c8bf1e70e37d43b4c156816c97d3337d0af76f954046e66a4ee5ef12e5a524772110c6b19f831bf35c2d20a3cc1e9d12ea5fff9e6608101a86ee"
+    },
+    {
+      "name": "libclang-cpp18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/llvm-toolchain-18/libclang-cpp18_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libclang-cpp18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 13166642,
+      "algorithm": "sha512",
+      "digest": "e7fb9be1f38a36d3809baedc4f02eeb7ac07941e1bfebcb5c60a47526268373a80c564d422278a5960128dcdf749ef1a3c146bda7c29149082a00368948cb9ab"
+    },
+    {
+      "name": "libclang1-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/llvm-toolchain-18/libclang1-18_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libclang1-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 7533024,
+      "algorithm": "sha512",
+      "digest": "93740eda37649c8184021696ba6b641915db755bdf04580f933da2c9ced0839a0ca4b4d7cfd33bf62354acf8dc2e5860423c2c194737a9033c7e0d5eac6297a5"
+    },
+    {
+      "name": "libcom-err2_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/e2fsprogs/libcom-err2_1.47.0-2.4%7eexp1ubuntu4.1_arm64.deb",
+      "filename": "libcom-err2_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "size": 22554,
+      "algorithm": "sha512",
+      "digest": "89f3bcaea0373d0b53721a26746231f4e2775a6358f08dddaec490e2a07abb6cd273853b51df59deb5e735a1d5b50f89646d4c34f706e23b50c4bff1891a54b1"
+    },
+    {
+      "name": "libctf-nobfd0_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/libctf-nobfd0_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "libctf-nobfd0_2.42-4ubuntu2.10_arm64.deb",
+      "size": 100868,
+      "algorithm": "sha512",
+      "digest": "090fbc0a589c165a69d70a6fd750401b3efed53b7514f2f8f0cbaa5842b0d3fba520d4cc41c168986385394141c47c490a806ee0ae29b437243dbe58a64d7d3f"
+    },
+    {
+      "name": "libctf0_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/libctf0_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "libctf0_2.42-4ubuntu2.10_arm64.deb",
+      "size": 95744,
+      "algorithm": "sha512",
+      "digest": "6461effcf749d1a1aa6654910fde2f470d2ced8777d3037808444dd57c35d41f0e680a45cf3f19bef112e60ab299686c18992184cd0b823a1776134c29c8ba37"
+    },
+    {
+      "name": "libcurl3t64-gnutls_8.5.0-2ubuntu10.15_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/curl/libcurl3t64-gnutls_8.5.0-2ubuntu10.15_arm64.deb",
+      "filename": "libcurl3t64-gnutls_8.5.0-2ubuntu10.15_arm64.deb",
+      "size": 330014,
+      "algorithm": "sha512",
+      "digest": "a0700b56e3bc498ed83afa3fdc57519ee5dfa8b1c100b18c9bb0ae11c9b4fcb073a9650aac147dde19c886dba5b1d3f62d008fb828ec00f550d62cbe2dd18098"
+    },
+    {
+      "name": "libcurl4t64_8.5.0-2ubuntu10.15_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/curl/libcurl4t64_8.5.0-2ubuntu10.15_arm64.deb",
+      "filename": "libcurl4t64_8.5.0-2ubuntu10.15_arm64.deb",
+      "size": 336504,
+      "algorithm": "sha512",
+      "digest": "6d2d94be0e3908dc6132fdf72001db6228bbf4260caddd9a43b039a46575409fe826efd194ca77bb600e2220ef630feab49e2e5c9a8909bde3e953a409ff7ca5"
+    },
+    {
+      "name": "libdpkg-perl_1.22.6ubuntu6.6_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/dpkg/libdpkg-perl_1.22.6ubuntu6.6_all.deb",
+      "filename": "libdpkg-perl_1.22.6ubuntu6.6_all.deb",
+      "size": 268420,
+      "algorithm": "sha512",
+      "digest": "a821b4597ee06282b541b4fe9eaa7d4a1140daafb1aa9c99155026f707054779f7fa110551819d713632b19f6b9645dbca96dcfb44c7ddc8a8df111d9690e927"
+    },
+    {
+      "name": "libdrm-amdgpu1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-amdgpu1_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-amdgpu1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 21870,
+      "algorithm": "sha512",
+      "digest": "a88883568c3064c2cc68381d8e94ae816e12232ce6bb22e2f5defd328bd6f014befbefe8c7b393f4422574e39fc01edb2acfd8fb36fa750add414cee2a79fcc8"
+    },
+    {
+      "name": "libdrm-common_2.4.125-1ubuntu0.1~24.04.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-common_2.4.125-1ubuntu0.1%7e24.04.2_all.deb",
+      "filename": "libdrm-common_2.4.125-1ubuntu0.1~24.04.2_all.deb",
+      "size": 9250,
+      "algorithm": "sha512",
+      "digest": "4f23954a835a44d4195486cefdb267247a43a960315d6770fbcd20accae7b9d23215b5247172a534dd2bff299e06fd474ea2fc516ba9dc29a6e91f8f6d427610"
+    },
+    {
+      "name": "libdrm-dev_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-dev_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-dev_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 349632,
+      "algorithm": "sha512",
+      "digest": "10e1c303941573e4d828a5570f28e6f4c7c29f8b3f2d132e46de12d98286c6518763cf3c3ec9916dd3d8fe1626356200c35b486d1786fc0b214acab89328524c"
+    },
+    {
+      "name": "libdrm-etnaviv1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-etnaviv1_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-etnaviv1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 12476,
+      "algorithm": "sha512",
+      "digest": "16e5c65d881801f6e42593d1c43c816ddbf09f363d8d6a36058a2472846f8fe9d8409fc0da4fa5590445f5a17e5e0a90a73e3c3544a04b7a40cc8644b441c0ae"
+    },
+    {
+      "name": "libdrm-freedreno1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-freedreno1_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-freedreno1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 20228,
+      "algorithm": "sha512",
+      "digest": "cfdd074e0224cfefa46a9d65c6964dda3b1efee56bec61d8ac530587e02c91682d2432e939d613d346b8dd794576a08db23928411b24eef282cd4f51d694d678"
+    },
+    {
+      "name": "libdrm-nouveau2_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-nouveau2_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-nouveau2_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 17794,
+      "algorithm": "sha512",
+      "digest": "e657f3b3817a7978720746cf7a87ada49747e24741335e74816906555182f50ea0d830d107cd30511d70c5728887e8f16051ca5ee277c4aabb500b84c2279d9f"
+    },
+    {
+      "name": "libdrm-radeon1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-radeon1_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-radeon1_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 20854,
+      "algorithm": "sha512",
+      "digest": "56c49f7f9859f947fa64fdb4f1fe8059f0329c8acd33bb237c4ce609ea4e57566119acaaf8064786990c9723b5e6389e6d35520664e5bab47a39f0ac3f85d7b8"
+    },
+    {
+      "name": "libdrm-tegra0_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm-tegra0_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm-tegra0_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 9636,
+      "algorithm": "sha512",
+      "digest": "2cade4f8d9769f442d8297d782ecbf2c4c9e6d6af496b78d13c810820ee0c694341c9481ffc1b4fb1add1525403f9311f83c79637fa424f21a91f7e92185fa0a"
+    },
+    {
+      "name": "libdrm2_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libd/libdrm/libdrm2_2.4.125-1ubuntu0.1%7e24.04.2_arm64.deb",
+      "filename": "libdrm2_2.4.125-1ubuntu0.1~24.04.2_arm64.deb",
+      "size": 42898,
+      "algorithm": "sha512",
+      "digest": "f4963a1418039dee06793cd3b98890f5a4bfe61731c3cf215bf8ed164db733b7509f2fd96f431d489dba6c0f2957066c6cace537955801f5258d621a91e12cfa"
+    },
+    {
+      "name": "libelf-dev_0.190-1.1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/elfutils/libelf-dev_0.190-1.1ubuntu0.1_arm64.deb",
+      "filename": "libelf-dev_0.190-1.1ubuntu0.1_arm64.deb",
+      "size": 72244,
+      "algorithm": "sha512",
+      "digest": "ce72d977b3579beb506101810b3916c57aba3df5ec922199ddd06c3f09f4a0b24320d9896e33827a36e4650eac0c264995775ff30bc95c2ff3860da5d049a769"
+    },
+    {
+      "name": "libelf1t64_0.190-1.1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/elfutils/libelf1t64_0.190-1.1ubuntu0.1_arm64.deb",
+      "filename": "libelf1t64_0.190-1.1ubuntu0.1_arm64.deb",
+      "size": 58420,
+      "algorithm": "sha512",
+      "digest": "c335f4feed7468cb94aeac32cf18e79d67d0569719a7c912c0070c004ba4fb2030245525003efd88a13574ac39ca2c6027d1ac905b583f3a7385f888941ff7ef"
+    },
+    {
+      "name": "libexpat1_2.6.1-2ubuntu0.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/expat/libexpat1_2.6.1-2ubuntu0.6_arm64.deb",
+      "filename": "libexpat1_2.6.1-2ubuntu0.6_arm64.deb",
+      "size": 89808,
+      "algorithm": "sha512",
+      "digest": "8e2a6541e1496ec577b46d2e050766bdd1613c1a195df182a80f0498d5151c8f3b8faeec5a09239e88d29eb61c47bda35399548d5a1eb95d425300fa225f3dfa"
+    },
+    {
+      "name": "libexpat1-dev_2.6.1-2ubuntu0.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/expat/libexpat1-dev_2.6.1-2ubuntu0.6_arm64.deb",
+      "filename": "libexpat1-dev_2.6.1-2ubuntu0.6_arm64.deb",
+      "size": 134104,
+      "algorithm": "sha512",
+      "digest": "4a1eee5423893b2af6ca1d5d620058f6875f938e1d7153b5d411b4b78d3c837da98d60eadaa65eb1927985c2cf68c9490b23563f75d52485b3571fb2284ce23d"
+    },
+    {
+      "name": "libext2fs2t64_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/e2fsprogs/libext2fs2t64_1.47.0-2.4%7eexp1ubuntu4.1_arm64.deb",
+      "filename": "libext2fs2t64_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "size": 224882,
+      "algorithm": "sha512",
+      "digest": "eb60d419a622dd01f3b1b41849c53be52417144c4f89685e51501cc5d456ba5c6d6b067deeadc82a36fbe794f127168bc5d19cc0e430f77dc30da0022cadb3b3"
+    },
+    {
+      "name": "libgcc-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/libgcc-13-dev_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libgcc-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 2473368,
+      "algorithm": "sha512",
+      "digest": "c73899a26a008625b168cff6b41773c7803741882683df5300d1049751029711273d58e97039e99b65ab0a2feb4cfe23f22bbc6c47c550009b6e16027b019143"
+    },
+    {
+      "name": "libgcc-s1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libgcc-s1_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libgcc-s1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 61884,
+      "algorithm": "sha512",
+      "digest": "51f30da4532c946739b33b4bf71df08a54ad65b3ae506e702234dbd68f312dc692aa43737ac56e47db9c58ed009f7318ca4b60cf9b172c8b6d62eb22faa16db2"
+    },
+    {
+      "name": "libgcrypt20_1.10.3-2ubuntu0.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libg/libgcrypt20/libgcrypt20_1.10.3-2ubuntu0.2_arm64.deb",
+      "filename": "libgcrypt20_1.10.3-2ubuntu0.2_arm64.deb",
+      "size": 475664,
+      "algorithm": "sha512",
+      "digest": "79afa68654daee9345682c1bd4b579b5e55972ebd6fc6addc35863911783c8ecd7e7331b10f3a4f7f354eefdbb8567d88d11323813f21567fb35e65a03753cf7"
+    },
+    {
+      "name": "libgmp10_2%3a6.3.0+dfsg-2ubuntu6.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gmp/libgmp10_6.3.0%2bdfsg-2ubuntu6.1_arm64.deb",
+      "filename": "libgmp10_2%3a6.3.0+dfsg-2ubuntu6.1_arm64.deb",
+      "size": 243166,
+      "algorithm": "sha512",
+      "digest": "6905c1c8d4600072661c8428d35d5ba5f9622e464688695768e151a2d743828455b64542ea84953aed6fd954dd913637152b096e304d895eb651c5f4d46b9d1d"
+    },
+    {
+      "name": "libgnutls30t64_3.8.3-1.1ubuntu3.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnutls28/libgnutls30t64_3.8.3-1.1ubuntu3.6_arm64.deb",
+      "filename": "libgnutls30t64_3.8.3-1.1ubuntu3.6_arm64.deb",
+      "size": 941922,
+      "algorithm": "sha512",
+      "digest": "0dcb4281895ded72145d7053654a3d2a3e8fa954151ae062ffdbcb4ae4f90a4ac7e1d9964514567e04a1ffbdb0e1a067b78bdfa6be594a96d37333f4e4dec479"
+    },
+    {
+      "name": "libgomp1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libgomp1_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libgomp1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 144962,
+      "algorithm": "sha512",
+      "digest": "380040142019dad4501d966db474aac9e8e0764e35a2beb1ead50a7b31a54f403e9e84b6e62064056d4a6695cd9eb892dadadaf86ef212e8764459142c7f1ac0"
+    },
+    {
+      "name": "libgpg-error0_1.47-3build2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libg/libgpg-error/libgpg-error0_1.47-3build2.1_arm64.deb",
+      "filename": "libgpg-error0_1.47-3build2.1_arm64.deb",
+      "size": 70050,
+      "algorithm": "sha512",
+      "digest": "4e2d69a8451abe9ed7e33b7f1b4f87a2183033678fd5395b960e7cf77f171551a150b09aa6ebf64c6fbeeb77c44b1ac3e013be1bf49ff214c879d8d82004d8b5"
+    },
+    {
+      "name": "libgprofng0_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/libgprofng0_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "libgprofng0_2.42-4ubuntu2.10_arm64.deb",
+      "size": 776452,
+      "algorithm": "sha512",
+      "digest": "361c24ba0b7a4a13c5b206bcdf7dd38f284c89307c34debf8e5c2ab4f3083968d1867401d9d54dda943f45f74f1943855bfa82941e9fb8c8d50d69ead98e7172"
+    },
+    {
+      "name": "libgssapi-krb5-2_1.20.1-6ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/krb5/libgssapi-krb5-2_1.20.1-6ubuntu2.10_arm64.deb",
+      "filename": "libgssapi-krb5-2_1.20.1-6ubuntu2.10_arm64.deb",
+      "size": 141730,
+      "algorithm": "sha512",
+      "digest": "4e6db02978818d45a02e04fad98e98ebc7b1aaab5ca64782a7afceed8709c844fe0aaedd3a578812419f3180e9e3be599a151412c87fdb675962359884896cfc"
+    },
+    {
+      "name": "libhogweed6t64_3.9.1-2.2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/nettle/libhogweed6t64_3.9.1-2.2build1.1_arm64.deb",
+      "filename": "libhogweed6t64_3.9.1-2.2build1.1_arm64.deb",
+      "size": 198784,
+      "algorithm": "sha512",
+      "digest": "a9c4eb59f1ee373ca682ead9598639afc7bee858dc1c1d535334e7116e3cea6d9ea7e8b5c02e2b7f1913524f5013677c20baf7969182c70e7b2c660201c1d318"
+    },
+    {
+      "name": "libhwasan0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libhwasan0_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libhwasan0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 1604938,
+      "algorithm": "sha512",
+      "digest": "985f120b40c056459eff9980d05c2f4b6b1665ba7090c836f5582494dea9fe0f551dd3ed5f67e3e14d19ec5d15fb06bcf1674626faf11ad6e06cf1e96c856bbb"
+    },
+    {
+      "name": "libicu-dev_74.2-1ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/icu/libicu-dev_74.2-1ubuntu3.1_arm64.deb",
+      "filename": "libicu-dev_74.2-1ubuntu3.1_arm64.deb",
+      "size": 11881468,
+      "algorithm": "sha512",
+      "digest": "1c04b31f27998e483d9a37f16ecf0bdc3b66f9decb2921a223a1017338cf9849f46caa08eb3f3a13be43f516256a0070e9ae4ab8eefc5abadb5b643d2fc93c36"
+    },
+    {
+      "name": "libicu74_74.2-1ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/icu/libicu74_74.2-1ubuntu3.1_arm64.deb",
+      "filename": "libicu74_74.2-1ubuntu3.1_arm64.deb",
+      "size": 10806898,
+      "algorithm": "sha512",
+      "digest": "6e06a4056fa98e6b14179f3e073d3c3774cb6570ae02829f411596cbba9c2b171b8f01def1c398d957f5d95028a40036b02c0e3de79aab3d0a748a5f49bcaa17"
+    },
+    {
+      "name": "libidn2-0_2.3.7-2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libi/libidn2/libidn2-0_2.3.7-2build1.1_arm64.deb",
+      "filename": "libidn2-0_2.3.7-2build1.1_arm64.deb",
+      "size": 67242,
+      "algorithm": "sha512",
+      "digest": "11130a49c52b483441be789c6c5b1295380f5a8f76f09b8b5026589b948f4a301283c0f6c1ca2f9fa190d3fab5409caa96aa52398fc6a68933cfb4b409828fb0"
+    },
+    {
+      "name": "libisl23_0.26-3build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/isl/libisl23_0.26-3build1.1_arm64.deb",
+      "filename": "libisl23_0.26-3build1.1_arm64.deb",
+      "size": 669128,
+      "algorithm": "sha512",
+      "digest": "4b89e437a3f480e94018602a2a227d121d57374040094b4e4b41b013194858162ca971dab80beb0b6ebc36bac181286d812ab5d6907cafc5102b1f20ae7643e3"
+    },
+    {
+      "name": "libitm1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libitm1_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libitm1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 28154,
+      "algorithm": "sha512",
+      "digest": "6d820d4e3a0a9d7f15a150bd44ddfe4dd2ebfe920d3b276dcae07af0b5c294f6b0b61fc094d3b887082ab1b68a1f5a32ffbd09fa5503c3647c7e4ff2d4319a08"
+    },
+    {
+      "name": "libk5crypto3_1.20.1-6ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/krb5/libk5crypto3_1.20.1-6ubuntu2.10_arm64.deb",
+      "filename": "libk5crypto3_1.20.1-6ubuntu2.10_arm64.deb",
+      "size": 85774,
+      "algorithm": "sha512",
+      "digest": "33f7f61235191ffc448236a55a42055bf8a268fb69bbc23f349fc4b3f6be359431cc59f2d864578d7ea95a61a248a829bdcf9588ac104d2db774e6d9a0cb9c66"
+    },
+    {
+      "name": "libkrb5-3_1.20.1-6ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/krb5/libkrb5-3_1.20.1-6ubuntu2.10_arm64.deb",
+      "filename": "libkrb5-3_1.20.1-6ubuntu2.10_arm64.deb",
+      "size": 349720,
+      "algorithm": "sha512",
+      "digest": "41ac31b9efea7fdc8d709615640c563f826af36d0058f63071ce361a2bddce38d91e43e816993aa84aa2e041a83dbe22b6c38e26ea450c24fe3f0d84110e339e"
+    },
+    {
+      "name": "libkrb5support0_1.20.1-6ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/krb5/libkrb5support0_1.20.1-6ubuntu2.10_arm64.deb",
+      "filename": "libkrb5support0_1.20.1-6ubuntu2.10_arm64.deb",
+      "size": 35356,
+      "algorithm": "sha512",
+      "digest": "f4cddf8721f979a2a3242a4a4934defc48d9e6e7a4531fbe775c2543243cdcc668a1b65581a545ad6917371b290101b001f8bc2deac257fe6922a14bdecabc2d"
+    },
+    {
+      "name": "libldap2_2.6.10+dfsg-0ubuntu0.24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/openldap/libldap2_2.6.10%2bdfsg-0ubuntu0.24.04.1_arm64.deb",
+      "filename": "libldap2_2.6.10+dfsg-0ubuntu0.24.04.1_arm64.deb",
+      "size": 195858,
+      "algorithm": "sha512",
+      "digest": "2e25f87d6d95a1c8bee2be0e4976d72bbd4bf8d828443744c471aa4f7d0e4e51dc9ace7424ab30a793a872806bfddd560bd5c3a3074733e88dcfe84a8823c0c7"
+    },
+    {
+      "name": "libllvm18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/llvm-toolchain-18/libllvm18_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libllvm18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 26341296,
+      "algorithm": "sha512",
+      "digest": "69e8e349364971edab24ef42ebb812bae12d4e93e57e533040ca2b7f1455f859ffbca6ae034c79fcb76e185655ef0e9ea938fcdac443aa2f3291c39ed27a549e"
+    },
+    {
+      "name": "liblsan0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/liblsan0_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "liblsan0_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 1289238,
+      "algorithm": "sha512",
+      "digest": "1034874f3f2fcb521eb0b410edcfa726632ae12f12eb1e8caee085e57c0bbae620af1ef0b1039273a951df8c0aedbe5a42e50f43e1eb07824f6457af052d3ec9"
+    },
+    {
+      "name": "liblz4-1_1.9.4-1build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/lz4/liblz4-1_1.9.4-1build1.1_arm64.deb",
+      "filename": "liblz4-1_1.9.4-1build1.1_arm64.deb",
+      "size": 64172,
+      "algorithm": "sha512",
+      "digest": "65dfe2282ac8e825a4c9da7f92e01239632bba2141591f01103650bdc728ca240874641792ef62e807201676bbe43525fe25540cffa3aed3cfd3cf41e8d9df84"
+    },
+    {
+      "name": "liblzma5_5.6.1+really5.4.5-1ubuntu0.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/x/xz-utils/liblzma5_5.6.1%2breally5.4.5-1ubuntu0.3_arm64.deb",
+      "filename": "liblzma5_5.6.1+really5.4.5-1ubuntu0.3_arm64.deb",
+      "size": 125976,
+      "algorithm": "sha512",
+      "digest": "3ea861b2a5b2943cbd32208f63ae22959183c693461939435d7ab382099365e63488d3009de9f71c3f1f4230ff80b4cb17686b29213a91eadd6ce59409524c21"
+    },
+    {
+      "name": "libmd0_1.1.0-2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libm/libmd/libmd0_1.1.0-2build1.1_arm64.deb",
+      "filename": "libmd0_1.1.0-2build1.1_arm64.deb",
+      "size": 24616,
+      "algorithm": "sha512",
+      "digest": "1500b909e549812b040224c4dd90cc80d63e7025a218ae127c812c82433938d0fe78e7ea2baca1065241231c8938e4b8a467063e6d5fcc8cc684315a4dc368f1"
+    },
+    {
+      "name": "libmount1_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/libmount1_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "libmount1_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 133662,
+      "algorithm": "sha512",
+      "digest": "f7bf279f5661389c6eca8f0c3a4b4b97286688a617ac6296eafc3d3f59bf441d28516c0ea90cc7a52cf5369bde5e6c1cdfe920b963a51bcbde3dde1fbb1c738d"
+    },
+    {
+      "name": "libmpc3_1.3.1-1build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/mpclib3/libmpc3_1.3.1-1build1.1_arm64.deb",
+      "filename": "libmpc3_1.3.1-1build1.1_arm64.deb",
+      "size": 56402,
+      "algorithm": "sha512",
+      "digest": "33c50e95a4c371a508948a3f914fde7df4f1f6c599ba184ba9a3b0d1f3fbdaca4a3a88cbe0936a4458b905e6974249432df78ffb344de0d8cb32be01399aeb21"
+    },
+    {
+      "name": "libmpfr6_4.2.1-1build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/mpfr4/libmpfr6_4.2.1-1build1.1_arm64.deb",
+      "filename": "libmpfr6_4.2.1-1build1.1_arm64.deb",
+      "size": 329460,
+      "algorithm": "sha512",
+      "digest": "0d16038f79f202e7ba1cfcfbe3055a387478e273a72ef47c43e3df393cdd99168db28595c5632043139d5b2bc96d79d2134fe760d15b98cd9dd56781a4ccc2c6"
+    },
+    {
+      "name": "libncurses-dev_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/libncurses-dev_6.4%2b20240113-1ubuntu2.2_arm64.deb",
+      "filename": "libncurses-dev_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "size": 385156,
+      "algorithm": "sha512",
+      "digest": "e80dbb17024c983b1fa14a3b5362d6761add5df798d71ea41154d58c04d2063a416af3acaec5a3d7a8872bc77b11c470958a12e083ee5ed0c54ffdcf7e39a6b9"
+    },
+    {
+      "name": "libncurses6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/libncurses6_6.4%2b20240113-1ubuntu2.2_arm64.deb",
+      "filename": "libncurses6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "size": 109620,
+      "algorithm": "sha512",
+      "digest": "a70bc1539b00fb45516f58f7d4689aee992aa6ced446089b5fd323213e7f679a2fa83667fdff5298cc1b34a86eb957eae17f04f3ca6d641a2201995c913f80d2"
+    },
+    {
+      "name": "libncursesw6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/libncursesw6_6.4%2b20240113-1ubuntu2.2_arm64.deb",
+      "filename": "libncursesw6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "size": 145566,
+      "algorithm": "sha512",
+      "digest": "6bf7fd0ab73db3175fb8e69cf8446138002f16eee0146ca47bb5c6fdd386d3e429d2b9f43985ae39074cdb4ebec930631231c9e28edccbd8ab6110d135d7a0a5"
+    },
+    {
+      "name": "libnettle8t64_3.9.1-2.2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/nettle/libnettle8t64_3.9.1-2.2build1.1_arm64.deb",
+      "filename": "libnettle8t64_3.9.1-2.2build1.1_arm64.deb",
+      "size": 192300,
+      "algorithm": "sha512",
+      "digest": "558823eb7ca9917d6fd3f6fde744e2473e678853ca4f7d2057e83d4efa90350d3656d4ccb915d44f5950905f02ac890fec8aaea233b728134788b69efb72507d"
+    },
+    {
+      "name": "libnghttp2-14_1.59.0-1ubuntu0.4_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/nghttp2/libnghttp2-14_1.59.0-1ubuntu0.4_arm64.deb",
+      "filename": "libnghttp2-14_1.59.0-1ubuntu0.4_arm64.deb",
+      "size": 74758,
+      "algorithm": "sha512",
+      "digest": "dc22b546a7ff29c78052fd2fdd54fc6e40b7a8ca257a9cd5bc9782eddbe342080d63a4ef2dd1bf56782d1d4df44219a048f337b94e8b92035b3ef8e6fcf344e5"
+    },
+    {
+      "name": "libp11-kit0_0.25.3-4ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/p11-kit/libp11-kit0_0.25.3-4ubuntu2.2_arm64.deb",
+      "filename": "libp11-kit0_0.25.3-4ubuntu2.2_arm64.deb",
+      "size": 276136,
+      "algorithm": "sha512",
+      "digest": "68d9c0a8bfda49d4aa92d6d853fca58ccc7a11cd34c8c2991f6efb07f4b1ee18c3c03ac3456fd947898bf230c9d11c2f539622b727cdbe0674194512c2c38547"
+    },
+    {
+      "name": "libpam-modules_1.5.3-5ubuntu5.7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pam/libpam-modules_1.5.3-5ubuntu5.7_arm64.deb",
+      "filename": "libpam-modules_1.5.3-5ubuntu5.7_arm64.deb",
+      "size": 285996,
+      "algorithm": "sha512",
+      "digest": "169e0c3c4efd53c7a305cdb8f6c1713f733b6b9a3cc28e6d24390a928af33b0944b7ffa1874ea8bc657436f1a884573e727994775b5823b14970da291023e610"
+    },
+    {
+      "name": "libpam-modules-bin_1.5.3-5ubuntu5.7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pam/libpam-modules-bin_1.5.3-5ubuntu5.7_arm64.deb",
+      "filename": "libpam-modules-bin_1.5.3-5ubuntu5.7_arm64.deb",
+      "size": 50432,
+      "algorithm": "sha512",
+      "digest": "379bd8e6e0d35b20bea4f16335a7971e386a22177f74dbfd275bd245693918924fcac4dad933f1f4cec3c367464e608bdfd6083664bfd94a06adcad73efa4774"
+    },
+    {
+      "name": "libpam-runtime_1.5.3-5ubuntu5.7_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pam/libpam-runtime_1.5.3-5ubuntu5.7_all.deb",
+      "filename": "libpam-runtime_1.5.3-5ubuntu5.7_all.deb",
+      "size": 40754,
+      "algorithm": "sha512",
+      "digest": "0f69f853dadbca55650458043e21c031408833fba2e7404eedde603508725230cf06994411f51dca0f40f6014f9ff6036f175f3fd8c6940b66b198ec4a9f78eb"
+    },
+    {
+      "name": "libpam0g_1.5.3-5ubuntu5.7_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pam/libpam0g_1.5.3-5ubuntu5.7_arm64.deb",
+      "filename": "libpam0g_1.5.3-5ubuntu5.7_arm64.deb",
+      "size": 68430,
+      "algorithm": "sha512",
+      "digest": "a281c0158683f5da316e043f82c76a8a19810c720c69e70af364b64ac5b2afed7d8a7178cc5159f5a911fa86b969aa1754c5903470261655700f8292bbdbae42"
+    },
+    {
+      "name": "libpciaccess-dev_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libp/libpciaccess/libpciaccess-dev_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "filename": "libpciaccess-dev_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "size": 23772,
+      "algorithm": "sha512",
+      "digest": "5db61264b2f3933187dc512b01a16beb5d46c5e4633916a91a39140d0bbbff566356356213bedc521ea3bc7b5ae6235f87a517f71c9f927303d661188fd77f4c"
+    },
+    {
+      "name": "libpciaccess0_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libp/libpciaccess/libpciaccess0_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "filename": "libpciaccess0_0.17-3ubuntu0.24.04.3_arm64.deb",
+      "size": 19510,
+      "algorithm": "sha512",
+      "digest": "d9771790559d23de9f37a962f5e201c30865878ca8922c4c2dc4d13b4abbef23d54a57ffc0e8b27146787aed90c2c691ced5c34082b5d116013e3e829d3fd577"
+    },
+    {
+      "name": "libpcre2-8-0_10.42-4ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pcre2/libpcre2-8-0_10.42-4ubuntu2.1_arm64.deb",
+      "filename": "libpcre2-8-0_10.42-4ubuntu2.1_arm64.deb",
+      "size": 211856,
+      "algorithm": "sha512",
+      "digest": "9a2c7312b113ea4a2d84c12179998a9d288b0ada1d898a5195d84d304e6cc80c92928852120a388cbd7516cd259a5a035c9d8e2d24d123b9999ed0200fc64691"
+    },
+    {
+      "name": "libperl5.38t64_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/perl/libperl5.38t64_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "filename": "libperl5.38t64_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "size": 4784712,
+      "algorithm": "sha512",
+      "digest": "6b62ab7f481479b08a7771b852a863908d605b10cc9210eaf42dde3da5fd4ccf6190ad4646016a108418e815b46948913951b3d99f4bccf492042e2232c34805"
+    },
+    {
+      "name": "libproc2-0_2%3a4.0.4-4ubuntu3.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/procps/libproc2-0_4.0.4-4ubuntu3.3_arm64.deb",
+      "filename": "libproc2-0_2%3a4.0.4-4ubuntu3.3_arm64.deb",
+      "size": 58470,
+      "algorithm": "sha512",
+      "digest": "0ca10dc87f59e53d0bf4e578c2c9031107ab9dc5508ba82663b990d862956cf97da3cb36e1c31bb880467f678147c8be6c3d732e41908e3832ccf76bdc3dacc9"
+    },
+    {
+      "name": "libpython3-stdlib_3.12.3-0ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3-defaults/libpython3-stdlib_3.12.3-0ubuntu2.1_arm64.deb",
+      "filename": "libpython3-stdlib_3.12.3-0ubuntu2.1_arm64.deb",
+      "size": 10088,
+      "algorithm": "sha512",
+      "digest": "83a169b07fb2ace2100b253239d37c4186339a531d3cd69f99276d4266bf313a30667bbdf7fdecda43bda7dca0fc34e5fd053c02598139432f12834b78284a82"
+    },
+    {
+      "name": "libpython3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3.12/libpython3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "filename": "libpython3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "size": 835130,
+      "algorithm": "sha512",
+      "digest": "4ea1930d734d31c69ef3252495f31cfaff8f69bf5c584f1249e8d90649cfd3b501cca63d7644d88e8c4ec96d5cdd72890e7e79c51093b484139db23c2e17537d"
+    },
+    {
+      "name": "libpython3.12-stdlib_3.12.3-1ubuntu0.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3.12/libpython3.12-stdlib_3.12.3-1ubuntu0.17_arm64.deb",
+      "filename": "libpython3.12-stdlib_3.12.3-1ubuntu0.17_arm64.deb",
+      "size": 2038562,
+      "algorithm": "sha512",
+      "digest": "ed63292ec60a835077029e92c9aa3a78a13b8599be28844c46f169df3bc8bbdfb509392a01049bbeb0ca9b440abb4091352ae5d621c92b2e825d24e658af171c"
+    },
+    {
+      "name": "libsasl2-2_2.1.28+dfsg1-5ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/cyrus-sasl2/libsasl2-2_2.1.28%2bdfsg1-5ubuntu3.1_arm64.deb",
+      "filename": "libsasl2-2_2.1.28+dfsg1-5ubuntu3.1_arm64.deb",
+      "size": 54660,
+      "algorithm": "sha512",
+      "digest": "5402100944c2aa3ee1a248c2643d8e6a35377999bb95cf9e1b18ac4c1db4737e2117ee1ffd9ac19acbf76b1de323c7380f0016db907a8815f77756160978e38f"
+    },
+    {
+      "name": "libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/c/cyrus-sasl2/libsasl2-modules-db_2.1.28%2bdfsg1-5ubuntu3.1_arm64.deb",
+      "filename": "libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3.1_arm64.deb",
+      "size": 21552,
+      "algorithm": "sha512",
+      "digest": "7017bfdfafd58d9328f987900d4132acdf154c054663294553b7c1ece5fa642044fdd66f957d964d03f694f14b83b0f2d01c7450372d0c031599807f2945e951"
+    },
+    {
+      "name": "libseccomp2_2.5.5-1ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libseccomp/libseccomp2_2.5.5-1ubuntu3.1_arm64.deb",
+      "filename": "libseccomp2_2.5.5-1ubuntu3.1_arm64.deb",
+      "size": 51170,
+      "algorithm": "sha512",
+      "digest": "d5242bc8f8b8e54addeb1a4c235ad3cb679e1201a77855c0cacc1d0c23154fd4345cddc90a25a7d8e127b955a6b0125fe1fd23d11712304770632d2954573d99"
+    },
+    {
+      "name": "libselinux1_3.5-2ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libselinux/libselinux1_3.5-2ubuntu2.1_arm64.deb",
+      "filename": "libselinux1_3.5-2ubuntu2.1_arm64.deb",
+      "size": 79946,
+      "algorithm": "sha512",
+      "digest": "a19c2ae904781c8ad80c84e8c6ff11e493398bcbf72865b71501136c2c4c0289da503b0d265bf88f1e26840679cee5653a1a1b04e4fa134deb5a3f444915a581"
+    },
+    {
+      "name": "libsframe1_2.42-4ubuntu2.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/binutils/libsframe1_2.42-4ubuntu2.10_arm64.deb",
+      "filename": "libsframe1_2.42-4ubuntu2.10_arm64.deb",
+      "size": 15428,
+      "algorithm": "sha512",
+      "digest": "801764675e78e80fe668cd2465fe9d3feb99311a4e4a9cc8b9b12d69fe847cc846b15c8e6e8736b3b879b3b70f2fd39c02ba4062d46b5dfaaeb8c1747f3808ed"
+    },
+    {
+      "name": "libsmartcols1_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/libsmartcols1_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "libsmartcols1_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 65774,
+      "algorithm": "sha512",
+      "digest": "1d8b3b61c3f376d109253c10a3c52172b23f71061b54fe953d4b6e17dc58e4b9aad0dc1af9e4bcd58cd33828deda4421be0574fb8c6d0c0be93f68e425e2aa18"
+    },
+    {
+      "name": "libsqlite3-0_3.45.1-1ubuntu2.8_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/sqlite3/libsqlite3-0_3.45.1-1ubuntu2.8_arm64.deb",
+      "filename": "libsqlite3-0_3.45.1-1ubuntu2.8_arm64.deb",
+      "size": 690864,
+      "algorithm": "sha512",
+      "digest": "6b0144991af22443a6a7ec1659dc83bf3d504a8eb9d71fa71365cae96abcb88757a3b6f68c5bb16e9a890eb751126760c858a3d4640caf4f0fc5159d8e118f25"
+    },
+    {
+      "name": "libss2_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/e2fsprogs/libss2_1.47.0-2.4%7eexp1ubuntu4.1_arm64.deb",
+      "filename": "libss2_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "size": 16470,
+      "algorithm": "sha512",
+      "digest": "5aeb09caab7c11a97121c722bd60a4ae4679aee84cd453ea73c96cc57e13020babfa230f3965bec25c6a0214a8779df099736c550cf0818ab5f31d4ec92946a1"
+    },
+    {
+      "name": "libssh-4_0.10.6-2ubuntu0.5_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libs/libssh/libssh-4_0.10.6-2ubuntu0.5_arm64.deb",
+      "filename": "libssh-4_0.10.6-2ubuntu0.5_arm64.deb",
+      "size": 192306,
+      "algorithm": "sha512",
+      "digest": "f825f3efbb9076b378f70f6daeb6cfcb9cb9f6a67fdfe395f4c3540ab6fc34568add7ddd9ba957aad47fce4357fbdc2ea032b6da24c2d34f0e6a12c8dd92b280"
+    },
+    {
+      "name": "libssl-dev_3.0.13-0ubuntu3.16_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/openssl/libssl-dev_3.0.13-0ubuntu3.16_arm64.deb",
+      "filename": "libssl-dev_3.0.13-0ubuntu3.16_arm64.deb",
+      "size": 2379194,
+      "algorithm": "sha512",
+      "digest": "9a1d884b882b07106fa6ebc545c24eed7ccd16b352c97ffbc56e72e71a38c79a5be7e2e3bdb1bb0cc28c12815cbaa8c67adf598c662fd1bd5c89d5314c8b99a3"
+    },
+    {
+      "name": "libssl3t64_3.0.13-0ubuntu3.16_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_arm64.deb",
+      "filename": "libssl3t64_3.0.13-0ubuntu3.16_arm64.deb",
+      "size": 1837684,
+      "algorithm": "sha512",
+      "digest": "6d04e49d248d441eb2b850936232edfce4bb0f556a0e931750bebbe9f9f70708e95dc4c9ec579675e1f843662000e353412469e10cddeb713f0235ce09d44704"
+    },
+    {
+      "name": "libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-13/libstdc%2b%2b-13-dev_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 2397276,
+      "algorithm": "sha512",
+      "digest": "0e2273fef6294da5c870e956c62ffbc30f9af6d8f26cc5e286ab63d5b5b6ebf20f93a9dbb49a3211236770f4bf13be4b67c28d2da380d6d56e7777635e52167a"
+    },
+    {
+      "name": "libstdc++6_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libstdc%2b%2b6_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libstdc++6_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 750976,
+      "algorithm": "sha512",
+      "digest": "adb9cd460664489d542e3047811c3b9721901625bd09558aa7fef9b43f3bc225e83df0e329d12ff2d6d111d74b95efc793431b68a817e27d17b8c66826db32d1"
+    },
+    {
+      "name": "libsystemd0_255.4-1ubuntu8.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/libsystemd0_255.4-1ubuntu8.17_arm64.deb",
+      "filename": "libsystemd0_255.4-1ubuntu8.17_arm64.deb",
+      "size": 427526,
+      "algorithm": "sha512",
+      "digest": "04bc46c77d75fb2dc31e9fac42101586d4043e4f389ccf8bd306412f35bcaf7bb32a107322bf711634210d6cad136b4dc048ce4eaee1973c4f5dd6d768538674"
+    },
+    {
+      "name": "libtasn1-6_4.19.0-3ubuntu0.24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libt/libtasn1-6/libtasn1-6_4.19.0-3ubuntu0.24.04.2_arm64.deb",
+      "filename": "libtasn1-6_4.19.0-3ubuntu0.24.04.2_arm64.deb",
+      "size": 43746,
+      "algorithm": "sha512",
+      "digest": "f5b543d9bd9bd52134b489cff5ca12a00aae2b1ffdc64a56ad1a17cb0f1c5a65016494a4ade7e45860bf36418084a0766d0feb1af4fd626c5670e3f62f7b9110"
+    },
+    {
+      "name": "libtinfo6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/libtinfo6_6.4%2b20240113-1ubuntu2.2_arm64.deb",
+      "filename": "libtinfo6_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "size": 104652,
+      "algorithm": "sha512",
+      "digest": "4c919ec46a33e5ff9437c3197e6e83c4dc200e773d730736af806a7df339b7ad21655293a62c94f1f8619e4ba0a14e726d3547689e74e527ff8d2a92cff88ee6"
+    },
+    {
+      "name": "libtsan2_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libtsan2_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libtsan2_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 2696830,
+      "algorithm": "sha512",
+      "digest": "59062a9e4460f3fadb228f8b86dc4362fbb8376e5e0121cc5804654dcc917cdcadec39675f2a5120e9902aa06ae193c611d5af0b499cf42fa26ac7b330c1cf57"
+    },
+    {
+      "name": "libubsan1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gcc-14/libubsan1_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libubsan1_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 1157016,
+      "algorithm": "sha512",
+      "digest": "5f18c0332f196b950effeb4b2c6125e0bf29ad5ec052b292036953f2b758a73dc832188b5f11315b9af9a80147441bcdccc89a81bddaa8d3c0148a7503e2ebe1"
+    },
+    {
+      "name": "libudev-dev_255.4-1ubuntu8.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/libudev-dev_255.4-1ubuntu8.17_arm64.deb",
+      "filename": "libudev-dev_255.4-1ubuntu8.17_arm64.deb",
+      "size": 22024,
+      "algorithm": "sha512",
+      "digest": "cae87fe4734c7665aecd9b5aa03fc79f8fa4d36afefe3405a1eaefcbd91649d5a93c358f867e07ba8550c783413a51708b7fcc7eb9a644d5250c9066af97a7d8"
+    },
+    {
+      "name": "libudev1_255.4-1ubuntu8.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/libudev1_255.4-1ubuntu8.17_arm64.deb",
+      "filename": "libudev1_255.4-1ubuntu8.17_arm64.deb",
+      "size": 176082,
+      "algorithm": "sha512",
+      "digest": "4c1c6f49146a7f04f4058e7aebd0ee8177429e21f841c4e34258e8ca3f68cc0d03de21cbb8c203dc42fcfb09d2a6966e9f7f2d59bff532d80c44caf1d3cb7a4a"
+    },
+    {
+      "name": "libunistring5_1.1-2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libu/libunistring/libunistring5_1.1-2build1.1_arm64.deb",
+      "filename": "libunistring5_1.1-2build1.1_arm64.deb",
+      "size": 529552,
+      "algorithm": "sha512",
+      "digest": "55b6477b8a715b3835ba98f831766765240dec1d2ba88ade8e78c54057aa1c6c00323858b1b02d5ddcaace8ce758eb7f32e460374348567fcf356de72342c1dc"
+    },
+    {
+      "name": "libuuid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/libuuid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "libuuid1_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 36754,
+      "algorithm": "sha512",
+      "digest": "ffd384ebacb2d141d9ce6cb3eddee2975748fe984289ccd561a4fdf0f6313fa0f2b2834beccf3fa78136bba15065a747987ada718ce0c417b06ca40727533ed5"
+    },
+    {
+      "name": "libxml2_2.9.14+dfsg-1.3ubuntu3.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libx/libxml2/libxml2_2.9.14%2bdfsg-1.3ubuntu3.10_arm64.deb",
+      "filename": "libxml2_2.9.14+dfsg-1.3ubuntu3.10_arm64.deb",
+      "size": 735876,
+      "algorithm": "sha512",
+      "digest": "53b24f57f517f01a9d66d172ded35953cfb12fd8e778d7832aff1c3e2ef1a65c67660fa993b8aea198a946d5308dc87013150df4d033867f7cd81311f3fed427"
+    },
+    {
+      "name": "libxml2-dev_2.9.14+dfsg-1.3ubuntu3.10_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libx/libxml2/libxml2-dev_2.9.14%2bdfsg-1.3ubuntu3.10_arm64.deb",
+      "filename": "libxml2-dev_2.9.14+dfsg-1.3ubuntu3.10_arm64.deb",
+      "size": 799584,
+      "algorithm": "sha512",
+      "digest": "a8c02be6483d0882c5c0b8f0c9a07d43c75de495f283878cdcd11bc6330e1371ca6fc6ed8253802ec5f6fa409f31a86019af2cfe53046912d7d147ec8e1ada34"
+    },
+    {
+      "name": "libzstd-dev_1.5.5+dfsg2-2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libz/libzstd/libzstd-dev_1.5.5%2bdfsg2-2build1.1_arm64.deb",
+      "filename": "libzstd-dev_1.5.5+dfsg2-2build1.1_arm64.deb",
+      "size": 343612,
+      "algorithm": "sha512",
+      "digest": "9600f300af88348ae1d89499d7ab19843ca7d0044b42253a0d7fb41297145bf1e5c1d21346b1aab020bad5304ecf5e541c1031740ded33106a39cc52308045c7"
+    },
+    {
+      "name": "libzstd1_1.5.5+dfsg2-2build1.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/libz/libzstd/libzstd1_1.5.5%2bdfsg2-2build1.1_arm64.deb",
+      "filename": "libzstd1_1.5.5+dfsg2-2build1.1_arm64.deb",
+      "size": 271278,
+      "algorithm": "sha512",
+      "digest": "23341a234a3cf8901d3275313e4ae00577c65c7bcbcd7f03d8f297cf91e7cf2c189f8a7eba470529228e57687d454e22df9dfbed2c0052e0c4c317d3d8791a08"
+    },
+    {
+      "name": "linux-libc-dev_6.8.0-146.146_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/linux/linux-libc-dev_6.8.0-146.146_arm64.deb",
+      "filename": "linux-libc-dev_6.8.0-146.146_arm64.deb",
+      "size": 1514706,
+      "algorithm": "sha512",
+      "digest": "10eaabdc1d6cbb95327fc10ee4af1d7f9df829aa843a7fc56574cef816b63b1f95a3bf2b8c65a5a2fcf3838f72a2dafee9df4e79d9420039f96e89ae61dc7575"
+    },
+    {
+      "name": "login_1%3a4.13+dfsg1-4ubuntu3.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/shadow/login_4.13%2bdfsg1-4ubuntu3.2_arm64.deb",
+      "filename": "login_1%3a4.13+dfsg1-4ubuntu3.2_arm64.deb",
+      "size": 200432,
+      "algorithm": "sha512",
+      "digest": "c91e7aaeceb5c47ecc8ecd914ad06e21773af831f08addc51e5abd8ba846a6d7e1874cc8a72750f0edf9e9fcc1250da83df8db396290186e91a13a7d68e476d7"
+    },
+    {
+      "name": "logsave_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/e2fsprogs/logsave_1.47.0-2.4%7eexp1ubuntu4.1_arm64.deb",
+      "filename": "logsave_1.47.0-2.4~exp1ubuntu4.1_arm64.deb",
+      "size": 22344,
+      "algorithm": "sha512",
+      "digest": "2d6e145159b5a0e92e823585386b94eb3dbd667fe203141058f98a8c7eaf44e600584782c70a6c2b6422cef86ca04905efc339cf354a3acbb27b59b7b9455b91"
+    },
+    {
+      "name": "mount_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/mount_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "mount_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 115750,
+      "algorithm": "sha512",
+      "digest": "49c0b34136d134851924c33db3848591d03c025fced2e7d66244b95b26caf3a133eb94f51d555caa7df372c1a6abdea0a74e7572c4f27fcbd56045328a408710"
+    },
+    {
+      "name": "ncurses-base_6.4+20240113-1ubuntu2.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/ncurses-base_6.4%2b20240113-1ubuntu2.2_all.deb",
+      "filename": "ncurses-base_6.4+20240113-1ubuntu2.2_all.deb",
+      "size": 25810,
+      "algorithm": "sha512",
+      "digest": "5599e0ab72c3a29ace3de29df528ff5a028eaa9c73903e4fec20582b00e5b56164eeb70df84416b7fdc4777718bce5e9aed67388d9350223e6d11e1e82f0682d"
+    },
+    {
+      "name": "ncurses-bin_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/ncurses/ncurses-bin_6.4%2b20240113-1ubuntu2.2_arm64.deb",
+      "filename": "ncurses-bin_6.4+20240113-1ubuntu2.2_arm64.deb",
+      "size": 186194,
+      "algorithm": "sha512",
+      "digest": "7121ea0d4e9755e7b6f2a1dc6a730c50fac987b8025b150e6c00d5e703318689d7b9ae7db158b164ec9a87d23e84c76209e85735b97e55a1a9959d07a8833767"
+    },
+    {
+      "name": "openssl_3.0.13-0ubuntu3.16_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/openssl/openssl_3.0.13-0ubuntu3.16_arm64.deb",
+      "filename": "openssl_3.0.13-0ubuntu3.16_arm64.deb",
+      "size": 985334,
+      "algorithm": "sha512",
+      "digest": "bcf6c77b1d9f8e24b9efe3668b96b8b7ea9d85f1cf24104fa83d0a223a116fb06072538e2fca2e6efa7e81acb4436694aae4a48512d7b1bbf4c0cd8be13e3acb"
+    },
+    {
+      "name": "passwd_1%3a4.13+dfsg1-4ubuntu3.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/shadow/passwd_4.13%2bdfsg1-4ubuntu3.2_arm64.deb",
+      "filename": "passwd_1%3a4.13+dfsg1-4ubuntu3.2_arm64.deb",
+      "size": 838406,
+      "algorithm": "sha512",
+      "digest": "d9732447108580637c90fde66aa236adc2965b70da2248d474fdea84807565b62017e06762de9c84f8635e738ad25d83c3c9fe05c55785222c6fcc18e2358752"
+    },
+    {
+      "name": "perl_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/perl/perl_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "filename": "perl_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "size": 231438,
+      "algorithm": "sha512",
+      "digest": "37aa39a64d4286f1ef63c1fa16de75284e92061d9ce4f138ad86a61389cbfbf21e4abf9d69cdf595d2cd839143593eeb164db59be72cde3616a46f5d40b3f72a"
+    },
+    {
+      "name": "perl-base_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/perl/perl-base_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "filename": "perl-base_5.38.2-3.2ubuntu0.6_arm64.deb",
+      "size": 1780386,
+      "algorithm": "sha512",
+      "digest": "e11c4abc987229d6ecdc4aee5e8bca341b7f102fe4f898a7a5992eaff38e9edd81e7e8694262d0aa189a572d601f15fc63c6af33e71ee920cb84c4534b3d47b8"
+    },
+    {
+      "name": "perl-modules-5.38_5.38.2-3.2ubuntu0.6_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/perl/perl-modules-5.38_5.38.2-3.2ubuntu0.6_all.deb",
+      "filename": "perl-modules-5.38_5.38.2-3.2ubuntu0.6_all.deb",
+      "size": 3110182,
+      "algorithm": "sha512",
+      "digest": "c19316244f2a63f1c77186fa13743108401b5b45d67f783798c939f47f98c460ae5dbc62f72104243e6f0fe1766a14cba614562c18265d42aa345db60d43c6ab"
+    },
+    {
+      "name": "procps_2%3a4.0.4-4ubuntu3.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/procps/procps_4.0.4-4ubuntu3.3_arm64.deb",
+      "filename": "procps_2%3a4.0.4-4ubuntu3.3_arm64.deb",
+      "size": 707418,
+      "algorithm": "sha512",
+      "digest": "e74dc17c3ee31c58d1a8dfbb41b234d57fc46c25eba2ceea2e68147edb8275741a638ac1cadd117c4f49144f2fcb2d9193dcc8a460d143d57b5b1c3eef9841ae"
+    },
+    {
+      "name": "python3_3.12.3-0ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3-defaults/python3_3.12.3-0ubuntu2.1_arm64.deb",
+      "filename": "python3_3.12.3-0ubuntu2.1_arm64.deb",
+      "size": 23004,
+      "algorithm": "sha512",
+      "digest": "37988ac4e6e0783a6be316c7a404fc51dd4446a386229242f0b131a9e80c7e8d973360e815f3d1847c94630eed414879c074c8730fedfd3a67665db293b5f997"
+    },
+    {
+      "name": "python3-mako_1.3.2-1ubuntu0.1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/mako/python3-mako_1.3.2-1ubuntu0.1_all.deb",
+      "filename": "python3-mako_1.3.2-1ubuntu0.1_all.deb",
+      "size": 63416,
+      "algorithm": "sha512",
+      "digest": "88521c9a1091966265850eaba332100c8dc4cbaf9888d0faa93c07e509db5921d57208008709dc138c43230f2ec5999877870c87593e1f0dea5d6f01b70ecded"
+    },
+    {
+      "name": "python3-minimal_3.12.3-0ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3-defaults/python3-minimal_3.12.3-0ubuntu2.1_arm64.deb",
+      "filename": "python3-minimal_3.12.3-0ubuntu2.1_arm64.deb",
+      "size": 27444,
+      "algorithm": "sha512",
+      "digest": "dd3a67c607636d1cf831348064c15b6c906bb5c40743d656c43a02074080a58935997b7fb24e918050593ddb4d5a3c6ac44c5972416fed700150326cd864e851"
+    },
+    {
+      "name": "python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/setuptools/python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb",
+      "filename": "python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb",
+      "size": 167914,
+      "algorithm": "sha512",
+      "digest": "c42f7ad124a2403a48a945132931e1f79c1c7126082f5be6cc0c40cf9506a27dc884e411dbe4a27bc433f35eacd907fff9185146dc2c94c022c5fe418546f23e"
+    },
+    {
+      "name": "python3-setuptools_68.1.2-2ubuntu1.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/setuptools/python3-setuptools_68.1.2-2ubuntu1.2_all.deb",
+      "filename": "python3-setuptools_68.1.2-2ubuntu1.2_all.deb",
+      "size": 396614,
+      "algorithm": "sha512",
+      "digest": "5344d1eb1baaab0c7ed0cc5939027bbcc452e7a5652fd53c401693e68711d272472b33e22667f468522c75639cb560688f835d5bcf109aa4cfdcd7997375be28"
+    },
+    {
+      "name": "python3.12_3.12.3-1ubuntu0.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3.12/python3.12_3.12.3-1ubuntu0.17_arm64.deb",
+      "filename": "python3.12_3.12.3-1ubuntu0.17_arm64.deb",
+      "size": 650732,
+      "algorithm": "sha512",
+      "digest": "038e664b34d1396b0a22ab2044b468fea013076f1824f4a7f743e3bbd5755d8004f92959875bdd0ccb60e780a7cec4bfa6ff621b3d649bfe2bebac4c9a3ad35d"
+    },
+    {
+      "name": "python3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/python3.12/python3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "filename": "python3.12-minimal_3.12.3-1ubuntu0.17_arm64.deb",
+      "size": 2253306,
+      "algorithm": "sha512",
+      "digest": "c43038c1d6905e084a700547c08f9cea1fca31721f1786be944387a63f0674501cdc2b2c012883cf82ef29231ab10668be24103b9be67e175ac92b2164ae9fe0"
+    },
+    {
+      "name": "rsync_3.2.7-1ubuntu1.5_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/rsync/rsync_3.2.7-1ubuntu1.5_arm64.deb",
+      "filename": "rsync_3.2.7-1ubuntu1.5_arm64.deb",
+      "size": 436714,
+      "algorithm": "sha512",
+      "digest": "3b873f7578eb82234fd962feae8a3fe6469783efb7dfdcfa82d036d7f71d01bcb10a7c74b85205e0d8c6e5b31b5da83e3e547ff610d79bb3829aa73bdf10fd3b"
+    },
+    {
+      "name": "sed_4.9-2ubuntu0.24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/sed/sed_4.9-2ubuntu0.24.04.1_arm64.deb",
+      "filename": "sed_4.9-2ubuntu0.24.04.1_arm64.deb",
+      "size": 191430,
+      "algorithm": "sha512",
+      "digest": "dfd892249f54a8656447e1ddf5d6a63406b0b56ddd3853ee5403cdf634d65587b87e2a7b170becf034a96d782b96e7fe9126fb6ead3b516ebac66f4f8ad5f9d2"
+    },
+    {
+      "name": "tar_1.35+dfsg-3ubuntu0.4_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/t/tar/tar_1.35%2bdfsg-3ubuntu0.4_arm64.deb",
+      "filename": "tar_1.35+dfsg-3ubuntu0.4_arm64.deb",
+      "size": 252352,
+      "algorithm": "sha512",
+      "digest": "c09ae5c2616091200131d9e254ea6d6d7e60877613d6a9e0163f14282e6c7d345000883f703d42b673a4c10b08114ab44e0e86ec45585852af316f8edd2bb486"
+    },
+    {
+      "name": "tzdata_2026c-0ubuntu0.24.04.1_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/t/tzdata/tzdata_2026c-0ubuntu0.24.04.1_all.deb",
+      "filename": "tzdata_2026c-0ubuntu0.24.04.1_all.deb",
+      "size": 279816,
+      "algorithm": "sha512",
+      "digest": "b94d5db64fc440e9eb738c44dfb8a58cf374f9d4ba6aaad1ddcfd9e12396d9b57b8b7ae648b973136973ab9922d2f30ee2d7427aee780b3dccabe8669c886e22"
+    },
+    {
+      "name": "unminimize_0.2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/unminimize/unminimize_0.2.1_arm64.deb",
+      "filename": "unminimize_0.2.1_arm64.deb",
+      "size": 3904,
+      "algorithm": "sha512",
+      "digest": "ced873b7047e510a81311d46ed5b96ff48db41c9a3a6635429f2572b4f4317a0d8b730544a2d04d23661cd660748e1ec942a8270187a78c771cbce3d5c00fc6a"
+    },
+    {
+      "name": "util-linux_2.39.3-9ubuntu6.6_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/util-linux/util-linux_2.39.3-9ubuntu6.6_arm64.deb",
+      "filename": "util-linux_2.39.3-9ubuntu6.6_arm64.deb",
+      "size": 1115824,
+      "algorithm": "sha512",
+      "digest": "12e0f636c0f3b5d755553c0d7cf7fc93389b0593f2a7f04fa7c5c02b5556d58fee39167891c8ef7a9ac8761022584ce755b0688a451289c4273bdd113dc0535f"
+    },
+    {
+      "name": "wayland-protocols_1.45-1~ubuntu0.24.04.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wayland-protocols/wayland-protocols_1.45-1%7eubuntu0.24.04.2_all.deb",
+      "filename": "wayland-protocols_1.45-1~ubuntu0.24.04.2_all.deb",
+      "size": 113788,
+      "algorithm": "sha512",
+      "digest": "c607ab98da7651f7e466bc5817cc18e8c1ccab5f7e8e59a950366e6c2b53d6e78ee4cd5f4d145e782ef006bf28c82e3d5ef777ffceb42d27846ec01309a8eaf0"
+    },
+    {
+      "name": "xz-utils_5.6.1+really5.4.5-1ubuntu0.3_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/x/xz-utils/xz-utils_5.6.1%2breally5.4.5-1ubuntu0.3_arm64.deb",
+      "filename": "xz-utils_5.6.1+really5.4.5-1ubuntu0.3_arm64.deb",
+      "size": 268376,
+      "algorithm": "sha512",
+      "digest": "41f2ef93128853204d51a2aba97f170a74be6e8f0f95bf937f8b50766d43c639f031331a6cb63c605b0a4f9b6d2ca3493035e67cb899491613e564c3e2e49174"
+    },
+    {
+      "name": "zlib1g_1%3a1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/z/zlib/zlib1g_1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "filename": "zlib1g_1%3a1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "size": 61898,
+      "algorithm": "sha512",
+      "digest": "35015c72071d909fdb61f686723ed158eae6098de8254ec54319657245e41be69a6a9eebf2e3b8dcab975f6b9d4c0dee047e926ec0c9d8488cf83809b3c9e99a"
+    },
+    {
+      "name": "zlib1g-dev_1%3a1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/z/zlib/zlib1g-dev_1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "filename": "zlib1g-dev_1%3a1.3.dfsg-3.1ubuntu2.2_arm64.deb",
+      "size": 893616,
+      "algorithm": "sha512",
+      "digest": "1cc87dd99fc23e0754faced60096e6c007134ad7d907af2de77e426827d323b01f85af5e92309a526737819f9bc98e47942333592641bda8efd9159393cf43bd"
+    },
+    {
+      "name": "clang-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/clang-18_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "clang-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 78398,
+      "algorithm": "sha512",
+      "digest": "1f417a61fcec08ff07cafa0c37c6a3a70aedd90ed1a6b0f04ff42e1bb564ff065aa60854188803be672efe6495f8aa0f18871d5e6fb2d64e267722d2ae2b87da"
+    },
+    {
+      "name": "glslang-dev_15.1.0-2~ubuntu0.24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/g/glslang/glslang-dev_15.1.0-2%7eubuntu0.24.04.2_arm64.deb",
+      "filename": "glslang-dev_15.1.0-2~ubuntu0.24.04.2_arm64.deb",
+      "size": 1417710,
+      "algorithm": "sha512",
+      "digest": "459ae108dbbb68ccf6e257d1bda1abb5bcb7c219012a2760911293db80e4bcf28cb90fc4ed7c0677dd1e93e1c1557e029dbff1b7c8b89b95ed0214231b964c0d"
+    },
+    {
+      "name": "glslang-tools_15.1.0-2~ubuntu0.24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/g/glslang/glslang-tools_15.1.0-2%7eubuntu0.24.04.2_arm64.deb",
+      "filename": "glslang-tools_15.1.0-2~ubuntu0.24.04.2_arm64.deb",
+      "size": 2328868,
+      "algorithm": "sha512",
+      "digest": "d3f0301a6e8c5606d555c96480d0f7883a514a8992830cf010e2a9fe66b54d11a9a214d1afc856f830d74d1436c35e2d2067663237b5f85a9897f56f2df27d9f"
+    },
+    {
+      "name": "libclang-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/libclang-18-dev_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libclang-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 29447938,
+      "algorithm": "sha512",
+      "digest": "428c90d98938de3c226419537e51b34c01879c425ad6360c3102271f71fb96ada627730bc663cadc09eae302200182e7882f37b481df69f30ce3c0f7523f6e3f"
+    },
+    {
+      "name": "libclang-common-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/libclang-common-18-dev_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libclang-common-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 735998,
+      "algorithm": "sha512",
+      "digest": "625d6acfb0972d09624a88c946b07788e4a4813c66fa057e854bb37b5256450edc633e186570b9e103da0e9df240e6ca8dbce52943051515b35a8383b7bfcc93"
+    },
+    {
+      "name": "libclang-cpp18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/libclang-cpp18-dev_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "libclang-cpp18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 3680,
+      "algorithm": "sha512",
+      "digest": "911f625ba6aad570ff85df4d6b3a3f445273232e40151bd1a3ffa2bbecddbb2e249a5e166bbc7b7c4efbaf3fcf6acfca3c8993c6623d4931a1266c63a5bb1c06"
+    },
+    {
+      "name": "libllvmspirvlib-18-dev_18.1.8-1~ubuntu0.24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/s/spirv-llvm-translator-18/libllvmspirvlib-18-dev_18.1.8-1%7eubuntu0.24.04.1_arm64.deb",
+      "filename": "libllvmspirvlib-18-dev_18.1.8-1~ubuntu0.24.04.1_arm64.deb",
+      "size": 8174,
+      "algorithm": "sha512",
+      "digest": "27a21530b6d8c4d2755dfe46cfedba296bbfe6f849003c9832e86f5cbb8eee280e0aa46fca679335559985e249120526bdf01efe929ad7d273d936774f05444e"
+    },
+    {
+      "name": "libllvmspirvlib18.1_18.1.8-1~ubuntu0.24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/s/spirv-llvm-translator-18/libllvmspirvlib18.1_18.1.8-1%7eubuntu0.24.04.1_arm64.deb",
+      "filename": "libllvmspirvlib18.1_18.1.8-1~ubuntu0.24.04.1_arm64.deb",
+      "size": 803826,
+      "algorithm": "sha512",
+      "digest": "78f1e92afcca6be2dd9e0736dfb41c33663f4709abdfa4bd6e5c923387e75a61f7280df35fa3901bb9d545794e8b5279a9efd8ebccf54e7db411163dbf0f2bfa"
+    },
+    {
+      "name": "libobjc-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/g/gcc-13/libobjc-13-dev_13.3.0-6ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libobjc-13-dev_13.3.0-6ubuntu2~24.04.1_arm64.deb",
+      "size": 190244,
+      "algorithm": "sha512",
+      "digest": "36ed96c9176e684057e5752765086c6ad332334521aabcd7f828e9e9a3538ed43f232b4bd8787129f25fada6fad76321c82785026309b305aad2a5fc0006b994"
+    },
+    {
+      "name": "libobjc4_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/g/gcc-14/libobjc4_14.2.0-4ubuntu2%7e24.04.1_arm64.deb",
+      "filename": "libobjc4_14.2.0-4ubuntu2~24.04.1_arm64.deb",
+      "size": 45498,
+      "algorithm": "sha512",
+      "digest": "eb53822bc2b0eed8a30f1fcc8ba49b9de0e4511c4ff7ef6aa7d9729d3daad660878c4dfdfe6ca4b163f225383bd2cc05d6e2ff622fcbc30e61b870b8511435bd"
+    },
+    {
+      "name": "libpfm4_4.13.0+git32-g0d4ed0e-1ubuntu0.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/libp/libpfm4/libpfm4_4.13.0%2bgit32-g0d4ed0e-1ubuntu0.1_arm64.deb",
+      "filename": "libpfm4_4.13.0+git32-g0d4ed0e-1ubuntu0.1_arm64.deb",
+      "size": 59242,
+      "algorithm": "sha512",
+      "digest": "5f0c473230a958a14fa204789710d203f700a11ed53f770a387b29df2f09a131dcfdceed44edf36f4604897c96cbf9f58feff4766387114607100c70f284a6c0"
+    },
+    {
+      "name": "llvm-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/llvm-18_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "llvm-18_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 24304298,
+      "algorithm": "sha512",
+      "digest": "5c771369e71bdc934ef1acb77ad92cf31b7532c29359047ba88ac57600e1703ded59c5882861bb3a1c20cbbe5032c2de8396251cb07ecb0748df83653d3ed344"
+    },
+    {
+      "name": "llvm-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/llvm-18-dev_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "llvm-18-dev_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 42216758,
+      "algorithm": "sha512",
+      "digest": "8c5b120e0a0874ede9c83c95bb13de9b7ed7df8152f8d1539fb357fff80430ab7b08250fe607e1d5f18e8eef972dacb66407bfe18545878530dbe671c86828c7"
+    },
+    {
+      "name": "llvm-18-linker-tools_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/llvm-18-linker-tools_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "llvm-18-linker-tools_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 1234040,
+      "algorithm": "sha512",
+      "digest": "01ee77315d44eac2af365a86a37a8f71cccc4e67eedd8732e50d049fd8ed06e0070a803a05c5910a7d4dbbfe1234551741de3237cf417199857e336d88d30bd1"
+    },
+    {
+      "name": "llvm-18-runtime_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/llvm-18-runtime_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "llvm-18-runtime_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 520916,
+      "algorithm": "sha512",
+      "digest": "9f043d21028b27ba6ebf35c183995eb66f64070d908d3eca4b437b14db7685675f58b9d8f81a535b1e1ad7a20daa10f29011ee7fdb4120226d0c86e9fe207d9e"
+    },
+    {
+      "name": "llvm-18-tools_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/l/llvm-toolchain-18/llvm-18-tools_18.1.3-1ubuntu1_arm64.deb",
+      "filename": "llvm-18-tools_1%3a18.1.3-1ubuntu1_arm64.deb",
+      "size": 532308,
+      "algorithm": "sha512",
+      "digest": "d5b7d0813152a5a0dda5daa47817384ab64f83022282812b0868b83bf1bf1706ecb0069882b82bf791c2988f54167a8e4b254303e2ebad0a2d422a51aa3aa425"
+    },
+    {
+      "name": "python3-pip-whl_24.0+dfsg-1ubuntu1.3_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/p/python-pip/python3-pip-whl_24.0%2bdfsg-1ubuntu1.3_all.deb",
+      "filename": "python3-pip-whl_24.0+dfsg-1ubuntu1.3_all.deb",
+      "size": 1706638,
+      "algorithm": "sha512",
+      "digest": "c7faf5b3340eff51178604183785538f470badb7bcd9c94d020d579db8696785a41482a3e0436f3c0b010c0cb5b262da03e866246065dfd7e3eb2e9ce1cf5289"
+    },
+    {
+      "name": "python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/s/setuptools/python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb",
+      "filename": "python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb",
+      "size": 716284,
+      "algorithm": "sha512",
+      "digest": "68b1d7990be3b11289b16644c04808f3c2e9a22be808ecc9ebe660cdb9b139c81ac8c578385207504a54cc17ef6572d853f921bca411da2c66d6fe9649f1969c"
+    },
+    {
+      "name": "python3-venv_3.12.3-0ubuntu2.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/p/python3-defaults/python3-venv_3.12.3-0ubuntu2.1_arm64.deb",
+      "filename": "python3-venv_3.12.3-0ubuntu2.1_arm64.deb",
+      "size": 1032,
+      "algorithm": "sha512",
+      "digest": "d7308d5e563a72af085fbc1dafdd83fa70e6736788ab959af585431099299f99e5b89a2115ecb7dea073f966717e5c8184c11490ab5c1539d6c8355592db4099"
+    },
+    {
+      "name": "python3.12-venv_3.12.3-1ubuntu0.17_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/p/python3.12/python3.12-venv_3.12.3-1ubuntu0.17_arm64.deb",
+      "filename": "python3.12-venv_3.12.3-1ubuntu0.17_arm64.deb",
+      "size": 5684,
+      "algorithm": "sha512",
+      "digest": "2cc418a65124ae3a76f5caf759f437c88cb7fc674f062afba523e252eb9a5a90c155ee852c43b58fcd624edca6d24cc8d24fa05a0a9fd9c7a90d2ea545cfe8be"
+    },
+    {
+      "name": "qemu-user-static_1%3a8.2.2+ds-0ubuntu1.18_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/q/qemu/qemu-user-static_8.2.2%2bds-0ubuntu1.18_arm64.deb",
+      "filename": "qemu-user-static_1%3a8.2.2+ds-0ubuntu1.18_arm64.deb",
+      "size": 16942584,
+      "algorithm": "sha512",
+      "digest": "8b9c3638a430fe939ed7f5a80fc69872bc3e3b3acb281bca9d6eafd8347bed888976b21b1ea731e48c2ed110653353609dfe14bf2bcb6cb84e3bf39b19499682"
+    },
+    {
+      "name": "spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/s/spirv-tools/spirv-tools_2025.1%7erc1-1%7eubuntu0.24.04.2_arm64.deb",
+      "filename": "spirv-tools_2025.1~rc1-1~ubuntu0.24.04.2_arm64.deb",
+      "size": 4440114,
+      "algorithm": "sha512",
+      "digest": "ef3eeecf64b2fcd61f96ac2f6afe6f35cf21f27021947f8447683f0a0cb0001431817ac8154ebf66046858475f76d71b9d1d870f618bd5166211294541a5271d"
+    },
+    {
+      "name": "kmod_31+20240202-2ubuntu7.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/kmod/kmod_31%2b20240202-2ubuntu7.2_arm64.deb",
+      "filename": "kmod_31+20240202-2ubuntu7.2_arm64.deb",
+      "size": 101170,
+      "algorithm": "sha512",
+      "digest": "2e4987a752d6fe668b14ba7f30d6cb159ade5f648376188b92c3e55fe7b2efdea2346b325fac5c8e3a3d956bb71940bd03e846406386b8e62ded8e5d758ccdba"
+    },
+    {
+      "name": "libkmod2_31+20240202-2ubuntu7.2_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/kmod/libkmod2_31%2b20240202-2ubuntu7.2_arm64.deb",
+      "filename": "libkmod2_31+20240202-2ubuntu7.2_arm64.deb",
+      "size": 51958,
+      "algorithm": "sha512",
+      "digest": "2672974cebfe1656a0cf2cc223005d12183018d1cc0de8e049a1218ee0029eed2a3f410c2872bd41e6c489377852fc26914cf1eab01b041385a0b8a16dc6692f"
+    }
+  ],
+  "supplemental": [
+    {
+      "name": "meson-python",
+      "url": "https://files.pythonhosted.org/packages/e5/2b/46bda4ef5a7ae4135dbfe27fc0368c44e5a349a897a54fdf2cedb8dcb66e/meson-1.7.2-py3-none-any.whl",
+      "filename": "meson-1.7.2-py3-none-any.whl",
+      "algorithm": "sha256",
+      "digest": "82c6818dc81743c96de3a458f06175776ebfde4081195ea31ea6971838f25e38"
+    },
+    {
+      "name": "wayland-protocols",
+      "filename": "wayland-protocols-1.49-1-any.pkg.tar.xz",
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/wayland-protocols-1.49-1-any.pkg.tar.xz",
+      "algorithm": "sha256",
+      "digest": "9678c0d371ecfb5041b1b1d8a7986977bd82b7233984dbe25b33a54da0dbee27"
+    }
+  ]
+}

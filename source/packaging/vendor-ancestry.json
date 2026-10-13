@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "vendor_references": [
+    {
+      "member": "drivers/i2c/busses/i2c-exynos5.c",
+      "sha256": "2db6b257edf99b779688c706129bffd62451d5bb43473f31eca09b38d6815f94",
+      "matching_lines": [
+        {
+          "line": 405,
+          "pattern": "ipclk / (op_clk * 15)"
+        },
+        {
+          "line": 433,
+          "pattern": "ipclk / (op_clk * 15)"
+        },
+        {
+          "line": 438,
+          "pattern": "7 * ipclk"
+        },
+        {
+          "line": 447,
+          "pattern": "7 * ipclk"
+        },
+        {
+          "line": 467,
+          "pattern": "ipclk / (op_clk * 15)"
+        },
+        {
+          "line": 472,
+          "pattern": "9 * ipclk"
+        },
+        {
+          "line": 481,
+          "pattern": "9 * ipclk"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "member": "drivers/net/wireless/bcmdhd_100_15/dhd_msgbuf.c",
+      "sha256": "d6d24fdbe1df50e7441114821da7b88d80cc34bae4a82868a4b0df751bb7d8f3",
+      "matching_lines": [
+        {
+          "line": 4605,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 4781,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 7218,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 7469,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 8003,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 8129,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 9669,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 9796,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        },
+        {
+          "line": 10896,
+          "pattern": "epoch = ring->seqnum % H2D_EPOCH_MODULO"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "member": "drivers/net/wireless/bcmdhd_100_15/dhd_pcie.c",
+      "sha256": "1b28e0276973aadbab4fb343419cc0352d1c3b28a7b4bf9a14ca9c3937ca552a",
+      "matching_lines": [
+        {
+          "line": 1599,
+          "pattern": "bus->dongle_ram_base = CR4_4347_RAM_BASE"
+        }
+      ],
+      "license_concluded": "NOASSERTION"
+    }
+  ],
+  "publication_cleared": false,
+  "vendor_archive_sha256": "8ffe72b5c6344b1656aaee5d27dc8db2ae6193cb0dbf9ff10e6047590297ebf3",
+  "vendor_url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/archive/5eaa43c40667ef407f826ca2bab9552568327c23.tar.gz",
+  "port_archive_sha256": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88",
+  "dts": {
+    "path": "arch/arm64/boot/dts/exynos/exynos9810-star2lte_eur_open_26.dts",
+    "sha256": "f1cad4f81bd0c27f1b422b17233e64687797034a4a70d8f7909415fc09659d3e",
+    "git_blob_sha1": "369a05f0a135f97e85cb3dce0f6a28f2e6899c34",
+    "bytes": 377323,
+    "starts_with_dts_directive": true,
+    "include_directives": 0,
+    "cpp_line_markers": 0,
+    "observed_spdx": [],
+    "copyright_marker_count": 0,
+    "interpretation": "Flattened-looking source; these measurements do not prove decompilation origin or license."
+  },
+  "ufs": [
+    {
+      "vendor_member": "drivers/scsi/ufs/ufs-cal-9810.c",
+      "port_member": "src/ufs/ufs-cal-9810.c",
+      "vendor_sha256": "a0ea376d046c429d386240e30f98cf4473d69640e1f9b0d32ee8a0de54618490",
+      "port_sha256": "a0ea376d046c429d386240e30f98cf4473d69640e1f9b0d32ee8a0de54618490",
+      "byte_identical": true,
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "vendor_member": "drivers/scsi/ufs/ufs-cal-9810.h",
+      "port_member": "src/ufs/ufs-cal-9810.h",
+      "vendor_sha256": "2dd0f8750e7579dbee443c405f626b6d89a3628b8a7c814fcd45f8e0aefbdd3c",
+      "port_sha256": "2dd0f8750e7579dbee443c405f626b6d89a3628b8a7c814fcd45f8e0aefbdd3c",
+      "byte_identical": true,
+      "license_concluded": "NOASSERTION"
+    }
+  ]
+}

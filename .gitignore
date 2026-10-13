@@ -1,0 +1,7 @@
+# Local acquisition, derived artifacts and temporary verification files
+/source/artifacts/
+/source/local-evidence/
+/source/packaging/source-export.allowlist.json
+__pycache__/
+*.pyc
+.DS_Store

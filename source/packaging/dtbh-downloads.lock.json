@@ -1,0 +1,11 @@
+{
+  "packages": [
+    {
+      "name": "vendor",
+      "filename": "vendor-source.tar.gz",
+      "url": "https://github.com/Exynos9810-LTS/android_kernel_samsung_universal9810/archive/5eaa43c40667ef407f826ca2bab9552568327c23.tar.gz",
+      "algorithm": "sha256",
+      "digest": "8ffe72b5c6344b1656aaee5d27dc8db2ae6193cb0dbf9ff10e6047590297ebf3"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "packages": [
+    {
+      "name": "linux",
+      "filename": "upstream-linux.tar.gz",
+      "url": "https://codeload.github.com/torvalds/linux/tar.gz/8cd9520d35a6c38db6567e97dd93b1f11f185dc6",
+      "algorithm": "sha256",
+      "digest": "3b89952ea68cf65a7ffad4ef527bd9c0a3e8f86e101d0491f062d495af730e55"
+    },
+    {
+      "name": "s9plus-port",
+      "filename": "upstream-port.tar.gz",
+      "url": "https://codeload.github.com/SheroAbi/galaxy-s9plus-mainline-linux/tar.gz/b42ffce0bf97c0f49f90af91107a670d324c53e3",
+      "algorithm": "sha256",
+      "digest": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88"
+    }
+  ]
+}

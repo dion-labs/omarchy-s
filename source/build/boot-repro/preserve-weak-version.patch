@@ -1,0 +1,13 @@
+--- a/init/Makefile
++++ b/init/Makefile
+@@ -38,6 +38,10 @@
+ # Build version.c with temporary UTS_VERSION
+ #
+ 
++# Reproduce native20's weak placeholder separately from the fixed final timestamp.
++# Its original build supplied KBUILD_BUILD_VERSION but no timestamp override.
++$(obj)/utsversion-tmp.h: build-timestamp =
++
+ $(obj)/utsversion-tmp.h: FORCE
+ 	$(call filechk,uts_version)
+ 

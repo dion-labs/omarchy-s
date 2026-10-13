@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "publication_cleared": false,
+  "upstream_pr": "https://github.com/dsankouski/dtbtool-exynos/pull/1",
+  "author_repository": "https://github.com/Grimler91/dtbtool-exynos",
+  "author_head": "6c418bf000af76959df27e21fd06ca49847ce65d",
+  "packaging_commit": "481e494cdceeb85bccb9016c6fb36e13505ebf39",
+  "packaging_mr": "https://gitlab.postmarketos.org/postmarketOS/pmaports/-/merge_requests/6746",
+  "files": [
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0001-Makefile-do-not-add-libfdt.so-to-OBJ_FILES.patch",
+      "sha256": "e4252142558da5267181dd9e5cf0ec4423e51922a8540af59e9be2acebd55c9f",
+      "author_commit": "3131795b676e3e533f521449fa4f09d71573df20",
+      "upstream_patch_id": "088ef744436395605954e76d24cdd4d4501d967e",
+      "packaged_patch_id": "088ef744436395605954e76d24cdd4d4501d967e",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "Makefile"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0002-Makefile-do-not-strip-the-produced-binary.patch",
+      "sha256": "0acda68ede73e64d11ad65d8a13c2f6330a7bcca937819fbf6fab6cac4fb6a48",
+      "author_commit": "0143ed5c784df0baf69f1aee6a3ba0fb45457de6",
+      "upstream_patch_id": "5b331284b0db91fdc3fc1a581d0cd904d45a1e91",
+      "packaged_patch_id": "5b331284b0db91fdc3fc1a581d0cd904d45a1e91",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "Makefile"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0003-dtbtool-exynos-convert-all-space-indentation-to-tabs.patch",
+      "sha256": "3fb1bd94ec335ef95dcb04c604d3703462d68534a78b74d526668b38ac5184fd",
+      "author_commit": "26e8af6741db48c7add3ac2f8cd2d05827702024",
+      "upstream_patch_id": "aee04af925c2534e255d7151eed984cc3c79c021",
+      "packaged_patch_id": "aee04af925c2534e255d7151eed984cc3c79c021",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0004-scan_dtb_path-be-less-verbose-when-scanning-director.patch",
+      "sha256": "d33306e38a70aeca30e2306d8b7fd6af4e2f9b61c1da96ec065e4de0bf9dd461",
+      "author_commit": "129bdc748223beb81a5cc516077909671a86e192",
+      "upstream_patch_id": "a717862c6d1ed318494bc8a5aeec609b2e2c1683",
+      "packaged_patch_id": "a717862c6d1ed318494bc8a5aeec609b2e2c1683",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0005-scan_dtb_path-free-struct-from-scandir.patch",
+      "sha256": "331c25f1ba7e4d1dd61eb85c92bda924ef57c952e76bdbe41e8e06af371fc51a",
+      "author_commit": "09df703183035495012a3af494243d37b8f93b31",
+      "upstream_patch_id": "9b3c2ba3de1bb0c7ede4991732575fc4dfb1fa8f",
+      "packaged_patch_id": "9b3c2ba3de1bb0c7ede4991732575fc4dfb1fa8f",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0006-dtbtool-exynos-zero-allocated-dtb_files-memory.patch",
+      "sha256": "78c7a86df6a7dfe53ddcd80caf3c7b54ffd5932b75cefe184d5b314bb452fa9c",
+      "author_commit": "57cee5fd7352f5db17eab51e7b26054327b7126c",
+      "upstream_patch_id": "378a15e1f0efe922a16480501dbfc4a7c3a85179",
+      "packaged_patch_id": "378a15e1f0efe922a16480501dbfc4a7c3a85179",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0007-dtbtool-exynos-allocate-memory-for-dtbs-as-needed.patch",
+      "sha256": "132ef3f290c0c6f762cf8a608e9e9bdde648dc3a24ce6b7da1d704a13c5e8431",
+      "author_commit": "cc35004fb1b81cf0fe4381d6b83c2e656b00fc47",
+      "upstream_patch_id": "69de63c727fc2b6058bc7592d349734e7564042c",
+      "packaged_patch_id": "69de63c727fc2b6058bc7592d349734e7564042c",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0008-dtbtool-exynos-remove-fail-goto.patch",
+      "sha256": "71f07bd77287da4e549269dbacdd5b3ab654b63ce3da57935f4b9214e58b390f",
+      "author_commit": "952fc6a1b5f2781b1077f84e5efdb0fd308cf09d",
+      "upstream_patch_id": "214936fa011adf2380439f437e51fe29204fbebb",
+      "packaged_patch_id": "214936fa011adf2380439f437e51fe29204fbebb",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0009-dtbtool-exynos-free-allocated-dtb_files-before-exit.patch",
+      "sha256": "76293797d1e3572ad335a0116f1014360b3588b095101ae113f3588ceeade642",
+      "author_commit": "4917606a69a5134863ac27b3b590d323355f9cfb",
+      "upstream_patch_id": "d3db3334b6d63207497030c71550b562bd97df9c",
+      "packaged_patch_id": "d3db3334b6d63207497030c71550b562bd97df9c",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    },
+    {
+      "path": "upstream/pmaports/main/dtbtool-exynos/0010-load_dtbh_block-free-allocated-memory.patch",
+      "sha256": "7fcd9e0a31c3ff1823c6ddfeccdd87d45bec5a1531b998a28c5534630ec775ef",
+      "author_commit": "6c418bf000af76959df27e21fd06ca49847ce65d",
+      "upstream_patch_id": "a569b741ed1d6b7062d437c44236941007114dee",
+      "packaged_patch_id": "a569b741ed1d6b7062d437c44236941007114dee",
+      "matching_diff": true,
+      "c_source_notice_sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "changed_paths": [
+        "dtbtool-exynos.c"
+      ],
+      "license_concluded": "NOASSERTION"
+    }
+  ],
+  "scope_observation": "Eight C patches preserve the existing Linux Foundation source notice in the author branch; two Makefile patches modify a file with no own license notice. PR body and two public comments discuss build fixes, not an explicit licensing grant. No review objects returned. Root pmaports GPLv3 and package MIT labels are recorded separately; no automatic license conclusion."
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "source_version": "1:1.36.1-6ubuntu3.1",
+  "signature_status": "DSC and upstream signature retained; signature trust not verified",
+  "packages": [
+    {
+      "name": "busybox_1.36.1.orig.tar.bz2",
+      "filename": "busybox_1.36.1.orig.tar.bz2",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox_1.36.1.orig.tar.bz2",
+      "algorithm": "sha256",
+      "digest": "b8cc24c9574d809e7279c3be349795c5d5ceb6fdf19ca709f80cde50e47de314",
+      "size": 2525473
+    },
+    {
+      "name": "busybox_1.36.1.orig.tar.bz2.asc",
+      "filename": "busybox_1.36.1.orig.tar.bz2.asc",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox_1.36.1.orig.tar.bz2.asc",
+      "algorithm": "sha256",
+      "digest": "d4a7082ba3cbc35b2fdb4f132a32e3789de66ce468b7b4858563f5f157c28afe",
+      "size": 195
+    },
+    {
+      "name": "busybox_1.36.1-6ubuntu3.1.debian.tar.xz",
+      "filename": "busybox_1.36.1-6ubuntu3.1.debian.tar.xz",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox_1.36.1-6ubuntu3.1.debian.tar.xz",
+      "algorithm": "sha256",
+      "digest": "1c7d785cf1e1d5d09ddc22fe755e14327fb3799878a5d840fc611044ff05f022",
+      "size": 84488
+    },
+    {
+      "name": "busybox_1.36.1-6ubuntu3.1.dsc",
+      "filename": "busybox_1.36.1-6ubuntu3.1.dsc",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox_1.36.1-6ubuntu3.1.dsc",
+      "algorithm": "sha256",
+      "digest": "ffbee3f0383ea5a3e77033c2bcc1978dc9ae00ff8c9d0a362ee32f6e84254be8"
+    }
+  ],
+  "binary_version": "1:1.36.1-6ubuntu3.1",
+  "recipe_sha256": "8556bc05edea26c62f8675744552bc8862f8ce01c55e328a3db8330e5eddac1c",
+  "expected_static_config_sha256": "d2d5f13922b26b070453cd3eb3c5992a233463a1b76cde59b324c688d088b0a4",
+  "expected_applets_sha256": "c1bd44f588e4c1e16512e5417c8b46c997947a4b6cff8bc4ee3f344d64dbc63c"
+}

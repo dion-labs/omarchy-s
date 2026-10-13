@@ -1,0 +1,38 @@
+--- a/main/boot.c
++++ b/main/boot.c
+@@ -12,7 +12,9 @@
+ void boot_kernel(void* dt, void* kernel, void* ramdisk)
+ {
+ #ifdef CONFIG_LIBFDT
++	printk(KERN_INFO, "OMARCHY D1: patching DTB\n");
+ 	patch_dtb(&dt);
++	printk(KERN_INFO, "OMARCHY D2: DTB patch returned\n");
+ #endif
+ 
+ 	printk(KERN_INFO, "Booting kernel...\n");
+--- a/arch/aarch64/load-kernel.c
++++ b/arch/aarch64/load-kernel.c
+@@ -24,7 +24,9 @@
+ 
+ void arch_load_kernel(void* kernel, void* dt, void* ramdisk)
+ {
++	printk(KERN_INFO, "OMARCHY D3: copying kernel\n");
+ 	memcpy((void*)CONFIG_PAYLOAD_ENTRY, kernel, (unsigned long) &kernel_size);
++	printk(KERN_INFO, "OMARCHY D4: kernel copied\n");
+ #ifndef CONFIG_RAMDISK_NO_COPY
+ 	__optimized_memcpy((void*)CONFIG_RAMDISK_ENTRY, ramdisk, (unsigned long) &ramdisk_size);
+ #endif
+@@ -37,11 +39,13 @@
+ 		__asm__ volatile("mrs %0, sctlr_el1" : "=r" (sctlr));
+ 	printk(KERN_INFO, "S9P handoff: EL%lu SCTLR=%lx kernel=%lx dt=%lx\n",
+ 	       el >> 2, sctlr, (unsigned long)CONFIG_PAYLOAD_ENTRY, (unsigned long)dt);
++	printk(KERN_INFO, "OMARCHY D5: cleaning caches\n");
+ 	clean_range((void *)CONFIG_PAYLOAD_ENTRY, (unsigned long)&kernel_size);
+ 	clean_range(dt, fdt_totalsize(dt));
+ #ifndef CONFIG_RAMDISK_NO_COPY
+ 	clean_range((void *)CONFIG_RAMDISK_ENTRY, (unsigned long)&ramdisk_size);
+ #endif
+ #endif
++	printk(KERN_INFO, "OMARCHY D6: jumping to kernel\n");
+ 	load_kernel_and_jump(dt, 0, 0, 0, (void*)CONFIG_PAYLOAD_ENTRY);
+ }

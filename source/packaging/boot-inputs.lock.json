@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "image_id": "sha256:a2a9d1e77008f91b120292e1170044c36b8c6466416217359202f9488184c60d",
+  "files": {
+    "build/mainline/diagnostic/init": "80b9ea297884cb80bcbd7dbd777d2360d8aab69c883f7c0c23fd5df69db66344",
+    "build/mainline/diagnostic/root-layout.sh": "5eade512224b0a9e76b3e09c01c8180faf4d5f8b04e045e35ced11ab60832b95",
+    "build/mainline/diagnostic/usb-console.sh": "43b3c6989f250a391b22c3b8fe5522e6115ba644405cc873683df56d63ae7f6f",
+    "build/arch-arm/native-boot/root-layout.sh": "07fef2265ae1dcb821a8cbc90d19074660b291f462322f9d4e9e2289aa83972f",
+    "build/arch-arm/native-boot/transition.sh": "832369348803e2092699f22bb484d1c90dbe89729b226ce4368b99d144a80c49",
+    "build/boot-repro/cpio-layout.json": "acfb438d8523ca79c0f664355fdaee4a4652b73c90aae10b862a6b3c8d2f7fb5"
+  },
+  "busybox_package": {
+    "name": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+    "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox-static_1.36.1-6ubuntu3.1_arm64.deb",
+    "filename": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+    "size": 910700,
+    "algorithm": "sha512",
+    "digest": "789ccedf6c0ea81ec042c466226a7b57fe411203d21d12cfeb180b94e9c20d96371889a6ef0a77124dbce3ef303e59d8d27c8968c2545730ce3ff3f52f5c54ca"
+  },
+  "port_archive": {
+    "name": "s9plus-port",
+    "filename": "upstream-port.tar.gz",
+    "url": "https://codeload.github.com/SheroAbi/galaxy-s9plus-mainline-linux/tar.gz/b42ffce0bf97c0f49f90af91107a670d324c53e3",
+    "algorithm": "sha256",
+    "digest": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88"
+  },
+  "initramfs_file_hashes": {
+    "bin/busybox": "52151e7f322f926b64049cdaa1410dc3ea6485525e0624b05813791c219ae933",
+    "extra-probe": "1ce985a4df6dcafa773c5504202d9b5981bc3b558dbb4317c4b00fabcb12b9f6",
+    "init": "d15b13e8c8dc8a12c5b99d6e36b6cd956d9e84197811bd4f292308434be369fa",
+    "native-root-layout.sh": "07fef2265ae1dcb821a8cbc90d19074660b291f462322f9d4e9e2289aa83972f",
+    "native-transition.sh": "832369348803e2092699f22bb484d1c90dbe89729b226ce4368b99d144a80c49",
+    "root-layout.sh": "5eade512224b0a9e76b3e09c01c8180faf4d5f8b04e045e35ced11ab60832b95",
+    "usb-console.sh": "43b3c6989f250a391b22c3b8fe5522e6115ba644405cc873683df56d63ae7f6f"
+  },
+  "cpio_sha256": "1fde00750f2a27a60acd240b83e4f964108932e0636ff613c57dcf5b0843e345",
+  "firmware": {
+    "brcm/brcmfmac4361-pcie.bin": {
+      "source": "firmware/bcmdhd_sta.bin_b2",
+      "sha256": "c5bcfaf76edc5c15b36a7182b40393684e948bc37ed13a16f54f2be15abe67ab",
+      "matches_embedded": true
+    },
+    "brcm/brcmfmac4361-pcie.txt": {
+      "source": "firmware/nvram.txt_r02a_b2",
+      "sha256": "a12040c8b03d687d25adf3260f5fa2a5ad03683d393cc2b41cade3dfc79a7e27",
+      "matches_embedded": true
+    },
+    "brcm/brcmfmac4361-pcie.clm_blob": {
+      "source": "firmware/bcmdhd_clm.blob",
+      "sha256": "2d9dc4980c6544a2d4eb1a111f55d02baa26eccee5798a66a77b8fc105cac24b",
+      "matches_embedded": true
+    },
+    "regulatory.db": {
+      "source": "firmware/regulatory.db",
+      "sha256": "2fb33ca0074db573e05ef7dd50bb45b63c0ff98b7e852e1105ebad536fae8e6b",
+      "matches_embedded": true
+    },
+    "regulatory.db.p7s": {
+      "source": "firmware/regulatory.db.p7s",
+      "sha256": "c941c08f51c93e46722293b85631604c3740d86c3de0c75f79aef50d2e919179",
+      "matches_embedded": true
+    }
+  },
+  "scope": "Exact byte provenance from pinned public package/source archives. No redistribution grant or device activation."
+}

@@ -1,0 +1,27 @@
+{
+  "packages": [
+    {
+      "name": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/busybox/busybox-static_1.36.1-6ubuntu3.1_arm64.deb",
+      "filename": "busybox-static_1%3a1.36.1-6ubuntu3.1_arm64.deb",
+      "size": 910700,
+      "algorithm": "sha512",
+      "digest": "789ccedf6c0ea81ec042c466226a7b57fe411203d21d12cfeb180b94e9c20d96371889a6ef0a77124dbce3ef303e59d8d27c8968c2545730ce3ff3f52f5c54ca"
+    },
+    {
+      "name": "s9plus-port",
+      "filename": "upstream-port.tar.gz",
+      "url": "https://codeload.github.com/SheroAbi/galaxy-s9plus-mainline-linux/tar.gz/b42ffce0bf97c0f49f90af91107a670d324c53e3",
+      "algorithm": "sha256",
+      "digest": "7ce9283544ea750bf5fb23b1e7613e38411b4f031c06ddd93bbed99eb26edb88"
+    },
+    {
+      "name": "lz4",
+      "filename": "lz4_1.9.4-1build1_arm64.deb",
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/l/lz4/lz4_1.9.4-1build1_arm64.deb",
+      "algorithm": "sha256",
+      "digest": "9a91d7d896f3811da41af6b4ff4c8395bbda418e020b71fdbc283dce0f0ed24f"
+    }
+  ],
+  "scope": "Public dependency downloads only; stock Samsung AP must be supplied separately. No packages installed or blobs published."
+}

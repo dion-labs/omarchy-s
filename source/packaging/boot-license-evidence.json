@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "component": "linux",
+      "archive": "artifacts/kernel-source-closure/upstream-linux.tar.gz",
+      "member": "COPYING",
+      "notice": "open-source/licenses/linux-COPYING.txt",
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "excerpt": false
+    },
+    {
+      "component": "linux",
+      "archive": "artifacts/kernel-source-closure/upstream-linux.tar.gz",
+      "member": "LICENSES/preferred/GPL-2.0",
+      "notice": "open-source/licenses/linux-LICENSES-preferred-GPL-2.0.txt",
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "excerpt": false
+    },
+    {
+      "component": "port",
+      "archive": "artifacts/kernel-source-closure/upstream-port.tar.gz",
+      "member": "LICENSE",
+      "notice": "open-source/licenses/port-LICENSE.txt",
+      "sha256": "1b0b03858b73cabb9ed1007080c94bf5c38f7ae8693a0278dbd7ee44f23af846",
+      "excerpt": false
+    },
+    {
+      "component": "port",
+      "archive": "artifacts/kernel-source-closure/upstream-port.tar.gz",
+      "member": "THIRD-PARTY.md",
+      "notice": "open-source/licenses/port-THIRD-PARTY.md.txt",
+      "sha256": "c3753c7204a10093d690dcb15038f7c9547c7d360afd1fa7d5b802df3fdfe24f",
+      "excerpt": false
+    },
+    {
+      "component": "port",
+      "archive": "artifacts/kernel-source-closure/upstream-port.tar.gz",
+      "member": "bootloader/uniLoader/LICENSE",
+      "notice": "open-source/licenses/port-bootloader-uniLoader-LICENSE.txt",
+      "sha256": "33da12ec2eb61c6bd2a7fe4b3882e2bdffbc0820333903b33e5d4c962771b3ab",
+      "excerpt": false
+    },
+    {
+      "component": "port",
+      "archive": "artifacts/kernel-source-closure/upstream-port.tar.gz",
+      "member": "firmware/README.md",
+      "notice": "open-source/licenses/port-firmware-README.md.txt",
+      "sha256": "4460698f4f3bdd9ac0906d038b9a41fdd84b471ced2a09ee7e2e3a19db118d4a",
+      "excerpt": false
+    },
+    {
+      "component": "vendor",
+      "archive": "artifacts/header-provenance/vendor-source.tar.gz",
+      "member": "COPYING",
+      "notice": "open-source/licenses/vendor-COPYING.txt",
+      "sha256": "af8067302947c01fd9eee72befa54c7e3ef8a48fecde7fd71277f2290b2bf0f7",
+      "excerpt": false
+    },
+    {
+      "component": "vendor",
+      "archive": "artifacts/header-provenance/vendor-source.tar.gz",
+      "member": "scripts/dtc/libfdt/libfdt.h",
+      "notice": "open-source/licenses/vendor-scripts-dtc-libfdt-libfdt.h.txt",
+      "sha256": "4ccbfb9794f2982bfda97988b69e167106337304a8135795b733b11f0c5ee052",
+      "excerpt": "complete leading notice"
+    },
+    {
+      "component": "dtbtool",
+      "archive": "artifacts/header-provenance/dtbtool-source.tar.gz",
+      "member": "dtbtool-exynos.c",
+      "notice": "open-source/licenses/dtbtool-dtbtool-exynos.c.txt",
+      "sha256": "065ad883cb3f1007ff6da0a4e4e4645c201039a835340b27c6d8df86c0b700ca",
+      "excerpt": "complete leading notice"
+    },
+    {
+      "component": "busybox",
+      "notice": "open-source/licenses/busybox-copyright.txt",
+      "sha256": "336d995e819d3a7a3fdbf3f5041c07094f75ee849acb3bb742b7503d45786329",
+      "origin": "Pinned Ubuntu package usr/share/doc/busybox-static/copyright"
+    },
+    {
+      "component": "vendor",
+      "archive": "artifacts/header-provenance/vendor-source.tar.gz",
+      "member": "drivers/i2c/busses/i2c-exynos5.c",
+      "notice": "open-source/licenses/vendor-i2c-exynos5-notice.txt",
+      "sha256": "759845861c2b7e7cc7becc1989119266d92874a3730e792ad3a0603ac23ef1ed",
+      "excerpt": "complete leading notice"
+    },
+    {
+      "component": "vendor",
+      "archive": "artifacts/header-provenance/vendor-source.tar.gz",
+      "member": "drivers/net/wireless/bcmdhd_100_15/dhd_msgbuf.c",
+      "notice": "open-source/licenses/vendor-dhd-msgbuf-notice.txt",
+      "sha256": "9d4e9d1de1ed424157c692dad13f6a9df725b62a4cebb3fec75ac8ff64d00fd9",
+      "excerpt": "complete leading notice"
+    },
+    {
+      "component": "pmaports",
+      "notice": "open-source/licenses/pmaports-LICENSE.txt",
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "origin": "https://gitlab.postmarketos.org/postmarketOS/pmaports/-/blob/2254bfcf53d13d79136e9c5187480a3582f32cad/LICENSE",
+      "excerpt": false
+    },
+    {
+      "component": "candidate-samsung-dts",
+      "member": "arch/arm64/boot/dts/exynos/exynos9810-star2lte_eur_open_26.dts",
+      "notice": "open-source/licenses/candidate-samsung-board-notice.txt",
+      "sha256": "42e6e2430787f0cd535a77a17bc1639f3077d972cf7e4d2acf7f089bb395534c",
+      "origin": "https://github.com/freeza-inc/bm-galaxy-sm9ne-plus-exynos/blob/4a958037832620087f707d99aaea94f03ded94c8/arch/arm64/boot/dts/exynos/exynos9810-star2lte_eur_open_26.dts",
+      "excerpt": "complete leading notice; candidate only, not exact boot input"
+    },
+    {
+      "component": "candidate-samsung-dts",
+      "member": "arch/arm64/boot/dts/exynos/exynos9810.dtsi",
+      "notice": "open-source/licenses/candidate-samsung-soc-notice.txt",
+      "sha256": "b77e129239fe1fd21e48c581c1c3e3df1907ed40337e1707bfd714ba7da9fa30",
+      "origin": "https://github.com/freeza-inc/bm-galaxy-sm9ne-plus-exynos/blob/4a958037832620087f707d99aaea94f03ded94c8/arch/arm64/boot/dts/exynos/exynos9810.dtsi",
+      "excerpt": "complete leading notice; candidate only, not exact boot input"
+    }
+  ],
+  "clearance": false
+}

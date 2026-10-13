@@ -67,7 +67,8 @@ package file is deliberately outside this version's plan format.
 ## Required executor contract
 
 A separate [isolated transaction laboratory](PORTAL-TRANSACTION-LAB.md) now
-implements and fault-tests storage transitions in marked temporary roots. It does
+implements and fault-tests storage transitions, explicit finalization and retained
+evidence cleanup in marked temporary roots. It does
 not enable live installation or satisfy process lifecycle/adoption requirements.
 
 These requirements define future live installation. The planner does not execute

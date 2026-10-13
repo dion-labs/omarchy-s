@@ -51,12 +51,12 @@ only files created by the transaction, restoring absence. Known partially writte
 temporary files can be discarded; unexpected contents, symlinks or hardlinks are
 refused. Already-restored files are unchanged. Recovery can itself be interrupted
 and repeated. Committed test transactions retain backups and can still be rolled
-back explicitly; no finalization or automatic backup deletion is provided.
+back explicitly until a durable finalization decision is written.
 
 A crash before the first durable journal leaves preparation evidence and unchanged
 targets. `recover` reports incomplete preparation and does not guess missing state.
 The isolated root should be retained for inspection or discarded in its entirety
-by the test harness. A retained transaction blocks another preparation. A crash
+by the test harness. An active retained transaction blocks another preparation until finalized. A crash
 during apply must go through recovery; apply does not resume a partial operation.
 
 ## Tested boundaries
@@ -87,6 +87,39 @@ unknown state rather than silently overwriting it.
 
 The [portal installation contract](PORTAL-PAYLOAD.md) remains the activation gate.
 Reviewed process quiesce/restart and real health checks, first adoption of existing
-phone files, source authorization and a durable finalization/retention policy are
-not implemented here. Native USB/Mesa/kernel ownership is outside the transaction.
+phone files, source authorization and an operational retention policy are
+not implemented here. Explicit laboratory finalization and pruning are implemented. Native USB/Mesa/kernel ownership is outside the transaction.
 Do not relax the temporary-root restrictions to use this library on the phone.
+
+## Finalization and explicit cleanup
+
+Run `test-portal-retention.py` with the same Linux container command above in
+place of `test-portal-transaction.py`. Its 11 tests add 72 abrupt process exits:
+six finalization and thirty pruning boundaries for each committed/rolled-back case.
+Together the dependency package has 60 tests and 200 abrupt-exit cases.
+
+`portal-retention.py` is a separate library with the same root restrictions and
+cooperative lock. `finalize(root)` requires a completed commit or rollback and
+exact whole-group state. It writes a synced close decision before renaming the
+transaction to a unique retained archive. Backups remain intact, another update
+can start, and rollback eligibility ends at the close decision. An interruption
+after that decision must resume finalization, not rollback. Repeating finalization
+when no active transaction exists returns None; `histories(root)` discovers saved
+archive handles. Older journals without a transaction ID remain recoverable but
+cannot be finalized by this protocol. Incomplete preparation is still retained
+for inspection, never implicitly discarded.
+
+`prune(root, history, close_sha256)` requires an explicit archive name and exact
+close digest. It verifies every retained entry before recording a durable deletion
+receipt, then removes only inventoried evidence. It preserves payloads and their
+owner receipt, even while a later transaction exists. Unexpected files, links or
+metadata/content drift cause refusal. Repeated cleanup resumes from the durable
+receipt, including after the close record or archive directory has been removed.
+`prune_receipts(root)` recovers the necessary handle after an interrupted cleanup.
+Small completion receipts remain; automatic expiration and receipt compaction are
+not provided. Pruning permanently removes those archived rollback blobs.
+
+Tests also cover repeated changed versions, failed-update recovery, cleanup with
+a later active transaction, legacy journal refusal, saved-handle discovery, short
+writes, sync failure and unknown-state preservation. These remain isolated storage
+checks with synthetic health callbacks, not service or physical-power validation.

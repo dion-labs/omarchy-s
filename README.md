@@ -77,19 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 3](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-3)
-adds a Linux transaction laboratory for portal creation, verified backups, owner
-receipt commits and interrupted rollback. It accepts only isolated marked
+[Dependency-source preview 4](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-4)
+adds explicit finalization and retained-backup cleanup to the Linux portal
+transaction laboratory, with repeated-update and interrupted-cleanup recovery. It accepts only isolated marked
 temporary directories and has no live installation mode. Read the
 [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
 [transaction laboratory guide](dependency-source/PORTAL-TRANSACTION-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-3/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-4/dependency-source-preview.tar).
 
-The 54-file source payload lives under `dependency-source/`, with manifest and
-allowlist under `release/dependencies/`. All 49 tests pass, including 128 injected
+The 56-file source payload lives under `dependency-source/`, with manifest and
+allowlist under `release/dependencies/`. All 60 tests pass, including 200 injected
 process exits. The real portal payload passes isolated storage rehearsals; no
 portal process or phone is activated. Seven runtime hashes reproduce exactly.
 Mesa runtime validation, live process coordination, existing-device adoption and
-transaction finalization remain separate. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
+automatic retention policy remain separate. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
 retains upstream notices. Earlier previews remain available at their release tags.

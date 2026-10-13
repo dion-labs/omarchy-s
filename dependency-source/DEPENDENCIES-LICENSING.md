@@ -39,3 +39,6 @@ the scoped grant. The generated portal notice remains the upstream MIT text.
 
 The isolated portal transaction library, fault-injection tests and laboratory
 guide are original DionLabs integration under the same scoped grant.
+
+The retention library and its tests are original DionLabs integration under the
+same scoped grant; public filesystem protocol facts are not ownership claims.

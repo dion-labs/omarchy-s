@@ -1,61 +1,53 @@
-# Dependency-source preview 3
+# Dependency-source preview 4
 
-The portal ownership planner now has a separate Linux storage executor for isolated
-test roots. It handles first-file creation, backups, owner receipt commits and
-explicit rollback after interrupted updates. Target bytes, ownership, permissions,
-timestamps and extended attributes are preserved on recovery. Live installation
-remains disabled; there is no device or service activation mode.
+Completed portal test transactions can now be finalized without deleting their
+backups, allowing subsequent updates in the same isolated root. Explicit cleanup
+validates a named archive and close digest before deleting retained evidence;
+interrupted cleanup resumes from a durable receipt.
 
-## What changed
+## Changes and validation
 
-- Backups and a write-ahead journal are synced before target mutation. Replacement
-  uses descriptor-relative temporary files, readback and directory syncs.
-- Payloads change before a synthetic health gate; the owner receipt commits last.
-  Whole-group readback is required before recording commit or rollback success.
-- Recovery handles known before/after states, restores absence on first installs,
-  refuses unrelated drift and can itself be interrupted and repeated.
-- Read-only staging inputs contribute bytes/modes only. Unsupported destination
-  extended attributes still fail closed instead of being silently discarded.
+Finalization checks terminal target state, writes a synced close decision and
+archives the transaction under a unique ID. Rollback stops at that decision;
+interrupted finalization resumes explicitly. Cleanup inventories and verifies all
+remaining evidence before deletion, preserves unknown state, and retains a small
+completion receipt. Old archives can be cleaned while a later transaction exists.
 
-## Validation
+All 60 tests pass without skips from the extracted archive in networkless ARM64
+Linux with read-only source mounts. The 200 abrupt child-process exits cover
+preparation, apply, recovery, finalization and cleanup. Eleven retention tests
+include repeated changed updates, failed-health recovery, saved cleanup-handle
+recovery, legacy journal refusal, metadata drift, links, short writes and sync
+failure. The previously rebuilt real portal payload passes create/upgrade,
+repeated-update, double rollback and cleanup checks with exact final state.
+Its binary is not executed; health callbacks remain synthetic.
 
-All 49 tests pass from the final source tree in a networkless ARM64 Linux container,
-with read-only source mounts and no skips. The 18 executor tests include 128 child
-process exits across preparation, application and recovery for first installs and
-upgrades. Each recoverable interruption is followed by two exact recoveries.
-Pre-journal preparation failures leave unchanged targets and retained evidence.
+Two normalized exports match. All 56 files pass exact archive/tree checks;
+55 attribution entries match their source hashes, and documentation links and
+privacy findings have been reviewed. Earlier boot/desktop payloads, dependency
+recipes and runtime pins are unchanged. No phone was contacted or modified.
 
-Additional tests cover short writes, failed syncs/metadata writes, different file
-ownership, corrupt backups/journals/temporary files, links/FIFOs, invalid roots,
-lock contention, health failures and late rollback drift. The real previously
-rebuilt portal payload also passes isolated create/upgrade and double-recovery
-rehearsals. Its binary is not executed; the health callback is synthetic.
+## Scope and next step
 
-Two normalized source exports match. Source hashes, per-file licensing, links and
-privacy checks pass. Earlier boot/desktop payloads and runtime dependency recipes
-are unchanged. No phone was contacted, no runtime pin changed, and no new physical
-acceptance is claimed.
+The [laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-4/dependency-source/PORTAL-TRANSACTION-LAB.md)
+describes explicit archive handles and crash recovery. The libraries only accept
+private marked temporary roots. There is no live-root override or activation CLI.
+These process-interruption checks do not prove physical power-cut durability.
+Incomplete preparation remains available for inspection. Older ID-less journals
+can recover but cannot use the new finalizer. Automatic expiration and cleanup
+receipt compaction are not implemented.
 
-## Limits and next step
+Next: isolated process lifecycle and health-contract integration. Real portal
+quiesce/restart, existing-device adoption, source authorization and Mesa runtime
+validation remain separate gates. Do not relax laboratory root restrictions.
 
-Read the [transaction laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-3/dependency-source/PORTAL-TRANSACTION-LAB.md).
-These are process-interruption tests on a container filesystem, not power-cut or
-storage-controller durability tests. The executor is restricted to private marked
-temporary roots; no live-root override exists. A retained transaction blocks a new
-one, and backups remain available for inspection and explicit rollback.
-
-Next is safe finalization and retained-evidence cleanup in isolated roots, followed
-by process lifecycle/health integration. Existing-device ownership adoption,
-source authorization, Mesa validation and full installation closure remain separate.
-Do not relax test-root restrictions to deploy this code to a phone.
-
-This 54-file release contains source only, with scoped DionLabs MIT original
-expression and retained upstream terms. It distributes no compiled payloads,
-firmware, configured images or account state.
+This is source only: original DionLabs integration has scoped MIT terms and
+inherited notices retain their terms. No binaries, firmware, images or account
+state are distributed.
 
 Archive dependency-source-preview.tar SHA256:
-`ec5f6fa12ae5865e4333cafe18d74314eefd65dcd039e7dc57d4a024b038a958`.
+`ae6576cc921780162ba41dc0c27dce88968260521fc30d83dc52d8b08b67c54e`.
 Assets also include manifest.json, dependency-source-export.allowlist.json and
-SHA256SUMS. Export-time source-preview.tar was renamed without changing bytes;
+SHA256SUMS. Export-time source-preview.tar is renamed without changing bytes;
 GitHub-generated repository archives differ. Frozen publication_cleared:false
 records prepublication export state; approval covers this reviewed source only.

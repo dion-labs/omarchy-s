@@ -10,22 +10,22 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "026168114834d48ea79757f488233dfd2431624e8cd16c123d47163a351a4773",
+      "sha256": "b858fe06a82df29f327a92362b47f2f34c1f03afa66c7991fdc73f9b34e8b5a5",
       "mode": "0644"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "2648d6bad3098db575e775c83894494e9a91f2b89df08a25e291957bbcfcce4e",
+      "sha256": "2a5f250c917ff4895cded6a1d1efdf57b506c88310b5c8911f6a6ffdc4784fb4",
       "mode": "0644"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
-      "sha256": "73590c77e38e67b7cca3be8c798e44fd58bd483ab9b65ace42635328d7db5c5d",
+      "sha256": "ab975c0401a353d5dfcf75f479ba1dd05e21ff19b8f873eccf0bfc13f1f32afc",
       "mode": "0644"
     },
     {
       "path": "PORTAL-TRANSACTION-LAB.md",
-      "sha256": "16fe08319130899732fd3524bd120d8f9edb774521c2ef8530fe5808d377bae9",
+      "sha256": "ca2d292bde3ab3d0fe2b1c85115a4dab36b4e11fd74acee1b3b00103a136018a",
       "mode": "0644"
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "1e290a7c4ae5e247c610545a213b07f3926bdde8cdc5071c911a50d4176db6a8",
+      "sha256": "96b7005675a8c68139bea81d40183cf21533769784c41b0e281265b3b487b34f",
       "mode": "0644"
     },
     {
@@ -179,8 +179,13 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/portal-retention.py",
+      "sha256": "3ebc1366792474d2792ff4d9ff7c94366873ce994b9aa70be16b86e57a238958",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/portal-transaction.py",
-      "sha256": "a3e986198a1bfc52dd4d0921bc7a2c9109ede24bc58f54ffedff7dcc5916e43b",
+      "sha256": "ca36c56fc57a6917340857ccf31643fafdc4540405b743c12b2465d30de0da84",
       "mode": "0644"
     },
     {
@@ -206,6 +211,11 @@
     {
       "path": "scripts/dependency-lab/test-portal-ownership.py",
       "sha256": "350145d0250d6ca857608ac9395f1d508284ce6f5bda5eaf29a0e81f87265c71",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-retention.py",
+      "sha256": "3d1c9d6b0c209c91f86f892e2f26ce6a62d4763428f4cb273d60be548c849666",
       "mode": "0644"
     },
     {

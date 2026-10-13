@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import secrets
 from pathlib import Path
 import stat
 import sys
@@ -173,7 +174,7 @@ def prepare(root, stage):
         txfd = os.open(TX, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=fd)
         try:
             st = os.fstat(fd)
-            journal = {'schema': 1, 'root': [st.st_dev, st.st_ino], 'state': 'prepared', 'entries': []}
+            journal = {'schema': 1, 'root': [st.st_dev, st.st_ino], 'transaction_id': secrets.token_hex(16), 'state': 'prepared', 'entries': []}
             for i, target in enumerate(TARGETS):
                 old_data, old_meta = old[target]
                 new_data = payload[target]
@@ -243,7 +244,10 @@ def replace(fd, txfd, row, version, i):
 def transaction(root):
     with locked(root) as fd:
         txfd = os.open(TX, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=fd)
-        try: yield fd, txfd, load(fd, txfd)
+        try:
+            if read_at(txfd, 'close.json')[0] is not None:
+                raise ValueError('Finalization decision exists; resume finalization')
+            yield fd, txfd, load(fd, txfd)
         finally: os.close(txfd)
 
 def apply(root, health):

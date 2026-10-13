@@ -66,8 +66,13 @@ package file is deliberately outside this version's plan format.
 
 ## Required executor contract
 
-These requirements define future installation; they are not implemented by the
-planner and passing its tests does not prove crash durability or a live rollback.
+A separate [isolated transaction laboratory](PORTAL-TRANSACTION-LAB.md) now
+implements and fault-tests storage transitions in marked temporary roots. It does
+not enable live installation or satisfy process lifecycle/adoption requirements.
+
+These requirements define future live installation. The planner does not execute
+them; the new laboratory covers storage transitions only, with process-interruption
+tests rather than power-failure or on-device acceptance.
 
 1. Validate source receipts and all staged bytes against the approved release.
    Recheck the filesystem under an exclusive update lock using no-follow file
@@ -88,9 +93,10 @@ planner and passing its tests does not prove crash durability or a live rollback
    successful rollback based solely on file hashes or restart the phone as a
    fallback. No device access is necessary for the next isolated executor tests.
 
-The existing dock transaction core is limited to marked test roots and replacing
-existing regular files. It cannot yet fulfill creation, receipt commit and portal
-lifecycle requirements above. Do not lift that restriction to apply this plan.
+The earlier dock transaction core remains restricted to marked test roots and
+replacements. The separate portal laboratory adds first-file creation and owner
+receipt commits, while live process coordination remains open. Neither restriction
+may be lifted to apply this plan on a running system.
 
 ## Validation scope
 

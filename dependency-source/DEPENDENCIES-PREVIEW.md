@@ -96,3 +96,7 @@ python3 scripts/dependency-lab/test-portal-ownership.py
 The public package contains source, recipes, pins and notices only. Downloaded
 archives, generated headers, builder images and compiled libraries are excluded.
 Their redistribution needs its own source/license obligations assessment.
+
+The [isolated transaction laboratory](PORTAL-TRANSACTION-LAB.md) exercises portal
+creation, backups, receipt commits and rollback on Linux. Its separate 18-test
+suite requires the documented container command; macOS skips are not acceptance.

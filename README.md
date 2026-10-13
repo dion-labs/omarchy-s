@@ -77,19 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 2](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-2)
-adds deterministic portal payload staging and an offline ownership/rollback planner
-to the input, Aquamarine, portal, Mesa and USB reconstruction recipes. Read the
+[Dependency-source preview 3](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-3)
+adds a Linux transaction laboratory for portal creation, verified backups, owner
+receipt commits and interrupted rollback. It accepts only isolated marked
+temporary directories and has no live installation mode. Read the
 [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[portal payload contract](dependency-source/PORTAL-PAYLOAD.md) and
+[transaction laboratory guide](dependency-source/PORTAL-TRANSACTION-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-2/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-3/dependency-source-preview.tar).
 
-The 51-file source payload lives under `dependency-source/`, with manifest and
-allowlist under `release/dependencies/`. Seven runtime hashes reproduce exactly.
-The planner rejects unowned files and drift, but does not implement live installation
-or durable rollback. Mesa still needs runtime validation; hardware helpers and
-complete installation ownership remain separate. The release supplies source,
-not prebuilt libraries, firmware or an enabled installer. Its
-[scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
-notices. Earlier previews remain available at their original release tags.
+The 54-file source payload lives under `dependency-source/`, with manifest and
+allowlist under `release/dependencies/`. All 49 tests pass, including 128 injected
+process exits. The real portal payload passes isolated storage rehearsals; no
+portal process or phone is activated. Seven runtime hashes reproduce exactly.
+Mesa runtime validation, live process coordination, existing-device adoption and
+transaction finalization remain separate. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
+retains upstream notices. Earlier previews remain available at their release tags.

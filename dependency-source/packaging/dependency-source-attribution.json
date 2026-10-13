@@ -10,21 +10,27 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "76935332f2bfc3c952784c05b7448e808887ea33f4c77286e728729378ca41b0",
+      "sha256": "026168114834d48ea79757f488233dfd2431624e8cd16c123d47163a351a4773",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "d25db9a2d4d8857908f81cb14e8936e5242dadd81056647f09bac1270a411386",
+      "sha256": "2648d6bad3098db575e775c83894494e9a91f2b89df08a25e291957bbcfcce4e",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
-      "sha256": "97cd6471ce94d1174c87f8f3b0570bc1d86bc2f9749666f9ef8b0b9137cb4157",
+      "sha256": "73590c77e38e67b7cca3be8c798e44fd58bd483ab9b65ace42635328d7db5c5d",
       "classification": "local-expression",
       "scope": "Original integration and offline tests only; identifiers and dependency facts are not claimed as original expression"
+    },
+    {
+      "path": "PORTAL-TRANSACTION-LAB.md",
+      "sha256": "16fe08319130899732fd3524bd120d8f9edb774521c2ef8530fe5808d377bae9",
+      "classification": "local-expression",
+      "scope": "Original isolated transaction integration, documentation and tests; no upstream ownership claim"
     },
     {
       "path": "build/arch-arm/dock/input-seat.c",
@@ -201,6 +207,12 @@
       "scope": "Original integration and offline tests only; identifiers and dependency facts are not claimed as original expression"
     },
     {
+      "path": "scripts/dependency-lab/portal-transaction.py",
+      "sha256": "a3e986198a1bfc52dd4d0921bc7a2c9109ede24bc58f54ffedff7dcc5916e43b",
+      "classification": "local-expression",
+      "scope": "Original isolated transaction integration, documentation and tests; no upstream ownership claim"
+    },
+    {
       "path": "scripts/dependency-lab/prepare-native-usb.py",
       "sha256": "43a583a5e537b4a062c98541281cfda471938ca6a7ddf7f7223132ea9e1d2017",
       "classification": "local-expression",
@@ -229,6 +241,12 @@
       "sha256": "350145d0250d6ca857608ac9395f1d508284ce6f5bda5eaf29a0e81f87265c71",
       "classification": "local-expression",
       "scope": "Original integration and offline tests only; identifiers and dependency facts are not claimed as original expression"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-transaction.py",
+      "sha256": "98fe660f608ca46eb2d4cd513a028361361f1b93658cb2e317e414003f617eea",
+      "classification": "local-expression",
+      "scope": "Original isolated transaction integration, documentation and tests; no upstream ownership claim"
     },
     {
       "path": "scripts/dependency-lab/test-stage-portal.py",

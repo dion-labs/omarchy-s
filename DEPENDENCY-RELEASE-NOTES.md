@@ -1,54 +1,61 @@
-# Dependency-source preview 2
+# Dependency-source preview 3
 
-The portal executable could already be rebuilt, but its runtime notice and manifest
-were still external installation inputs. This 51-file source preview adds a stager
-that reconstructs all three exact files, with deterministic modes, timestamps and
-an ownership receipt. Seven of the desktop's ten external hashes now reproduce.
+The portal ownership planner now has a separate Linux storage executor for isolated
+test roots. It handles first-file creation, backups, owner receipt commits and
+explicit rollback after interrupted updates. Target bytes, ownership, permissions,
+timestamps and extended attributes are preserved on recovery. Live installation
+remains disabled; there is no device or service activation mode.
 
-It also defines a three-file installation ownership boundary and a pure offline
-planner. Existing unowned files cannot be silently adopted; mismatched previous
-state rejects an update. Partial rollback accepts only known before/after states
-and refuses unrelated changes. The planner never reads or mutates target files.
+## What changed
+
+- Backups and a write-ahead journal are synced before target mutation. Replacement
+  uses descriptor-relative temporary files, readback and directory syncs.
+- Payloads change before a synthetic health gate; the owner receipt commits last.
+  Whole-group readback is required before recording commit or rollback success.
+- Recovery handles known before/after states, restores absence on first installs,
+  refuses unrelated drift and can itself be interrupted and repeated.
+- Read-only staging inputs contribute bytes/modes only. Unsupported destination
+  extended attributes still fail closed instead of being silently discarded.
 
 ## Validation
 
-- 31 tests pass from the extracted source, including six staging and seven
-  ownership tests. Synthetic cases cover creation, no-op, collision, drift,
-  malformed inventories and every file-level interruption boundary of an upgrade.
-- Two fresh offline portal builds from extracted source match the installed hash.
-  Both stage into identical four-file trees (three payload files and receipt),
-  also matching stages made from the previous independently rebuilt executables.
-- All three portal payload hashes match the unchanged runtime dependency lock.
-  Their ownership paths do not overlap the existing 40-file dock service package.
-- Two source exports match exactly. Archive membership, hashes, relative links,
-  per-file licensing and privacy review pass. Earlier boot/desktop payloads and
-  dependency build recipes remain unchanged.
+All 49 tests pass from the final source tree in a networkless ARM64 Linux container,
+with read-only source mounts and no skips. The 18 executor tests include 128 child
+process exits across preparation, application and recovery for first installs and
+upgrades. Each recoverable interruption is followed by two exact recoveries.
+Pre-journal preparation failures leave unchanged targets and retained evidence.
 
-The previous four-component build evidence is retained; this milestone rebuilds
-portal only because those recipes and inputs are unchanged. Package-reconstructed
-builder receipts are reused and verified. No phone was contacted or modified.
+Additional tests cover short writes, failed syncs/metadata writes, different file
+ownership, corrupt backups/journals/temporary files, links/FIFOs, invalid roots,
+lock contention, health failures and late rollback drift. The real previously
+rebuilt portal payload also passes isolated create/upgrade and double-recovery
+rehearsals. Its binary is not executed; the health callback is synthetic.
 
-## Scope and next step
+Two normalized source exports match. Source hashes, per-file licensing, links and
+privacy checks pass. Earlier boot/desktop payloads and runtime dependency recipes
+are unchanged. No phone was contacted, no runtime pin changed, and no new physical
+acceptance is claimed.
 
-Read [the portal payload contract](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-2/dependency-source/PORTAL-PAYLOAD.md) for staging
-commands, ownership rules and the required executor behavior. No live installer
-or crash-durable rollback is implemented by this planner. The next step is isolated
-executor tests for creation, backups, receipt commits and recovery. Device adoption,
-process lifecycle coordination and physical checks remain separate gates. The
-existing marked-test-root restriction is unchanged.
+## Limits and next step
 
-Mesa remains a candidate with three differences from the installed build; runtime
-equivalence and truthful candidate metadata remain open. Native hardware-helper,
-kernel/gadget and full installation closure are also separate. This source release
-does not distribute generated portal binaries or other runtime artifacts.
+Read the [transaction laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-3/dependency-source/PORTAL-TRANSACTION-LAB.md).
+These are process-interruption tests on a container filesystem, not power-cut or
+storage-controller durability tests. The executor is restricted to private marked
+temporary roots; no live-root override exists. A retained transaction blocks a new
+one, and backups remain available for inspection and explicit rollback.
 
-Original integration has a scoped DionLabs MIT grant. Inherited notices and patch
-context retain their applicable licenses. The source-only archive contains 51 files.
+Next is safe finalization and retained-evidence cleanup in isolated roots, followed
+by process lifecycle/health integration. Existing-device ownership adoption,
+source authorization, Mesa validation and full installation closure remain separate.
+Do not relax test-root restrictions to deploy this code to a phone.
+
+This 54-file release contains source only, with scoped DionLabs MIT original
+expression and retained upstream terms. It distributes no compiled payloads,
+firmware, configured images or account state.
+
 Archive dependency-source-preview.tar SHA256:
-`c62a3829ee8b99cb3a434df8b4c814877c841e1665d797268128e48e6b3235aa`.
-
+`ec5f6fa12ae5865e4333cafe18d74314eefd65dcd039e7dc57d4a024b038a958`.
 Assets also include manifest.json, dependency-source-export.allowlist.json and
-SHA256SUMS. The archive's export-time filename was source-preview.tar; renaming
-preserves its digest. GitHub-generated repository archives are different.
-The frozen manifest's publication_cleared:false records its prepublication export
-state; publication approval covers only this reviewed source package.
+SHA256SUMS. Export-time source-preview.tar was renamed without changing bytes;
+GitHub-generated repository archives differ. Frozen publication_cleared:false
+records prepublication export state; approval covers this reviewed source only.

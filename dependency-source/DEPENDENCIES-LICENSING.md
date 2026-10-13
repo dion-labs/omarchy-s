@@ -36,3 +36,6 @@ desktop previews retain their own separate scopes.
 The portal staging helper, offline ownership planner, tests and
 [installation contract](PORTAL-PAYLOAD.md) are original integration covered by
 the scoped grant. The generated portal notice remains the upstream MIT text.
+
+The isolated portal transaction library, fault-injection tests and laboratory
+guide are original DionLabs integration under the same scoped grant.

@@ -1,52 +1,53 @@
-# Dependency-source preview 4
+# Dependency-source preview 5
 
-Completed portal test transactions can now be finalized without deleting their
-backups, allowing subsequent updates in the same isolated root. Explicit cleanup
-validates a named archive and close digest before deleting retained evidence;
-interrupted cleanup resumes from a durable receipt.
+The isolated portal updater now has a simulated service lifecycle coordinator.
+It records recovery intent before quiescence, confirms the fixture has stopped
+before replacing files, and requires candidate health before receipt commit.
+Rollback must restore both old files and simulated old-service health before
+finalization is allowed.
 
 ## Changes and validation
 
-Finalization checks terminal target state, writes a synced close decision and
-archives the transaction under a unique ID. Rollback stops at that decision;
-interrupted finalization resumes explicitly. Cleanup inventories and verifies all
-remaining evidence before deletion, preserves unknown state, and retains a small
-completion receipt. Old archives can be cleaned while a later transaction exists.
+All callbacks run under the same transaction lock. The storage executor exposes
+internal lock-held operations; its ordinary apply/recover methods reject managed
+lifecycle journals. Stop/start/health failures and exceptions leave explicit
+recovery pending. Repeated recovery is supported. Target drift is refused, and
+health callbacks cannot authorize modified restored files.
 
-All 60 tests pass without skips from the extracted archive in networkless ARM64
-Linux with read-only source mounts. The 200 abrupt child-process exits cover
-preparation, apply, recovery, finalization and cleanup. Eleven retention tests
-include repeated changed updates, failed-health recovery, saved cleanup-handle
-recovery, legacy journal refusal, metadata drift, links, short writes and sync
-failure. The previously rebuilt real portal payload passes create/upgrade,
-repeated-update, double rollback and cleanup checks with exact final state.
-Its binary is not executed; health callbacks remain synthetic.
+All 70 tests pass without skips from the extracted source archive in networkless
+ARM64 Linux with read-only source mounts. Ten new tests include 95 abrupt exits
+(51 update, 44 recovery); the complete package covers 295 abrupt-exit cases.
+Failure cases include quiescence, startup, candidate health, old-service restart,
+non-boolean results, callback exceptions and interruption of durable phases.
+Lock coverage, unrelated state and exact prior bytes/metadata are checked.
 
-Two normalized exports match. All 56 files pass exact archive/tree checks;
-55 attribution entries match their source hashes, and documentation links and
-privacy findings have been reviewed. Earlier boot/desktop payloads, dependency
-recipes and runtime pins are unchanged. No phone was contacted or modified.
+The previously rebuilt real portal payload passes update, double recovery and
+explicit archive cleanup with the fake-service model. No portal binary or real
+service is executed. Two normalized exports match; all 58 source files match the
+archive and 57 attribution entries match their hashes. Links and privacy findings
+were reviewed. Earlier boot/desktop payloads, dependency recipes and runtime pins
+are unchanged. No phone was contacted or modified.
 
 ## Scope and next step
 
-The [laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-4/dependency-source/PORTAL-TRANSACTION-LAB.md)
-describes explicit archive handles and crash recovery. The libraries only accept
-private marked temporary roots. There is no live-root override or activation CLI.
-These process-interruption checks do not prove physical power-cut durability.
-Incomplete preparation remains available for inspection. Older ID-less journals
-can recover but cannot use the new finalizer. Automatic expiration and cleanup
-receipt compaction are not implemented.
+Read the [lifecycle laboratory contract](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-5/dependency-source/PORTAL-TRANSACTION-LAB.md).
+The adapter in tests is a persistent fake service: its hooks model atomic actions,
+not operating-system processes. The coordinator only supports an existing owned,
+initially healthy installation. First installs and initially stopped services are
+not covered by this lifecycle layer. No real service adapter, timeout supervisor,
+service-manager command or activation CLI is bundled. Private marked temporary
+root restrictions remain mandatory. Process exits do not prove power-cut durability.
 
-Next: isolated process lifecycle and health-contract integration. Real portal
-quiesce/restart, existing-device adoption, source authorization and Mesa runtime
-validation remain separate gates. Do not relax laboratory root restrictions.
+Next: a disposable child-process adapter with bounded shutdown/startup, ownership
+and IPC health checks, still isolated from the phone. Real portal clients, live
+adoption, source authorization and Mesa runtime validation remain separate gates.
 
-This is source only: original DionLabs integration has scoped MIT terms and
-inherited notices retain their terms. No binaries, firmware, images or account
+This source-only preview retains scoped DionLabs MIT terms for original expression
+and upstream terms for inherited material. No binaries, firmware, images or account
 state are distributed.
 
 Archive dependency-source-preview.tar SHA256:
-`ae6576cc921780162ba41dc0c27dce88968260521fc30d83dc52d8b08b67c54e`.
+`caa821c4bcaafbe2390c4fab6a4925d4180f4bec95b3e8ba7e337b341294b381`.
 Assets also include manifest.json, dependency-source-export.allowlist.json and
 SHA256SUMS. Export-time source-preview.tar is renamed without changing bytes;
 GitHub-generated repository archives differ. Frozen publication_cleared:false

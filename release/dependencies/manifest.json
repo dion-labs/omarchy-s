@@ -1,7 +1,7 @@
 {
   "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
   "publication_cleared": false,
-  "allowlist_sha256": "8f6b0a63a8fef0f594a6d36389cd143be3de77b36bf90178ca64e95d6ea196ab",
+  "allowlist_sha256": "d5abc58ac4565c65ac270ac2acc32a0b10b5cb038d218eab4e4930788a47a7ff",
   "files": [
     {
       "path": "DEPENDENCIES-LICENSE-MIT",
@@ -10,22 +10,22 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "b858fe06a82df29f327a92362b47f2f34c1f03afa66c7991fdc73f9b34e8b5a5",
+      "sha256": "8d87428089e6a1e1fa60e674ebb67a7b0dd53af2d7c5b09de60e99e92477d1a4",
       "mode": "0644"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "2a5f250c917ff4895cded6a1d1efdf57b506c88310b5c8911f6a6ffdc4784fb4",
+      "sha256": "f2ac125d546284ae4e212915824b5b8f7044c649bf0b9ff73367654ca49c2b0e",
       "mode": "0644"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
-      "sha256": "ab975c0401a353d5dfcf75f479ba1dd05e21ff19b8f873eccf0bfc13f1f32afc",
+      "sha256": "acbbb9f9cf4720a6498182f9f4a2fdf8bf501bf1871606dd16414e20454730a6",
       "mode": "0644"
     },
     {
       "path": "PORTAL-TRANSACTION-LAB.md",
-      "sha256": "ca2d292bde3ab3d0fe2b1c85115a4dab36b4e11fd74acee1b3b00103a136018a",
+      "sha256": "3413999541a7a25433d9e21ff9b73961ea3662b0c41348e559a92388eb04c23c",
       "mode": "0644"
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "96b7005675a8c68139bea81d40183cf21533769784c41b0e281265b3b487b34f",
+      "sha256": "ee02625e036237da16b94b61ea3fb7778cdf918e00e3b4c4ae9063ccd6200ac9",
       "mode": "0644"
     },
     {
@@ -174,18 +174,23 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/portal-lifecycle.py",
+      "sha256": "282be1099afe4391ce55ef75b609231ddfc742c3346676e14c4c00ad5b8528a4",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/portal-ownership.py",
       "sha256": "50e3d146a07e0239c5cf2b73cc2d44b68cdcf55d1c25775a89b30dcd615b01dc",
       "mode": "0644"
     },
     {
       "path": "scripts/dependency-lab/portal-retention.py",
-      "sha256": "3ebc1366792474d2792ff4d9ff7c94366873ce994b9aa70be16b86e57a238958",
+      "sha256": "2ccdc123c1c9ce6b725225a3357fca8ae441b01013d5aeb7712705e36abd7aa3",
       "mode": "0644"
     },
     {
       "path": "scripts/dependency-lab/portal-transaction.py",
-      "sha256": "ca36c56fc57a6917340857ccf31643fafdc4540405b743c12b2465d30de0da84",
+      "sha256": "abf88222ca423821953763915cc4db603e2ad450adb70a3916ba87b0768dc550",
       "mode": "0644"
     },
     {
@@ -206,6 +211,11 @@
     {
       "path": "scripts/dependency-lab/test-native-usb.py",
       "sha256": "53c17ca7e8c5aefc0db864ec4a930ffcfd5a19204f61d8132697c3314b02a9ec",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-lifecycle.py",
+      "sha256": "9390da8a7813866a9fd5c75f38feeb76728bc6c184b53d03c63dbb7c995888fa",
       "mode": "0644"
     },
     {
@@ -284,5 +294,5 @@
       "mode": "0644"
     }
   ],
-  "archive_sha256": "ae6576cc921780162ba41dc0c27dce88968260521fc30d83dc52d8b08b67c54e"
+  "archive_sha256": "caa821c4bcaafbe2390c4fab6a4925d4180f4bec95b3e8ba7e337b341294b381"
 }

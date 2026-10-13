@@ -69,7 +69,9 @@ package file is deliberately outside this version's plan format.
 A separate [isolated transaction laboratory](PORTAL-TRANSACTION-LAB.md) now
 implements and fault-tests storage transitions, explicit finalization and retained
 evidence cleanup in marked temporary roots. It does
-not enable live installation or satisfy process lifecycle/adoption requirements.
+not enable live installation or satisfy real process lifecycle/adoption requirements.
+A fake-service coordinator tests stop/start/health ordering and failure recovery;
+it does not establish actual portal process or client behavior.
 
 These requirements define future live installation. The planner does not execute
 them; the new laboratory covers storage transitions only, with process-interruption

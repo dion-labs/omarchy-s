@@ -42,3 +42,6 @@ guide are original DionLabs integration under the same scoped grant.
 
 The retention library and its tests are original DionLabs integration under the
 same scoped grant; public filesystem protocol facts are not ownership claims.
+
+The lifecycle coordinator and fake-service contract tests are original DionLabs
+integration under the same scoped grant. No real service adapter is bundled.

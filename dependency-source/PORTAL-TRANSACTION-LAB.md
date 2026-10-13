@@ -86,7 +86,7 @@ unknown state rather than silently overwriting it.
 ## Still required before live installation
 
 The [portal installation contract](PORTAL-PAYLOAD.md) remains the activation gate.
-Reviewed process quiesce/restart and real health checks, first adoption of existing
+Real process quiesce/restart and health checks, first adoption of existing
 phone files, source authorization and an operational retention policy are
 not implemented here. Explicit laboratory finalization and pruning are implemented. Native USB/Mesa/kernel ownership is outside the transaction.
 Do not relax the temporary-root restrictions to use this library on the phone.
@@ -123,3 +123,40 @@ Tests also cover repeated changed versions, failed-update recovery, cleanup with
 a later active transaction, legacy journal refusal, saved-handle discovery, short
 writes, sync failure and unknown-state preservation. These remain isolated storage
 checks with synthetic health callbacks, not service or physical-power validation.
+
+## Simulated service lifecycle
+
+`portal-lifecycle.py` coordinates an already-owned, initially healthy installation
+inside the same marked temporary roots. Run `test-portal-lifecycle.py` with the
+Linux container command above. Ten tests add 95 abrupt exits (51 update and 44
+recovery), bringing the package to 70 tests and 295 abrupt-exit cases.
+
+The adapter contract is four synchronous methods, each requiring exactly True:
+`quiesce()`, `stopped()`, `start(identity)` and `healthy(identity)`. The identity
+maps the three payload paths to their expected SHA256 and mode. Quiescence must
+cover the owned process and its clients. A successful start is not sufficient:
+health must establish the expected version is serving correctly. All callbacks
+run under the transaction lock. Adapters must not recursively call transaction
+operations. The supplied tests use a persistent fake service model, not an OS
+process; hook calls are atomic in that model. There is no shipped real adapter,
+service-manager command, timeout supervisor or activation CLI.
+
+Update first verifies old-service health, then syncs recovery intent before any
+side-effecting callback. It quiesces and verifies stop before file replacement,
+starts the candidate and checks health before committing the owner receipt.
+A callback failure, exception or interruption leaves explicit recovery pending.
+Repeated apply is refused. Recovery rechecks all files, quiesces again, restores
+old payloads and receipt, starts the old version, checks health and revalidates
+files before marking lifecycle recovery complete. Repeating recovery is supported.
+Low-level apply/recover entry points reject lifecycle-managed journals, and
+finalization refuses them until lifecycle commit or recovery has completed.
+
+Tests cover stop/start/health failures, non-boolean results, callback exceptions,
+failed old-service restart, locking, unrelated state preservation, target drift,
+mutating health callbacks and interrupted durable phases. Each process-exit case
+restores exact prior file state and fake-service identity; recoverable lifecycle
+states are recovered twice. Existing unhealthy services and first installations
+are refused before quiescence. Initially stopped services, real client draining,
+hook timeouts, child ownership, IPC health and actual portal behavior remain open.
+Next is a disposable child-process adapter with bounded stop/start and identity
+checks, still isolated from the phone and real services.

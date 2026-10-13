@@ -250,30 +250,40 @@ def transaction(root):
             yield fd, txfd, load(fd, txfd)
         finally: os.close(txfd)
 
+def apply_locked(fd, txfd, journal, health):
+    if journal['state'] != 'prepared': raise ValueError('Expected prepared journal')
+    # Refuse resume through apply; interrupted updates must be explicitly recovered.
+    if any(snapshot(fd, r['target'])[1] != r['old'] for r in journal['entries']):
+        raise ValueError('Partially applied transaction requires rollback')
+    for i, row in enumerate(journal['entries'][:-1]): replace(fd, txfd, row, 'new', i)
+    checkpoint('apply:before-health')
+    if health() is not True: raise RuntimeError('Synthetic health gate failed; explicit recovery required')
+    checkpoint('apply:after-health')
+    # Callback cannot legitimize mutations or a changed journal/blob set.
+    load(fd, txfd)
+    if any(snapshot(fd, r['target'])[1] != r['new'] for r in journal['entries'][:-1]): raise RuntimeError('Payload changed before receipt commit')
+    replace(fd, txfd, journal['entries'][-1], 'new', 3)
+    if any(snapshot(fd, r['target'])[1] != r['new'] for r in journal['entries']):
+        raise RuntimeError('Whole-group commit readback failed')
+    checkpoint('apply:group-verified')
+    journal['state'] = 'committed-test'; save(txfd, journal)
+
+def recover_locked(fd, txfd, journal):
+    for i in (2, 1, 0, 3): replace(fd, txfd, journal['entries'][i], 'old', i)
+    if any(snapshot(fd, r['target'])[1] != r['old'] for r in journal['entries']):
+        raise RuntimeError('Whole-group rollback readback failed')
+    checkpoint('recover:group-verified')
+    journal['state'] = 'rolled-back'; save(txfd, journal)
+    return journal
+
+
 def apply(root, health):
     with transaction(root) as (fd, txfd, journal):
-        if journal['state'] != 'prepared': raise ValueError('Expected prepared journal')
-        # Refuse resume through apply; interrupted updates must be explicitly recovered.
-        if any(snapshot(fd, r['target'])[1] != r['old'] for r in journal['entries']):
-            raise ValueError('Partially applied transaction requires rollback')
-        for i, row in enumerate(journal['entries'][:-1]): replace(fd, txfd, row, 'new', i)
-        checkpoint('apply:before-health')
-        if health() is not True: raise RuntimeError('Synthetic health gate failed; explicit recovery required')
-        checkpoint('apply:after-health')
-        # Callback cannot legitimize mutations or a changed journal/blob set.
-        load(fd, txfd)
-        if any(snapshot(fd, r['target'])[1] != r['new'] for r in journal['entries'][:-1]): raise RuntimeError('Payload changed before receipt commit')
-        replace(fd, txfd, journal['entries'][-1], 'new', 3)
-        if any(snapshot(fd, r['target'])[1] != r['new'] for r in journal['entries']):
-            raise RuntimeError('Whole-group commit readback failed')
-        checkpoint('apply:group-verified')
-        journal['state'] = 'committed-test'; save(txfd, journal)
+        if 'lifecycle' in journal: raise ValueError('Use lifecycle recovery for managed transaction')
+        return apply_locked(fd, txfd, journal, health)
+
 
 def recover(root):
     with transaction(root) as (fd, txfd, journal):
-        for i in (2, 1, 0, 3): replace(fd, txfd, journal['entries'][i], 'old', i)
-        if any(snapshot(fd, r['target'])[1] != r['old'] for r in journal['entries']):
-            raise RuntimeError('Whole-group rollback readback failed')
-        checkpoint('recover:group-verified')
-        journal['state'] = 'rolled-back'; save(txfd, journal)
-        return journal
+        if 'lifecycle' in journal: raise ValueError('Use lifecycle recovery for managed transaction')
+        return recover_locked(fd, txfd, journal)

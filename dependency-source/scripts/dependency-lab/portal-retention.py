@@ -67,6 +67,11 @@ def finalize(root):
             journal = tx.load(fd, active)
             if journal['state'] not in ('committed-test','rolled-back'):
                 raise ValueError('Only terminal transactions can be finalized')
+            lifecycle = journal.get('lifecycle')
+            if lifecycle is not None:
+                expected = 'committed' if journal['state']=='committed-test' else 'restored'
+                if lifecycle.get('schema') != 1 or lifecycle.get('phase') != expected:
+                    raise ValueError('Lifecycle incomplete; recover service before finalization')
             txn = identifier(journal.get('transaction_id'))
             desired = 'new' if journal['state']=='committed-test' else 'old'
             if any(tx.snapshot(fd, row['target'])[1] != row[desired] for row in journal['entries']):

@@ -71,7 +71,8 @@ implements and fault-tests storage transitions, explicit finalization and retain
 evidence cleanup in marked temporary roots. It does
 not enable live installation or satisfy real process lifecycle/adoption requirements.
 A fake-service coordinator tests stop/start/health ordering and failure recovery;
-it does not establish actual portal process or client behavior.
+a disposable child adapter additionally tests bounded process control and IPC
+identity. Neither establishes actual portal process or client behavior.
 
 These requirements define future live installation. The planner does not execute
 them; the new laboratory covers storage transitions only, with process-interruption

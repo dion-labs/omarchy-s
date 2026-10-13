@@ -45,3 +45,6 @@ same scoped grant; public filesystem protocol facts are not ownership claims.
 
 The lifecycle coordinator and fake-service contract tests are original DionLabs
 integration under the same scoped grant. No real service adapter is bundled.
+
+The disposable child adapter, bundled test child and process tests are original
+DionLabs integration under the same scoped grant. They are not a portal daemon.

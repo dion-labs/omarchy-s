@@ -96,7 +96,7 @@ Do not relax the temporary-root restrictions to use this library on the phone.
 Run `test-portal-retention.py` with the same Linux container command above in
 place of `test-portal-transaction.py`. Its 11 tests add 72 abrupt process exits:
 six finalization and thirty pruning boundaries for each committed/rolled-back case.
-Together the dependency package has 60 tests and 200 abrupt-exit cases.
+The storage/retention subset has 60 tests and 200 abrupt-exit cases.
 
 `portal-retention.py` is a separate library with the same root restrictions and
 cooperative lock. `finalize(root)` requires a completed commit or rollback and
@@ -129,7 +129,7 @@ checks with synthetic health callbacks, not service or physical-power validation
 `portal-lifecycle.py` coordinates an already-owned, initially healthy installation
 inside the same marked temporary roots. Run `test-portal-lifecycle.py` with the
 Linux container command above. Ten tests add 95 abrupt exits (51 update and 44
-recovery), bringing the package to 70 tests and 295 abrupt-exit cases.
+recovery), bringing the suites through the fake-service layer to 70 tests and 295 abrupt-exit cases.
 
 The adapter contract is four synchronous methods, each requiring exactly True:
 `quiesce()`, `stopped()`, `start(identity)` and `healthy(identity)`. The identity
@@ -160,3 +160,51 @@ are refused before quiescence. Initially stopped services, real client draining,
 hook timeouts, child ownership, IPC health and actual portal behavior remain open.
 Next is a disposable child-process adapter with bounded stop/start and identity
 checks, still isolated from the phone and real services.
+
+## Disposable child-process adapter
+
+`portal-child.py` adds an adapter for its own bundled Python test child, not a
+portal daemon. Run `test-portal-child.py` in the same Linux container command.
+Nine tests bring the complete package to 79 tests and 318 forced coordinator
+exits: 23 new real-child cases cover 12 update and 11 recovery hook boundaries.
+The existing 295 cases retain their separate storage/fake-service coverage.
+
+`Child(root, timeout=1.0, mode='normal')` exposes the same lifecycle hooks.
+Call `close()` in a finally block. It accepts only the guarded temporary roots;
+a separate controller lock prevents two adapters controlling the same fixture.
+It launches only this fixed script with a known interpreter and fixed test modes,
+never staged payload executables, system services or arbitrary commands.
+
+The child records its PID, kernel start time, root identity and random instance
+identifier before opening an abstract Unix socket. The adapter verifies process
+start time and fixed command identity before signalling through pidfds, avoiding
+PID-reuse signal races. Socket peer PID/UID, instance identifier, loaded payload
+identity and current file hashes/modes must agree for health success. The instance
+identifier is an ephemeral fixture identifier, not a production authentication
+mechanism. An equal-privilege hostile writer is outside this test-root model.
+
+Startup and IPC waits have deadlines; TERM is followed by bounded KILL escalation.
+The timeout is constrained to 0.05–5 seconds: shutdown waits at most two timeout
+periods, and startup may include one final health wait beyond its polling deadline.
+Local filesystem calls and scheduler latency are not hard real-time bounded.
+Failed startup retains state for explicit lifecycle recovery. Known child handles
+also cover failure before the identity record is written. A Linux parent-death
+signal and parent recheck terminate children if their coordinator exits, including
+the spawn-before-record gap. A child additionally expires after 30 seconds.
+
+Tests exercise no readiness, invalid health, an unresponsive endpoint, early child
+exit, ignored TERM requiring KILL, stale process identity refusal, wrong socket
+peer, controller contention, payload drift and fresh-coordinator recovery after
+forced exits. Recovery checks both exact old file metadata and real child IPC
+health twice. Child actions inside hooks are not exhaustively interrupted at every
+instruction; real power loss, orphan adoption across a machine reboot and actual
+portal/client behavior remain unproven. These fixtures use parent-bound children;
+a production service manager has different ownership and survival semantics.
+
+Next: define and test the real portal adapter's readiness/client-drain contract in
+an isolated session before considering any live installation. Initially stopped
+services, first-install lifecycle policy and source authorization remain open.
+
+A startup regression test covers atomic identity-record replacement during a read.
+Only that concurrent-snapshot error is retried during a known spawn, within the
+existing deadline; malformed identities and unrelated drift still fail closed.

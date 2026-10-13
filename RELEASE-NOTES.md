@@ -39,6 +39,6 @@ The release assets are `source-preview.tar`, `manifest.json`,
 archives would also include repository documentation; they are not the reviewed
 107-file source archive and will have different hashes.
 
-Published under `dionlabs/omarchy-s` as prerelease `boot-source-preview-1` with
+Published under `dion-labs/omarchy-s` as prerelease `boot-source-preview-1` with
 D’s approval. The frozen source retains the historical pre-publication review
 status. This release contains source only; it does not clear excluded assets.

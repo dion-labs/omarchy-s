@@ -51,9 +51,9 @@ There is no commitment to support other phones or configurations.
 
 ## Download
 
-[Boot-source preview 1](https://github.com/dionlabs/omarchy-s/releases/tag/boot-source-preview-1)
+[Boot-source preview 1](https://github.com/dion-labs/omarchy-s/releases/tag/boot-source-preview-1)
 contains the reviewed source archive, manifest, separate allowlist and checksums.
-[Download source-preview.tar](https://github.com/dionlabs/omarchy-s/releases/download/boot-source-preview-1/source-preview.tar).
+[Download source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/boot-source-preview-1/source-preview.tar).
 
 The source payload preserves its pre-publication review records, including their
 historical “publication unapproved” status. Publication of this exact preview was

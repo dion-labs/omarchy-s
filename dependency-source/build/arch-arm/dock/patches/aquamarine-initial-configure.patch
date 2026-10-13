@@ -1,0 +1,33 @@
+--- a/src/backend/Wayland.cpp
++++ b/src/backend/Wayland.cpp
+@@ -526,6 +526,9 @@
+     waylandState.xdgSurface->setConfigure([this](CCXdgSurface* r, uint32_t serial) {
+         backend->backend->log(AQ_LOG_DEBUG, std::format("Output {}: configure surface with {}", name, serial));
+         r->sendAckConfigure(serial);
++        waylandState.initialConfigureAcked = true;
++        needsFrame = true;
++        sched.frameReady.emit();
+     });
+ 
+     waylandState.xdgToplevel = makeShared<CCXdgToplevel>(waylandState.xdgSurface->sendGetToplevel());
+@@ -615,6 +618,10 @@
+ }
+ 
+ bool Aquamarine::CWaylandOutput::commit() {
++    // xdg-shell forbids attaching a buffer before acknowledging its initial configure.
++    // Keep pending state intact; the configure callback schedules the first real frame.
++    if (!waylandState.initialConfigureAcked)
++        return true;
+     const auto  snapshot  = state->snapshot();
+     const auto& STATE     = snapshot.state();
+     Vector2D    pixelSize = {};
+--- a/include/aquamarine/backend/Wayland.hpp
++++ b/include/aquamarine/backend/Wayland.hpp
+@@ -90,6 +90,7 @@
+             Hyprutils::Memory::CSharedPointer<CCXdgToplevel> xdgToplevel;
+             Hyprutils::Memory::CSharedPointer<CCWlCallback>  frameCallback;
+             Hyprutils::Math::Vector2D                        surfaceSize;
++            bool initialConfigureAcked = false;
+         } waylandState;
+ 
+         friend class CWaylandBackend;

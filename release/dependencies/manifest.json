@@ -1,0 +1,238 @@
+{
+  "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
+  "publication_cleared": false,
+  "allowlist_sha256": "557110e011462ec1c9edf27b04ced58768cfee42f98318ae8a3a81b67aaf0ac1",
+  "files": [
+    {
+      "path": "DEPENDENCIES-LICENSE-MIT",
+      "sha256": "fcf392851989e0430a15e5145e79cc7092f7e16a57161da67b3e2122bb13b9ff",
+      "mode": "0644"
+    },
+    {
+      "path": "DEPENDENCIES-LICENSING.md",
+      "sha256": "d712f054e08815dba056498e3dfe45e2b0ab37fa97d76f4627b45fee1ec3b1ba",
+      "mode": "0644"
+    },
+    {
+      "path": "DEPENDENCIES-PREVIEW.md",
+      "sha256": "fac2ec87fe4d8fb037c7e4a161521e84b2ad71007002edc6059a5774e8620762",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/input-seat.c",
+      "sha256": "6487471e534eaa4e6698da5f3579c6419fe3459378f30c44b7ee925e32f15050",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/patches/aquamarine-compositor-version.patch",
+      "sha256": "85ee77d520ce865fd652989db00edc7c34a97750e9aa434fa9f147297f8cdcc3",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/dock/patches/aquamarine-initial-configure.patch",
+      "sha256": "740de8b522144c9f28de0108ef2499db4afea64d0c36ffd2d5cfa640c584afa2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/usb/dock_service.py",
+      "sha256": "e519d2cc014bd8783e281d8915fff3e61b0883b0a9ab6ea91b104d5757139b80",
+      "mode": "0644"
+    },
+    {
+      "path": "build/arch-arm/usb/usb_service.py",
+      "sha256": "f63d296d45035f2d6f0ecb4df88630e04a8f4d8276ce75529ace59c8777375d6",
+      "mode": "0644"
+    },
+    {
+      "path": "build/mesa-cache/patch.py",
+      "sha256": "1d216bfa08662c919aa575d19ef8f5305b8130c9fae58d9ff44b2310b86667e3",
+      "mode": "0644"
+    },
+    {
+      "path": "build/portal-wlr/patch.py",
+      "sha256": "0c33fc36ab1ba2b108b31d94201206de33c821c709c1543308fcb367fc6b4dac",
+      "mode": "0644"
+    },
+    {
+      "path": "build/repro/aquamarine.sh",
+      "sha256": "edd9188bfb52e98f166f7955f74d493b853a44dea284d5eefb697786f7bb6a4a",
+      "mode": "0644"
+    },
+    {
+      "path": "build/repro/input-seat-packaged-headers.sh",
+      "sha256": "600674d0bc64f3271f928ce729ad954a09d235c78ee14f585bc151c81f7359f9",
+      "mode": "0644"
+    },
+    {
+      "path": "build/repro/mesa.sh",
+      "sha256": "2dc3a7814224f9228244f1ec622fec9d0a0e57783c38c46fc305c99de1ea6aad",
+      "mode": "0644"
+    },
+    {
+      "path": "build/repro/portal.sh",
+      "sha256": "6d9863e95e1847ee0702a46921632fb017eebd64e7b7e60a88c10c5d059b13a7",
+      "mode": "0644"
+    },
+    {
+      "path": "build/toolchains/arch.Dockerfile",
+      "sha256": "fe85c93b763acfa85677c462d444d69b99ccc5796b7a2746a1900052ce8a96d2",
+      "mode": "0644"
+    },
+    {
+      "path": "build/toolchains/mesa.Dockerfile",
+      "sha256": "dacbf5c5e95e5580722bc07d824c0fbe6ea08bf50787d2ce7cc35f6e159ac3ea",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dependencies/aquamarine-LICENSE",
+      "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dependencies/mesa-MIT",
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dependencies/mesa-license.rst",
+      "sha256": "0d1a0472ecc81830e75c20d59b0ea02841e3db21255e0ebad97ab682c54d6615",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dependencies/portal-LICENSE",
+      "sha256": "3ac22677b8ed454296793da5eabf995925e1e018f2b7ab8342d9ef0c8d4201f0",
+      "mode": "0644"
+    },
+    {
+      "path": "open-source/licenses/dependencies/weston-COPYING",
+      "sha256": "fdb65868f65d0fbdb05c2d3b779e10ce9969fa0c4b9262ba4f260e87086ab860",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dependency-notices.json",
+      "sha256": "76fc50b91cf16a78cb4e14feb47d93fb8a0f6c3ceaa2aaf8e7bc6e9b7852a4dd",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dependency-source-attribution.json",
+      "sha256": "8288d7195a16a7ba774c0eb55f75dde5c9f4a6957c9c23b40aa9e56ee3823dab",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dependency-sources.lock.json",
+      "sha256": "7f44ffe49e71806796381415bf8b976c668df0d90d6b0baca28936d0c84da69d",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/dock-dependencies.lock.json",
+      "sha256": "838cf39883267f6ecb831b571aacef11a63d7e842ad5b534b2d750faa192240f",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/header-provenance-builds.lock.json",
+      "sha256": "dc112acee57542ca78b799b64e6a2ca85af789290b46721a2203e884bd47f2f6",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/toolchains/arch-archives.lock.json",
+      "sha256": "17c549e500e6dc7b9ed7b89dfdae397538353bf3caa541fe4026c72768b7ab1e",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/toolchains/mesa-archives.lock.json",
+      "sha256": "25ffd4b95841a7ef2bbd03239027345f794333ee8ae9a94e27ebb3d0d6423456",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/toolchains/reconstructed-arch-packages.txt",
+      "sha256": "f17aeee2cc2c66eae901ab5b81799b736f0ad0716603a179e76417ee55305785",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/toolchains/reconstructed-mesa-packages.txt",
+      "sha256": "5221e7512ec6022fd49e150c3cdbce428034c28f8b3474ebe2b3af9660a989a1",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/weston-headers.lock.json",
+      "sha256": "a868d0a52318ad2c9832eb28bb1a36d89319e17835e270b0b0ac8781c9400561",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/acquire-sources.py",
+      "sha256": "0bde97cd2dab45f8024d0ec80b577af542042e8e1e6959b1d7b98a05acce2a16",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/prepare-native-usb.py",
+      "sha256": "43a583a5e537b4a062c98541281cfda471938ca6a7ddf7f7223132ea9e1d2017",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-acquire-sources.py",
+      "sha256": "5288fb31d3d89d6b7009f39c552cb46aeee2c78e93f7b06d1d2c042bce0ad5c0",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-native-usb.py",
+      "sha256": "53c17ca7e8c5aefc0db864ec4a930ffcfd5a19204f61d8132697c3314b02a9ec",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/export-source.py",
+      "sha256": "b367bbe67e1e76b63cfdbd375c78ab8403d9908f9ad898c72cd5fc5cbd5af870",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/rebuild-private.py",
+      "sha256": "a944814ad8ec57648fee8e5c94e81bcbc8a18862d6f10c31569e62029fcdda6b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/release/test-private-builds.py",
+      "sha256": "c58a53c290da9bc9aa83d29e86dd7392ae4f3575ce617c11e5082458b93cbb1b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/assemble-arch.py",
+      "sha256": "952ae1b3525f7356a6c06b8bf7f0e5410048556c431931a8ee5799041a699220",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/bind-build-lock.py",
+      "sha256": "e0a0aea80f4c736d4df724de01b4a17eb615713d1fe161e4c95bcec48f7f8712",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/build-toolchain.py",
+      "sha256": "0bc330868f735a085344499790149d66dc64b769a596156349df8ac69be05ce7",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/fetch-packages.py",
+      "sha256": "a4a59b698e37cb98e247d497fb0f95cd61a4cb38be3927f88963a157a0b9b630",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/prepare-context.py",
+      "sha256": "881083090d0f69137f5519449578c4990dc2f36a4a09c7595e2aec73b3e67a66",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/test-inputs.py",
+      "sha256": "780bbeb1c5dbfaa3a74e95b0ac0bf00319053305f024a88fd533cfbcfa191fab",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/test-weston-headers.py",
+      "sha256": "5dea6aa1acd6f505017b95db3e4493667dc04afcb002992c852f944a25de8fb7",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/toolchain-lab/weston-headers.py",
+      "sha256": "23dc104c75f1bed04d7145b30cee3511b9fb2f7b89dd612003ce998d60c3c1a5",
+      "mode": "0644"
+    }
+  ],
+  "archive_sha256": "82a8372ded61447062e46f747e936b96642569c46f649b819792ee122e7b44c7"
+}

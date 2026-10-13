@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "scope": "Validated candidate: package-reconstructed toolchains; no device activation",
+  "components": {
+    "input-seat": {
+      "image_id": "sha256:814d760504589d2ca08a097636fd4bb7d3eaa6d8c6340111b83058a4e629c33a",
+      "recipe": "build/repro/input-seat-packaged-headers.sh",
+      "inputs": {
+        "build/arch-arm/dock/input-seat.c": "6487471e534eaa4e6698da5f3579c6419fe3459378f30c44b7ee925e32f15050",
+        "build/repro/input-seat-packaged-headers.sh": "600674d0bc64f3271f928ce729ad954a09d235c78ee14f585bc151c81f7359f9",
+        "artifacts/weston-provenance/first/headers.tgz": "d80b0140a46ef9f3b61c6274a84fcb6adb34a32d2ff88b202dfb66c3fa5ca473"
+      },
+      "toolchain_packages_sha256": "f17aeee2cc2c66eae901ab5b81799b736f0ad0716603a179e76417ee55305785",
+      "source_origin": {
+        "headers": "Derived from hash-verified Weston15.0.1-3 ARM64 package;25 files equal original capture"
+      },
+      "toolchain_inventory": "packaging/toolchains/reconstructed-arch-packages.txt",
+      "tool_versions": {
+        "cc": "cc (GCC) 16.1.1 20260430",
+        "c++": "c++ (GCC) 16.1.1 20260430",
+        "meson": "1.12.1",
+        "ninja": "1.13.2",
+        "python": "Python 3.14.8"
+      },
+      "toolchain_origin": "147 package archives, fresh download validated; five explicit package upgrades versus original snapshot",
+      "archive_lock": "packaging/toolchains/arch-archives.lock.json",
+      "rootfs_sha256": "81447a7f8d77dc2fcbf2731f35f954d316a541f02311fa7fa00a4ae492b369b8"
+    },
+    "aquamarine": {
+      "image_id": "sha256:814d760504589d2ca08a097636fd4bb7d3eaa6d8c6340111b83058a4e629c33a",
+      "recipe": "build/repro/aquamarine.sh",
+      "inputs": {
+        "artifacts/hyprland-trial/aquamarine-v0.15.1.tar.gz": "2f9de98c0bd1b7b1b09c576e390a2fef436449762fb334163c414f0c300296f2",
+        "build/arch-arm/dock/patches/aquamarine-compositor-version.patch": "85ee77d520ce865fd652989db00edc7c34a97750e9aa434fa9f147297f8cdcc3",
+        "build/arch-arm/dock/patches/aquamarine-initial-configure.patch": "740de8b522144c9f28de0108ef2499db4afea64d0c36ffd2d5cfa640c584afa2",
+        "build/repro/aquamarine.sh": "edd9188bfb52e98f166f7955f74d493b853a44dea284d5eefb697786f7bb6a4a"
+      },
+      "toolchain_packages_sha256": "f17aeee2cc2c66eae901ab5b81799b736f0ad0716603a179e76417ee55305785",
+      "source_origin": {
+        "version": "0.15.1",
+        "archive": "https://github.com/hyprwm/aquamarine/archive/refs/tags/v0.15.1.tar.gz"
+      },
+      "toolchain_inventory": "packaging/toolchains/reconstructed-arch-packages.txt",
+      "tool_versions": {
+        "cc": "cc (GCC) 16.1.1 20260430",
+        "c++": "c++ (GCC) 16.1.1 20260430",
+        "meson": "1.12.1",
+        "ninja": "1.13.2",
+        "python": "Python 3.14.8"
+      },
+      "toolchain_origin": "147 package archives, fresh download validated; five explicit package upgrades versus original snapshot",
+      "archive_lock": "packaging/toolchains/arch-archives.lock.json",
+      "rootfs_sha256": "81447a7f8d77dc2fcbf2731f35f954d316a541f02311fa7fa00a4ae492b369b8"
+    },
+    "portal": {
+      "image_id": "sha256:814d760504589d2ca08a097636fd4bb7d3eaa6d8c6340111b83058a4e629c33a",
+      "recipe": "build/repro/portal.sh",
+      "inputs": {
+        "build/portal-wlr/source.tar": "730d69d7898592ba2c281c8e7c42697680a7462835ae1e9068f976cf4e5e0ac7",
+        "build/portal-wlr/patch.py": "0c33fc36ab1ba2b108b31d94201206de33c821c709c1543308fcb367fc6b4dac",
+        "build/repro/portal.sh": "6d9863e95e1847ee0702a46921632fb017eebd64e7b7e60a88c10c5d059b13a7"
+      },
+      "toolchain_packages_sha256": "f17aeee2cc2c66eae901ab5b81799b736f0ad0716603a179e76417ee55305785",
+      "source_origin": {
+        "commit": "34153094662acd713241ca6cbbb20003ef67da5f",
+        "archive_kind": "git archive HEAD"
+      },
+      "toolchain_inventory": "packaging/toolchains/reconstructed-arch-packages.txt",
+      "tool_versions": {
+        "cc": "cc (GCC) 16.1.1 20260430",
+        "c++": "c++ (GCC) 16.1.1 20260430",
+        "meson": "1.12.1",
+        "ninja": "1.13.2",
+        "python": "Python 3.14.8"
+      },
+      "toolchain_origin": "147 package archives, fresh download validated; five explicit package upgrades versus original snapshot",
+      "archive_lock": "packaging/toolchains/arch-archives.lock.json",
+      "rootfs_sha256": "81447a7f8d77dc2fcbf2731f35f954d316a541f02311fa7fa00a4ae492b369b8"
+    },
+    "mesa": {
+      "image_id": "sha256:f14a7db2c1241023c2b1325937fe30b752672034050c435b27a1d64ada6ad1cf",
+      "recipe": "build/repro/mesa.sh",
+      "inputs": {
+        "build/repro/mesa.sh": "2dc3a7814224f9228244f1ec622fec9d0a0e57783c38c46fc305c99de1ea6aad",
+        "artifacts/mesa-26.2.3.tar.xz": "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f",
+        "build/mesa-cache/patch.py": "1d216bfa08662c919aa575d19ef8f5305b8130c9fae58d9ff44b2310b86667e3"
+      },
+      "toolchain_origin": "package-only reconstruction, no project image snapshot",
+      "toolchain_packages_sha256": "5221e7512ec6022fd49e150c3cdbce428034c28f8b3474ebe2b3af9660a989a1",
+      "source_origin": {
+        "version": "26.2.3",
+        "archive_sha256": "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f"
+      },
+      "toolchain_inventory": "packaging/toolchains/reconstructed-mesa-packages.txt",
+      "tool_versions": {
+        "cc": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "c++": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "meson": "1.7.2",
+        "ninja": "1.11.1",
+        "python": "Python 3.12.3"
+      },
+      "archive_lock": "packaging/toolchains/mesa-archives.lock.json"
+    }
+  }
+}

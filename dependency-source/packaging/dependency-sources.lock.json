@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "archives": [
+    {
+      "path": "artifacts/hyprland-trial/aquamarine-v0.15.1.tar.gz",
+      "url": "https://github.com/hyprwm/aquamarine/archive/refs/tags/v0.15.1.tar.gz",
+      "sha256": "2f9de98c0bd1b7b1b09c576e390a2fef436449762fb334163c414f0c300296f2"
+    },
+    {
+      "path": "artifacts/mesa-26.2.3.tar.xz",
+      "url": "https://archive.mesa3d.org/mesa-26.2.3.tar.xz",
+      "sha256": "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f"
+    },
+    {
+      "path": "artifacts/weston-provenance/weston-15.0.1-3-aarch64.pkg.tar.xz",
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/weston-15.0.1-3-aarch64.pkg.tar.xz",
+      "sha256": "2da79ea9f1059b5e068debbf6c5b4f650c59c9b6725d98479c5c99753d878f36"
+    }
+  ],
+  "git_archives": [
+    {
+      "path": "build/portal-wlr/source.tar",
+      "repository": "https://github.com/emersion/xdg-desktop-portal-wlr.git",
+      "commit": "34153094662acd713241ca6cbbb20003ef67da5f",
+      "sha256": "730d69d7898592ba2c281c8e7c42697680a7462835ae1e9068f976cf4e5e0ac7"
+    }
+  ]
+}

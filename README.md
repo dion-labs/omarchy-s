@@ -7,8 +7,7 @@ on the device and can work with its human across both interfaces.
 The boot preview contains the boot reconstruction work for the **Samsung
 Galaxy S9+ SM-G965F (Exynos 9810)**. It is a narrow source release, not the full
 phone system or an installer. The broader project uses Arch ARM, Phosh on the
-phone and a partial Omarchy/Hyprland port on the external display; that desktop
-stack is not included here.
+phone and a partial Omarchy/Hyprland port on the external display; selected desktop sources and dependency recipes are released separately below.
 
 ## Start here
 
@@ -75,3 +74,19 @@ separate allowlist under `release/desktop/`. Copy the allowlist into
 does not include the external graphics dependencies or a supported live installer.
 Its [scoped licensing](desktop-source/DOCK-LICENSING.md) is separate from the boot
 payload. The older boot download links above remain valid.
+
+## External dependency source preview
+
+[Dependency-source preview 1](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-1)
+adds reproducible input, Aquamarine, portal and Mesa recipes plus native USB owner
+source reconstruction. Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md)
+and [release notes](DEPENDENCY-RELEASE-NOTES.md).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-1/dependency-source-preview.tar).
+
+The 46-file source payload lives under `dependency-source/`, with manifest and
+allowlist under `release/dependencies/`. Five runtime hashes reproduce exactly;
+Mesa is a repeatable candidate with an explicit runtime-validation gate. Hardware
+helpers, installed metadata and complete installation ownership remain separate.
+This release supplies recipes, not prebuilt libraries, firmware or a live installer.
+Its [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains
+Aquamarine BSD and other upstream notices. Earlier source payloads are unchanged.

@@ -13,3 +13,7 @@ Preserve all upstream notices and applicable terms.
 The desktop-source payload has its own
 [licensing statement](desktop-source/DOCK-LICENSING.md) and per-file ledger.
 The original DESKTOP-RELEASE-NOTES.md is covered by the repository MIT grant.
+
+The dependency-source payload has its own
+[licensing statement](dependency-source/DEPENDENCIES-LICENSING.md) and per-file
+ledger. Original DEPENDENCY-RELEASE-NOTES.md is covered by the repository MIT grant.

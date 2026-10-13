@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "open-source/licenses/dependencies/aquamarine-LICENSE",
+      "sha256": "52d07f3457591b4496ae2e79b05efd63c7df72135666fa12428d83078c4c0de5",
+      "archive_sha256": "2f9de98c0bd1b7b1b09c576e390a2fef436449762fb334163c414f0c300296f2",
+      "member": "aquamarine-0.15.1/LICENSE"
+    },
+    {
+      "path": "open-source/licenses/dependencies/portal-LICENSE",
+      "sha256": "3ac22677b8ed454296793da5eabf995925e1e018f2b7ab8342d9ef0c8d4201f0",
+      "archive_sha256": "730d69d7898592ba2c281c8e7c42697680a7462835ae1e9068f976cf4e5e0ac7",
+      "member": "LICENSE"
+    },
+    {
+      "path": "open-source/licenses/dependencies/mesa-license.rst",
+      "sha256": "0d1a0472ecc81830e75c20d59b0ea02841e3db21255e0ebad97ab682c54d6615",
+      "archive_sha256": "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f",
+      "member": "mesa-26.2.3/docs/license.rst"
+    },
+    {
+      "path": "open-source/licenses/dependencies/mesa-MIT",
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "archive_sha256": "1628058a8d2c0615975de5a15ab7bbb9638c50000b5bed9456ff423ea034a81f",
+      "member": "mesa-26.2.3/licenses/MIT"
+    },
+    {
+      "path": "open-source/licenses/dependencies/weston-COPYING",
+      "sha256": "fdb65868f65d0fbdb05c2d3b779e10ce9969fa0c4b9262ba4f260e87086ab860",
+      "archive_sha256": "2da79ea9f1059b5e068debbf6c5b4f650c59c9b6725d98479c5c99753d878f36",
+      "member": "usr/share/licenses/weston/COPYING"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
   "publication_cleared": false,
-  "allowlist_sha256": "e968f11ded37038f7ae71079d8d18db911623ce60596be5080314a0ed4be879d",
+  "allowlist_sha256": "0fc1bb96fab95a216edefb87bff9c62da35242f6d31d44a20ab72b2c2dbe320c",
   "files": [
     {
       "path": "DEPENDENCIES-LICENSE-MIT",
@@ -15,7 +15,12 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "eae88bd2d752edc6211b48bce394856d3728d651e9b7ed62b24ce9b43138adc8",
+      "sha256": "19d0619def3b7d60ed4769822d62d00ea1639b325cc90177382a666d2caf6146",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-ACCEPTANCE.md",
+      "sha256": "93dcd295523ec92ae0a92768e5d87b8ef46417a7dd88ef1cca75ef67c0639105",
       "mode": "0644"
     },
     {
@@ -35,7 +40,7 @@
     },
     {
       "path": "PORTAL-CAPTURE-SCOPE-E2E-LAB.md",
-      "sha256": "1af7ffc785e216dbcf923da6db0680614b245d0cdb947f8f1c6f46c4bd02de15",
+      "sha256": "76b3d4d01b3e75b5af96aea560df03d969f70bd241b5aa9b408931d923e72993",
       "mode": "0644"
     },
     {
@@ -165,7 +170,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "94a2b78675e404f4f73138b354c89fb9ab5d6e37bc612f01c532e8f7a3eafb48",
+      "sha256": "87cb52a511926578b175e08658767a6faa7cdd779ce962a28507f4b65bfbadd4",
       "mode": "0644"
     },
     {
@@ -211,6 +216,11 @@
     {
       "path": "packaging/weston-headers.lock.json",
       "sha256": "a868d0a52318ad2c9832eb28bb1a36d89319e17835e270b0b0ac8781c9400561",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/acceptance-case.py",
+      "sha256": "b0d82e4a7859d8957c75c9e7aaed9f5064f5a93818da6fe1bb7d35d40728cbd6",
       "mode": "0644"
     },
     {
@@ -289,8 +299,18 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/run-acceptance.py",
+      "sha256": "33314c707e61086469721ffc3ba409e814b5356a287f6588074c997e94f4622f",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/stage-portal.py",
       "sha256": "b3d15acee130adac6da9faaef66ff4c1f4e3d70ec627fdbcb514fbd1ba72568b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-acceptance.py",
+      "sha256": "27e79a9a3801eda412799b9740fd6140438fd729e1cd23d25e45db43c6bd845e",
       "mode": "0644"
     },
     {
@@ -424,5 +444,5 @@
       "mode": "0644"
     }
   ],
-  "archive_sha256": "a5306d4f51f0e69db0491a89dc4b4266a3488dae08943dd914bf82b5a2018852"
+  "archive_sha256": "9ad54522fd65d2acef87346ebe02a96b52d4e49ebca65919c6c8e632b19523d3"
 }

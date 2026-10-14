@@ -46,3 +46,6 @@ service boundary. The host engine and cooperating code remain trusted. There is
 no live updater or global portal interception. Next: consolidate a single
 reproducible acceptance command and machine-readable evidence for these Linux and
 host checks, making the published recovery guarantees easier to reproduce.
+
+Use the [acceptance command](PORTAL-ACCEPTANCE.md) to run Linux and host suites
+from exact exported source and retain structured results plus hashed logs.

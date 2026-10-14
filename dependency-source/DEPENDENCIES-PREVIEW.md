@@ -126,3 +126,6 @@ and terminal recovery after destruction of a scope registered before capture.
 
 [Real capture scope tests](PORTAL-CAPTURE-SCOPE-E2E-LAB.md) now exercise app death
 and container destruction with changing frames and unresolved capture receipts.
+
+Use the [acceptance command](PORTAL-ACCEPTANCE.md) to run Linux and host suites
+from exact exported source and retain structured results plus hashed logs.

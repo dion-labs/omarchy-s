@@ -1,30 +1,30 @@
-# Dependency-source preview 11
+# Dependency-source preview 12
 
-Real headless portal capture now exercises cooperative update admission. A shared
-capture scope creates a durable unresolved receipt before any portal calls. It
-retains the admission lock until scope exit, even after confirmed cleanup removes
-the receipt. Updates refuse active scopes and unresolved receipts.
+Unresolved capture receipts can now retain immutable bus/service/session/media
+identity and be explicitly reconciled under exclusive admission. Recovery requires
+matching identity and confirmed frontend/backend/media absence. Missing identity,
+changed service owners, timeouts or incomplete evidence preserve the blocking record.
+No session close or process kill is performed by this recovery operation.
 
 ## Validation
 
-All 125 tests pass without skips from the extracted archive. Four new real frontend
-tests cover active capture/explicit close, application disconnect, backend death
-with surviving frontend state, and cleanup-probe failure. Exact UnknownObject
-replies establish object absence; other D-Bus failures do not. Two adapter tests
-cover strict confirmation and client death. That additional forced exit brings the
-total to 326 and leaves durable refusal after the process lock is released.
+All 133 tests pass without skips from the extracted archive. Six new adapter tests
+cover recovery, identity drift, partial proof, unknown records/paths, recording
+validation, probe timeout and repeatable interruption. Two real frontend cases test
+active-session refusal followed by cleanup recovery, and refusal after service
+restart. The real probe checks identity before and after cleanup observation.
+One additional recovery forced exit brings the total to 327.
 
-Two normalized 77-file exports match; 76 attribution entries and links verify.
+Two normalized 78-file exports match; 77 attribution entries and links verify.
 Privacy findings reviewed; boot/desktop inventories and runtime pins unchanged.
-No phone or live desktop was contacted. Real capture uses headless software rendering.
+No phone or live desktop was contacted; real capture uses headless software rendering.
 
 ## Limits and next step
 
-See the [capture admission guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-11/dependency-source/PORTAL-CAPTURE-ADMISSION-LAB.md).
-This covers trusted cooperating private clients, not arbitrary desktop applications.
-The cleanup probe must be authoritative and bounded; no new sessions may start
-within a confirmed scope. Unresolved receipts remain blocking, and transaction
-recovery deliberately cannot clear them. No production updater is enabled.
+See the [recovery guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-12/dependency-source/PORTAL-CAPTURE-RECOVERY-LAB.md).
+Only trusted cooperating private clients are covered. Probes must be authoritative
+and bounded. Identity-less receipts and interrupted-recording drafts remain blocking;
+there is no automatic clearing path for them. No production updater is enabled.
 
-Next: record session/service identities and design explicit capture-receipt recovery
-that refuses stale or lost identity rather than deleting evidence to force progress.
+Next: test recording crashes/orphan drafts and define whole-private-session teardown
+proof for records that lost their identity, without treating uncertainty as cleanup.

@@ -86,6 +86,52 @@ class Fences(unittest.TestCase):
    receipt.confirm_cleanup(lambda:True)
    with self.assertRaises(m.a.Refused):receipt.confirm_cleanup(lambda:True)
   with g.acquire():pass
+ def identity(self):
+  return dict(bus_id='a'*32,frontend_owner=':1.2',backend_owner=':1.3',session='/org/freedesktop/portal/desktop/session/1_4/r1',node=42,pipewire_cookie=123)
+ def recorded(self,g):
+  identity=self.identity()
+  with g.capture_client() as receipt:receipt.record_identity(identity);name=receipt.name
+  return name,identity
+ def proof(self,identity):return dict(identity=identity,frontend_absent=True,backend_absent=True,media_absent=True)
+ def test_recorded_capture_recovery(self):
+  root,h,before,g=self.fixture();name,identity=self.recorded(g)
+  g.reconcile_capture(name,self.proof)
+  with g.acquire():pass
+  self.assertEqual(f.f.state(root),before)
+ def test_identity_drift_and_partial_cleanup_refused(self):
+  root,h,before,g=self.fixture();name,identity=self.recorded(g)
+  for key in identity:
+   changed=dict(identity);changed[key]=43 if key in ('node','pipewire_cookie') else 'changed'
+   with self.assertRaises(m.a.Refused):g.reconcile_capture(name,lambda original:self.proof(changed))
+  for key in ('frontend_absent','backend_absent','media_absent'):
+   for value in (False,None,1):
+    proof=self.proof(identity);proof[key]=value
+    with self.assertRaises(m.a.Refused):g.reconcile_capture(name,lambda original:proof)
+  self.assertTrue((root/name).exists())
+ def test_unrecorded_identity_and_bad_path_refused(self):
+  root,h,before,g=self.fixture()
+  with g.capture_client() as receipt:name=receipt.name
+  for path in (name,'../escape',m.CAPTURE_PREFIX+'draft-'+'a'*32):
+   with self.assertRaises(m.a.Refused):g.reconcile_capture(path,self.proof)
+  self.assertTrue((root/name).exists())
+ def test_recording_is_one_time_and_validated(self):
+  root,h,before,g=self.fixture()
+  with g.capture_client() as receipt:
+   with self.assertRaises(m.a.Refused):receipt.record_identity({})
+   receipt.record_identity(self.identity())
+   with self.assertRaises(m.a.Refused):receipt.record_identity(self.identity())
+ def test_recovery_probe_timeout_retains_record(self):
+  root,h,before,g=self.fixture();name,identity=self.recorded(g)
+  def timeout(identity):raise TimeoutError('deadline')
+  with self.assertRaises(TimeoutError):g.reconcile_capture(name,timeout)
+  self.assertTrue((root/name).exists())
+ def test_capture_recovery_crash_is_repeatable(self):
+  root,h,before,g=self.fixture();name,identity=self.recorded(g)
+  code='m.checkpoint=lambda label: os._exit(94) if label=="capture-reconciled-before-clear" else None\ng.reconcile_capture('+repr(name)+',lambda identity:dict(identity=identity,frontend_absent=True,backend_absent=True,media_absent=True))\n'
+  p=self.child(root,code);out,err=p.communicate(timeout=3);self.assertEqual(p.returncode,94,err)
+  self.assertTrue((root/name).exists());g.reconcile_capture(name,self.proof)
+  with g.acquire():pass
+  print('capture recovery exits verified 1',flush=True)
  def test_invalid_deadline(self):
   for value in (True,0,3,float('inf'),float('nan')):
    with self.assertRaises(ValueError):m.Fence('/unused',value)

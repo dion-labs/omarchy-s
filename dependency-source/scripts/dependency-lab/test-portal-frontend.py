@@ -184,6 +184,40 @@ class Frontend(unittest.TestCase):
         self.assertTrue(list(root.glob(fence.CAPTURE_PREFIX+'*')))
         with self.assertRaises(fence.a.Refused):
             with gate.acquire():pass
+    def capture_identity(self,session,node):
+        def bus(method,args):return self.call('org.freedesktop.DBus',method,args,'/org/freedesktop/DBus','org.freedesktop.DBus',self.monitor).unpack()[0]
+        objects=json.loads(subprocess.check_output(['pw-dump'],env=self.env,text=True,timeout=2))
+        core=next(o for o in objects if o['type']=='PipeWire:Interface:Core')
+        return dict(bus_id=bus('GetId',None),frontend_owner=bus('GetNameOwner',GLib.Variant('(s)',(FRONT,))),
+            backend_owner=bus('GetNameOwner',GLib.Variant('(s)',(BACK,))),session=session,node=node,pipewire_cookie=core['info']['cookie'])
+    def recovery_probe(self,identity):
+        current=self.capture_identity(identity['session'],identity['node'])
+        gone=self.cleanup_confirmed(identity['session'],identity['node'])
+        if self.capture_identity(identity['session'],identity['node'])!=current:
+            raise RuntimeError('Service identity changed during cleanup probe')
+        return dict(identity=current,frontend_absent=gone,backend_absent=gone,media_absent=gone)
+    def test_recorded_capture_recovery_after_scope_loss(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node)
+            receipt.record_identity(self.capture_identity(session,node));name=receipt.name
+        with self.assertRaises(fence.a.Refused):gate.reconcile_capture(name,self.recovery_probe)
+        self.close_session(session);self.wait(lambda:self.cleanup_confirmed(session,node))
+        gate.reconcile_capture(name,self.recovery_probe)
+        with gate.acquire():pass
+    def test_recorded_capture_recovery_rejects_service_restart(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node)
+            receipt.record_identity(self.capture_identity(session,node));name=receipt.name
+            self.close_session(session);self.wait(lambda:self.cleanup_confirmed(session,node))
+        self.stop(self.backend)
+        self.backend=self.spawn([str(self.binary),'-c',str(self.root/'wlr.conf'),'-l','DEBUG'])
+        self.wait(lambda:self.call('org.freedesktop.DBus','NameHasOwner',GLib.Variant('(s)',(BACK,)),
+            '/org/freedesktop/DBus','org.freedesktop.DBus',self.monitor).unpack()[0])
+        # A live replacement has a different unique owner: never clear old evidence.
+        with self.assertRaises(fence.a.Refused):gate.reconcile_capture(name,self.recovery_probe)
+        self.assertTrue((root/name).exists())
     def test_closed_tracked_sessions_cannot_authorize_update(self):
         import importlib.util
         spec=importlib.util.spec_from_file_location('admission',HERE/'portal-admission.py')

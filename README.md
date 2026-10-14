@@ -77,18 +77,17 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 11](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-11)
-connects cooperative admission to real isolated portal capture. Updates remain
-blocked through capture and cleanup; durable unresolved receipts prevent admission
-after probe failure or client death. Confirmation requires session/media absence,
-and the shared lock remains held until the capture scope exits.
-Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[capture admission guide](dependency-source/PORTAL-CAPTURE-ADMISSION-LAB.md) and
+[Dependency-source preview 12](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-12)
+adds recorded capture identity and explicit conservative recovery. Cleanup evidence
+must match the recorded bus, service owners, session and PipeWire identity; missing,
+changed or unavailable identity keeps admission blocked. Recovery never force-closes
+sessions. Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
+[capture recovery guide](dependency-source/PORTAL-CAPTURE-RECOVERY-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-11/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-12/dependency-source-preview.tar).
 
-The 77-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 125 tests pass, including 326 injected process
+The 78-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 133 tests pass, including 327 injected process
 exits. No phone or live desktop is changed; no production updater or arbitrary
 client interception is enabled. No runtime binaries are released.
 The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream

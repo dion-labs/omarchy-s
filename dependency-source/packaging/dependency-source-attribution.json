@@ -16,7 +16,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "03d23fab5e7a55c8bad982680818f3858ec086241dd057588416ef9954d4d858",
+      "sha256": "4231adc689649e3398760eb2478bf39e3b7026d89fdd54297f3e0d959ae980f2",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -30,7 +30,13 @@
       "path": "PORTAL-CAPTURE-ADMISSION-LAB.md",
       "classification": "local-expression",
       "scope": "Original capture admission documentation",
-      "sha256": "261bf09101f1aa023308a48a7bd952dd577c3b7517446a39a837d267cadd2d2e"
+      "sha256": "ec8a88db1e9e364fb044b85e1b160b42322a44f36093538bf7c3b0825a1766d1"
+    },
+    {
+      "path": "PORTAL-CAPTURE-RECOVERY-LAB.md",
+      "classification": "local-expression",
+      "scope": "Original capture identity and recovery documentation",
+      "sha256": "dd4039b0c4a3d2c60cfb5f9ba64b80bade486701b99087d3199ab48d89a1635e"
     },
     {
       "path": "PORTAL-FENCE-LAB.md",
@@ -258,7 +264,7 @@
       "path": "scripts/dependency-lab/portal-fence.py",
       "classification": "local-expression",
       "scope": "Original private cooperative admission adapter, tests and documentation",
-      "sha256": "263f09c98fdaf9472f00178c7e02d5b15d0be5059f42848e5214f6c4ba6435ef"
+      "sha256": "88efadca7fbbb0035be8acfd05d1c425e772f36dcb4704b10ee0c8abbf628de2"
     },
     {
       "path": "scripts/dependency-lab/portal-frame-probe.c",
@@ -348,13 +354,13 @@
       "path": "scripts/dependency-lab/test-portal-fence.py",
       "classification": "local-expression",
       "scope": "Original private cooperative admission adapter, tests and documentation",
-      "sha256": "882825b58822160aeda5b6b1721a4b9abcb1290fe21ca270715fa0b0d3406d6f"
+      "sha256": "9a2a13d0a8d4e4058f5b02c9ba2e674dce61e1fcb24351c6bd2a29cfc82dffcc"
     },
     {
       "path": "scripts/dependency-lab/test-portal-frontend.py",
       "classification": "local-expression",
       "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
-      "sha256": "9ca46941321dbe64a660e38fb41e3036e7f315461c4fedefcf49d0035702f904"
+      "sha256": "b8ad498ade5e624bceb1babc6804dae5cefe7dc5b33af4994607861011ffb0f3"
     },
     {
       "path": "scripts/dependency-lab/test-portal-lifecycle.py",

@@ -33,3 +33,6 @@ applications to a production updater. Callers/probes and the private filesystem
 are trusted. No D-Bus interception or global inventory is claimed. No phone or
 live desktop session is contacted. Next: design explicit capture-receipt recovery
 with recorded session/service identity and conservative handling of lost identity.
+
+[Recorded capture recovery](PORTAL-CAPTURE-RECOVERY-LAB.md) now supports exact
+identity reconciliation; unidentified or changed-service records remain blocking.

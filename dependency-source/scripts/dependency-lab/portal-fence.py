@@ -4,6 +4,8 @@ import contextlib
 import fcntl
 import importlib.util
 import math
+import json
+import re
 import os
 from pathlib import Path
 import secrets
@@ -97,6 +99,20 @@ class Fence:
                 checkpoint('before-clear')
                 os.unlink(DIRTY,dir_fd=fd);os.fsync(fd)
             finally:lease.active=False
+    def reconcile_capture(self,name,probe):
+        """Probe the exact recorded session under exclusive admission; never close it."""
+        with self.locked(True) as (fd,lock):
+            raw,record=read_capture(fd,name)
+            result=probe(dict(record['identity']))
+            if not isinstance(result,dict) or result.get('identity')!=record['identity']:
+                raise a.Refused('Capture identity changed or unavailable')
+            for field in ('frontend_absent','backend_absent','media_absent'):
+                if result.get(field) is not True:raise a.Refused('Capture cleanup unconfirmed')
+            again,_=read_capture(fd,name)
+            if again!=raw:raise a.Refused('Capture receipt changed during probe')
+            checkpoint('capture-reconciled-before-clear')
+            os.unlink(name,dir_fd=fd);os.fsync(fd)
+
     def reconcile(self,hooks):
         """Explicitly restore prior transaction under exclusivity, then reopen.
 
@@ -134,7 +150,48 @@ class Lease:
 class CaptureReceipt:
     def __init__(self,fd,name):
         self.fd=fd;self.name=name;self.active=True;self.pid=os.getpid()
+    def record_identity(self,identity):
+        if not self.active or self.pid!=os.getpid():raise a.Refused('Expired capture receipt')
+        validate_capture_identity(identity)
+        old=read_capture_bytes(self.fd,self.name)
+        if old!=b'capture cleanup unconfirmed\n':raise a.Refused('Identity already recorded or ambiguous')
+        draft=CAPTURE_PREFIX+'draft-'+secrets.token_hex(16)
+        handle=os.open(draft,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600,dir_fd=self.fd)
+        try:
+            data=json.dumps({'schema':1,'identity':identity},sort_keys=True).encode()+b'\n'
+            with os.fdopen(handle,'wb',closefd=False) as stream:stream.write(data);stream.flush()
+            os.fsync(handle)
+        finally:os.close(handle)
+        os.replace(draft,self.name,src_dir_fd=self.fd,dst_dir_fd=self.fd);os.fsync(self.fd)
+        checkpoint('capture-identity-durable')
     def confirm_cleanup(self,probe):
         if not self.active or self.pid!=os.getpid():raise a.Refused('Expired capture receipt')
         if probe() is not True:raise a.Refused('Cleanup not confirmed')
         os.unlink(self.name,dir_fd=self.fd);os.fsync(self.fd);self.active=False
+
+
+def validate_capture_identity(identity):
+    keys={'bus_id','frontend_owner','backend_owner','session','node','pipewire_cookie'}
+    if type(identity) is not dict or set(identity)!=keys:raise a.Refused('Incomplete capture identity')
+    if not isinstance(identity['bus_id'],str) or not re.fullmatch('[0-9a-f]{32}',identity['bus_id']):raise a.Refused('Invalid bus identity')
+    for key in ('frontend_owner','backend_owner'):
+        if not isinstance(identity[key],str) or not re.fullmatch(r':\d+\.\d+',identity[key]):raise a.Refused('Invalid service owner')
+    if not isinstance(identity['session'],str) or not re.fullmatch(r'/org/freedesktop/portal/desktop/session/[A-Za-z0-9_]+/[A-Za-z0-9_]+',identity['session']):raise a.Refused('Invalid session identity')
+    for key in ('node','pipewire_cookie'):
+        if type(identity[key]) is not int or not 0<=identity[key]<2**32:raise a.Refused('Invalid media identity')
+
+def read_capture_bytes(fd,name):
+    if not isinstance(name,str) or not re.fullmatch(re.escape(CAPTURE_PREFIX)+'[0-9a-f]{32}',name):raise a.Refused('Invalid capture receipt name')
+    handle=os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK,dir_fd=fd)
+    try:
+        st=os.fstat(handle)
+        if not stat.S_ISREG(st.st_mode) or st.st_nlink!=1 or st.st_uid!=os.geteuid() or stat.S_IMODE(st.st_mode)!=0o600 or st.st_size>4096:raise a.Refused('Unsafe capture receipt')
+        return os.read(handle,4097)
+    finally:os.close(handle)
+
+def read_capture(fd,name):
+    raw=read_capture_bytes(fd,name)
+    try:record=json.loads(raw)
+    except (ValueError,UnicodeError) as error:raise a.Refused('Unrecorded capture identity') from error
+    if type(record) is not dict or set(record)!={'schema','identity'} or type(record['schema']) is not int or record['schema']!=1:raise a.Refused('Unknown capture schema')
+    validate_capture_identity(record['identity']);return raw,record

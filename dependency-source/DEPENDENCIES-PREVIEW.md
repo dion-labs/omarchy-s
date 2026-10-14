@@ -123,3 +123,6 @@ identity reconciliation; unidentified or changed-service records remain blocking
 
 [Private-scope retirement](PORTAL-SCOPE-RETIREMENT-LAB.md) tests recording crashes
 and terminal recovery after destruction of a scope registered before capture.
+
+[Real capture scope tests](PORTAL-CAPTURE-SCOPE-E2E-LAB.md) now exercise app death
+and container destruction with changing frames and unresolved capture receipts.

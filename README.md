@@ -77,19 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 13](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-13)
-tests interrupted identity recording and adds terminal retirement of pre-registered
-private container scopes. Unidentified capture records require proof that their
-entire disposable container was destroyed; the old root then stays retired.
+[Dependency-source preview 14](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-14)
+verifies real capture through private-container destruction and terminal recovery.
+Changing frames precede app death or active-capture interruption; unresolved records
+remain blocked until the exact registered container is destroyed. The recovered
+root stays permanently retired.
 Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[scope retirement guide](dependency-source/PORTAL-SCOPE-RETIREMENT-LAB.md) and
+[end-to-end capture guide](dependency-source/PORTAL-CAPTURE-SCOPE-E2E-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-13/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-14/dependency-source-preview.tar).
 
-The 82-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 140 tests pass, including 333 injected process
-exits. The host test uses an owned disposable container and synthetic receipts;
-real capture inside that retired container is the next integration check.
-No phone or live desktop is changed, and no production updater is enabled.
+The 84-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 141 tests pass: 139 Linux and 2 host tests.
+The earlier 333 injected-exit cases are retained, plus two real capture interruption
+scenarios. No phone/live desktop is changed and no production updater is enabled.
 The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
 terms. No runtime binaries are released; earlier previews remain available.

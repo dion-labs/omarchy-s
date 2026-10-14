@@ -15,7 +15,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "806a634562355e48fb036c6be1688059cd883e31ee4326c25f1cb50ed31947b3",
+      "sha256": "eae88bd2d752edc6211b48bce394856d3728d651e9b7ed62b24ce9b43138adc8",
       "mode": "0644"
     },
     {
@@ -31,6 +31,11 @@
     {
       "path": "PORTAL-CAPTURE-RECOVERY-LAB.md",
       "sha256": "03a75542df59230255a8d5d7b2df1c2696934053a68f7f4d365c761275a51775",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-CAPTURE-SCOPE-E2E-LAB.md",
+      "sha256": "1af7ffc785e216dbcf923da6db0680614b245d0cdb947f8f1c6f46c4bd02de15",
       "mode": "0644"
     },
     {
@@ -50,7 +55,7 @@
     },
     {
       "path": "PORTAL-SCOPE-RETIREMENT-LAB.md",
-      "sha256": "9b2be5879e46a814457b458cdb929394ef8818070975c2baffe720764e03e7d7",
+      "sha256": "979606c153f1c63387e982f72c49a9b48a774c7381e36fcb7554ac1de0c97555",
       "mode": "0644"
     },
     {
@@ -160,7 +165,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "ecee957e118bb0c4fedaf5837af0432f7d8c2369785f0d0f117f6d689d8d3aa4",
+      "sha256": "94a2b78675e404f4f73138b354c89fb9ab5d6e37bc612f01c532e8f7a3eafb48",
       "mode": "0644"
     },
     {
@@ -259,6 +264,11 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/portal-scope-capture-worker.py",
+      "sha256": "bc2312202f04af27f2a6307a212d8b18c1d1e8ef68b0052c818dbc691e53ad44",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/portal-scope.py",
       "sha256": "8e512efc55a1f924d3a8a8587159b958292207e133cf4196773ef4679c40214e",
       "mode": "0644"
@@ -335,7 +345,7 @@
     },
     {
       "path": "scripts/dependency-lab/test-portal-scope-host.py",
-      "sha256": "e6ef86942db3cb3966242ea5d106d6671cbf6d8b11e57dc46d005f676f23841b",
+      "sha256": "f83f3b466cea2133a494c5f757b889717cdd7fb59a6dea0131897badc6951d64",
       "mode": "0644"
     },
     {

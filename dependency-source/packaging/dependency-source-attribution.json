@@ -16,7 +16,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "806a634562355e48fb036c6be1688059cd883e31ee4326c25f1cb50ed31947b3",
+      "sha256": "eae88bd2d752edc6211b48bce394856d3728d651e9b7ed62b24ce9b43138adc8",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -37,6 +37,12 @@
       "classification": "local-expression",
       "scope": "Original capture identity and recovery documentation",
       "sha256": "03a75542df59230255a8d5d7b2df1c2696934053a68f7f4d365c761275a51775"
+    },
+    {
+      "path": "PORTAL-CAPTURE-SCOPE-E2E-LAB.md",
+      "classification": "local-expression",
+      "scope": "Original isolated real capture scope test worker and documentation",
+      "sha256": "1af7ffc785e216dbcf923da6db0680614b245d0cdb947f8f1c6f46c4bd02de15"
     },
     {
       "path": "PORTAL-FENCE-LAB.md",
@@ -60,7 +66,7 @@
       "path": "PORTAL-SCOPE-RETIREMENT-LAB.md",
       "classification": "local-expression",
       "scope": "Original private-scope retirement integration, tests and documentation",
-      "sha256": "9b2be5879e46a814457b458cdb929394ef8818070975c2baffe720764e03e7d7"
+      "sha256": "979606c153f1c63387e982f72c49a9b48a774c7381e36fcb7554ac1de0c97555"
     },
     {
       "path": "PORTAL-SESSION-LAB.md",
@@ -303,6 +309,12 @@
       "sha256": "2ccdc123c1c9ce6b725225a3357fca8ae441b01013d5aeb7712705e36abd7aa3"
     },
     {
+      "path": "scripts/dependency-lab/portal-scope-capture-worker.py",
+      "classification": "local-expression",
+      "scope": "Original isolated real capture scope test worker and documentation",
+      "sha256": "bc2312202f04af27f2a6307a212d8b18c1d1e8ef68b0052c818dbc691e53ad44"
+    },
+    {
       "path": "scripts/dependency-lab/portal-scope.py",
       "classification": "local-expression",
       "scope": "Original private-scope retirement integration, tests and documentation",
@@ -396,7 +408,7 @@
       "path": "scripts/dependency-lab/test-portal-scope-host.py",
       "classification": "local-expression",
       "scope": "Original private-scope retirement integration, tests and documentation",
-      "sha256": "e6ef86942db3cb3966242ea5d106d6671cbf6d8b11e57dc46d005f676f23841b"
+      "sha256": "f83f3b466cea2133a494c5f757b889717cdd7fb59a6dea0131897badc6951d64"
     },
     {
       "path": "scripts/dependency-lab/test-portal-scope.py",

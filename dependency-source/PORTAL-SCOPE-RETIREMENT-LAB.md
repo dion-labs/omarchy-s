@@ -45,3 +45,6 @@ to their scope. A callback assertion alone is not independent proof of that fact
 Next: run real capture wholly inside a registered disposable container and verify
 end-to-end crash recovery through its destruction and terminal retirement. No phone
 or live desktop changes are needed for that test.
+
+[Real capture scope tests](PORTAL-CAPTURE-SCOPE-E2E-LAB.md) now exercise app death
+and container destruction with changing frames and unresolved capture receipts.

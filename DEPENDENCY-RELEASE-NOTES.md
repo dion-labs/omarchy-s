@@ -1,31 +1,30 @@
-# Dependency-source preview 13
+# Dependency-source preview 14
 
-Interrupted capture identity recording now has four forced-exit checkpoints.
-Drafts and unidentified records remain blocking. An explicit retirement operation
-can clear them only for a private container scope registered before capture and
-only with proof that the exact container was destroyed on the recorded engine.
-The root is permanently retired; it cannot become a new capture/update scope.
+Real portal capture now runs inside a disposable container registered before capture.
+A worker consumes changing headless frames while retaining admission and an
+unidentified durable receipt. The host tests both app death without cleanup and
+container destruction while capture remains active. Recovery refuses until exact
+container destruction is proven; it then retires the root permanently.
 
 ## Validation
 
-All 140 tests pass without skips from extracted source: 139 Linux tests plus one
-opt-in host engine test. Four recording exits and two retirement exits bring the
-total to 333. Scope tests cover pre-binding, incomplete/changed proof, unsafe
-artifacts, terminal cleanup and repeatable partial cleanup after interruption.
-The host test refuses a live container, removes its own exact disposable container,
-verifies absence and engine identity, then retires synthetic capture evidence.
+All 141 tests pass without skips from extracted source: 139 Linux and 2 host tests.
+The new host test includes two real interruption scenarios. The existing 333
+injected-exit cases remain unchanged. Each scenario verifies changing 1280x720
+frames, refusal before destruction, retained evidence, exact container absence on
+the unchanged engine, receipt retirement and refusal to reuse the retired root.
 
-Two normalized 82-file exports match; 81 attribution entries and source links verify.
+Two normalized 84-file exports match; 83 attribution entries and source links verify.
 Privacy findings reviewed. Boot/desktop inventories and runtime pins unchanged.
-No phone or live desktop was contacted; test containers/volumes are owned fixtures.
+Owned test containers/volumes are removed; no phone or live desktop was contacted.
 
 ## Limits and next step
 
-Read the [scope guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-13/dependency-source/PORTAL-SCOPE-RETIREMENT-LAB.md).
-Bindings cannot be inferred retroactively for old captures. Missing scope identity
-remains blocked. The module trusts a bounded host proof; it performs no engine
-commands or automatic destruction. Stopped/unreachable is insufficient. Transaction
-evidence remains untouched. No production updater or arbitrary-client gate exists.
+Read the [capture scope guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-14/dependency-source/PORTAL-CAPTURE-SCOPE-E2E-LAB.md).
+Capture uses headless software rendering and a pinned backend, not the phone's
+GPU/wlr path. The host engine and cooperating callers are trusted. This is not a
+production service boundary, live updater or arbitrary-client interception mechanism.
 
-Next: place real capture wholly inside a registered disposable container and verify
-end-to-end crash recovery through container destruction and terminal retirement.
+Next: consolidate a reproducible acceptance command and machine-readable evidence
+for the Linux and host checks so the published recovery guarantees are easier to
+reproduce independently.

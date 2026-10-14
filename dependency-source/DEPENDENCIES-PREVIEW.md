@@ -114,3 +114,6 @@ active inventories and requires a continuously held exclusive admission fence.
 
 The [cooperative fence adapter](PORTAL-FENCE-LAB.md) now implements this contract
 for private test sessions only, with durable crash refusal and explicit recovery.
+
+[Real capture admission tests](PORTAL-CAPTURE-ADMISSION-LAB.md) now retain durable
+unresolved capture receipts until session/media cleanup is confirmed.

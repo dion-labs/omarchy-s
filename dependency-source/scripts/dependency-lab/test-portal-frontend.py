@@ -124,6 +124,66 @@ class Frontend(unittest.TestCase):
         for p in reversed(self.children):self.stop(p)
         for log in self.logs:log.close()
         shutil.rmtree(self.root)
+    def capture_fence(self):
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('capture_fence',HERE/'portal-fence.py')
+        fence=importlib.util.module_from_spec(spec);spec.loader.exec_module(fence)
+        root=fence.tx.initialize();self.addCleanup(shutil.rmtree,root,True)
+        return fence,root,fence.Fence(root,timeout=.06)
+    def cleanup_confirmed(self,session,node):
+        # Never convert D-Bus timeout/access errors into evidence of absence.
+        if node in self.nodes():return False
+        for dest,interface in [(FRONT,'org.freedesktop.portal.Session'),(BACK,'org.freedesktop.impl.portal.Session')]:
+            if dest==BACK and self.backend.poll() is not None:
+                owner=self.call('org.freedesktop.DBus','NameHasOwner',GLib.Variant('(s)',(BACK,)),
+                    '/org/freedesktop/DBus','org.freedesktop.DBus',self.monitor).unpack()[0]
+                if owner:return False
+                continue
+            try:xml=self.call('org.freedesktop.DBus.Introspectable','Introspect',None,session,dest,self.monitor).unpack()[0]
+            except GLib.Error as error:
+                if Gio.DBusError.get_remote_error(error)=='org.freedesktop.DBus.Error.UnknownObject':continue
+                raise
+            if 'interface name="'+interface+'"' in xml:return False
+        return True
+    def test_capture_admission_held_through_confirmed_close(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node)
+            with self.assertRaises(fence.a.Refused):
+                with gate.acquire():pass
+            with self.assertRaises(fence.a.Refused):receipt.confirm_cleanup(lambda:self.cleanup_confirmed(session,node))
+            self.close_session(session);self.wait(lambda:self.cleanup_confirmed(session,node))
+            receipt.confirm_cleanup(lambda:self.cleanup_confirmed(session,node))
+            # Even confirmed cleanup retains the shared lock until scope exit.
+            with self.assertRaises(fence.a.Refused):
+                with gate.acquire():pass
+        with gate.acquire():pass
+    def test_capture_disconnect_requires_media_confirmation(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node)
+            self.client.close_sync(None);self.wait(lambda:self.cleanup_confirmed(session,node))
+            receipt.confirm_cleanup(lambda:self.cleanup_confirmed(session,node))
+        with gate.acquire():pass
+    def test_capture_backend_death_retains_admission_until_frontend_closed(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node);self.stop(self.backend)
+            self.wait(lambda:node not in self.nodes())
+            with self.assertRaises(fence.a.Refused):receipt.confirm_cleanup(lambda:self.cleanup_confirmed(session,node))
+            self.close_session(session);self.wait(lambda:self.cleanup_confirmed(session,node))
+            receipt.confirm_cleanup(lambda:self.cleanup_confirmed(session,node))
+        with gate.acquire():pass
+    def test_capture_probe_failure_preserves_durable_refusal(self):
+        fence,root,gate=self.capture_fence()
+        with gate.capture_client() as receipt:
+            session=self.create();node=self.start(session);self.capture(session,node)
+            self.close_session(session);self.assert_gone(session,node)
+            def unavailable():raise TimeoutError('cleanup probe unavailable')
+            with self.assertRaises(TimeoutError):receipt.confirm_cleanup(unavailable)
+        self.assertTrue(list(root.glob(fence.CAPTURE_PREFIX+'*')))
+        with self.assertRaises(fence.a.Refused):
+            with gate.acquire():pass
     def test_closed_tracked_sessions_cannot_authorize_update(self):
         import importlib.util
         spec=importlib.util.spec_from_file_location('admission',HERE/'portal-admission.py')

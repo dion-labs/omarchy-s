@@ -77,18 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 10](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-10)
-adds an isolated cooperative admission adapter. Shared session locks exclude
-updates; exclusive update locks exclude new cooperating sessions. A durable pending
-marker keeps admission closed after coordinator death until explicit reconciliation.
-This is not interception of arbitrary desktop/portal applications.
+[Dependency-source preview 11](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-11)
+connects cooperative admission to real isolated portal capture. Updates remain
+blocked through capture and cleanup; durable unresolved receipts prevent admission
+after probe failure or client death. Confirmation requires session/media absence,
+and the shared lock remains held until the capture scope exits.
 Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[fence adapter guide](dependency-source/PORTAL-FENCE-LAB.md) and
+[capture admission guide](dependency-source/PORTAL-CAPTURE-ADMISSION-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-10/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-11/dependency-source-preview.tar).
 
-The 76-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 119 tests pass, including 325 injected process
-exits. No phone or live desktop is changed, and no production updater is enabled.
-No runtime binaries are released. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
-retains upstream terms. Earlier source previews remain available.
+The 77-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 125 tests pass, including 326 injected process
+exits. No phone or live desktop is changed; no production updater or arbitrary
+client interception is enabled. No runtime binaries are released.
+The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
+terms. Earlier source previews remain available.

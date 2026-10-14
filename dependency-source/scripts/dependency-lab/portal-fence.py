@@ -15,6 +15,7 @@ a=importlib.util.module_from_spec(s);s.loader.exec_module(a)
 tx=a.lifecycle.tx
 LOCK='.portal-admission-lock'
 DIRTY='.portal-admission-pending'
+CAPTURE_PREFIX='.portal-capture-'
 
 def checkpoint(label):
     """Abrupt-exit test hook."""
@@ -60,10 +61,32 @@ class Fence:
         with self.locked(False) as (fd,lock):
             if self.pending(fd):raise a.Refused('Explicit reconciliation required')
             yield
+    @staticmethod
+    def capture_pending(fd):
+        return any(name.startswith(CAPTURE_PREFIX) for name in os.listdir(fd))
+    @contextlib.contextmanager
+    def capture_client(self):
+        """Durable unresolved receipt precedes any portal call.
+
+        Caller must confirm cleanup with an authoritative, bounded probe while
+        still holding the shared lock. Exceptions/death preserve the receipt.
+        Unresolved capture receipts cannot be cleared by transaction recovery.
+        """
+        with self.locked(False) as (fd,lock):
+            if self.pending(fd):raise a.Refused('Explicit reconciliation required')
+            name=CAPTURE_PREFIX+secrets.token_hex(16)
+            receipt=os.open(name,os.O_CREAT|os.O_EXCL|os.O_WRONLY|os.O_NOFOLLOW,0o600,dir_fd=fd)
+            try:os.write(receipt,b'capture cleanup unconfirmed\n');os.fsync(receipt)
+            finally:os.close(receipt)
+            os.fsync(fd)
+            handle=CaptureReceipt(fd,name)
+            try:yield handle
+            finally:handle.active=False
     @contextlib.contextmanager
     def acquire(self):
         with self.locked(True) as (fd,lock):
             if self.pending(fd):raise a.Refused('Explicit reconciliation required')
+            if self.capture_pending(fd):raise a.Refused('Capture cleanup unconfirmed')
             marker=os.open(DIRTY,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600,dir_fd=fd)
             try:os.write(marker,b'private admission pending\n');os.fsync(marker)
             finally:os.close(marker)
@@ -82,6 +105,7 @@ class Fence:
         Exceptions retain the pending marker; no forced client termination.
         """
         with self.locked(True) as (fd,lock):
+            if self.capture_pending(fd):raise a.Refused('Capture cleanup unconfirmed')
             if not self.pending(fd):raise a.Refused('No pending admission')
             with tx.transaction(self.root) as (rootfd,txfd,journal):
                 has_lifecycle='lifecycle' in journal
@@ -106,3 +130,11 @@ class Lease:
         if (st.st_dev,st.st_ino)!=self.identity or not Fence.pending(self.fd):raise a.Refused('Lost admission evidence')
         return dict(token=self.token,epoch=self.epoch,fenced=True,complete=True,responsive=True,
             observed_at=time.monotonic(),frontend_sessions=[],backend_sessions=[],requests=[],media_nodes=[],unknown_clients=[])
+
+class CaptureReceipt:
+    def __init__(self,fd,name):
+        self.fd=fd;self.name=name;self.active=True;self.pid=os.getpid()
+    def confirm_cleanup(self,probe):
+        if not self.active or self.pid!=os.getpid():raise a.Refused('Expired capture receipt')
+        if probe() is not True:raise a.Refused('Cleanup not confirmed')
+        os.unlink(self.name,dir_fd=self.fd);os.fsync(self.fd);self.active=False

@@ -39,3 +39,6 @@ Next: connect cooperating admission to an isolated real portal client lifecycle,
 including keeping the admission lock until all media/session state is gone.
 Production interception, unknown-client accounting and phone acceptance remain
 separate requirements; no live updater is enabled.
+
+[Real capture admission tests](PORTAL-CAPTURE-ADMISSION-LAB.md) now retain durable
+unresolved capture receipts until session/media cleanup is confirmed.

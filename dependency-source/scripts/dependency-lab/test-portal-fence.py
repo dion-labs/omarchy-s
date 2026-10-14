@@ -69,6 +69,23 @@ class Fences(unittest.TestCase):
   root,h,before,g=self.fixture();(root/m.LOCK).symlink_to('/dev/null')
   with self.assertRaises(OSError):
    with g.client():pass
+ def test_capture_client_death_keeps_durable_refusal(self):
+  root,h,before,g=self.fixture()
+  p=self.child(root,'with g.capture_client(): os._exit(93)\n');out,err=p.communicate(timeout=3);self.assertEqual(p.returncode,93,err)
+  self.assertTrue(list(root.glob(m.CAPTURE_PREFIX+'*')))
+  with self.assertRaises(m.a.Refused):
+   with g.acquire():pass
+  with self.assertRaises(m.a.Refused):g.reconcile(h)
+  self.assertEqual(f.f.state(root),before)
+  print('capture client exits verified 1',flush=True)
+ def test_capture_probe_requires_strict_confirmation(self):
+  root,h,before,g=self.fixture()
+  with g.capture_client() as receipt:
+   for value in (False,None,1,[]):
+    with self.assertRaises(m.a.Refused):receipt.confirm_cleanup(lambda:value)
+   receipt.confirm_cleanup(lambda:True)
+   with self.assertRaises(m.a.Refused):receipt.confirm_cleanup(lambda:True)
+  with g.acquire():pass
  def test_invalid_deadline(self):
   for value in (True,0,3,float('inf'),float('nan')):
    with self.assertRaises(ValueError):m.Fence('/unused',value)

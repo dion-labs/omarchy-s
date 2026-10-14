@@ -58,3 +58,6 @@ This is measured capture/lifecycle evidence, not physical display acceptance or
 interactive chooser validation. There is no production updater. Next: define
 refusal and reconciliation rules for active, unknown and unresponsive clients before
 adapting these contracts to a running service.
+
+The [update admission contract](PORTAL-ADMISSION-LAB.md) refuses incomplete or
+active inventories and requires a continuously held exclusive admission fence.

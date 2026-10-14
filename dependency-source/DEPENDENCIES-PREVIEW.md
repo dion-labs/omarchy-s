@@ -108,3 +108,6 @@ explicit read-only staged payload mount and accepts no skipped results.
 The [frontend capture lab](PORTAL-FRONTEND-LAB.md) adds original test fixtures and
 a hash-pinned private builder recipe. External package license identifiers remain
 upstream metadata; no package binaries or generated protocol code are exported.
+
+The [update admission contract](PORTAL-ADMISSION-LAB.md) refuses incomplete or
+active inventories and requires a continuously held exclusive admission fence.

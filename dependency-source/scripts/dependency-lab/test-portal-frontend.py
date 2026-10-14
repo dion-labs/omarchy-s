@@ -124,6 +124,19 @@ class Frontend(unittest.TestCase):
         for p in reversed(self.children):self.stop(p)
         for log in self.logs:log.close()
         shutil.rmtree(self.root)
+    def test_closed_tracked_sessions_cannot_authorize_update(self):
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('admission',HERE/'portal-admission.py')
+        admission=importlib.util.module_from_spec(spec);spec.loader.exec_module(admission)
+        session=self.create();node=self.start(session);self.capture(session,node)
+        self.close_session(session);self.assert_gone(session,node)
+        # These real observed objects are gone, but we cannot enumerate all clients
+        # or fence new requests. Never turn this local success into global approval.
+        observation=dict(fenced=False,complete=False,responsive=True,token='lab',epoch='lab',
+            observed_at=time.monotonic(),frontend_sessions=[],backend_sessions=[],
+            requests=[],media_nodes=[],unknown_clients=[])
+        with self.assertRaises(admission.Refused):
+            admission.require_idle(observation,'lab','lab',time.monotonic())
     def test_frames_and_explicit_close(self):
         session=self.create();node=self.start(session);values=self.capture(session,node);self.close_session(session);self.assert_gone(session,node)
         print('capture proof',json.dumps(values),flush=True)

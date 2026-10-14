@@ -1,32 +1,34 @@
-# Dependency-source preview 8
+# Dependency-source preview 9
 
-This source preview adds a real headless Phoc compositor, portal frontend and
-PipeWire frame consumer to the isolated lifecycle laboratory. A 50-package overlay
-reconstructs its private ARM64 environment from the existing Arch builder, using
-exact package hashes and runtime/XML checks. Packages and images are not assets.
+Updates now have an isolated admission wrapper that refuses active or unresolved
+frontend/backend sessions, requests, media nodes and unknown clients. It also
+refuses missing, stale, malformed or unresponsive inventories and changed fence
+identity. Successful admission requires an adapter-owned exclusive fence that
+prevents new clients/requests throughout apply or recovery.
 
-## Validation and findings
+## Validation
 
-All 96 tests pass without skips from the extracted source archive, including five
-frontend tests and four builder-input tests. The previous 318 injected-exit cases
-are unchanged. Actual changing 1280x720 frames traverse OpenPipeWireRemote;
-explicit session close, application disconnect and repeated capture cycles clean
-up sessions and media. Backend death removes media but leaves frontend session
-state until explicit closure. A Request.Close timeout remains an unknown outcome:
-a later response may arrive. Explicit session reconciliation succeeds.
+All 109 tests pass without skips from the extracted source archive. Twelve new
+contract tests verify refusal without service stop or payload modification,
+probe timeout, post-stop request races, fence loss, explicit recovery and hook
+failure. One new real frontend capture test closes its tracked sessions/media
+and still refuses update authorization: complete inventory and fencing are absent.
+The previous 318 injected process exits are unchanged; no new crash-coverage claim.
 
-Two normalized 70-file exports match. All 69 attribution records verify; source
-links and privacy findings were reviewed. Earlier boot/desktop inventories remain
-unchanged. The original fixtures and integration use the scoped MIT grant;
-upstream package metadata and generated protocol code retain upstream terms.
-Rolling package URLs may expire; preserve a verified cache. No fresh package
-signature-verification claim is made.
+Two normalized 73-file exports match, 72 attribution entries verify and source
+links/privacy findings are reviewed. Earlier boot/desktop inventories and runtime
+pins remain unchanged. No phone or live desktop was contacted.
 
-## Scope and next step
+## Limits and next step
 
-See the [frontend laboratory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-8/dependency-source/PORTAL-FRONTEND-LAB.md).
-Capture uses ext-image-copy-capture and pixman, not the phone's GPU/wlr path.
-Interactive choosers, physical output, document portals and global client draining
-are not validated. No phone or host desktop session is contacted, and no live
-updater is enabled. Next: refusal/reconciliation rules for active, unknown and
-unresponsive clients before production adoption.
+Read the [admission contract](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-9/dependency-source/PORTAL-ADMISSION-LAB.md).
+The wrapper never cancels or force-closes clients. It rechecks after stopping,
+before payload writes; a failed check requires explicit recovery under a fresh
+fence/inventory. Adapter acquire/probe calls must be bounded and its fence must
+survive relevant races and release safely after coordinator death. These are
+adapter obligations, not guarantees supplied by the synchronous wrapper.
+
+No production collector/fence adapter or live updater is enabled. Empty tracked
+session lists cannot prove global quiescence. Next: implement and crash-test an
+exclusive private-session admission adapter before production integration.
+Phone GPU/wlr capture, chooser and physical acceptance remain separate.

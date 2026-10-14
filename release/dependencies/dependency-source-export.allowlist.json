@@ -15,12 +15,17 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "cf66e1e48501cdd243749757d74a5c52ca53677b87266b54292b0ebcc924078b",
+      "sha256": "47362cc6943713a4bd5fdad352e778b8edbdbb599c0a8851f4a019d3c7a50a8e",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-ADMISSION-LAB.md",
+      "sha256": "4216712bdcf2481871f4e070777d5f5e1cac6f23789e0f15c90e2e0970ef37f8",
       "mode": "0644"
     },
     {
       "path": "PORTAL-FRONTEND-LAB.md",
-      "sha256": "eb8a1ae25d255f1e2854d4eb2c89ef69d8241b065ebe9916595c7059dc43e964",
+      "sha256": "fbb42c5bb22f8c86bc6a13881f4ae78ff626499e7fbbaf157412a63ad10bbf92",
       "mode": "0644"
     },
     {
@@ -135,7 +140,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "f3427844d3542af3735c563512eb9c6a6d3f00f236531a853fd02a476b5cbde0",
+      "sha256": "4b74e95c818a747a0e582986db2c46055e5db0aba03044e1abb801d434add979",
       "mode": "0644"
     },
     {
@@ -191,6 +196,11 @@
     {
       "path": "scripts/dependency-lab/build-frontend-lab.py",
       "sha256": "76570a2d8eeffb878ccd3b5f850e8f5c0f171fc43cff252475c3a90380c1ff4a",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-admission.py",
+      "sha256": "9808fb6ab451fccf41421f5bd064c4a42c89a8450bcf2e49ffc47991e0c393cb",
       "mode": "0644"
     },
     {
@@ -259,13 +269,18 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/test-portal-admission.py",
+      "sha256": "afd7fcc481384f9c600c590ff98bc40d44a9afe5781e8206b4744450a0e97d68",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/dependency-lab/test-portal-child.py",
       "sha256": "f5fac9ad54b5190fb680472ad9856d754f8db2685c0774d0c855608c09437a1c",
       "mode": "0644"
     },
     {
       "path": "scripts/dependency-lab/test-portal-frontend.py",
-      "sha256": "1a71b024f7fe90904f0f4e923f679e0fb98ce016324cae7e98f3281de49c9305",
+      "sha256": "2419d51c032b703c887e101d49da3e46aea1764ccb857b715ef7f15791493dc2",
       "mode": "0644"
     },
     {

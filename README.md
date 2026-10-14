@@ -77,20 +77,20 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 8](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-8)
-adds real headless compositor/frontend capture tests and a reproducible private lab
-builder. Changing 1280x720 frames reach a PipeWire consumer. Explicit closure and
-application disconnect clean up sessions and media. Backend death and cancellation
-timeouts require explicit reconciliation; they do not establish global quiescence.
+[Dependency-source preview 9](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-9)
+adds a fail-closed update admission contract. Active sessions, pending requests,
+media nodes, unknown clients and incomplete or unresponsive inventories block
+updates. A continuously held exclusive admission fence is required; the laboratory
+has no production adapter capable of asserting that guarantee.
 Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
+[admission contract](dependency-source/PORTAL-ADMISSION-LAB.md),
 [frontend capture guide](dependency-source/PORTAL-FRONTEND-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-8/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-9/dependency-source-preview.tar).
 
-The 70-file payload lives under `dependency-source/`; its manifest and allowlist
-are under `release/dependencies/`. All 96 tests pass, retaining the earlier 318
-injected process exits. The lab uses isolated services and software rendering;
-phone GPU/wlr capture and live updater adoption remain separate checks. No phone
-or live session is changed. No package archives or runtime binaries are released.
-The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
-terms. Earlier boot, desktop and dependency previews remain available.
+The 73-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 109 tests pass, retaining the earlier 318
+injected process exits. Tests run against isolated fixtures and real private
+headless capture services. No phone or live desktop is changed. No runtime binaries
+are released. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
+retains upstream terms. Earlier boot, desktop and dependency previews remain available.

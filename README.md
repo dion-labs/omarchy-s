@@ -77,18 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 15](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-15)
-adds one reproducible acceptance command for the Linux and host suites. It verifies
-exact exported source and runtime identities and produces structured unittest
-results, a final receipt and hashed logs. Skips, failures and wrong counts refuse
-acceptance. Read the [acceptance guide](dependency-source/PORTAL-ACCEPTANCE.md),
-[dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md) and
+[Dependency-source preview 16](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-16)
+adds offline verification and comparison of saved acceptance evidence. Receipt,
+source/runtime, result and log identities must match; copied or incomplete runs
+cannot establish reproduction. Read the
+[evidence guide](dependency-source/PORTAL-EVIDENCE-VERIFICATION.md),
+[acceptance guide](dependency-source/PORTAL-ACCEPTANCE.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-15/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-16/dependency-source-preview.tar).
 
-The 88-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 147 tests pass: 145 Linux and 2 host tests.
-The earlier 333 injected-exit cases and two real capture interruption scenarios
-remain covered. No phone/live desktop is changed and no production updater is enabled.
-The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
-terms. No runtime binaries or local evidence are released; earlier previews remain available.
+The 91-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. Two full runs each pass 155 tests: 153 Linux and 2 host.
+Their source/runtime/test contracts match after independent artifact verification.
+Timing and logs may differ. This checks evidence consistency, not cryptographic
+proof of execution or independent hosts. No phone/live desktop is changed and no
+production updater is enabled. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
+retains upstream terms. No runtime binaries or local evidence are released.

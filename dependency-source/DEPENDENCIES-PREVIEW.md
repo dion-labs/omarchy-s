@@ -129,3 +129,6 @@ and container destruction with changing frames and unresolved capture receipts.
 
 Use the [acceptance command](PORTAL-ACCEPTANCE.md) to run Linux and host suites
 from exact exported source and retain structured results plus hashed logs.
+
+Use the [offline evidence verifier](PORTAL-EVIDENCE-VERIFICATION.md) to check saved
+acceptance artifacts and compare runs against the same source/runtime contract.

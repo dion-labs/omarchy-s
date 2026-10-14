@@ -17,7 +17,7 @@ CASES=[('scripts/release/test-private-builds.py',4),('scripts/toolchain-lab/test
 CASES += [('scripts/dependency-lab/test-'+name+'.py',count) for name,count in [
  ('native-usb',3),('acquire-sources',2),('stage-portal',6),('portal-ownership',7),('portal-transaction',18),
  ('portal-retention',11),('portal-lifecycle',10),('portal-child',9),('portal-session',8),('frontend-lab-inputs',4),
- ('portal-frontend',12),('portal-admission',12),('portal-fence',19),('portal-scope',5),('acceptance',6)]]
+ ('portal-frontend',12),('portal-admission',12),('portal-fence',19),('portal-scope',5),('acceptance',6),('acceptance-evidence',8)]]
 HOST=('scripts/dependency-lab/test-portal-scope-host.py',2)
 PIN='e3c43847acc34cd113f101087de3c113e7ae821c933515b0c55b2c92cbb7eb3b'
 
@@ -51,7 +51,7 @@ def main():
  p.add_argument('--builder-receipt',type=Path,required=True);p.add_argument('--stage',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
  out=args.output.resolve();stage=args.stage.resolve()
  if out.exists() or out==ROOT or ROOT in out.parents or out==stage or stage in out.parents:raise ValueError('Output must be new and outside source/stage')
- out.mkdir(parents=True);report={'schema':1,'status':'running','cases':[],'phone_contacted':False,'production_updater_enabled':False,
+ out.mkdir(parents=True);report={'schema':2,'run_id':secrets.token_hex(16),'status':'running','cases':[],'phone_contacted':False,'production_updater_enabled':False,
    'limits':['headless software capture, not phone GPU/wlr','trusted Docker engine and cooperating private clients','not global portal interception or production activation']}
  def save():
   draft=out/'acceptance.tmp';draft.write_text(json.dumps(report,indent=2)+'\n');draft.replace(out/'acceptance.json')

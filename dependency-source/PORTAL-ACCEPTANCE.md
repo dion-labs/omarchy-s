@@ -32,7 +32,7 @@ lock/backend hashes, per-suite counts, Linux/host totals, elapsed time and log/r
 hashes. `case-N.json` files come directly from unittest results, not log parsing.
 The runner rejects missing results, wrong counts, skips, expected failures and
 ordinary failures. `linux.log` and `host.log` preserve detailed output. Source and
-portal hashes are rechecked at completion. Current acceptance is147 tests:145 Linux
+portal hashes are rechecked at completion. Current acceptance is155 tests:153 Linux
 and2 host; the existing333 injected-exit cases and two real capture interruption
 scenarios are exercised by these suites, not independently counted by the runner.
 
@@ -49,3 +49,6 @@ These are private recovery guarantees, not a production update authorization,
 global portal inventory, physical display check or phone GPU/wlr acceptance.
 Next: add a reusable verifier for saved receipts and their source/runtime/log
 identities, so independent runs can be compared without trusting a summary alone.
+
+[Saved-evidence verification and comparison](PORTAL-EVIDENCE-VERIFICATION.md) validates
+receipt identities, every result/log and the declared reproduction contract offline.

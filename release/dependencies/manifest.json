@@ -1,7 +1,7 @@
 {
   "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
   "publication_cleared": false,
-  "allowlist_sha256": "0fc1bb96fab95a216edefb87bff9c62da35242f6d31d44a20ab72b2c2dbe320c",
+  "allowlist_sha256": "2b1c0047d2658c1dd093e9a9a735bb889a2ed0081400d8abedbc73c9f268fb4b",
   "files": [
     {
       "path": "DEPENDENCIES-LICENSE-MIT",
@@ -15,12 +15,12 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "19d0619def3b7d60ed4769822d62d00ea1639b325cc90177382a666d2caf6146",
+      "sha256": "884e9d9ad784e05c8a3d8926ed110b4bfbc3f30776476c6c5076eb868364aabf",
       "mode": "0644"
     },
     {
       "path": "PORTAL-ACCEPTANCE.md",
-      "sha256": "93dcd295523ec92ae0a92768e5d87b8ef46417a7dd88ef1cca75ef67c0639105",
+      "sha256": "8c1efd4714bc9d59c7f14c07db3a794fac9f4ee1094ce771d75274115d307206",
       "mode": "0644"
     },
     {
@@ -41,6 +41,11 @@
     {
       "path": "PORTAL-CAPTURE-SCOPE-E2E-LAB.md",
       "sha256": "76b3d4d01b3e75b5af96aea560df03d969f70bd241b5aa9b408931d923e72993",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-EVIDENCE-VERIFICATION.md",
+      "sha256": "5d957882b621ca031ba4b61fcbb04615f0d74d481e3cbc06292a90c543e6171d",
       "mode": "0644"
     },
     {
@@ -170,7 +175,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "87cb52a511926578b175e08658767a6faa7cdd779ce962a28507f4b65bfbadd4",
+      "sha256": "283bddcf26a7bb106524285fa7fb03a3594b8cc4079ac8a7209cc0cefe6e6f6f",
       "mode": "0644"
     },
     {
@@ -300,12 +305,17 @@
     },
     {
       "path": "scripts/dependency-lab/run-acceptance.py",
-      "sha256": "33314c707e61086469721ffc3ba409e814b5356a287f6588074c997e94f4622f",
+      "sha256": "54fa87c9e394390f9acb7f42481cddd8cacb77e7f2db5faae416d7264cf5a22c",
       "mode": "0644"
     },
     {
       "path": "scripts/dependency-lab/stage-portal.py",
       "sha256": "b3d15acee130adac6da9faaef66ff4c1f4e3d70ec627fdbcb514fbd1ba72568b",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-acceptance-evidence.py",
+      "sha256": "917a19fa6f4683c138861c6b739d8323f01fa6bf7b46018960366852ef5aafaa",
       "mode": "0644"
     },
     {
@@ -389,6 +399,11 @@
       "mode": "0644"
     },
     {
+      "path": "scripts/dependency-lab/verify-acceptance.py",
+      "sha256": "b5f8ad8734728fdd092dc9c92e7537c318870d2cdd67123fd917fc0859702196",
+      "mode": "0644"
+    },
+    {
       "path": "scripts/release/export-source.py",
       "sha256": "b367bbe67e1e76b63cfdbd375c78ab8403d9908f9ad898c72cd5fc5cbd5af870",
       "mode": "0644"
@@ -444,5 +459,5 @@
       "mode": "0644"
     }
   ],
-  "archive_sha256": "9ad54522fd65d2acef87346ebe02a96b52d4e49ebca65919c6c8e632b19523d3"
+  "archive_sha256": "ea9e02729d8c66cf52fc6325dd180e96ee0e6ba50afc221663d633315854284e"
 }

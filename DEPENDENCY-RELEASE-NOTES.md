@@ -1,32 +1,32 @@
-# Dependency-source preview 15
+# Dependency-source preview 16
 
-The private recovery suite now has one host acceptance command. It validates the
-release manifest hash and exact source membership/hashes/modes, rejects symlinks,
-checks the immutable ARM64 image and builder lock, and pins the portal executable.
-Linux tests use read-only source/stage mounts; host tests create only owned fixtures.
+Saved acceptance evidence now has an offline verifier. It checks trusted receipt
+and manifest hashes, exact source identity, builder/lock/portal identity, complete
+artifact membership, per-result/log hashes, strict test outcomes and summary totals.
+Comparison requires two verified runs with the same source/runtime/test contract;
+duration and each run's diagnostics may differ. New receipts carry random run IDs.
 
 ## Validation
 
-The new command passes all 147 tests from extracted source: 145 Linux and 2 host.
-Six new validator tests cover source drift, unsafe manifests, missing/extra files,
-symlinks/modes, failed/skipped results and incorrect counts. A separate negative
-invocation rejects a wrong manifest hash before tests and saves a failed receipt.
-Existing 333 injected-exit cases and two real capture interruption scenarios remain
-covered, without adding further crash scenarios in this release.
+Two complete exported-source runs each pass 155 tests: 153 Linux and 2 host, across
+20 suites. Eight new tests cover tampering, incomplete/linked artifacts, duplicate
+JSON keys, failed or copied runs, summary drift and runtime differences. The offline
+comparison verifies both evidence sets and reports equivalent contracts with
+distinct declared run IDs. Existing 333 injected-exit cases and two real capture
+interruption scenarios remain covered; no additional crash scenarios are claimed.
 
-Per-suite JSON comes directly from unittest results. The final receipt records
-source/runtime hashes, platform counts, per-suite outcomes and log/result hashes.
-Source and portal identity are checked again after testing. An incomplete/running
-receipt is not acceptance. Two normalized 88-file exports match; 87 attribution
-entries and links verify. Boot/desktop inventories and runtime pins are unchanged.
+Two normalized 91-file exports match; 90 attribution entries and source links verify.
+Privacy findings reviewed. Boot/desktop inventories and runtime pins unchanged.
+No phone or live desktop was contacted; local evidence is not a release asset.
 
 ## Limits and next step
 
-See the [acceptance guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-15/dependency-source/PORTAL-ACCEPTANCE.md).
-The manifest/runner must be obtained from a trusted release. Local diagnostics may
-contain host paths and are not release assets. Abrupt host/engine death can leave
-owned test fixtures requiring cleanup. This remains headless private-session proof,
-not phone GPU/wlr acceptance, global client interception or production activation.
+See the [evidence guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-16/dependency-source/PORTAL-EVIDENCE-VERIFICATION.md).
+Receipt hashes must come from a trusted record. Hash consistency and distinct run
+IDs do not authenticate execution or establish independent hosts. The verifier
+makes no Docker/device calls and does not re-execute the recorded image. Legacy
+receipt shape is supported only with a matching source/test registry.
 
-Next: add a reusable verifier for saved receipt, source/runtime and log identities,
-so independently produced evidence can be compared without trusting summary text.
+Next: use this consolidated evidence to define a minimal production integration
+candidate and explicit rollback/adoption gates. No phone updater is enabled by
+laboratory acceptance alone.

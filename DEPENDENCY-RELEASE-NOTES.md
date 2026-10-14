@@ -1,30 +1,31 @@
-# Dependency-source preview 12
+# Dependency-source preview 13
 
-Unresolved capture receipts can now retain immutable bus/service/session/media
-identity and be explicitly reconciled under exclusive admission. Recovery requires
-matching identity and confirmed frontend/backend/media absence. Missing identity,
-changed service owners, timeouts or incomplete evidence preserve the blocking record.
-No session close or process kill is performed by this recovery operation.
+Interrupted capture identity recording now has four forced-exit checkpoints.
+Drafts and unidentified records remain blocking. An explicit retirement operation
+can clear them only for a private container scope registered before capture and
+only with proof that the exact container was destroyed on the recorded engine.
+The root is permanently retired; it cannot become a new capture/update scope.
 
 ## Validation
 
-All 133 tests pass without skips from the extracted archive. Six new adapter tests
-cover recovery, identity drift, partial proof, unknown records/paths, recording
-validation, probe timeout and repeatable interruption. Two real frontend cases test
-active-session refusal followed by cleanup recovery, and refusal after service
-restart. The real probe checks identity before and after cleanup observation.
-One additional recovery forced exit brings the total to 327.
+All 140 tests pass without skips from extracted source: 139 Linux tests plus one
+opt-in host engine test. Four recording exits and two retirement exits bring the
+total to 333. Scope tests cover pre-binding, incomplete/changed proof, unsafe
+artifacts, terminal cleanup and repeatable partial cleanup after interruption.
+The host test refuses a live container, removes its own exact disposable container,
+verifies absence and engine identity, then retires synthetic capture evidence.
 
-Two normalized 78-file exports match; 77 attribution entries and links verify.
-Privacy findings reviewed; boot/desktop inventories and runtime pins unchanged.
-No phone or live desktop was contacted; real capture uses headless software rendering.
+Two normalized 82-file exports match; 81 attribution entries and source links verify.
+Privacy findings reviewed. Boot/desktop inventories and runtime pins unchanged.
+No phone or live desktop was contacted; test containers/volumes are owned fixtures.
 
 ## Limits and next step
 
-See the [recovery guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-12/dependency-source/PORTAL-CAPTURE-RECOVERY-LAB.md).
-Only trusted cooperating private clients are covered. Probes must be authoritative
-and bounded. Identity-less receipts and interrupted-recording drafts remain blocking;
-there is no automatic clearing path for them. No production updater is enabled.
+Read the [scope guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-13/dependency-source/PORTAL-SCOPE-RETIREMENT-LAB.md).
+Bindings cannot be inferred retroactively for old captures. Missing scope identity
+remains blocked. The module trusts a bounded host proof; it performs no engine
+commands or automatic destruction. Stopped/unreachable is insufficient. Transaction
+evidence remains untouched. No production updater or arbitrary-client gate exists.
 
-Next: test recording crashes/orphan drafts and define whole-private-session teardown
-proof for records that lost their identity, without treating uncertainty as cleanup.
+Next: place real capture wholly inside a registered disposable container and verify
+end-to-end crash recovery through container destruction and terminal retirement.

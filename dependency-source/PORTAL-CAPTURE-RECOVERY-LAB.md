@@ -34,3 +34,6 @@ confirmation. Records without identity intentionally have no automatic clearing 
 
 Next: test identity-recording crashes and ambiguous/orphan drafts, and define an
 explicit whole-private-session teardown proof for records whose identity was lost.
+
+[Private-scope retirement](PORTAL-SCOPE-RETIREMENT-LAB.md) tests recording crashes
+and terminal recovery after destruction of a scope registered before capture.

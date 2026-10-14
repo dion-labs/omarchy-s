@@ -132,6 +132,16 @@ class Fences(unittest.TestCase):
   self.assertTrue((root/name).exists());g.reconcile_capture(name,self.proof)
   with g.acquire():pass
   print('capture recovery exits verified 1',flush=True)
+ def test_identity_recording_crash_boundaries(self):
+  for label in ('capture-draft-created','capture-draft-synced','capture-draft-renamed','capture-identity-durable'):
+   root,h,before,g=self.fixture()
+   code='m.checkpoint=lambda label: os._exit(96) if label=='+repr(label)+' else None\nwith g.capture_client() as receipt: receipt.record_identity('+repr(self.identity())+')\n'
+   p=self.child(root,code);out,err=p.communicate(timeout=4);self.assertEqual(p.returncode,96,err)
+   self.assertTrue(list(root.glob(m.CAPTURE_PREFIX+'*')))
+   with self.assertRaises(m.a.Refused):
+    with g.acquire():pass
+   self.assertEqual(f.f.state(root),before)
+  print('identity recording exits verified 4',flush=True)
  def test_invalid_deadline(self):
   for value in (True,0,3,float('inf'),float('nan')):
    with self.assertRaises(ValueError):m.Fence('/unused',value)

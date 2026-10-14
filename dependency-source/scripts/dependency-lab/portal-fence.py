@@ -18,6 +18,7 @@ tx=a.lifecycle.tx
 LOCK='.portal-admission-lock'
 DIRTY='.portal-admission-pending'
 CAPTURE_PREFIX='.portal-capture-'
+RETIRED='.portal-scope-retiring'
 
 def checkpoint(label):
     """Abrupt-exit test hook."""
@@ -58,10 +59,15 @@ class Fence:
     def pending(fd):
         try:os.stat(DIRTY,dir_fd=fd,follow_symlinks=False);return True
         except FileNotFoundError:return False
+    @staticmethod
+    def retired(fd):
+        try:os.stat(RETIRED,dir_fd=fd,follow_symlinks=False);return True
+        except FileNotFoundError:return False
     @contextlib.contextmanager
     def client(self):
         with self.locked(False) as (fd,lock):
             if self.pending(fd):raise a.Refused('Explicit reconciliation required')
+            if self.retired(fd):raise a.Refused('Private scope retired')
             yield
     @staticmethod
     def capture_pending(fd):
@@ -76,6 +82,7 @@ class Fence:
         """
         with self.locked(False) as (fd,lock):
             if self.pending(fd):raise a.Refused('Explicit reconciliation required')
+            if self.retired(fd):raise a.Refused('Private scope retired')
             name=CAPTURE_PREFIX+secrets.token_hex(16)
             receipt=os.open(name,os.O_CREAT|os.O_EXCL|os.O_WRONLY|os.O_NOFOLLOW,0o600,dir_fd=fd)
             try:os.write(receipt,b'capture cleanup unconfirmed\n');os.fsync(receipt)
@@ -88,6 +95,7 @@ class Fence:
     def acquire(self):
         with self.locked(True) as (fd,lock):
             if self.pending(fd):raise a.Refused('Explicit reconciliation required')
+            if self.retired(fd):raise a.Refused('Private scope retired')
             if self.capture_pending(fd):raise a.Refused('Capture cleanup unconfirmed')
             marker=os.open(DIRTY,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600,dir_fd=fd)
             try:os.write(marker,b'private admission pending\n');os.fsync(marker)
@@ -121,6 +129,7 @@ class Fence:
         Exceptions retain the pending marker; no forced client termination.
         """
         with self.locked(True) as (fd,lock):
+            if self.retired(fd):raise a.Refused('Private scope retired')
             if self.capture_pending(fd):raise a.Refused('Capture cleanup unconfirmed')
             if not self.pending(fd):raise a.Refused('No pending admission')
             with tx.transaction(self.root) as (rootfd,txfd,journal):
@@ -157,12 +166,13 @@ class CaptureReceipt:
         if old!=b'capture cleanup unconfirmed\n':raise a.Refused('Identity already recorded or ambiguous')
         draft=CAPTURE_PREFIX+'draft-'+secrets.token_hex(16)
         handle=os.open(draft,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600,dir_fd=self.fd)
+        checkpoint('capture-draft-created')
         try:
             data=json.dumps({'schema':1,'identity':identity},sort_keys=True).encode()+b'\n'
             with os.fdopen(handle,'wb',closefd=False) as stream:stream.write(data);stream.flush()
-            os.fsync(handle)
+            os.fsync(handle);checkpoint('capture-draft-synced')
         finally:os.close(handle)
-        os.replace(draft,self.name,src_dir_fd=self.fd,dst_dir_fd=self.fd);os.fsync(self.fd)
+        os.replace(draft,self.name,src_dir_fd=self.fd,dst_dir_fd=self.fd);checkpoint('capture-draft-renamed');os.fsync(self.fd)
         checkpoint('capture-identity-durable')
     def confirm_cleanup(self,probe):
         if not self.active or self.pid!=os.getpid():raise a.Refused('Expired capture receipt')

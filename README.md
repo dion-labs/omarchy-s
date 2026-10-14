@@ -77,18 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 12](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-12)
-adds recorded capture identity and explicit conservative recovery. Cleanup evidence
-must match the recorded bus, service owners, session and PipeWire identity; missing,
-changed or unavailable identity keeps admission blocked. Recovery never force-closes
-sessions. Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[capture recovery guide](dependency-source/PORTAL-CAPTURE-RECOVERY-LAB.md) and
+[Dependency-source preview 13](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-13)
+tests interrupted identity recording and adds terminal retirement of pre-registered
+private container scopes. Unidentified capture records require proof that their
+entire disposable container was destroyed; the old root then stays retired.
+Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
+[scope retirement guide](dependency-source/PORTAL-SCOPE-RETIREMENT-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-12/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-13/dependency-source-preview.tar).
 
-The 78-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 133 tests pass, including 327 injected process
-exits. No phone or live desktop is changed; no production updater or arbitrary
-client interception is enabled. No runtime binaries are released.
+The 82-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 140 tests pass, including 333 injected process
+exits. The host test uses an owned disposable container and synthetic receipts;
+real capture inside that retired container is the next integration check.
+No phone or live desktop is changed, and no production updater is enabled.
 The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
-terms. Earlier source previews remain available.
+terms. No runtime binaries are released; earlier previews remain available.

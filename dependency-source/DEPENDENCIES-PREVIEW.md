@@ -120,3 +120,6 @@ unresolved capture receipts until session/media cleanup is confirmed.
 
 [Recorded capture recovery](PORTAL-CAPTURE-RECOVERY-LAB.md) now supports exact
 identity reconciliation; unidentified or changed-service records remain blocking.
+
+[Private-scope retirement](PORTAL-SCOPE-RETIREMENT-LAB.md) tests recording crashes
+and terminal recovery after destruction of a scope registered before capture.

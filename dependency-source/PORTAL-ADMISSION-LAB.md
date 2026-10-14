@@ -40,3 +40,6 @@ inspected portal backend nor the current laboratory can prove all clients absent
 and fence new requests. Next: implement and crash-test an exclusive private-session
 admission adapter before considering a production integration. Preserve the
 existing phone wlr/GPU, chooser and physical checks for later.
+
+The [cooperative fence adapter](PORTAL-FENCE-LAB.md) now implements this contract
+for private test sessions only, with durable crash refusal and explicit recovery.

@@ -77,20 +77,18 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 9](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-9)
-adds a fail-closed update admission contract. Active sessions, pending requests,
-media nodes, unknown clients and incomplete or unresponsive inventories block
-updates. A continuously held exclusive admission fence is required; the laboratory
-has no production adapter capable of asserting that guarantee.
+[Dependency-source preview 10](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-10)
+adds an isolated cooperative admission adapter. Shared session locks exclude
+updates; exclusive update locks exclude new cooperating sessions. A durable pending
+marker keeps admission closed after coordinator death until explicit reconciliation.
+This is not interception of arbitrary desktop/portal applications.
 Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[admission contract](dependency-source/PORTAL-ADMISSION-LAB.md),
-[frontend capture guide](dependency-source/PORTAL-FRONTEND-LAB.md) and
+[fence adapter guide](dependency-source/PORTAL-FENCE-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-9/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-10/dependency-source-preview.tar).
 
-The 73-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 109 tests pass, retaining the earlier 318
-injected process exits. Tests run against isolated fixtures and real private
-headless capture services. No phone or live desktop is changed. No runtime binaries
-are released. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
-retains upstream terms. Earlier boot, desktop and dependency previews remain available.
+The 76-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 119 tests pass, including 325 injected process
+exits. No phone or live desktop is changed, and no production updater is enabled.
+No runtime binaries are released. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
+retains upstream terms. Earlier source previews remain available.

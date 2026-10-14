@@ -111,3 +111,6 @@ upstream metadata; no package binaries or generated protocol code are exported.
 
 The [update admission contract](PORTAL-ADMISSION-LAB.md) refuses incomplete or
 active inventories and requires a continuously held exclusive admission fence.
+
+The [cooperative fence adapter](PORTAL-FENCE-LAB.md) now implements this contract
+for private test sessions only, with durable crash refusal and explicit recovery.

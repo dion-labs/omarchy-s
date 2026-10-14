@@ -15,12 +15,17 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "47362cc6943713a4bd5fdad352e778b8edbdbb599c0a8851f4a019d3c7a50a8e",
+      "sha256": "7c5b7e5bf0733775a80e0c856fda0a6c85170d0dc506c9b6cf0af112da722e2b",
       "mode": "0644"
     },
     {
       "path": "PORTAL-ADMISSION-LAB.md",
-      "sha256": "4216712bdcf2481871f4e070777d5f5e1cac6f23789e0f15c90e2e0970ef37f8",
+      "sha256": "562c7833a25bdb5effd600011395d1dad606addf711abdcd462279d9b81f0275",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-FENCE-LAB.md",
+      "sha256": "896c475fb01bd5a644f9585ff7a1289bf04e5704d2bb2e03a05b62a87caf5df2",
       "mode": "0644"
     },
     {
@@ -140,7 +145,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "4b74e95c818a747a0e582986db2c46055e5db0aba03044e1abb801d434add979",
+      "sha256": "bd0d71dd0b0eb74e142ea30444425cb2a1cd9cfb2ab65a494e4e76cad54a964d",
       "mode": "0644"
     },
     {
@@ -206,6 +211,11 @@
     {
       "path": "scripts/dependency-lab/portal-child.py",
       "sha256": "7d5206d4137bc384582e24e9b5b59fc9c3198934dbcb7f46714992fbd20b5a0e",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-fence.py",
+      "sha256": "891fd867f4424a2434af2206a4934d427c9da5df0dd821e25db827cdfe417d64",
       "mode": "0644"
     },
     {
@@ -276,6 +286,11 @@
     {
       "path": "scripts/dependency-lab/test-portal-child.py",
       "sha256": "f5fac9ad54b5190fb680472ad9856d754f8db2685c0774d0c855608c09437a1c",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-fence.py",
+      "sha256": "d81769ad71f0981f692dc77b7a1d2104f0916e108d9b478f01a5bc91cf718a0c",
       "mode": "0644"
     },
     {

@@ -16,7 +16,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "47362cc6943713a4bd5fdad352e778b8edbdbb599c0a8851f4a019d3c7a50a8e",
+      "sha256": "7c5b7e5bf0733775a80e0c856fda0a6c85170d0dc506c9b6cf0af112da722e2b",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -24,7 +24,13 @@
       "path": "PORTAL-ADMISSION-LAB.md",
       "classification": "local-expression",
       "scope": "Original isolated admission contract, tests and documentation; no upstream ownership claim",
-      "sha256": "4216712bdcf2481871f4e070777d5f5e1cac6f23789e0f15c90e2e0970ef37f8"
+      "sha256": "562c7833a25bdb5effd600011395d1dad606addf711abdcd462279d9b81f0275"
+    },
+    {
+      "path": "PORTAL-FENCE-LAB.md",
+      "classification": "local-expression",
+      "scope": "Original private cooperative admission adapter, tests and documentation",
+      "sha256": "896c475fb01bd5a644f9585ff7a1289bf04e5704d2bb2e03a05b62a87caf5df2"
     },
     {
       "path": "PORTAL-FRONTEND-LAB.md",
@@ -243,6 +249,12 @@
       "sha256": "7d5206d4137bc384582e24e9b5b59fc9c3198934dbcb7f46714992fbd20b5a0e"
     },
     {
+      "path": "scripts/dependency-lab/portal-fence.py",
+      "classification": "local-expression",
+      "scope": "Original private cooperative admission adapter, tests and documentation",
+      "sha256": "891fd867f4424a2434af2206a4934d427c9da5df0dd821e25db827cdfe417d64"
+    },
+    {
       "path": "scripts/dependency-lab/portal-frame-probe.c",
       "classification": "local-expression",
       "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
@@ -325,6 +337,12 @@
       "classification": "local-expression",
       "scope": "Original isolated child-process adapter, fixture and tests; no upstream ownership claim",
       "sha256": "f5fac9ad54b5190fb680472ad9856d754f8db2685c0774d0c855608c09437a1c"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-fence.py",
+      "classification": "local-expression",
+      "scope": "Original private cooperative admission adapter, tests and documentation",
+      "sha256": "d81769ad71f0981f692dc77b7a1d2104f0916e108d9b478f01a5bc91cf718a0c"
     },
     {
       "path": "scripts/dependency-lab/test-portal-frontend.py",

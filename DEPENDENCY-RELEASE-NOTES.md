@@ -1,34 +1,33 @@
-# Dependency-source preview 9
+# Dependency-source preview 10
 
-Updates now have an isolated admission wrapper that refuses active or unresolved
-frontend/backend sessions, requests, media nodes and unknown clients. It also
-refuses missing, stale, malformed or unresponsive inventories and changed fence
-identity. Successful admission requires an adapter-owned exclusive fence that
-prevents new clients/requests throughout apply or recovery.
+The private-session admission contract now has a cooperative flock adapter.
+Sessions hold shared locks throughout their lifetime; updates require exclusivity.
+Nonblocking acquisition has a bounded contention deadline. A durable pending marker
+blocks client admission after exceptions or coordinator death, even after kernel
+locks are released. Explicit reconciliation verifies an untouched prepared state
+or restores the prior payload/service before reopening admission.
 
 ## Validation
 
-All 109 tests pass without skips from the extracted source archive. Twelve new
-contract tests verify refusal without service stop or payload modification,
-probe timeout, post-stop request races, fence loss, explicit recovery and hook
-failure. One new real frontend capture test closes its tracked sessions/media
-and still refuses update authorization: complete inventory and fencing are absent.
-The previous 318 injected process exits are unchanged; no new crash-coverage claim.
+All 119 tests pass without skips from the extracted source archive. Ten new tests
+cover concurrent clients, cross-process exclusion, dead-client cleanup, bounded
+contention, apply/rollback, exception recovery, invalid locks/deadlines and stale
+leases. Six update-boundary forced exits and one reconciliation exit bring total
+injected exits to 325. Each crash keeps clients blocked until explicit reconciliation.
 
-Two normalized 73-file exports match, 72 attribution entries verify and source
-links/privacy findings are reviewed. Earlier boot/desktop inventories and runtime
-pins remain unchanged. No phone or live desktop was contacted.
+Two normalized 76-file exports match; 75 attribution entries and documentation
+links verify. Privacy findings reviewed. Boot/desktop inventories and runtime pins
+remain unchanged. No phone or live desktop was contacted.
 
-## Limits and next step
+## Scope and next step
 
-Read the [admission contract](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-9/dependency-source/PORTAL-ADMISSION-LAB.md).
-The wrapper never cancels or force-closes clients. It rechecks after stopping,
-before payload writes; a failed check requires explicit recovery under a fresh
-fence/inventory. Adapter acquire/probe calls must be bounded and its fence must
-survive relevant races and release safely after coordinator death. These are
-adapter obligations, not guarantees supplied by the synchronous wrapper.
+See the [fence adapter guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-10/dependency-source/PORTAL-FENCE-LAB.md).
+Completeness applies only to cooperating sessions in private test roots. The adapter
+does not intercept D-Bus, inspect arbitrary applications or provide a production
+portal gate. The filesystem and cooperating callers are trusted. Lock contention
+is bounded; filesystem I/O has no hard real-time guarantee. Inherited locks can
+cause refusal rather than unsafe success. No live updater is enabled.
 
-No production collector/fence adapter or live updater is enabled. Empty tracked
-session lists cannot prove global quiescence. Next: implement and crash-test an
-exclusive private-session admission adapter before production integration.
-Phone GPU/wlr capture, chooser and physical acceptance remain separate.
+Next: integrate cooperating admission with an isolated real portal client, holding
+the session lock until backend/frontend sessions and media are confirmed gone.
+Unknown-client accounting and phone acceptance remain separate requirements.

@@ -104,3 +104,7 @@ Its separate 48-test transaction/retention/lifecycle/child suites requires the d
 The optional [real backend session laboratory](PORTAL-SESSION-LAB.md) adds eight
 tests using the hash-pinned portal executable on a private bus; it requires the
 explicit read-only staged payload mount and accepts no skipped results.
+
+The [frontend capture lab](PORTAL-FRONTEND-LAB.md) adds original test fixtures and
+a hash-pinned private builder recipe. External package license identifiers remain
+upstream metadata; no package binaries or generated protocol code are exported.

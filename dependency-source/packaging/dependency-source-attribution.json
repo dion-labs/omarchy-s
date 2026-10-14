@@ -10,15 +10,21 @@
     },
     {
       "path": "DEPENDENCIES-LICENSING.md",
-      "sha256": "c2aeea7e91b335fd594d0699d2bcca0e131a25d5250dc30726c7daccdff0dc29",
+      "sha256": "5e9bda543918f3ee89a02c16c17292fe355dd2610fea77a2165a630a6991491c",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "8dd5db94811afd987b6d0e17f437ba0612669dc2ae0ddc0c2681f9468803791e",
+      "sha256": "cf66e1e48501cdd243749757d74a5c52ca53677b87266b54292b0ebcc924078b",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
+    },
+    {
+      "path": "PORTAL-FRONTEND-LAB.md",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "eb8a1ae25d255f1e2854d4eb2c89ef69d8241b065ebe9916595c7059dc43e964"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
@@ -171,6 +177,12 @@
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
+      "path": "packaging/portal-frontend-lab.lock.json",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "bfcf86502df93940b5b7dc0316896aea2e9510285962db130a65d04caf6e976e"
+    },
+    {
       "path": "packaging/toolchains/arch-archives.lock.json",
       "sha256": "17c549e500e6dc7b9ed7b89dfdae397538353bf3caa541fe4026c72768b7ab1e",
       "classification": "local-expression",
@@ -207,10 +219,22 @@
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
+      "path": "scripts/dependency-lab/build-frontend-lab.py",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "76570a2d8eeffb878ccd3b5f850e8f5c0f171fc43cff252475c3a90380c1ff4a"
+    },
+    {
       "path": "scripts/dependency-lab/portal-child.py",
       "classification": "local-expression",
       "scope": "Original isolated child-process adapter, fixture and tests; no upstream ownership claim",
       "sha256": "7d5206d4137bc384582e24e9b5b59fc9c3198934dbcb7f46714992fbd20b5a0e"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-frame-probe.c",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "1ae00b137257af0bf4aebe1d2497956d06a0b7daada57371374bcac8e58df5d3"
     },
     {
       "path": "scripts/dependency-lab/portal-lifecycle.py",
@@ -223,6 +247,12 @@
       "sha256": "50e3d146a07e0239c5cf2b73cc2d44b68cdcf55d1c25775a89b30dcd615b01dc",
       "classification": "local-expression",
       "scope": "Original integration and offline tests only; identifiers and dependency facts are not claimed as original expression"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-painter.c",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "3f527d40fee3e9d4c844d3c68a7e24db94f1a0d1cb4d95b0c39851529c96bd95"
     },
     {
       "path": "scripts/dependency-lab/portal-retention.py",
@@ -261,6 +291,12 @@
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
     {
+      "path": "scripts/dependency-lab/test-frontend-lab-inputs.py",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "cc7e8a52d1964efdd30badc747d5ff88b48e2784d160133fda5ed41f8ca0e2c3"
+    },
+    {
       "path": "scripts/dependency-lab/test-native-usb.py",
       "sha256": "53c17ca7e8c5aefc0db864ec4a930ffcfd5a19204f61d8132697c3314b02a9ec",
       "classification": "local-expression",
@@ -271,6 +307,12 @@
       "classification": "local-expression",
       "scope": "Original isolated child-process adapter, fixture and tests; no upstream ownership claim",
       "sha256": "f5fac9ad54b5190fb680472ad9856d754f8db2685c0774d0c855608c09437a1c"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-frontend.py",
+      "classification": "local-expression",
+      "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
+      "sha256": "1a71b024f7fe90904f0f4e923f679e0fb98ce016324cae7e98f3281de49c9305"
     },
     {
       "path": "scripts/dependency-lab/test-portal-lifecycle.py",

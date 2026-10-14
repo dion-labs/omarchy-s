@@ -1,0 +1,578 @@
+{
+  "schema": 1,
+  "scope": "Additional packages for private headless portal lab; no packages or images distributed",
+  "base_lock_sha256": "17c549e500e6dc7b9ed7b89dfdae397538353bf3caa541fe4026c72768b7ab1e",
+  "acquisition": "Exact hash required; rolling mirror URLs may expire. Preserve a verified cache. Hash pins do not claim new signature verification.",
+  "packages": [
+    {
+      "filename": "at-spi2-core-2.60.7-1-aarch64.pkg.tar.xz",
+      "name": "at-spi2-core",
+      "version": "2.60.7-1",
+      "architecture": "aarch64",
+      "sha256": "5fec9625acccd39bd063d4c9f37365cc099070e5abef9eb889e3bbe0a04d32b8",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/at-spi2-core-2.60.7-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "cairo-1.18.6-1-aarch64.pkg.tar.xz",
+      "name": "cairo",
+      "version": "1.18.6-1",
+      "architecture": "aarch64",
+      "sha256": "8c5a5c0470ff369386a3597d1e414c79c951a18d03313c162e5fff3d91989773",
+      "licenses": [
+        "LGPL-2.1-only OR MPL-1.1"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/cairo-1.18.6-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "fontconfig-2:2.18.3-2-aarch64.pkg.tar.xz",
+      "name": "fontconfig",
+      "version": "2:2.18.3-2",
+      "architecture": "aarch64",
+      "sha256": "8f3bf0609eb73b15526179357e139441bf1a9a502c3b948f0925e9b1b586129a",
+      "licenses": [
+        "HPND AND Unicode-DFS-2016"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/fontconfig-2%3A2.18.3-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "freetype2-2.14.3-1-aarch64.pkg.tar.xz",
+      "name": "freetype2",
+      "version": "2.14.3-1",
+      "architecture": "aarch64",
+      "sha256": "080b6aa7827298e5b92800229d76689e0dbff08cd96690ae75e8feedf6a9ae5d",
+      "licenses": [
+        "FTL OR GPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/freetype2-2.14.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "fribidi-1.0.17-1-aarch64.pkg.tar.xz",
+      "name": "fribidi",
+      "version": "1.0.17-1",
+      "architecture": "aarch64",
+      "sha256": "44f00133167fba3debb1afae29ccb23e9abbada84c32b3580dbc33b2e3b53f09",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/fribidi-1.0.17-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "fuse3-3.18.3-1-aarch64.pkg.tar.xz",
+      "name": "fuse3",
+      "version": "3.18.3-1",
+      "architecture": "aarch64",
+      "sha256": "ea1a152ebe20cecf157378c8917e04b976e89287e2471dd20117b3923b3f0ebb",
+      "licenses": [
+        "GPL-2.0-only",
+        "LGPL-2.1-only"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/fuse3-3.18.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "gdk-pixbuf2-2.44.6-2-aarch64.pkg.tar.xz",
+      "name": "gdk-pixbuf2",
+      "version": "2.44.6-2",
+      "architecture": "aarch64",
+      "sha256": "b82777737dc0bd778040595ef78f73b9f03c06f4e45320490f5dbf80e393b657",
+      "licenses": [
+        "LGPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gdk-pixbuf2-2.44.6-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "glycin-2.1.5-2-aarch64.pkg.tar.xz",
+      "name": "glycin",
+      "version": "2.1.5-2",
+      "architecture": "aarch64",
+      "sha256": "4e81cfef254f37e444a35c15d023f2fcdbd1586e8b48f47899ed9d81c52e9f4c",
+      "licenses": [
+        "MPL-2.0 OR LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/glycin-2.1.5-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "gnome-desktop-1:44.5-1-aarch64.pkg.tar.xz",
+      "name": "gnome-desktop",
+      "version": "1:44.5-1",
+      "architecture": "aarch64",
+      "sha256": "6b134750543194c89c1f5887133f63df72e0356d4bdef8b70a4f359150983f4c",
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gnome-desktop-1%3A44.5-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "gnome-desktop-common-1:44.5-1-aarch64.pkg.tar.xz",
+      "name": "gnome-desktop-common",
+      "version": "1:44.5-1",
+      "architecture": "aarch64",
+      "sha256": "5a103eac06906d162150cbbe002aecbc77e09a154d1dac039730f93b64aa0df4",
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gnome-desktop-common-1%3A44.5-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "gobject-introspection-runtime-1.86.0-2-aarch64.pkg.tar.xz",
+      "name": "gobject-introspection-runtime",
+      "version": "1.86.0-2",
+      "architecture": "aarch64",
+      "sha256": "fe0d6a936340bf8b6752d96f198f130ad0fdbc39521dd71257346f297a0287ae",
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gobject-introspection-runtime-1.86.0-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "graphite-1:1.3.15-1-aarch64.pkg.tar.xz",
+      "name": "graphite",
+      "version": "1:1.3.15-1",
+      "architecture": "aarch64",
+      "sha256": "87c700c71585c7f44f951928184deb690a78d39ad36ea9b6c07c59d7592e4c92",
+      "licenses": [
+        "LGPL-2.1-or-later OR MPL-2.0 OR GPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/graphite-1%3A1.3.15-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "gsettings-desktop-schemas-50.1-1-any.pkg.tar.xz",
+      "name": "gsettings-desktop-schemas",
+      "version": "50.1-1",
+      "architecture": "any",
+      "sha256": "f1168df169d0166adc756205be0c202f939d0845209c7e8010e452760e18bb26",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gsettings-desktop-schemas-50.1-1-any.pkg.tar.xz"
+    },
+    {
+      "filename": "gsettings-system-schemas-50.1-1-any.pkg.tar.xz",
+      "name": "gsettings-system-schemas",
+      "version": "50.1-1",
+      "architecture": "any",
+      "sha256": "790657e711431d6d1adb6977625d59591f4ff2e29e815e334063b602b620fec6",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gsettings-system-schemas-50.1-1-any.pkg.tar.xz"
+    },
+    {
+      "filename": "gtk3-1:3.24.52-1-aarch64.pkg.tar.xz",
+      "name": "gtk3",
+      "version": "1:3.24.52-1",
+      "architecture": "aarch64",
+      "sha256": "bad14c1e2e4fa9cd662a501d400a3b74858ae5721e28ca42257fdbd7fe632944",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/gtk3-1%3A3.24.52-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "harfbuzz-14.5.0-1-aarch64.pkg.tar.xz",
+      "name": "harfbuzz",
+      "version": "14.5.0-1",
+      "architecture": "aarch64",
+      "sha256": "fcd8e850bdc41268a5d4d9c2de98b5c38f80c889ba5faace7351470f6bf4b622",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/harfbuzz-14.5.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "json-glib-1.10.8-1-aarch64.pkg.tar.xz",
+      "name": "json-glib",
+      "version": "1.10.8-1",
+      "architecture": "aarch64",
+      "sha256": "dc2a5ff08d3d7c8fcadeb820411aa31d5f1522e425045f6408fbf134db817d85",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/json-glib-1.10.8-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "lcms2-2.19.1-1-aarch64.pkg.tar.xz",
+      "name": "lcms2",
+      "version": "2.19.1-1",
+      "architecture": "aarch64",
+      "sha256": "5f93d01820b4e1a463f3cb11e19916bb3761b4faca20d4e1f0854329ba3f46f8",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/lcms2-2.19.1-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libcloudproviders-0.4.1-1-aarch64.pkg.tar.xz",
+      "name": "libcloudproviders",
+      "version": "0.4.1-1",
+      "architecture": "aarch64",
+      "sha256": "83dfe6750ccad57d0e453cd6df7dd4263ec3cd3362ae26db126a820ff829fd3f",
+      "licenses": [
+        "LGPL-3.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libcloudproviders-0.4.1-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libdatrie-0.2.14-1-aarch64.pkg.tar.xz",
+      "name": "libdatrie",
+      "version": "0.2.14-1",
+      "architecture": "aarch64",
+      "sha256": "13f6aeb32f57d91c59ca68ce21abce48353081e886d3e8c2d89d5884b1f4b969",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libdatrie-0.2.14-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libdisplay-info-0.3.0-1-aarch64.pkg.tar.xz",
+      "name": "libdisplay-info",
+      "version": "0.3.0-1",
+      "architecture": "aarch64",
+      "sha256": "73af5a8923b764610ed281c3d1529c73bfeb40dcb3a4015a1e36ef4fc1ba7e5d",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libdisplay-info-0.3.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libepoxy-1.5.10-3-aarch64.pkg.tar.xz",
+      "name": "libepoxy",
+      "version": "1.5.10-3",
+      "architecture": "aarch64",
+      "sha256": "8bb73da9e2df09cf7798904a8709dfb49826a7a9c593a166cddd4a891a280724",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libepoxy-1.5.10-3-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libgmobile-0.7.3-1-aarch64.pkg.tar.xz",
+      "name": "libgmobile",
+      "version": "0.7.3-1",
+      "architecture": "aarch64",
+      "sha256": "8d8d958221bf264ea724b8cb95f1353907fd108114fd19c31a84c7214e0ce8d2",
+      "licenses": [
+        "LGPL-2.1-or-later AND GPL-3.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libgmobile-0.7.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libliftoff-0.5.0-1-aarch64.pkg.tar.xz",
+      "name": "libliftoff",
+      "version": "0.5.0-1",
+      "architecture": "aarch64",
+      "sha256": "77c8cf79c256c0b118ee14250ba16b7e322525566daa16a9fcf048153a1214df",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libliftoff-0.5.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libpng-1.6.59-1-aarch64.pkg.tar.xz",
+      "name": "libpng",
+      "version": "1.6.59-1",
+      "architecture": "aarch64",
+      "sha256": "6265adc1c9ec9f3cb6dc3393ea90e6d8e934e99291ce4fbf5affe3ea1b9370fc",
+      "licenses": [
+        "libpng-2.0"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libpng-1.6.59-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libseccomp-2.6.0-1-aarch64.pkg.tar.xz",
+      "name": "libseccomp",
+      "version": "2.6.0-1",
+      "architecture": "aarch64",
+      "sha256": "ebb62cc156a605aa3f024a6d2c9dd99ba66db6f50d9aeb75b8bb336316f0a2f5",
+      "licenses": [
+        "LGPL-2.1-only"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/core/libseccomp-2.6.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libthai-0.1.30-1-aarch64.pkg.tar.xz",
+      "name": "libthai",
+      "version": "0.1.30-1",
+      "architecture": "aarch64",
+      "sha256": "6bef55010b97524e3e2c7de4ec8834df5971eab8fe8ac4c5f2e88e42fad28524",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libthai-0.1.30-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "liburing-2.15-1-aarch64.pkg.tar.xz",
+      "name": "liburing",
+      "version": "2.15-1",
+      "architecture": "aarch64",
+      "sha256": "efb67ef7eed7b30bebebbe9420fbf67bbfd0676c2b731f30e47e544cdb73feaf",
+      "licenses": [
+        "GPL-2.0-only WITH Linux-syscall-note OR MIT",
+        "LGPL-2.0-or-later",
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/liburing-2.15-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libwireplumber-0.5.18-1-aarch64.pkg.tar.xz",
+      "name": "libwireplumber",
+      "version": "0.5.18-1",
+      "architecture": "aarch64",
+      "sha256": "9fc7aedc4079fadbef1fd7079076b781bee45431d9e534b7c45b82c39ad17d9c",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libwireplumber-0.5.18-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxcomposite-0.4.7-1-aarch64.pkg.tar.xz",
+      "name": "libxcomposite",
+      "version": "0.4.7-1",
+      "architecture": "aarch64",
+      "sha256": "37f2d1eb8e2eeef41c0b6cc290aba66ed1783ada5657801929d5390893383978",
+      "licenses": [
+        "MIT",
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxcomposite-0.4.7-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxcursor-1.2.3-1-aarch64.pkg.tar.xz",
+      "name": "libxcursor",
+      "version": "1.2.3-1",
+      "architecture": "aarch64",
+      "sha256": "9102597b8989250aa23379202a95ae15e2c7816e573d9bc81bc1bf4bc77b646f",
+      "licenses": [
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxcursor-1.2.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxdamage-1.1.7-1-aarch64.pkg.tar.xz",
+      "name": "libxdamage",
+      "version": "1.1.7-1",
+      "architecture": "aarch64",
+      "sha256": "c10d529d8e1eb9e518eea2249d4250ea8f7a711f9ec15a644164b94a6b554955",
+      "licenses": [
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxdamage-1.1.7-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxfixes-6.0.2-1-aarch64.pkg.tar.xz",
+      "name": "libxfixes",
+      "version": "6.0.2-1",
+      "architecture": "aarch64",
+      "sha256": "be025023ed05babf0372515e8346128f5dd7eccd82fd51be6c3c88eb8881d7a2",
+      "licenses": [
+        "MIT",
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxfixes-6.0.2-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxi-1.8.3-1-aarch64.pkg.tar.xz",
+      "name": "libxi",
+      "version": "1.8.3-1",
+      "architecture": "aarch64",
+      "sha256": "379cea947498145d31decca7a1beacec268cb24fb622a59f6dc49c23be793a22",
+      "licenses": [
+        "MIT-open-group",
+        "SMLNJ",
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxi-1.8.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxinerama-1.1.6-1-aarch64.pkg.tar.xz",
+      "name": "libxinerama",
+      "version": "1.1.6-1",
+      "architecture": "aarch64",
+      "sha256": "3a44bdcbc01e68437ea76c8746051586bfda37a36f2c0c5613844eebf9eafdad",
+      "licenses": [
+        "MIT",
+        "MIT-open-group",
+        "X11"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxinerama-1.1.6-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxrandr-1.5.5-1-aarch64.pkg.tar.xz",
+      "name": "libxrandr",
+      "version": "1.5.5-1",
+      "architecture": "aarch64",
+      "sha256": "50ced1a5945e325ef28fd4a5f9ee3e45e49f538841271f49326916576213a5f3",
+      "licenses": [
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxrandr-1.5.5-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "libxrender-0.9.12-1-aarch64.pkg.tar.xz",
+      "name": "libxrender",
+      "version": "0.9.12-1",
+      "architecture": "aarch64",
+      "sha256": "f5f344d116ff42b379c50ef595e7e9a3a6f7ed09357f8cd3acab90a3d11c9960",
+      "licenses": [
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/libxrender-0.9.12-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "lua-5.5.1-1-aarch64.pkg.tar.xz",
+      "name": "lua",
+      "version": "5.5.1-1",
+      "architecture": "aarch64",
+      "sha256": "bc30a8770a0e8bf42cdba5b49c1dcffce547396405526130845719cab5adf72d",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/lua-5.5.1-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "numactl-2.0.19-1-aarch64.pkg.tar.xz",
+      "name": "numactl",
+      "version": "2.0.19-1",
+      "architecture": "aarch64",
+      "sha256": "b28ebc082254c63fbbd9aac1e2ec9bae8e78fe7243682e875df537906ecb5971",
+      "licenses": [
+        "GPL-2.0-only",
+        "LGPL-2.1-only"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/numactl-2.0.19-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "pango-1:1.58.2-1-aarch64.pkg.tar.xz",
+      "name": "pango",
+      "version": "1:1.58.2-1",
+      "architecture": "aarch64",
+      "sha256": "89712127cef41515a3a7b92bc632dcb9c635e9088126ee238d3b63f675d4e7eb",
+      "licenses": [
+        "LGPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/pango-1%3A1.58.2-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "phoc-0.57.0-1-aarch64.pkg.tar.xz",
+      "name": "phoc",
+      "version": "0.57.0-1",
+      "architecture": "aarch64",
+      "sha256": "612a7ab08de1164483389a7331538027b55ae9d5c860618ecb553f471e5fd8ac",
+      "licenses": [
+        "GPL-3.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/phoc-0.57.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "python-gobject-3.56.3-1-aarch64.pkg.tar.xz",
+      "name": "python-gobject",
+      "version": "3.56.3-1",
+      "architecture": "aarch64",
+      "sha256": "f6e700bdca2cbe33c4f39240a741a27dad0b965fc0f2542655280112affb79c9",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/python-gobject-3.56.3-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "tinysparql-3.11.1-1-aarch64.pkg.tar.xz",
+      "name": "tinysparql",
+      "version": "3.11.1-1",
+      "architecture": "aarch64",
+      "sha256": "d245e5c2098c20a6eff65759d3967a63ff3e4658f755585296000b9c1890a547",
+      "licenses": [
+        "GPL-2.0-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/tinysparql-3.11.1-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "vulkan-icd-loader-1.4.357.0-1-aarch64.pkg.tar.xz",
+      "name": "vulkan-icd-loader",
+      "version": "1.4.357.0-1",
+      "architecture": "aarch64",
+      "sha256": "1163492a4ded4484623bd350b4ed69ed908b75520a6cb7a730695579a0e254e8",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/vulkan-icd-loader-1.4.357.0-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "wireplumber-0.5.18-1-aarch64.pkg.tar.xz",
+      "name": "wireplumber",
+      "version": "0.5.18-1",
+      "architecture": "aarch64",
+      "sha256": "2410813c8b3eba26598b90b260171ac884af59f8dc1441112eee80f1873b628b",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/wireplumber-0.5.18-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "wlroots0.20-0.20.2-1-aarch64.pkg.tar.xz",
+      "name": "wlroots0.20",
+      "version": "0.20.2-1",
+      "architecture": "aarch64",
+      "sha256": "31bf5f2ea29001643fffd3df21930e4254e51f30bc1a1684c476449d4ebdedc3",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/wlroots0.20-0.20.2-1-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "xcb-util-errors-1.0.1-2-aarch64.pkg.tar.xz",
+      "name": "xcb-util-errors",
+      "version": "1.0.1-2",
+      "architecture": "aarch64",
+      "sha256": "50bbcefde3803aba7a8a4502e927fff5e71261c6e6b82d32e478ae5d2ec8af24",
+      "licenses": [
+        "MIT"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/xcb-util-errors-1.0.1-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "xcb-util-renderutil-0.3.10-2-aarch64.pkg.tar.xz",
+      "name": "xcb-util-renderutil",
+      "version": "0.3.10-2",
+      "architecture": "aarch64",
+      "sha256": "87ab6eb530aaf6a2cf25af677ceb4493346ff319bb86e041afb9408e606784e3",
+      "licenses": [
+        "X11-distribute-modifications-variant",
+        "HPND-sell-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/xcb-util-renderutil-0.3.10-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "xcb-util-wm-0.4.2-2-aarch64.pkg.tar.xz",
+      "name": "xcb-util-wm",
+      "version": "0.4.2-2",
+      "architecture": "aarch64",
+      "sha256": "cca68248ca0d4a83382cac35fec66e8965e121d792ab2cb54a048fd7f514b92e",
+      "licenses": [
+        "X11-distribute-modifications-variant"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/xcb-util-wm-0.4.2-2-aarch64.pkg.tar.xz"
+    },
+    {
+      "filename": "xdg-desktop-portal-1.22.1-2-aarch64.pkg.tar.xz",
+      "name": "xdg-desktop-portal",
+      "version": "1.22.1-2",
+      "architecture": "aarch64",
+      "sha256": "e1f5f15d6455a3b9787775e5c6f33c0223154aef94d837b1ed52f4651705c7c6",
+      "licenses": [
+        "LGPL-2.1-or-later"
+      ],
+      "url": "https://de3.mirror.archlinuxarm.org/aarch64/extra/xdg-desktop-portal-1.22.1-2-aarch64.pkg.tar.xz"
+    }
+  ],
+  "runtime_files": {
+    "/usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+    "/usr/bin/phoc": "eb6326545820910dd6a787e14470f4c6095548aaa8d499b586fbc7aeb218f72f",
+    "/usr/lib/xdg-desktop-portal": "5e77edd768bb9a85081cd76e4583c7bff18220b61a8e43e23f0bb12932b2f83e",
+    "/usr/bin/wireplumber": "90b35144ce8ffc8550dfa4d4b4b1fb3c332bb8654ae5bd30be1343ec659f7a0b"
+  }
+}

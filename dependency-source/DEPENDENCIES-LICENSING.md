@@ -52,3 +52,7 @@ DionLabs integration under the same scoped grant. They are not a portal daemon.
 The real backend session test, registry-only Wayland fixture and session guide are
 original DionLabs integration. Protocol headers/code generated during tests retain
 upstream terms and are not exported. The upstream portal binary is not distributed.
+
+The [frontend capture lab](PORTAL-FRONTEND-LAB.md) adds original test fixtures and
+a hash-pinned private builder recipe. External package license identifiers remain
+upstream metadata; no package binaries or generated protocol code are exported.

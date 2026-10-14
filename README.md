@@ -77,21 +77,20 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 7](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-7)
-adds real portal backend readiness and known-session closure tests on a private
-D-Bus/PipeWire session with a registry-only Wayland fixture. Tests use private
-temporary directories; there is no live installation mode. Read the
-[dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
-[transaction laboratory guide](dependency-source/PORTAL-TRANSACTION-LAB.md),
-[real session guide](dependency-source/PORTAL-SESSION-LAB.md) and
+[Dependency-source preview 8](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-8)
+adds real headless compositor/frontend capture tests and a reproducible private lab
+builder. Changing 1280x720 frames reach a PipeWire consumer. Explicit closure and
+application disconnect clean up sessions and media. Backend death and cancellation
+timeouts require explicit reconciliation; they do not establish global quiescence.
+Read the [dependency guide](dependency-source/DEPENDENCIES-PREVIEW.md),
+[frontend capture guide](dependency-source/PORTAL-FRONTEND-LAB.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-7/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-8/dependency-source-preview.tar).
 
-The 63-file source payload lives under `dependency-source/`, with manifest and
-allowlist under `release/dependencies/`. All 87 tests pass, including 318 injected
-process exits. The real portal payload passes isolated storage rehearsals; no
-phone is activated. The real backend executes only inside the isolated lab.
-Seven runtime hashes reproduce exactly.
-Mesa runtime validation, live process coordination, existing-device adoption and
-automatic retention policy remain separate. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
-retains upstream notices. Earlier previews remain available at their release tags.
+The 70-file payload lives under `dependency-source/`; its manifest and allowlist
+are under `release/dependencies/`. All 96 tests pass, retaining the earlier 318
+injected process exits. The lab uses isolated services and software rendering;
+phone GPU/wlr capture and live updater adoption remain separate checks. No phone
+or live session is changed. No package archives or runtime binaries are released.
+The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
+terms. Earlier boot, desktop and dependency previews remain available.

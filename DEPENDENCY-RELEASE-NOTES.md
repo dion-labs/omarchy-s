@@ -1,30 +1,42 @@
-# Dependency-source preview 17
+# Dependency-source preview 18
 
-The first device integration candidate is now concrete: adopt the exact existing
-three-file portal payload into explicit ownership without payload replacement or
-service activation. The proposal defines a production-sidecar location separately
-from the lab receipt, exact mutation boundaries, ordered evidence gates and rollback
-that refuses external drift. It contains no live collector, writer or installer.
+Adds a bounded read-only portal inventory collector and an offline adoption planner.
+They prepare an explicit ownership migration for the existing three-file portal
+payload without replacing it or restarting services. Every plan withholds commit
+authorization; no metadata writer or production updater is included.
 
-## Basis and validation
+## Behavior
 
-Published dock source uses a separate bubblewrap PID namespace and private D-Bus
-session. Those frozen source references were hash-checked; they are not fresh phone
-observations or proof of complete client teardown. The machine-readable candidate's
-three payload identities match the verified stage exactly. Existing ownership rules
-remain unchanged: equal hashes alone do not authorize adoption of unowned files.
+The Linux collector uses no-follow directory/file handles, no-atime file reads,
+size/xattr bounds, two observations and file/path identity rechecks. It reports
+payload metadata, hashes, xattrs, parent identities and missing receipt parents.
+It refuses links, special files, read races and insufficient no-atime permissions.
+The offline planner checks all three entries against a supplied stage receipt,
+refuses missing/mixed files, wrong modes, existing sidecars, observed cross-device
+boundaries and baseline drift. The existing unowned-file refusal rule is unchanged.
 
-All 155 existing tests pass from the extracted candidate through the acceptance
-command. No new behavioral tests or crash-coverage claims are added for this
-specification-only change. Two normalized 93-file exports match; 92 attribution
-entries and links verify. Boot/desktop sources and runtime pins remain unchanged.
-No phone or live desktop was contacted; fresh device evidence remains a gate.
+## Validation
 
-## Next step and limits
+All 167 tests pass from extracted source: 165 Linux and 2 host across 21 suites.
+Twelve new fixture tests exercise the observation/planning behavior. Existing 333
+injected-exit cases and two real capture interruption scenarios remain covered;
+no adoption-writer crash coverage is claimed. A private copy of the pinned portal
+stage also passes collection and planning with unchanged payload observations.
 
-Read the [integration candidate](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-17/dependency-source/PORTAL-INTEGRATION-CANDIDATE.md).
-Next: implement a bounded read-only inventory collector and offline adoption planner,
-then rehearse the metadata writer in private roots before any concrete device commit.
-Future payload updates should use a verified stopped dock-session boundary; the lab's
-Docker destruction proof does not automatically establish a phone bubblewrap adapter.
-No production updater, service restart or physical/GPU acceptance is enabled here.
+Two normalized 96-file exports match, with 95 scoped attribution entries. Archive
+membership, hashes, modes, links and privacy findings are reviewed. Saved acceptance
+evidence verifies offline. Boot/desktop source inventories and runtime pins remain
+unchanged. No phone or live desktop was contacted. No binaries, observations,
+credentials or local acceptance logs are included in the release.
+
+## Limits and next step
+
+Read the [inventory guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-18/dependency-source/PORTAL-ADOPTION-INVENTORY.md).
+Two observations are not an atomic snapshot. The supplied receipt and saved
+observations need separate trust and freshness checks. Process/device identity,
+filesystem health and external package ownership are not inspected. Absence of
+this proposed sidecar does not prove absence of another owner.
+
+Next: implement the metadata-only adoption writer in private roots, with durable
+baseline/journal, crash recovery and drift-safe rollback tests, before preparing
+any device commit. Physical checks remain deferred.

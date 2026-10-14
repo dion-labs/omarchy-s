@@ -15,17 +15,22 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "6c798ddebcac20c6380aaf6141911e6324cbe4b42b10ee014cad216cb5c7e958",
+      "sha256": "f8730bca491d50092dffa189ec8a05d52f200b4a24570587fbaf0b85f10ade69",
       "mode": "0644"
     },
     {
       "path": "PORTAL-ACCEPTANCE.md",
-      "sha256": "8c1efd4714bc9d59c7f14c07db3a794fac9f4ee1094ce771d75274115d307206",
+      "sha256": "e325bc4160ea31ffe9077864e1781733d7b39ba08d8cefa57f7e8516035bb64b",
       "mode": "0644"
     },
     {
       "path": "PORTAL-ADMISSION-LAB.md",
       "sha256": "562c7833a25bdb5effd600011395d1dad606addf711abdcd462279d9b81f0275",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-ADOPTION-INVENTORY.md",
+      "sha256": "7c09264ecbb63150e99e0aafdbd0edafc893fe598bc10e4cc29b9ca0f0256bab",
       "mode": "0644"
     },
     {
@@ -60,7 +65,7 @@
     },
     {
       "path": "PORTAL-INTEGRATION-CANDIDATE.md",
-      "sha256": "b3df1ea5844dd367c6d9e90ca1c78a16700d763011e09a37fc2081f4eb1290b0",
+      "sha256": "698c372ff2b897810141cd82448c00f2c92a0211ecc41e7d76dd54e593f5d17a",
       "mode": "0644"
     },
     {
@@ -180,7 +185,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "db11a1d0f3576beffc66f6ecc8577fab2e459b3a5a90e0c3726b26a227639908",
+      "sha256": "8bbbb25c3b8b0e6588ffe1c5e58f19831763f4b7b4313a6bbc97ee86e5bb0b6e",
       "mode": "0644"
     },
     {
@@ -205,7 +210,7 @@
     },
     {
       "path": "packaging/portal-integration-candidate.json",
-      "sha256": "4e8d8a8be5ec0504b4f95f9cd11d096ef0a0985147158e33f6cf941ded9a2900",
+      "sha256": "f0c9bc073ad7aebeec44d939c0f3a1d11d5785e4c2df9b20e97d5180e74575dd",
       "mode": "0644"
     },
     {
@@ -251,6 +256,11 @@
     {
       "path": "scripts/dependency-lab/portal-admission.py",
       "sha256": "9808fb6ab451fccf41421f5bd064c4a42c89a8450bcf2e49ffc47991e0c393cb",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-adoption.py",
+      "sha256": "1315059396fd67e06bac964e65f5e3180563899c7b1c69ac1a97014304b6332e",
       "mode": "0644"
     },
     {
@@ -315,7 +325,7 @@
     },
     {
       "path": "scripts/dependency-lab/run-acceptance.py",
-      "sha256": "54fa87c9e394390f9acb7f42481cddd8cacb77e7f2db5faae416d7264cf5a22c",
+      "sha256": "338da84d4473a87bc00fc25dc3313c8e1953b7b14fa0d4eaf3883a57e9908a34",
       "mode": "0644"
     },
     {
@@ -351,6 +361,11 @@
     {
       "path": "scripts/dependency-lab/test-portal-admission.py",
       "sha256": "afd7fcc481384f9c600c590ff98bc40d44a9afe5781e8206b4744450a0e97d68",
+      "mode": "0644"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-adoption.py",
+      "sha256": "be047ef6d842e76a74fe664d002bc827103fb60a220df46b727ed5250c2cb26d",
       "mode": "0644"
     },
     {

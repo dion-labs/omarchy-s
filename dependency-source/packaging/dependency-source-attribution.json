@@ -16,7 +16,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "6c798ddebcac20c6380aaf6141911e6324cbe4b42b10ee014cad216cb5c7e958",
+      "sha256": "f8730bca491d50092dffa189ec8a05d52f200b4a24570587fbaf0b85f10ade69",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -24,13 +24,19 @@
       "path": "PORTAL-ACCEPTANCE.md",
       "classification": "local-expression",
       "scope": "Original host acceptance orchestration, structured results, validation tests and documentation",
-      "sha256": "8c1efd4714bc9d59c7f14c07db3a794fac9f4ee1094ce771d75274115d307206"
+      "sha256": "e325bc4160ea31ffe9077864e1781733d7b39ba08d8cefa57f7e8516035bb64b"
     },
     {
       "path": "PORTAL-ADMISSION-LAB.md",
       "classification": "local-expression",
       "scope": "Original isolated admission contract, tests and documentation; no upstream ownership claim",
       "sha256": "562c7833a25bdb5effd600011395d1dad606addf711abdcd462279d9b81f0275"
+    },
+    {
+      "path": "PORTAL-ADOPTION-INVENTORY.md",
+      "classification": "local-expression",
+      "scope": "Original read-only inventory, offline adoption planning, tests and documentation",
+      "sha256": "7c09264ecbb63150e99e0aafdbd0edafc893fe598bc10e4cc29b9ca0f0256bab"
     },
     {
       "path": "PORTAL-CAPTURE-ADMISSION-LAB.md",
@@ -72,7 +78,7 @@
       "path": "PORTAL-INTEGRATION-CANDIDATE.md",
       "classification": "local-expression",
       "scope": "Original adoption candidate definition; upstream paths and artifact identities are factual references",
-      "sha256": "b3df1ea5844dd367c6d9e90ca1c78a16700d763011e09a37fc2081f4eb1290b0"
+      "sha256": "698c372ff2b897810141cd82448c00f2c92a0211ecc41e7d76dd54e593f5d17a"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
@@ -240,7 +246,7 @@
       "path": "packaging/portal-integration-candidate.json",
       "classification": "local-expression",
       "scope": "Original adoption candidate definition; upstream paths and artifact identities are factual references",
-      "sha256": "4e8d8a8be5ec0504b4f95f9cd11d096ef0a0985147158e33f6cf941ded9a2900"
+      "sha256": "f0c9bc073ad7aebeec44d939c0f3a1d11d5785e4c2df9b20e97d5180e74575dd"
     },
     {
       "path": "packaging/toolchains/arch-archives.lock.json",
@@ -295,6 +301,12 @@
       "classification": "local-expression",
       "scope": "Original isolated admission contract, tests and documentation; no upstream ownership claim",
       "sha256": "9808fb6ab451fccf41421f5bd064c4a42c89a8450bcf2e49ffc47991e0c393cb"
+    },
+    {
+      "path": "scripts/dependency-lab/portal-adoption.py",
+      "classification": "local-expression",
+      "scope": "Original read-only inventory, offline adoption planning, tests and documentation",
+      "sha256": "1315059396fd67e06bac964e65f5e3180563899c7b1c69ac1a97014304b6332e"
     },
     {
       "path": "scripts/dependency-lab/portal-child.py",
@@ -372,7 +384,7 @@
       "path": "scripts/dependency-lab/run-acceptance.py",
       "classification": "local-expression",
       "scope": "Original host acceptance orchestration, structured results, validation tests and documentation",
-      "sha256": "54fa87c9e394390f9acb7f42481cddd8cacb77e7f2db5faae416d7264cf5a22c"
+      "sha256": "338da84d4473a87bc00fc25dc3313c8e1953b7b14fa0d4eaf3883a57e9908a34"
     },
     {
       "path": "scripts/dependency-lab/stage-portal.py",
@@ -415,6 +427,12 @@
       "classification": "local-expression",
       "scope": "Original isolated admission contract, tests and documentation; no upstream ownership claim",
       "sha256": "afd7fcc481384f9c600c590ff98bc40d44a9afe5781e8206b4744450a0e97d68"
+    },
+    {
+      "path": "scripts/dependency-lab/test-portal-adoption.py",
+      "classification": "local-expression",
+      "scope": "Original read-only inventory, offline adoption planning, tests and documentation",
+      "sha256": "be047ef6d842e76a74fe664d002bc827103fb60a220df46b727ed5250c2cb26d"
     },
     {
       "path": "scripts/dependency-lab/test-portal-child.py",

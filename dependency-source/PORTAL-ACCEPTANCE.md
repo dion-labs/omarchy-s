@@ -32,8 +32,8 @@ lock/backend hashes, per-suite counts, Linux/host totals, elapsed time and log/r
 hashes. `case-N.json` files come directly from unittest results, not log parsing.
 The runner rejects missing results, wrong counts, skips, expected failures and
 ordinary failures. `linux.log` and `host.log` preserve detailed output. Source and
-portal hashes are rechecked at completion. Current acceptance is155 tests:153 Linux
-and2 host; the existing333 injected-exit cases and two real capture interruption
+portal hashes are rechecked at completion. Current acceptance is 167 tests: 165 Linux
+and 2 host; the existing333 injected-exit cases and two real capture interruption
 scenarios are exercised by these suites, not independently counted by the runner.
 
 Status starts as running and becomes passed only after every check. Ordinary
@@ -52,3 +52,6 @@ identities, so independent runs can be compared without trusting a summary alone
 
 [Saved-evidence verification and comparison](PORTAL-EVIDENCE-VERIFICATION.md) validates
 receipt identities, every result/log and the declared reproduction contract offline.
+
+Preview18 adds twelve read-only adoption inventory/planner fixture tests: 167 total
+(165 Linux, 2 host) across 21 suites. See [adoption inventory](PORTAL-ADOPTION-INVENTORY.md).

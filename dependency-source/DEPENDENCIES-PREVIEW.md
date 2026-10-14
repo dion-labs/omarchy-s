@@ -135,3 +135,6 @@ acceptance artifacts and compare runs against the same source/runtime contract.
 
 The [first integration candidate](PORTAL-INTEGRATION-CANDIDATE.md) defines adoption
 without payload replacement or service activation, with explicit rollback gates.
+
+Read-only [adoption inventory/planning](PORTAL-ADOPTION-INVENTORY.md) is available
+for private Linux fixtures. A matching plan never authorizes a production commit.

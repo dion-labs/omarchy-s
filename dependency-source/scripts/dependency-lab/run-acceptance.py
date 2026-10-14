@@ -17,7 +17,7 @@ CASES=[('scripts/release/test-private-builds.py',4),('scripts/toolchain-lab/test
 CASES += [('scripts/dependency-lab/test-'+name+'.py',count) for name,count in [
  ('native-usb',3),('acquire-sources',2),('stage-portal',6),('portal-ownership',7),('portal-transaction',18),
  ('portal-retention',11),('portal-lifecycle',10),('portal-child',9),('portal-session',8),('frontend-lab-inputs',4),
- ('portal-frontend',12),('portal-admission',12),('portal-fence',19),('portal-scope',5),('acceptance',6),('acceptance-evidence',8)]]
+ ('portal-frontend',12),('portal-admission',12),('portal-fence',19),('portal-scope',5),('acceptance',6),('acceptance-evidence',8),('portal-adoption',12)]]
 HOST=('scripts/dependency-lab/test-portal-scope-host.py',2)
 PIN='e3c43847acc34cd113f101087de3c113e7ae821c933515b0c55b2c92cbb7eb3b'
 

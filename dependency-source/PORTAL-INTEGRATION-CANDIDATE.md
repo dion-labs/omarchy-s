@@ -102,12 +102,16 @@ by changing a path. Namespace identity, descendant lifetime, stop/start exclusio
 rollback and recovery need explicit host/device adapter evidence. Hot replacement,
 force-closing unknown clients and general portal interception are deferred.
 
+## Read-only implementation
+
+The [inventory and offline planner](PORTAL-ADOPTION-INVENTORY.md) now implement
+bounded two-pass filesystem observation and exact supplied-stage matching. They
+remain rehearsal tools: no device identity, process or external ownership registry
+is collected, and every plan explicitly withholds commit authorization.
+
 ## Next concrete implementation
 
-Build a bounded read-only inventory collector and an offline adoption planner that
-consume saved observations and emit match/refusal decisions. Exercise them with
-fixtures for missing, mixed, linked, conflicting and drifting state. Keep all
-credentials, device addresses, process details and local snapshots outside public
-source exports. After that, implement and crash-test the adoption writer in private
-roots before preparing a concrete device commit. Nothing in this document enables
+Implement and crash-test the adoption metadata writer in private roots before
+preparing a concrete device commit. Keep credentials, device addresses, process
+details and local snapshots outside public source exports. Nothing in this document enables
 installation or claims that the current phone has been inspected.

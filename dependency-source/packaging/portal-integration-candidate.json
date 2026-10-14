@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "candidate": "portal-adoption-1",
-  "status": "defined-not-implemented",
+  "status": "read-only-planning-implemented-writer-deferred",
   "activation": "none",
   "device_observed": false,
   "phone_mutation_authorized_by_this_artifact": false,
@@ -46,8 +46,8 @@
     "boot/kernel/USB/charging changes"
   ],
   "next_implementation": [
-    "read-only inventory collector",
-    "offline adoption planner"
+    "private-root metadata writer and crash rehearsal",
+    "fresh device identity and process/ownership inventory before any device commit"
   ],
   "source_anchors": {
     "dock-launch.py": "d17a4ccf0bd9d5d65c14e681cc62790bc7b96e949fb67654fa1cce4ca5069d48",

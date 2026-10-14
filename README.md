@@ -77,19 +77,20 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 17](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-17)
-defines the first device integration candidate: adopt the exact existing portal
-payload into explicit ownership without replacing files or restarting services.
-Fresh device inventory, durable snapshots, exclusive revalidation and drift-safe
-rollback are required before a future metadata commit. No live writer is included.
-Read the [candidate](dependency-source/PORTAL-INTEGRATION-CANDIDATE.md),
+[Dependency-source preview 18](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-18)
+adds read-only payload inventory and offline adoption planning. It checks the exact
+three-file payload against a supplied stage receipt, refuses conflicts and drift,
+and keeps all device commit gates explicit. No metadata writer is included and
+plans never authorize a commit.
+Read the [inventory guide](dependency-source/PORTAL-ADOPTION-INVENTORY.md),
+[candidate](dependency-source/PORTAL-INTEGRATION-CANDIDATE.md),
 [acceptance guide](dependency-source/PORTAL-ACCEPTANCE.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-17/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-18/dependency-source-preview.tar).
 
-The 93-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. All 155 existing tests pass from exported source.
-Candidate payload and frozen architecture references were verified separately.
-No phone/live desktop was contacted or changed; device facts remain unobserved.
+The 96-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 167 tests pass from exported source, including
+12 new adoption fixture tests. Collection/planning also passes against a private
+copy of the exact staged payload. No phone or live desktop was contacted.
 The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
 terms. No runtime binaries or local evidence are released.

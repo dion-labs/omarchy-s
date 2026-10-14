@@ -77,19 +77,19 @@ payload. The older boot download links above remain valid.
 
 ## External dependency source preview
 
-[Dependency-source preview 16](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-16)
-adds offline verification and comparison of saved acceptance evidence. Receipt,
-source/runtime, result and log identities must match; copied or incomplete runs
-cannot establish reproduction. Read the
-[evidence guide](dependency-source/PORTAL-EVIDENCE-VERIFICATION.md),
+[Dependency-source preview 17](https://github.com/dion-labs/omarchy-s/releases/tag/dependency-source-preview-17)
+defines the first device integration candidate: adopt the exact existing portal
+payload into explicit ownership without replacing files or restarting services.
+Fresh device inventory, durable snapshots, exclusive revalidation and drift-safe
+rollback are required before a future metadata commit. No live writer is included.
+Read the [candidate](dependency-source/PORTAL-INTEGRATION-CANDIDATE.md),
 [acceptance guide](dependency-source/PORTAL-ACCEPTANCE.md) and
 [release notes](DEPENDENCY-RELEASE-NOTES.md).
-[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-16/dependency-source-preview.tar).
+[Download dependency-source-preview.tar](https://github.com/dion-labs/omarchy-s/releases/download/dependency-source-preview-17/dependency-source-preview.tar).
 
-The 91-file payload lives under `dependency-source/`; manifest and allowlist are
-under `release/dependencies/`. Two full runs each pass 155 tests: 153 Linux and 2 host.
-Their source/runtime/test contracts match after independent artifact verification.
-Timing and logs may differ. This checks evidence consistency, not cryptographic
-proof of execution or independent hosts. No phone/live desktop is changed and no
-production updater is enabled. The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md)
-retains upstream terms. No runtime binaries or local evidence are released.
+The 93-file payload lives under `dependency-source/`; manifest and allowlist are
+under `release/dependencies/`. All 155 existing tests pass from exported source.
+Candidate payload and frozen architecture references were verified separately.
+No phone/live desktop was contacted or changed; device facts remain unobserved.
+The [scoped licensing](dependency-source/DEPENDENCIES-LICENSING.md) retains upstream
+terms. No runtime binaries or local evidence are released.

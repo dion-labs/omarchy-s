@@ -1,7 +1,7 @@
 {
   "scope": "External dependency source preview: offline userspace build recipes and two native USB owner sources; no binaries, firmware, device state or installer",
   "publication_cleared": false,
-  "allowlist_sha256": "2b1c0047d2658c1dd093e9a9a735bb889a2ed0081400d8abedbc73c9f268fb4b",
+  "allowlist_sha256": "6dc0ef97fc2933c4c81e900e05652f8161501004d0128743419aeb42623d8f35",
   "files": [
     {
       "path": "DEPENDENCIES-LICENSE-MIT",
@@ -15,7 +15,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "884e9d9ad784e05c8a3d8926ed110b4bfbc3f30776476c6c5076eb868364aabf",
+      "sha256": "6c798ddebcac20c6380aaf6141911e6324cbe4b42b10ee014cad216cb5c7e958",
       "mode": "0644"
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "path": "PORTAL-EVIDENCE-VERIFICATION.md",
-      "sha256": "5d957882b621ca031ba4b61fcbb04615f0d74d481e3cbc06292a90c543e6171d",
+      "sha256": "ec0b62b6bb84c9a7987afc097a6acd7a1f6ab7078e78f6852bc74fc05ea6fb09",
       "mode": "0644"
     },
     {
@@ -56,6 +56,11 @@
     {
       "path": "PORTAL-FRONTEND-LAB.md",
       "sha256": "fbb42c5bb22f8c86bc6a13881f4ae78ff626499e7fbbaf157412a63ad10bbf92",
+      "mode": "0644"
+    },
+    {
+      "path": "PORTAL-INTEGRATION-CANDIDATE.md",
+      "sha256": "b3df1ea5844dd367c6d9e90ca1c78a16700d763011e09a37fc2081f4eb1290b0",
       "mode": "0644"
     },
     {
@@ -175,7 +180,7 @@
     },
     {
       "path": "packaging/dependency-source-attribution.json",
-      "sha256": "283bddcf26a7bb106524285fa7fb03a3594b8cc4079ac8a7209cc0cefe6e6f6f",
+      "sha256": "db11a1d0f3576beffc66f6ecc8577fab2e459b3a5a90e0c3726b26a227639908",
       "mode": "0644"
     },
     {
@@ -196,6 +201,11 @@
     {
       "path": "packaging/portal-frontend-lab.lock.json",
       "sha256": "bfcf86502df93940b5b7dc0316896aea2e9510285962db130a65d04caf6e976e",
+      "mode": "0644"
+    },
+    {
+      "path": "packaging/portal-integration-candidate.json",
+      "sha256": "4e8d8a8be5ec0504b4f95f9cd11d096ef0a0985147158e33f6cf941ded9a2900",
       "mode": "0644"
     },
     {
@@ -459,5 +469,5 @@
       "mode": "0644"
     }
   ],
-  "archive_sha256": "ea9e02729d8c66cf52fc6325dd180e96ee0e6ba50afc221663d633315854284e"
+  "archive_sha256": "167b6d3e2e4afaab2885fbe7a85ddb2941337c312c441a76db76370cd29d8d3b"
 }

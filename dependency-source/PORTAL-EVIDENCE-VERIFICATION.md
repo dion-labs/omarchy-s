@@ -43,3 +43,6 @@ used for this release's reproduction check; logs and elapsed times may differ.
 Next: use the consolidated evidence to define the smallest production integration
 candidate and its rollback/adoption gates. Host lab acceptance alone must not enable
 updates on the phone or claim physical/GPU acceptance.
+
+The [first integration candidate](PORTAL-INTEGRATION-CANDIDATE.md) defines adoption
+without payload replacement or service activation, with explicit rollback gates.

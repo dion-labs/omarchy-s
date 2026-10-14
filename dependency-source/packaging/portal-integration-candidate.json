@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "candidate": "portal-adoption-1",
+  "status": "defined-not-implemented",
+  "activation": "none",
+  "device_observed": false,
+  "phone_mutation_authorized_by_this_artifact": false,
+  "runtime_owner": "omarchy-portal",
+  "payload_mutations": [],
+  "adopt_exact_payload": [
+    {
+      "mode": "0644",
+      "sha256": "3ac22677b8ed454296793da5eabf995925e1e018f2b7ab8342d9ef0c8d4201f0",
+      "target": "usr/local/lib/omarchy-dock/portal-LICENSE"
+    },
+    {
+      "mode": "0644",
+      "sha256": "a2f48ae61299d50fca5f5723dbf7f03549bb5fe8bb7c3477fec309c79a5ffc35",
+      "target": "usr/local/lib/omarchy-dock/portal-manifest.json"
+    },
+    {
+      "mode": "0755",
+      "sha256": "e3c43847acc34cd113f101087de3c113e7ae821c933515b0c55b2c92cbb7eb3b",
+      "target": "usr/local/lib/omarchy-dock/portal-wlr"
+    }
+  ],
+  "dependency_lock_sha256": "838cf39883267f6ecb831b571aacef11a63d7e842ad5b534b2d750faa192240f",
+  "proposed_owner_receipt": "/var/lib/omarchy-s/owners/omarchy-portal.json",
+  "existing_receipt_policy": "refuse conflicts; never overwrite or infer ownership",
+  "transaction_storage": "private path selected only after fresh parent/filesystem inventory",
+  "rollback": "remove only unchanged sidecar created by this transaction; preserve payload and unrelated state",
+  "required_gates": [
+    "trusted-source-and-runtime-evidence",
+    "fresh-device-and-filesystem-inventory",
+    "running-process-identity-if-present",
+    "exact-stage-match",
+    "durable-baseline-and-journal",
+    "private-root-adoption-crash-rehearsal",
+    "exclusive-revalidation-before-commit"
+  ],
+  "deferred": [
+    "payload replacement",
+    "service activation or restart",
+    "dock namespace update adapter",
+    "physical phone GPU/wlr acceptance",
+    "boot/kernel/USB/charging changes"
+  ],
+  "next_implementation": [
+    "read-only inventory collector",
+    "offline adoption planner"
+  ],
+  "source_anchors": {
+    "dock-launch.py": "d17a4ccf0bd9d5d65c14e681cc62790bc7b96e949fb67654fa1cce4ca5069d48",
+    "portal_backend.py": "96075c72129baf15ce2ade3376375c94093b2c2f4b5cf01ed276c35c1da978d6"
+  }
+}

@@ -132,3 +132,6 @@ from exact exported source and retain structured results plus hashed logs.
 
 Use the [offline evidence verifier](PORTAL-EVIDENCE-VERIFICATION.md) to check saved
 acceptance artifacts and compare runs against the same source/runtime contract.
+
+The [first integration candidate](PORTAL-INTEGRATION-CANDIDATE.md) defines adoption
+without payload replacement or service activation, with explicit rollback gates.

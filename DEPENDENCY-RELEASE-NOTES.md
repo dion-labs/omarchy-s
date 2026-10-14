@@ -1,32 +1,30 @@
-# Dependency-source preview 16
+# Dependency-source preview 17
 
-Saved acceptance evidence now has an offline verifier. It checks trusted receipt
-and manifest hashes, exact source identity, builder/lock/portal identity, complete
-artifact membership, per-result/log hashes, strict test outcomes and summary totals.
-Comparison requires two verified runs with the same source/runtime/test contract;
-duration and each run's diagnostics may differ. New receipts carry random run IDs.
+The first device integration candidate is now concrete: adopt the exact existing
+three-file portal payload into explicit ownership without payload replacement or
+service activation. The proposal defines a production-sidecar location separately
+from the lab receipt, exact mutation boundaries, ordered evidence gates and rollback
+that refuses external drift. It contains no live collector, writer or installer.
 
-## Validation
+## Basis and validation
 
-Two complete exported-source runs each pass 155 tests: 153 Linux and 2 host, across
-20 suites. Eight new tests cover tampering, incomplete/linked artifacts, duplicate
-JSON keys, failed or copied runs, summary drift and runtime differences. The offline
-comparison verifies both evidence sets and reports equivalent contracts with
-distinct declared run IDs. Existing 333 injected-exit cases and two real capture
-interruption scenarios remain covered; no additional crash scenarios are claimed.
+Published dock source uses a separate bubblewrap PID namespace and private D-Bus
+session. Those frozen source references were hash-checked; they are not fresh phone
+observations or proof of complete client teardown. The machine-readable candidate's
+three payload identities match the verified stage exactly. Existing ownership rules
+remain unchanged: equal hashes alone do not authorize adoption of unowned files.
 
-Two normalized 91-file exports match; 90 attribution entries and source links verify.
-Privacy findings reviewed. Boot/desktop inventories and runtime pins unchanged.
-No phone or live desktop was contacted; local evidence is not a release asset.
+All 155 existing tests pass from the extracted candidate through the acceptance
+command. No new behavioral tests or crash-coverage claims are added for this
+specification-only change. Two normalized 93-file exports match; 92 attribution
+entries and links verify. Boot/desktop sources and runtime pins remain unchanged.
+No phone or live desktop was contacted; fresh device evidence remains a gate.
 
-## Limits and next step
+## Next step and limits
 
-See the [evidence guide](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-16/dependency-source/PORTAL-EVIDENCE-VERIFICATION.md).
-Receipt hashes must come from a trusted record. Hash consistency and distinct run
-IDs do not authenticate execution or establish independent hosts. The verifier
-makes no Docker/device calls and does not re-execute the recorded image. Legacy
-receipt shape is supported only with a matching source/test registry.
-
-Next: use this consolidated evidence to define a minimal production integration
-candidate and explicit rollback/adoption gates. No phone updater is enabled by
-laboratory acceptance alone.
+Read the [integration candidate](https://github.com/dion-labs/omarchy-s/blob/dependency-source-preview-17/dependency-source/PORTAL-INTEGRATION-CANDIDATE.md).
+Next: implement a bounded read-only inventory collector and offline adoption planner,
+then rehearse the metadata writer in private roots before any concrete device commit.
+Future payload updates should use a verified stopped dock-session boundary; the lab's
+Docker destruction proof does not automatically establish a phone bubblewrap adapter.
+No production updater, service restart or physical/GPU acceptance is enabled here.

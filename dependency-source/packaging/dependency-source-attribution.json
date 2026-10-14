@@ -16,7 +16,7 @@
     },
     {
       "path": "DEPENDENCIES-PREVIEW.md",
-      "sha256": "884e9d9ad784e05c8a3d8926ed110b4bfbc3f30776476c6c5076eb868364aabf",
+      "sha256": "6c798ddebcac20c6380aaf6141911e6324cbe4b42b10ee014cad216cb5c7e958",
       "classification": "local-expression",
       "scope": "Original integration only; public identifiers, metadata and protocol facts excluded from ownership claims"
     },
@@ -54,7 +54,7 @@
       "path": "PORTAL-EVIDENCE-VERIFICATION.md",
       "classification": "local-expression",
       "scope": "Original offline evidence verification, comparison, tests and documentation",
-      "sha256": "5d957882b621ca031ba4b61fcbb04615f0d74d481e3cbc06292a90c543e6171d"
+      "sha256": "ec0b62b6bb84c9a7987afc097a6acd7a1f6ab7078e78f6852bc74fc05ea6fb09"
     },
     {
       "path": "PORTAL-FENCE-LAB.md",
@@ -67,6 +67,12 @@
       "classification": "local-expression",
       "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
       "sha256": "fbb42c5bb22f8c86bc6a13881f4ae78ff626499e7fbbaf157412a63ad10bbf92"
+    },
+    {
+      "path": "PORTAL-INTEGRATION-CANDIDATE.md",
+      "classification": "local-expression",
+      "scope": "Original adoption candidate definition; upstream paths and artifact identities are factual references",
+      "sha256": "b3df1ea5844dd367c6d9e90ca1c78a16700d763011e09a37fc2081f4eb1290b0"
     },
     {
       "path": "PORTAL-PAYLOAD.md",
@@ -229,6 +235,12 @@
       "classification": "local-expression",
       "scope": "Original laboratory integration only; upstream metadata and protocol identifiers retain their terms",
       "sha256": "bfcf86502df93940b5b7dc0316896aea2e9510285962db130a65d04caf6e976e"
+    },
+    {
+      "path": "packaging/portal-integration-candidate.json",
+      "classification": "local-expression",
+      "scope": "Original adoption candidate definition; upstream paths and artifact identities are factual references",
+      "sha256": "4e8d8a8be5ec0504b4f95f9cd11d096ef0a0985147158e33f6cf941ded9a2900"
     },
     {
       "path": "packaging/toolchains/arch-archives.lock.json",
